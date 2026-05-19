@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://imageconvert.io
+
+# Sitemaps
+Sitemap: https://imageconvert.io/sitemap.xml
