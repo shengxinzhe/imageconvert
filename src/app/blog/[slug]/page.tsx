@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/constants";
 function MarkdownContent({ content }: { content: string }) {
   const blocks = content.split("\n\n");
   return (
-    <div className="prose-vercel">
+    <div className="prose-mint">
       {blocks.map((block, i) => {
         if (block.startsWith("## ")) {
           return <h2 key={i}>{block.replace(/^## /, "")}</h2>;

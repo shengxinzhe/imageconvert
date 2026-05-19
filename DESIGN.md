@@ -1,31 +1,23 @@
-# Design System — Vercel (from awesome-design-md)
+# Design System — Layered (awesome-design-md)
 
-Source: [VoltAgent/awesome-design-md/design-md/vercel](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/vercel)
+Base tokens: **Vercel** ([design-md/vercel](https://github.com/VoltAgent/awesome-design-md/tree/main/design-md/vercel))  
+Implementation: `src/lib/design-variants.ts` + `src/app/globals.css`
 
-This project uses the Vercel-inspired DESIGN.md tokens for UI consistency.
+## Audience layers
 
-## Core tokens
+| Traffic | Style source | Routes | Visual cues |
+|---------|--------------|--------|-------------|
+| HEIC / iPhone | Apple-adjacent on Vercel base | `/heic-to-jpg`, `/heic-to-png`, home hero | `#fbfbfb` hero, spacious, ink CTAs, rounded-2xl cards |
+| WebP / AVIF / dev | Linear-adjacent on Vercel base | `/webp-*`, `/avif-*`, `/jpg-to-webp`, `/png-to-webp` | Purple `#5e6ad2`, mono format labels, mesh hero |
+| Blog / SEO | Mintlify-adjacent typography | `/blog/*` | Green links `#0d9373`, line-height 1.75, section dividers |
+| Ads | Cal/Vercel partitions | `content-band`, sidebar | Hairline borders, soft bands between sections |
 
-- **Ink / Primary:** `#171717`
-- **Body:** `#4d4d4d` · **Mute:** `#888888`
-- **Hairline:** `#ebebeb` · **Canvas:** `#ffffff` · **Canvas soft:** `#fafafa`
-- **Link:** `#0070f3`
-- **Buttons:** Pill shape (`border-radius: 9999px`), primary = ink fill + white text
+## Shared tokens (do not fork per page)
 
-## Typography
+- Ink `#171717`, Body `#4d4d4d`, Hairline `#ebebeb`, Canvas `#ffffff`
+- Geist Sans + Geist Mono
+- Pill primary button = ink (HEIC) or purple (developer tools)
 
-- **Sans:** Geist, Inter, system-ui
-- **Mono:** Geist Mono (labels, technical badges)
-- Display: tight negative letter-spacing (`-0.05em` at xl)
+## Changing a layer
 
-## Layout
-
-- Max content width ~1152px (`max-w-6xl`)
-- Nav height 64px, hairline bottom border
-- Hero: mesh gradient band (cyan / blue / violet / amber at low opacity)
-
-## Components
-
-- Cards: `rounded-lg` (12px), hairline border, white or `#fafafa` fill
-- Inputs / dropzone: hairline border, `rounded-md` (8px)
-- No emerald accent — use ink + link blue only
+Edit `audienceStyles` in `src/lib/design-variants.ts`. To swap a whole brand (e.g. Linear → Resend), replace the `developer` entry with tokens from another `DESIGN.md` in awesome-design-md.

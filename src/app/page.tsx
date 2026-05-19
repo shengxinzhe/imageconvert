@@ -1,36 +1,44 @@
 import Link from "next/link";
 import { toolList } from "@/lib/tools-config";
 import { blogPosts } from "@/lib/blog-posts";
-import { ArrowRight, Lock, Zap } from "lucide-react";
+import { audienceStyles, getToolAudience, homeStyles } from "@/lib/design-variants";
+import { ArrowRight, Lock } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const heicTools = toolList.filter((t) => getToolAudience(t.slug) === "heic");
+const devTools = toolList.filter((t) => getToolAudience(t.slug) === "developer");
 
 export default function HomePage() {
   return (
     <>
-      <section className="mesh-hero border-b border-hairline">
+      {/* HEIC / Apple-adjacent hero */}
+      <section className={homeStyles.heicSection}>
         <div className="mx-auto max-w-6xl px-4 py-20 text-center md:py-28 lg:px-6">
-          <p className="font-mono text-xs uppercase tracking-widest text-mute">
-            Private · Browser-local · Free
-          </p>
+          <span
+            className={cn(
+              "inline-flex rounded-full border px-3 py-1 text-xs font-medium",
+              audienceStyles.heic.badge
+            )}
+          >
+            iPhone & iPad photos
+          </span>
           <h1 className="mt-6 text-balance text-4xl font-semibold tracking-display text-ink md:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
-            Convert HEIC, WebP & AVIF — without uploading your photos
+            Convert HEIC to JPG — without uploading your photos
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-body">
-            Modern image formats save space—but break compatibility. ImageConvert runs
-            entirely in your browser for iPhone HEIC, web WebP, and next-gen AVIF.
+            Apple&apos;s default format doesn&apos;t work everywhere. Convert locally in
+            your browser—private, free, and instant for Windows, Mac, and sharing.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/heic-to-jpg"
-              className="inline-flex h-12 items-center rounded-full bg-ink px-6 text-sm font-medium text-white transition-colors hover:bg-[#333]"
-            >
+            <Link href="/heic-to-jpg" className={cn("inline-flex h-12 items-center px-6 text-sm font-medium", homeStyles.heicCta)}>
               HEIC to JPG
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
             <Link
-              href="/avif-to-jpg"
-              className="inline-flex h-12 items-center rounded-full border border-hairline bg-canvas px-6 text-sm font-medium text-ink transition-colors hover:bg-canvas-soft"
+              href="/heic-to-png"
+              className="inline-flex h-12 items-center rounded-full border border-hairline bg-canvas px-6 text-sm font-medium text-ink hover:bg-canvas-soft"
             >
-              AVIF to JPG
+              HEIC to PNG
             </Link>
           </div>
           <ul className="mx-auto mt-14 flex max-w-lg flex-wrap justify-center gap-8 text-sm text-body">
@@ -38,61 +46,76 @@ export default function HomePage() {
               <Lock className="h-4 w-4 text-ink" aria-hidden />
               Files stay on device
             </li>
-            <li className="flex items-center gap-2">
-              <Zap className="h-4 w-4 text-ink" aria-hidden />
-              Batch up to 5 images
-            </li>
           </ul>
         </div>
       </section>
 
-      <section className="bg-canvas-soft py-20">
-        <div className="mx-auto max-w-6xl px-4 lg:px-6">
-          <p className="font-mono text-xs uppercase tracking-wider text-mute">Converters</p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-display-sm text-ink md:text-3xl">
-            All tools
+      {/* Developer / Linear-adjacent tools */}
+      <section className={homeStyles.devSection}>
+        <div className="mx-auto max-w-6xl px-4 py-16 lg:px-6">
+          <span className={homeStyles.devBadge}>WebP · AVIF · optimize</span>
+          <h2 className="mt-3 text-2xl font-semibold tracking-display-sm text-ink md:text-3xl">
+            Developer converters
           </h2>
           <p className="mt-2 max-w-xl text-body">
-            Eight landing pages, cross-linked for discoverability and SEO.
+            WebP and AVIF for modern sites—convert locally before deploy or share.
           </p>
-          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {toolList.map((tool) => (
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {devTools.map((tool) => (
               <Link
                 key={tool.slug}
                 href={tool.path}
-                className="group rounded-vercel-lg border border-hairline bg-canvas p-5 shadow-card transition hover:shadow-card-hover"
+                className="group rounded-vercel-lg border border-hairline bg-canvas p-5 shadow-card transition hover:border-[#c4c4ef] hover:shadow-card-hover"
               >
-                <h3 className="font-medium capitalize text-ink group-hover:text-link">
+                <p className="font-mono text-xs text-[#5e6ad2]">{tool.from} → {tool.to}</p>
+                <h3 className="mt-2 font-medium capitalize text-ink group-hover:text-[#5e6ad2]">
                   {tool.slug.replace(/-/g, " ")}
                 </h3>
-                <p className="mt-2 line-clamp-2 text-sm text-body">
-                  {tool.metaDescription}
-                </p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-20 lg:px-6">
+      {/* HEIC tools grid */}
+      <section className="content-band-soft py-16">
+        <div className="mx-auto max-w-6xl px-4 lg:px-6">
+          <h2 className="text-xl font-semibold text-ink">iPhone photo tools</h2>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {heicTools.map((tool) => (
+              <Link
+                key={tool.slug}
+                href={tool.path}
+                className={cn("p-5 transition hover:shadow-card-hover", audienceStyles.heic.card)}
+              >
+                <h3 className="font-medium capitalize text-ink">{tool.slug.replace(/-/g, " ")}</h3>
+                <p className="mt-2 line-clamp-2 text-sm text-body">{tool.metaDescription}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Blog / Mintlify-adjacent */}
+      <section className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
         <p className="font-mono text-xs uppercase tracking-wider text-mute">Guides</p>
         <h2 className="mt-2 text-2xl font-semibold tracking-display-sm text-ink">Blog</h2>
-        <ul className="mt-8 grid gap-3 md:grid-cols-2">
+        <p className="mt-2 text-body">HEIC, WebP, and AVIF guides for search and sharing.</p>
+        <ul className="mt-8 divide-y divide-hairline border-y border-hairline">
           {blogPosts.slice(0, 4).map((post) => (
-            <li key={post.slug}>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="block rounded-vercel-lg border border-hairline bg-canvas p-5 shadow-card transition hover:shadow-card-hover"
-              >
-                <h3 className="font-medium text-ink">{post.title}</h3>
-                <p className="mt-2 text-sm text-body">{post.description}</p>
+            <li key={post.slug} className="py-6">
+              <Link href={`/blog/${post.slug}`} className="group block">
+                <h3 className="font-medium text-ink group-hover:text-[var(--mintlify-green)]">
+                  {post.title}
+                </h3>
+                <p className="mt-1 text-sm text-body">{post.description}</p>
               </Link>
             </li>
           ))}
         </ul>
         <Link
           href="/blog"
-          className="mt-6 inline-flex items-center text-sm font-medium text-link hover:text-link-deep"
+          className="mt-6 inline-flex items-center text-sm font-medium text-[var(--mintlify-green)] hover:underline"
         >
           View all articles
           <ArrowRight className="ml-1 h-4 w-4" />

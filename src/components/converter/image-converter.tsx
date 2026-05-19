@@ -11,6 +11,7 @@ import {
 import { MAX_BATCH, MAX_FREE_SIZE } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Download, Loader2, Upload, X } from "lucide-react";
+import type { ToolAudience } from "@/lib/design-variants";
 import { cn } from "@/lib/utils";
 
 interface ConvertedFile {
@@ -24,9 +25,15 @@ interface ConvertedFile {
 interface ImageConverterProps {
   from: InputFormat;
   to: OutputFormat;
+  audience?: ToolAudience;
 }
 
-export function ImageConverter({ from, to }: ImageConverterProps) {
+export function ImageConverter({
+  from,
+  to,
+  audience = "heic",
+}: ImageConverterProps) {
+  const isDev = audience === "developer";
   const [files, setFiles] = useState<File[]>([]);
   const [results, setResults] = useState<ConvertedFile[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -126,7 +133,9 @@ export function ImageConverter({ from, to }: ImageConverterProps) {
         className={cn(
           "relative rounded-vercel border-2 border-dashed p-10 text-center transition-colors",
           dragOver
-            ? "border-ink bg-canvas-soft-2"
+            ? isDev
+              ? "border-[#5e6ad2] bg-[#f5f5ff]"
+              : "border-ink bg-canvas-soft-2"
             : "border-hairline bg-canvas-soft"
         )}
       >
@@ -174,6 +183,7 @@ export function ImageConverter({ from, to }: ImageConverterProps) {
         <Button
           onClick={convertAll}
           disabled={!files.length || converting}
+          variant={isDev ? "developer" : "primary"}
           className="min-w-[140px]"
         >
           {converting ? (

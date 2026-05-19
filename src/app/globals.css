@@ -18,6 +18,10 @@
   --error-soft: #f7d4d6;
   --violet: #7928ca;
   --cyan: #50e3c2;
+  --apple-blue: #0071e3;
+  --linear-accent: #5e6ad2;
+  --linear-soft: #f5f5ff;
+  --mintlify-green: #0d9373;
   --background: var(--canvas);
   --foreground: var(--ink);
 }
@@ -70,5 +74,60 @@
 
   .prose-vercel :where(a):not(:where([class~="not-prose"] *)) {
     @apply text-link no-underline hover:underline;
+  }
+
+  /* Apple-adjacent: HEIC / iPhone — calm, spacious, minimal mesh */
+  .hero-heic {
+    background-color: #fbfbfb;
+    background-image: none;
+  }
+
+  .prose-heic :where(h2):not(:where([class~="not-prose"] *)) {
+    @apply font-semibold text-ink;
+    letter-spacing: -0.025em;
+  }
+
+  /* Linear-adjacent: WebP / AVIF — purple dev accent */
+  .prose-dev :where(a):not(:where([class~="not-prose"] *)) {
+    color: var(--linear-accent);
+  }
+
+  .prose-dev :where(code):not(:where([class~="not-prose"] *)) {
+    @apply rounded bg-canvas-soft-2 px-1.5 py-0.5 font-mono text-xs text-ink;
+  }
+
+  /* Mintlify-adjacent: blog / long-form SEO */
+  .prose-mint {
+    @apply prose prose-neutral max-w-none;
+    --tw-prose-body: var(--body);
+    --tw-prose-headings: var(--ink);
+    --tw-prose-links: var(--mintlify-green);
+    --tw-prose-bold: var(--ink);
+  }
+
+  .prose-mint {
+    line-height: 1.75;
+  }
+
+  .prose-mint :where(p, li):not(:where([class~="not-prose"] *)) {
+    @apply text-[15px] leading-7 text-body;
+  }
+
+  .prose-mint :where(h2):not(:where([class~="not-prose"] *)) {
+    @apply mt-10 scroll-mt-20 border-b border-hairline pb-2 text-xl font-semibold text-ink;
+  }
+
+  .prose-mint :where(a):not(:where([class~="not-prose"] *)) {
+    color: var(--mintlify-green);
+    @apply font-medium no-underline hover:underline;
+  }
+
+  /* AdSense-friendly content bands */
+  .content-band {
+    @apply border-y border-hairline bg-canvas;
+  }
+
+  .content-band-soft {
+    @apply border-y border-hairline bg-canvas-soft;
   }
 }

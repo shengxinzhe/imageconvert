@@ -2,10 +2,12 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import type { ToolConfig } from "@/lib/tools-config";
 import { getToolBySlug, tools } from "@/lib/tools-config";
+import { audienceStyles, getToolAudience } from "@/lib/design-variants";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { FaqJsonLd } from "@/components/seo/faq-json-ld";
 import { SITE_URL } from "@/lib/constants";
 import { Lock, Zap } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const ImageConverter = dynamic(
   () =>
@@ -21,32 +23,40 @@ const ImageConverter = dynamic(
 );
 
 export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
+  const audience = getToolAudience(tool.slug);
+  const style = audienceStyles[audience];
+
   return (
     <article>
       <FaqJsonLd faqs={tool.faqs} url={`${SITE_URL}${tool.path}`} />
-      <section className="mesh-hero border-b border-hairline">
+      <section className={cn("border-b border-hairline", style.hero)}>
         <div className="mx-auto max-w-6xl px-4 py-12 lg:px-6">
-          <p className="font-mono text-xs uppercase tracking-wider text-mute">
-            100% browser-based · Private
-          </p>
-          <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-display-sm text-ink md:text-4xl">
+          <span
+            className={cn(
+              "inline-flex rounded-full border px-3 py-1 text-xs font-medium",
+              style.badge
+            )}
+          >
+            {style.label}
+          </span>
+          <h1 className="mt-4 max-w-3xl text-3xl font-semibold tracking-display-sm text-ink md:text-[2.5rem] md:leading-tight">
             {tool.h1}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-body">{tool.heroSubtitle}</p>
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_260px]">
-            <div className="rounded-vercel-lg border border-hairline bg-canvas p-6 shadow-card">
-              <ImageConverter from={tool.from} to={tool.to} />
+            <div className={cn("p-6", style.card)}>
+              <ImageConverter from={tool.from} to={tool.to} audience={audience} />
             </div>
             <aside className="hidden lg:block">
               <AdSlot position="sidebar" />
               <ul className="mt-6 space-y-4 text-sm text-body">
                 <li className="flex gap-3">
-                  <Lock className="h-5 w-5 shrink-0 text-ink" aria-hidden />
+                  <Lock className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
                   Files never leave your device
                 </li>
                 <li className="flex gap-3">
-                  <Zap className="h-5 w-5 shrink-0 text-ink" aria-hidden />
+                  <Zap className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
                   No signup · Free batch of 5
                 </li>
               </ul>
@@ -55,9 +65,11 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
         </div>
       </section>
 
-      <AdSlot position="in-content" />
+      <div className="content-band">
+        <AdSlot position="in-content" />
+      </div>
 
-      <section className="mx-auto max-w-3xl px-4 py-12 prose-vercel lg:px-6">
+      <section className={cn("mx-auto max-w-3xl px-4 py-12 lg:px-6", style.prose)}>
         <h2>{tool.whyConvert.title}</h2>
         {tool.whyConvert.paragraphs.map((p) => (
           <p key={p.slice(0, 40)}>{p}</p>
@@ -87,7 +99,7 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
           {tool.faqs.map((faq) => (
             <details
               key={faq.question}
-              className="group rounded-vercel border border-hairline bg-canvas p-4"
+              className="rounded-vercel border border-hairline bg-canvas p-4"
             >
               <summary className="cursor-pointer text-sm font-medium text-ink">
                 {faq.question}
