@@ -5,32 +5,40 @@ import { ImageIcon } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-950/90">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+    <header className="sticky top-0 z-40 h-16 border-b border-hairline bg-canvas/90 backdrop-blur-md">
+      <div className="mx-auto flex h-full max-w-6xl items-center justify-between gap-4 px-4 lg:px-6">
         <Link
           href="/"
-          className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white"
+          className="flex items-center gap-2 text-sm font-semibold text-ink"
         >
-          <ImageIcon className="h-6 w-6 text-emerald-600" aria-hidden />
+          <span className="flex h-7 w-7 items-center justify-center rounded-md border border-hairline bg-canvas-soft">
+            <ImageIcon className="h-4 w-4" aria-hidden />
+          </span>
           {SITE_NAME}
         </Link>
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
+        <nav className="hidden items-center gap-0.5 md:flex" aria-label="Main">
           {toolList.slice(0, 4).map((t) => (
             <Link
               key={t.slug}
               href={t.path}
-              className="rounded-md px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+              className="rounded-full px-3 py-1.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink"
             >
               {t.slug.replace(/-/g, " ")}
             </Link>
           ))}
           <Link
             href="/blog"
-            className="rounded-md px-2 py-1.5 text-sm text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800"
+            className="rounded-full px-3 py-1.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink"
           >
             Blog
           </Link>
         </nav>
+        <Link
+          href="/heic-to-jpg"
+          className="hidden rounded-md bg-ink px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#333] sm:inline-flex"
+        >
+          Convert now
+        </Link>
       </div>
     </header>
   );

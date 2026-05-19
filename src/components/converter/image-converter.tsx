@@ -89,7 +89,7 @@ export function ImageConverter({ from, to }: ImageConverterProps) {
       setError(
         err instanceof Error
           ? err.message
-          : "Conversion failed. Try a different browser (Chrome recommended for HEIC/AVIF)."
+          : "Conversion failed. Try Chrome for HEIC/AVIF support."
       );
     } finally {
       setConverting(false);
@@ -124,20 +124,18 @@ export function ImageConverter({ from, to }: ImageConverterProps) {
         onDragLeave={() => setDragOver(false)}
         onDrop={onDrop}
         className={cn(
-          "relative rounded-xl border-2 border-dashed p-8 text-center transition-colors",
+          "relative rounded-vercel border-2 border-dashed p-10 text-center transition-colors",
           dragOver
-            ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30"
-            : "border-slate-300 bg-slate-50 dark:border-slate-600 dark:bg-slate-900/50"
+            ? "border-ink bg-canvas-soft-2"
+            : "border-hairline bg-canvas-soft"
         )}
       >
-        <Upload className="mx-auto h-10 w-10 text-slate-400" aria-hidden />
-        <p className="mt-3 text-sm font-medium text-slate-700 dark:text-slate-300">
-          Drag & drop images here
-        </p>
-        <p className="mt-1 text-xs text-slate-500">
+        <Upload className="mx-auto h-8 w-8 text-mute" aria-hidden />
+        <p className="mt-4 text-sm font-medium text-ink">Drag & drop images here</p>
+        <p className="mt-1 font-mono text-xs text-mute">
           Up to {MAX_BATCH} files · Max 10 MB each
         </p>
-        <label className="mt-4 inline-flex cursor-pointer items-center justify-center rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-medium hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-900 dark:hover:bg-slate-800">
+        <label className="mt-5 inline-flex cursor-pointer items-center justify-center rounded-full border border-hairline bg-canvas px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2">
           <span className="sr-only">Choose files</span>
           <input
             type="file"
@@ -151,14 +149,14 @@ export function ImageConverter({ from, to }: ImageConverterProps) {
       </div>
 
       {files.length > 0 && (
-        <ul className="space-y-2 rounded-lg border border-slate-200 p-3 dark:border-slate-700">
+        <ul className="space-y-1 rounded-vercel border border-hairline bg-canvas p-3">
           {files.map((f) => (
             <li
               key={f.name + f.size}
-              className="flex items-center justify-between text-sm text-slate-600 dark:text-slate-400"
+              className="flex items-center justify-between rounded-md px-2 py-1.5 text-sm text-body"
             >
-              <span className="truncate">{f.name}</span>
-              <span className="shrink-0 text-xs">
+              <span className="truncate font-mono text-xs">{f.name}</span>
+              <span className="shrink-0 font-mono text-xs text-mute">
                 {(f.size / 1024 / 1024).toFixed(2)} MB
               </span>
             </li>
@@ -167,7 +165,7 @@ export function ImageConverter({ from, to }: ImageConverterProps) {
       )}
 
       {error && (
-        <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-950/50 dark:text-red-300">
+        <p className="rounded-vercel border border-[var(--error-soft)] bg-[var(--error-soft)] px-3 py-2 text-sm text-[var(--error)]">
           {error}
         </p>
       )}
@@ -188,7 +186,7 @@ export function ImageConverter({ from, to }: ImageConverterProps) {
           )}
         </Button>
         {(files.length > 0 || results.length > 0) && (
-          <Button variant="outline" onClick={clear} type="button">
+          <Button variant="secondary" onClick={clear} type="button">
             <X className="mr-1 h-4 w-4" />
             Clear
           </Button>
@@ -200,9 +198,9 @@ export function ImageConverter({ from, to }: ImageConverterProps) {
           {results.map((r) => (
             <li
               key={r.id}
-              className="flex items-center justify-between rounded-lg border border-emerald-200 bg-emerald-50/50 px-3 py-2 dark:border-emerald-900 dark:bg-emerald-950/30"
+              className="flex items-center justify-between rounded-vercel border border-hairline bg-canvas-soft px-3 py-2.5"
             >
-              <span className="truncate text-sm font-medium">{r.outputName}</span>
+              <span className="truncate font-mono text-xs text-ink">{r.outputName}</span>
               <Button size="sm" variant="ghost" onClick={() => download(r)}>
                 <Download className="mr-1 h-4 w-4" />
                 Download

@@ -2,24 +2,26 @@ import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, forwardRef } from "react";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "default" | "outline" | "ghost";
+  variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "default" | "sm" | "lg";
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "default", size = "default", ...props }, ref) => {
+  ({ className, variant = "primary", size = "default", ...props }, ref) => {
     return (
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 disabled:pointer-events-none disabled:opacity-50",
-          variant === "default" &&
-            "bg-emerald-600 text-white hover:bg-emerald-700",
+          "inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          variant === "primary" &&
+            "rounded-full bg-ink text-white hover:bg-[#333]",
+          variant === "secondary" &&
+            "rounded-full border border-hairline bg-canvas text-ink hover:bg-canvas-soft",
           variant === "outline" &&
-            "border border-slate-300 bg-white hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-900 dark:hover:bg-slate-800",
-          variant === "ghost" && "hover:bg-slate-100 dark:hover:bg-slate-800",
-          size === "default" && "h-10 px-4 py-2 text-sm",
-          size === "sm" && "h-8 px-3 text-xs",
+            "rounded-full border border-hairline bg-canvas text-ink hover:bg-canvas-soft",
+          variant === "ghost" && "rounded-full text-body hover:bg-canvas-soft",
+          size === "default" && "h-10 px-5 text-sm",
+          size === "sm" && "h-8 px-4 text-xs",
           size === "lg" && "h-12 px-6 text-base",
           className
         )}

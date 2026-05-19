@@ -3,11 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
 import { SITE_URL } from "@/lib/constants";
-// Simple markdown renderer
+
 function MarkdownContent({ content }: { content: string }) {
   const blocks = content.split("\n\n");
   return (
-    <div className="prose prose-slate max-w-none dark:prose-invert">
+    <div className="prose-vercel">
       {blocks.map((block, i) => {
         if (block.startsWith("## ")) {
           return <h2 key={i}>{block.replace(/^## /, "")}</h2>;
@@ -23,7 +23,7 @@ function MarkdownContent({ content }: { content: string }) {
                       .split("|")
                       .filter((c) => c.trim())
                       .map((cell, ci) => (
-                        <td key={ci} className="border px-2 py-1">
+                        <td key={ci} className="border border-hairline px-2 py-1">
                           {cell.trim()}
                         </td>
                       ))}
@@ -35,7 +35,7 @@ function MarkdownContent({ content }: { content: string }) {
         }
         const withLinks = block.replace(
           /\[([^\]]+)\]\(([^)]+)\)/g,
-          '<a href="$2" class="text-emerald-600 hover:underline">$1</a>'
+          '<a href="$2">$1</a>'
         );
         if (block.startsWith("- ")) {
           return (
@@ -46,9 +46,7 @@ function MarkdownContent({ content }: { content: string }) {
             </ul>
           );
         }
-        return (
-          <p key={i} dangerouslySetInnerHTML={{ __html: withLinks }} />
-        );
+        return <p key={i} dangerouslySetInnerHTML={{ __html: withLinks }} />;
       })}
     </div>
   );
@@ -77,15 +75,15 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   if (!post) notFound();
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-12">
-      <Link href="/blog" className="text-sm text-emerald-600 hover:underline">
+    <article className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
+      <Link href="/blog" className="text-sm font-medium text-link hover:text-link-deep">
         ← Blog
       </Link>
-      <h1 className="mt-4 text-3xl font-bold">{post.title}</h1>
-      <p className="mt-2 text-sm text-slate-500">
+      <h1 className="mt-6 text-3xl font-semibold tracking-display-sm text-ink">{post.title}</h1>
+      <p className="mt-3 font-mono text-xs text-mute">
         {post.publishedAt} · {post.readMinutes} min read
       </p>
-      <div className="mt-8">
+      <div className="mt-10">
         <MarkdownContent content={post.content} />
       </div>
     </article>

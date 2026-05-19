@@ -11,18 +11,21 @@ export const metadata: Metadata = {
 
 export default function BlogIndexPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12">
-      <h1 className="text-3xl font-bold">Blog</h1>
-      <p className="mt-2 text-slate-600 dark:text-slate-400">
+    <div className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
+      <p className="font-mono text-xs uppercase tracking-wider text-mute">Guides</p>
+      <h1 className="mt-2 text-3xl font-semibold tracking-display-sm text-ink">Blog</h1>
+      <p className="mt-3 text-body">
         Long-tail guides for {SITE_NAME} — traffic and internal links to our free tools.
       </p>
-      <ul className="mt-10 space-y-6">
+      <ul className="mt-12 divide-y divide-hairline border-y border-hairline">
         {blogPosts.map((post) => (
-          <li key={post.slug} className="border-b border-slate-200 pb-6 dark:border-slate-800">
-            <Link href={`/blog/${post.slug}`} className="group">
-              <h2 className="text-xl font-semibold group-hover:text-emerald-600">{post.title}</h2>
-              <p className="mt-2 text-slate-600 dark:text-slate-400">{post.description}</p>
-              <p className="mt-2 text-xs text-slate-500">
+          <li key={post.slug} className="py-8 first:pt-8">
+            <Link href={`/blog/${post.slug}`} className="group block">
+              <h2 className="text-xl font-medium text-ink group-hover:text-link">
+                {post.title}
+              </h2>
+              <p className="mt-2 text-body">{post.description}</p>
+              <p className="mt-3 font-mono text-xs text-mute">
                 {post.publishedAt} · {post.readMinutes} min read
               </p>
             </Link>
