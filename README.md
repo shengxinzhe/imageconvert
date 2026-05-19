@@ -1,6 +1,6 @@
-# ImageConvert
+# HeicSave
 
-Free browser-local image converters for HEIC, WebP, and AVIF. Built for Vercel deployment and Western SEO (US/EU).
+Free browser-local image converters for HEIC, WebP, and AVIF. Production domain: [heicsave.com](https://heicsave.com). Built for Vercel deployment and Western SEO (US/EU).
 
 ## Stack
 
@@ -37,7 +37,7 @@ npm run dev
 1. Import repo → set `NEXT_PUBLIC_SITE_URL` to your domain.
 2. Deploy. `postbuild` runs `next-sitemap`.
 3. Add AdSense / Cookiebot scripts in `src/components/ads/ad-slot.tsx` when approved.
-4. Point domain (e.g. `imageconvert.io`) in Vercel DNS.
+4. In Vercel → Settings → Domains, add `heicsave.com` and `www.heicsave.com`; set DNS at NameSilo per Vercel instructions.
 
 ## Limits (V1)
 

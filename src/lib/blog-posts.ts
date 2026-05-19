@@ -153,7 +153,7 @@ Browser tools that process locally never send your photos to a third-party serve
 
 ## Browser-local (recommended)
 
-**ImageConvert** — [HEIC to JPG](/heic-to-jpg), no upload, GDPR-friendly, free tier 5×10MB.
+**HeicSave** — [HEIC to JPG](/heic-to-jpg), no upload, GDPR-friendly, free tier 5×10MB.
 
 ## Desktop
 

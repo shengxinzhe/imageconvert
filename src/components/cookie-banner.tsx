@@ -9,7 +9,7 @@ export function CookieBanner() {
       buttonText="Accept"
       declineButtonText="Decline"
       enableDeclineButton
-      cookieName="imageconvert_consent"
+      cookieName="heicsave_consent"
       style={{
         background: "#171717",
         fontSize: "14px",

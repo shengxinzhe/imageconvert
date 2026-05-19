@@ -130,7 +130,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       {
         heading: "HEIC to JPG for iPhone users in the US and EU",
         content:
-          "Millions of photos are captured in HEIC every day. If you email pictures to family, submit documents, or post to platforms that only accept JPG, a reliable HEIC to JPG converter saves time. ImageConvert is built for privacy-conscious users in Europe and North America: no account, no cloud upload, and clear cookie consent under GDPR.",
+          "Millions of photos are captured in HEIC every day. If you email pictures to family, submit documents, or post to platforms that only accept JPG, a reliable HEIC to JPG converter saves time. HeicSave is built for privacy-conscious users in Europe and North America: no account, no cloud upload, and clear cookie consent under GDPR.",
       },
       {
         heading: "Batch HEIC to JPG online",
@@ -365,7 +365,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       {
         heading: "AVIF to JPG — the blue ocean converter",
         content:
-          "Few dedicated AVIF tools exist compared to HEIC converters. ImageConvert targets early adopters and SEO for avif-to-jpg queries as AVIF deployment grows across the web.",
+          "Few dedicated AVIF tools exist compared to HEIC converters. HeicSave targets early adopters and SEO for avif-to-jpg queries as AVIF deployment grows across the web.",
       },
     ],
   },

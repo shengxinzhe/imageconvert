@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://imageconvert.io
+Host: https://heicsave.com
 
 # Sitemaps
-Sitemap: https://imageconvert.io/sitemap.xml
+Sitemap: https://heicsave.com/sitemap.xml
