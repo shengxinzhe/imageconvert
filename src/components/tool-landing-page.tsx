@@ -4,6 +4,7 @@ import type { ToolConfig } from "@/lib/tools-config";
 import { getToolBySlug, tools } from "@/lib/tools-config";
 import { audienceStyles, getToolAudience } from "@/lib/design-variants";
 import { AdSlot } from "@/components/ads/ad-slot";
+import { hasAdSenseDisplayUnits } from "@/lib/adsense";
 import { ToolJsonLd } from "@/components/seo/tool-json-ld";
 import { Lock, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -64,9 +65,11 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
         </div>
       </section>
 
-      <div className="content-band">
-        <AdSlot position="in-content" />
-      </div>
+      {hasAdSenseDisplayUnits() ? (
+        <div className="content-band">
+          <AdSlot position="in-content" />
+        </div>
+      ) : null}
 
       <section className={cn("mx-auto max-w-3xl px-4 py-12 lg:px-6", style.prose)}>
         <h2>{tool.whyConvert.title}</h2>
