@@ -15,6 +15,14 @@ export function toolMetadata(tool: ToolConfig): Metadata {
       siteName: SITE_NAME,
       type: "website",
       locale: "en_US",
+      images: [
+        {
+          url: "/og.png",
+          width: 1200,
+          height: 630,
+          alt: SITE_NAME,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",

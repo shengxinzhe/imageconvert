@@ -20,6 +20,26 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: SITE_NAME,
+    title: `${SITE_NAME} — Free HEIC, WebP & AVIF Converters`,
+    description:
+      "Convert HEIC, WebP, and AVIF images free in your browser. Private, fast, no upload.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} — Free HEIC, WebP & AVIF converters`,
+      },
+    ],
+  },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} — Free HEIC, WebP & AVIF Converters`,
+    description:
+      "Convert HEIC, WebP, and AVIF images free in your browser. Private, fast, no upload.",
   },
 };
 
