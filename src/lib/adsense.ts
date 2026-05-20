@@ -1,5 +1,5 @@
 /** HeicSave AdSense publisher ID (public in page source; override via env if needed). */
-export const ADSENSE_CLIENT_ID_DEFAULT = "ca-pub-1364330416083360";
+export const ADSENSE_CLIENT_ID_DEFAULT = "ca-pub-1564555416568365";
 
 /** Google AdSense — override with NEXT_PUBLIC_ADSENSE_CLIENT_ID on Vercel if needed. */
 export function getAdSenseClientId(): string | undefined {
