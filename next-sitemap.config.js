@@ -40,6 +40,8 @@ const BLOG_SLUGS = [
   "webp-vs-jpg",
   "webp-for-developers",
   "privacy-browser-image-conversion",
+  "transfer-iphone-photos-to-windows",
+  "heic-live-photo-guide",
 ];
 
 /** @type {import('next-sitemap').IConfig} */

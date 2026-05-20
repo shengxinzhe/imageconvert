@@ -301,6 +301,135 @@ Analytics (with consent) and standard server logs—not your image files. Questi
 
 [HEIC to JPG](/heic-to-jpg) · [AVIF to PNG](/avif-to-png) · [WebP to JPG](/webp-to-jpg)`,
   },
+  {
+    slug: "transfer-iphone-photos-to-windows",
+    title: "How to Transfer iPhone Photos to a Windows PC (2026 Guide)",
+    description:
+      "Copy iPhone photos to Windows without HEIC headaches. USB, iCloud, and browser conversion options explained.",
+    publishedAt: "2026-05-19",
+    readMinutes: 9,
+    content: `Moving photos from an iPhone to a Windows PC should be simple—but Apple's default HEIC format often breaks the workflow. Here is what works in 2026.
+
+## Why Windows struggles with iPhone photos
+
+Modern iPhones save still photos as **HEIC** (High Efficiency Image Container). Windows 10 and 11 do not always open .heic files out of the box. You may see a blank thumbnail, an error in Photos, or files that refuse to attach to email.
+
+JPG is still what most Windows apps, printers, and upload forms expect.
+
+## Method 1: USB cable (File Explorer)
+
+1. Connect iPhone with a Lightning or USB-C cable.
+2. Unlock the phone and tap **Trust This Computer** if prompted.
+3. Open **File Explorer** → **Apple iPhone** → **Internal Storage** → **DCIM**.
+4. Copy folders to your PC.
+
+**Catch:** copied files are often still HEIC. They may not preview until you install codecs or convert them.
+
+## Method 2: iCloud for Windows
+
+Install **iCloud for Windows**, sign in, and enable **Photos**. New iPhone shots sync to the iCloud Photos folder on your PC.
+
+**Catch:** sync can take time on slow connections, and HEIC compatibility on Windows still applies unless you change iPhone camera settings to **Most Compatible** (JPG).
+
+## Method 3: Convert HEIC to JPG in the browser (no install)
+
+If you already copied HEIC files—or received them by AirDrop to a Mac and moved them via USB stick—convert locally:
+
+1. Open [HEIC to JPG](/heic-to-jpg) in **Chrome or Edge**.
+2. Drag your .heic files into the drop zone.
+3. Adjust **JPEG quality** if needed (default 90%).
+4. Click **Convert**, then download each JPG or **Download all as ZIP**.
+
+Processing happens **in your browser**. Nothing uploads to our servers—useful for personal, medical, or client photos.
+
+## Method 4: Shoot JPG on iPhone going forward
+
+**Settings → Camera → Formats → Most Compatible** makes new photos JPEG. Existing HEIC files still need conversion.
+
+## Batch tips for large albums
+
+There is no fixed file-count cap on HeicSave—practical limits are your PC memory and browser tab stability. For hundreds of vacation photos:
+
+- Convert in groups of 50–100 if the tab feels slow.
+- Close other heavy tabs before a big batch.
+- Prefer desktop Chrome or Edge over mobile Safari for very large folders.
+
+## HEIC vs JPG after transfer
+
+| Goal | Format |
+|---|---|
+| Keep iPhone storage efficient | HEIC on phone |
+| Open on Windows without codecs | JPG on PC |
+| Print shop or government portal | JPG |
+| Edit with maximum flexibility | [HEIC to PNG](/heic-to-png) first |
+
+## Troubleshooting
+
+- **PC does not see iPhone** — try another cable, unlock phone, reinstall Apple Mobile Device support / iTunes components on older Windows builds.
+- **Photos look rotated wrong** — EXIF orientation is copied to JPG when supported; re-export from Photos on Mac if needed.
+- **Live Photo pairs (.heic + .mov)** — convert the .heic still; see our [Live Photo guide](/blog/heic-live-photo-guide).
+
+For a Windows-only walkthrough, see [How to Open and Convert HEIC on Windows](/blog/heic-windows-guide).`,
+  },
+  {
+    slug: "heic-live-photo-guide",
+    title: "iPhone Live Photos and HEIC: How to Export JPG Still Images",
+    description:
+      "Understand Live Photo HEIC files, avoid .mov confusion, and convert still images to JPG on Windows and Mac.",
+    publishedAt: "2026-05-20",
+    readMinutes: 7,
+    content: `Live Photos capture a few seconds of motion around a still image. On disk they often appear as **two files**: a .heic (or .jpg) still and a companion **.mov** video. That confuses Windows users and breaks batch conversion if you pick the wrong file.
+
+## What is a Live Photo?
+
+When Live Photos is on (**Settings → Camera → Live Photos**), each shot stores:
+
+- A **still image** (HEIC by default on modern iPhones)
+- A short **video clip** (.mov) for the "live" effect
+
+In the Photos app you see one tile; on a PC file share you may see both files with similar names.
+
+## Why conversion fails on the wrong file
+
+Browser converters—including [HEIC to JPG](/heic-to-jpg)—expect a **still image**. If you drop a .mov into the HEIC tool, conversion will fail or produce nothing useful.
+
+**Fix:** select only the **.heic** (or .heif) file—the still—not the .mov sidecar.
+
+## Export a still JPG from iPhone (no computer)
+
+1. Open the photo in **Photos**.
+2. Tap **Share**.
+3. If you see **Save as Video**, you are sharing the motion clip—go back and use **Duplicate** or export still via Mac/PC instead.
+4. On Mac: open in Preview → **File → Export** → JPEG.
+
+For many photos at once, transfer HEIC stills to a computer and batch-convert.
+
+## Batch convert Live Photo stills on Windows
+
+1. Copy **only** .heic files from iPhone or iCloud folder.
+2. Open [HEIC to JPG](/heic-to-jpg) in Chrome or Edge.
+3. Drop the stills, set quality, convert, download ZIP.
+
+Skip .mov files in the same folder—they are not the photo you want for email or printing.
+
+## Turn off Live Photos for simpler sharing
+
+**Camera app → Live Photos icon (top)** — set to Off when you know you only need a plain JPG/HEIC still. Fewer duplicate files on Windows.
+
+## Live Photo vs regular HEIC
+
+| | Live Photo pair | Regular HEIC photo |
+|---|---|---|
+| Files on disk | .heic + .mov | .heic only |
+| Good for | Memories in Photos app | Email, print, Windows |
+| Convert with HeicSave | .heic still only | Yes |
+
+## Privacy note
+
+Live Photo **video** clips can include audio and background scenes you did not intend to share. When converting for upload, use the **still** HEIC→JPG path and review the JPG before sending.
+
+Need universal Windows compatibility? After conversion, JPG opens in Photos, Paint, Word, and every legacy uploader. For lossless workflows, try [HEIC to PNG](/heic-to-png) on the still image only.`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
