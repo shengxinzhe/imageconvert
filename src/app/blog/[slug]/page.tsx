@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArticleJsonLd } from "@/components/seo/article-json-ld";
 import { blogPosts, getPostBySlug } from "@/lib/blog-posts";
-import { SITE_URL } from "@/lib/constants";
+import { blogPostMetadata } from "@/lib/site-metadata";
 
 function MarkdownContent({ content }: { content: string }) {
   const blocks = content.split("\n\n");
@@ -63,11 +64,7 @@ export function generateMetadata({
 }): Metadata {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
-  return {
-    title: post.title,
-    description: post.description,
-    alternates: { canonical: `${SITE_URL}/blog/${post.slug}` },
-  };
+  return blogPostMetadata(post);
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
@@ -76,6 +73,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
+      <ArticleJsonLd post={post} />
       <Link href="/blog" className="text-sm font-medium text-link hover:text-link-deep">
         ← Blog
       </Link>

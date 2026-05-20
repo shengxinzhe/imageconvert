@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { WebsiteJsonLd } from "@/components/seo/website-json-ld";
 import { toolList } from "@/lib/tools-config";
 import { blogPosts } from "@/lib/blog-posts";
 import { audienceStyles, getToolAudience, homeStyles } from "@/lib/design-variants";
+import { homeMetadata } from "@/lib/site-metadata";
 import { ArrowRight, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+export const metadata = homeMetadata;
 
 const heicTools = toolList.filter((t) => getToolAudience(t.slug) === "heic");
 const devTools = toolList.filter((t) => getToolAudience(t.slug) === "developer");
@@ -11,6 +15,7 @@ const devTools = toolList.filter((t) => getToolAudience(t.slug) === "developer")
 export default function HomePage() {
   return (
     <>
+      <WebsiteJsonLd />
       {/* HEIC / Apple-adjacent hero */}
       <section className={homeStyles.heicSection}>
         <div className="mx-auto max-w-6xl px-4 py-20 text-center md:py-28 lg:px-6">

@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { ADSENSE_CLIENT_ID_DEFAULT } from "@/lib/adsense";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { OG_IMAGE } from "@/lib/site-metadata";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,14 +25,7 @@ export const metadata: Metadata = {
     title: `${SITE_NAME} — Free HEIC, WebP & AVIF Converters`,
     description:
       "Convert HEIC, WebP, and AVIF images free in your browser. Private, fast, no upload.",
-    images: [
-      {
-        url: "/og.png",
-        width: 1200,
-        height: 630,
-        alt: `${SITE_NAME} — Free HEIC, WebP & AVIF converters`,
-      },
-    ],
+    images: [OG_IMAGE],
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],

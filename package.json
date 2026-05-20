@@ -8,7 +8,9 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "compress:brand": "node scripts/compress-brand-assets.mjs"
+    "compress:brand": "node scripts/compress-brand-assets.mjs",
+    "generate:og": "node scripts/generate-og-placeholder.mjs",
+    "prebuild": "node scripts/generate-og-placeholder.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
