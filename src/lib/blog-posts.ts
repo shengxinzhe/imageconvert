@@ -27,7 +27,14 @@ Windows 10/11 can open HEIC with optional codecs from the Microsoft Store. Many 
 
 ## How to convert HEIC
 
-Use a browser-based converter that processes files locally—no upload required. Our [HEIC to JPG](/heic-to-jpg) tool converts multiple files at once and can download a ZIP.
+Use a browser-based converter that processes files locally—no upload required. Our [HEIC to JPG](/heic-to-jpg) tool lets you:
+
+- Convert **many files in one session** (no fixed batch cap)
+- Adjust **JPEG quality** with a slider before converting
+- Download results individually or as a **ZIP**
+- Keep common **EXIF** data (date, camera model) in JPG when possible
+
+Nothing is uploaded to our servers.
 
 ## HEIC vs JPG
 
@@ -58,7 +65,7 @@ Settings → Camera → Formats → **Most Compatible** forces new photos to JPE
 
 ## Convert existing HEIC
 
-Try our free [HEIC to JPG converter](/heic-to-jpg)—private, browser-based, no account.`,
+Use our free [HEIC to JPG converter](/heic-to-jpg): private, in your browser, no account, no watermark. Add multiple photos, pick your JPEG quality, and download a ZIP if you converted a whole album.`,
   },
   {
     slug: "heic-vs-jpg",
@@ -77,9 +84,9 @@ HEIC typically wins at the same perceived quality—often ~50% smaller than JPG.
 
 JPG works everywhere: email, print shops, government portals, and 20-year-old software. HEIC needs modern support.
 
-## Quality
+## Quality when you convert
 
-At high bitrates both look excellent. Converting HEIC→JPG at 90% quality is fine for social and documents.
+At high JPEG quality both look excellent. On [HeicSave](/heic-to-jpg) you can set the slider (default 90%) before converting. We also try to copy common EXIF tags into the JPG; GPS and rare fields may still drop.
 
 ## Recommendation
 
@@ -102,20 +109,22 @@ Microsoft Store offers "HEIF Image Extensions" and "HEVC Video Extensions" (paid
 
 ## Option 2: Convert online (no install)
 
-1. Open [HEIC to JPG](/heic-to-jpg) in Chrome or Edge.
-2. Drag .heic files into the drop zone.
-3. Download JPG files.
+1. Open [HEIC to JPG](/heic-to-jpg) in **Chrome or Edge** (best for HEIC).
+2. Drag .heic files into the drop zone—or click Browse files.
+3. Set **JPEG quality** if you want smaller or sharper files.
+4. Click **Convert**, then download each JPG or **Download all as ZIP**.
 
 Conversion runs in your browser—nothing uploads to a server.
 
-## Batch conversion
+## Batch conversion tips
 
-Convert many files in one go in your browser. For huge folders, split into smaller batches if your device slows down.
+There is no fixed “5 files” or “10 MB” cap. Very large folders may slow down your PC; if the tab struggles, convert in smaller groups. HeicSave will warn you when a batch or file size looks heavy for your device.
 
 ## Troubleshooting
 
 - **Photos app spins forever** — codecs missing; use browser conversion.
-- **Email won't attach HEIC** — convert to JPG first.`,
+- **Email won't attach HEIC** — convert to JPG first.
+- **Conversion failed** — use Chrome/Edge, confirm the file is .heic (not a Live Photo .mov), try one file at a time.`,
   },
   {
     slug: "heic-mac-guide",
@@ -136,7 +145,12 @@ Fine for one image; slow for dozens.
 
 ## Online batch tool
 
-Use [HEIC to JPG](/heic-to-jpg) in Safari or Chrome to convert multiple files at once without exporting one-by-one.
+Use [HEIC to JPG](/heic-to-jpg) in Safari or Chrome:
+
+- Drop many files at once
+- Adjust JPEG quality on the slider
+- Download a **ZIP** of all JPGs
+- EXIF (date taken, camera) is preserved when possible
 
 ## Privacy
 
@@ -153,7 +167,16 @@ Browser tools that process locally never send your photos to a third-party serve
 
 ## Browser-local (recommended)
 
-**HeicSave** — [HEIC to JPG](/heic-to-jpg), no upload, GDPR-friendly, no fixed size or batch cap.
+**HeicSave** — [HEIC to JPG](/heic-to-jpg):
+
+- No upload; files stay in your browser
+- No account, no watermark, free
+- **No fixed** file-count or 10 MB limits (device memory is the practical cap)
+- Batch convert + **ZIP download**
+- **JPEG quality** slider
+- **EXIF** copied to JPG when supported
+
+Also: [HEIC to PNG](/heic-to-png), [WebP](/webp-to-jpg), and [AVIF](/avif-to-jpg) tools.
 
 ## Desktop
 
@@ -183,12 +206,14 @@ CDNs, WordPress plugins, and performance-focused sites serve AVIF with JPG fallb
 
 ## Browser support
 
-Major browsers decode AVIF. Desktop apps often don't—hence [AVIF to JPG](/avif-to-jpg) demand.
+Major browsers decode AVIF in the tab. Desktop apps often don't—hence [AVIF to JPG](/avif-to-jpg) demand. Use Chrome or Edge for the most reliable in-browser conversion.
 
 ## Convert when needed
 
-- **AVIF → JPG** for universal sharing.
-- **AVIF → PNG** for design pipelines.
+- **[AVIF to JPG](/avif-to-jpg)** for universal sharing—adjust JPEG quality on the slider.
+- **[AVIF to PNG](/avif-to-png)** for design pipelines.
+
+Batch and ZIP work the same as our HEIC tools: multiple files, download together when you need them.
 
 ## Future
 
@@ -213,8 +238,10 @@ JPG wins for email and legacy apps. WebP wins on modern websites with fallbacks.
 
 ## Conversion tools
 
-- [JPG to WebP](/jpg-to-webp) — optimize for your site.
-- [WebP to JPG](/webp-to-jpg) — share with anyone.
+- [JPG to WebP](/jpg-to-webp) — optimize for your site; set **WebP quality** on the slider (default 85%).
+- [WebP to JPG](/webp-to-jpg) — share with anyone; batch + ZIP supported.
+
+All conversion is local in the browser—no upload.
 
 ## Best practice
 
@@ -231,15 +258,15 @@ Serve WebP with <picture> and JPG fallback. Keep masters in JPG or RAW.`,
 
 ## Encode locally
 
-Before CI, run [PNG to WebP](/png-to-webp) or [JPG to WebP](/jpg-to-webp) on marketing assets.
+Before CI, run [PNG to WebP](/png-to-webp) or [JPG to WebP](/jpg-to-webp) on marketing assets. Tune quality in the UI—no fixed file-size gate.
 
 ## Decode for stakeholders
 
-[WebP to PNG](/webp-to-png) when design needs PNG in Figma handoffs.
+[WebP to PNG](/webp-to-png) when design needs PNG in Figma handoffs. [WebP to JPG](/webp-to-jpg) for email attachments.
 
 ## Canvas API
 
-Modern browsers encode WebP via canvas.toBlob—our tool wraps that client-side.
+Modern browsers encode WebP via canvas.toBlob—our tool wraps that client-side, same as production would.
 
 ## Don't forget fallbacks
 
@@ -251,20 +278,24 @@ Always ship JPG/PNG fallbacks for email clients and ancient browsers.`,
     description:
       "GDPR, client photos, and why files should stay on-device when converting HEIC and AVIF.",
     publishedAt: "2026-03-01",
-    readMinutes: 5,
+    readMinutes: 6,
     content: `Uploading family photos or client assets to random converters creates GDPR and security risk.
 
 ## Client-side processing
 
-Tools that use WebAssembly (HEIC) or Canvas (WebP/AVIF) keep bytes on your device.
+Tools that use WebAssembly (HEIC) or Canvas (WebP/AVIF) keep bytes on your device. HeicSave does not receive your image files for conversion.
 
-## GDPR
+## What we don't limit artificially
 
-EU users expect consent for cookies and clarity on data processing. We don't process image content on servers.
+There is no “5 files only” or “10 MB max” rule in our tools. Very large batches may still fail if your browser runs out of memory—we show a friendly warning, not a paywall.
+
+## GDPR & cookies
+
+EU users see a cookie banner for analytics and ad partners (e.g. Ezoic). You can accept or decline. Image bytes are not part of that processing.
 
 ## What we collect
 
-Analytics (with consent) and standard server logs—not your image files.
+Analytics (with consent) and standard server logs—not your image files. Questions: [privacy@heicsave.com](mailto:privacy@heicsave.com) or our [Contact](/contact) page.
 
 ## Try it
 
