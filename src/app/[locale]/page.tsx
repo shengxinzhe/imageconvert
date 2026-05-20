@@ -1,22 +1,35 @@
-import Link from "next/link";
 import { WebsiteJsonLd } from "@/components/seo/website-json-ld";
-import { toolList } from "@/lib/tools-config";
+import { Link } from "@/i18n/navigation";
+import { routing, type AppLocale } from "@/i18n/routing";
 import { blogPosts } from "@/lib/blog-posts";
 import { audienceStyles, getToolAudience, homeStyles } from "@/lib/design-variants";
+import { getLocalizedToolList } from "@/lib/get-localized-tool";
+import { getT } from "@/lib/i18n/translations";
 import { homeMetadata } from "@/lib/site-metadata";
 import { ArrowRight, Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export const metadata = homeMetadata;
+type PageProps = { params: { locale: string } };
 
-const heicTools = toolList.filter((t) => getToolAudience(t.slug) === "heic");
-const devTools = toolList.filter((t) => getToolAudience(t.slug) === "developer");
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
-export default function HomePage() {
+export function generateMetadata({ params }: PageProps) {
+  const locale = params.locale as AppLocale;
+  return homeMetadata(locale);
+}
+
+export default function HomePage({ params }: PageProps) {
+  const locale = params.locale as AppLocale;
+  const t = getT(locale);
+  const tools = getLocalizedToolList(locale);
+  const heicTools = tools.filter((tool) => getToolAudience(tool.slug) === "heic");
+  const devTools = tools.filter((tool) => getToolAudience(tool.slug) === "developer");
+
   return (
     <>
-      <WebsiteJsonLd />
-      {/* HEIC / Apple-adjacent hero */}
+      <WebsiteJsonLd locale={locale} />
       <section className={homeStyles.heicSection}>
         <div className="mx-auto max-w-6xl px-4 py-20 text-center md:py-28 lg:px-6">
           <span
@@ -25,54 +38,56 @@ export default function HomePage() {
               audienceStyles.heic.badge
             )}
           >
-            iPhone & iPad photos
+            {t("home.heroBadge")}
           </span>
           <h1 className="mt-6 text-balance text-4xl font-semibold tracking-display text-ink md:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
-            Convert HEIC to JPG — without uploading your photos
+            {t("home.heroTitle")}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-body">
-            Apple&apos;s default format doesn&apos;t work everywhere. Convert locally in
-            your browser—private, free, and instant for Windows, Mac, and sharing.
-          </p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-body">{t("home.heroSubtitle")}</p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Link href="/heic-to-jpg" className={cn("inline-flex h-12 items-center px-6 text-sm font-medium", homeStyles.heicCta)}>
-              HEIC to JPG
+            <Link
+              href="/heic-to-jpg"
+              className={cn(
+                "inline-flex h-12 items-center px-6 text-sm font-medium",
+                homeStyles.heicCta
+              )}
+            >
+              {t("home.heroCtaHeic")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
             <Link
               href="/heic-to-png"
               className="inline-flex h-12 items-center rounded-full border border-hairline bg-canvas px-6 text-sm font-medium text-ink hover:bg-canvas-soft"
             >
-              HEIC to PNG
+              {t("home.heroCtaPng")}
             </Link>
           </div>
           <ul className="mx-auto mt-14 flex max-w-lg flex-wrap justify-center gap-8 text-sm text-body">
             <li className="flex items-center gap-2">
               <Lock className="h-4 w-4 text-ink" aria-hidden />
-              Files stay on device
+              {t("home.heroTrust")}
             </li>
           </ul>
         </div>
       </section>
 
-      {/* Developer / Linear-adjacent tools */}
       <section className={homeStyles.devSection}>
         <div className="mx-auto max-w-6xl px-4 py-16 lg:px-6">
-          <span className={homeStyles.devBadge}>WebP · AVIF · optimize</span>
+          <span className={homeStyles.devBadge}>{t("home.devBadge")}</span>
           <h2 className="mt-3 text-2xl font-semibold tracking-display-sm text-ink md:text-3xl">
-            Developer converters
+            {t("home.devTitle")}
           </h2>
-          <p className="mt-2 max-w-xl text-body">
-            WebP and AVIF for modern sites—convert locally before deploy or share.
-          </p>
+          <p className="mt-2 max-w-xl text-body">{t("home.devSubtitle")}</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {devTools.map((tool) => (
               <Link
                 key={tool.slug}
-                href={tool.path}
+                href={`/${tool.slug}`}
                 className="group rounded-vercel-lg border border-hairline bg-canvas p-5 shadow-card transition hover:border-[#c4c4ef] hover:shadow-card-hover"
               >
-                <p className="font-mono text-xs text-[#5e6ad2]">{tool.from} → {tool.to}</p>
+                <p className="font-mono text-xs text-[#5e6ad2]">
+                  {tool.from} → {tool.to}
+                </p>
                 <h3 className="mt-2 font-medium capitalize text-ink group-hover:text-[#5e6ad2]">
                   {tool.slug.replace(/-/g, " ")}
                 </h3>
@@ -82,15 +97,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HEIC tools grid */}
       <section className="content-band-soft py-16">
         <div className="mx-auto max-w-6xl px-4 lg:px-6">
-          <h2 className="text-xl font-semibold text-ink">iPhone photo tools</h2>
+          <h2 className="text-xl font-semibold text-ink">{t("home.heicToolsTitle")}</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {heicTools.map((tool) => (
               <Link
                 key={tool.slug}
-                href={tool.path}
+                href={`/${tool.slug}`}
                 className={cn("p-5 transition hover:shadow-card-hover", audienceStyles.heic.card)}
               >
                 <h3 className="font-medium capitalize text-ink">{tool.slug.replace(/-/g, " ")}</h3>
@@ -101,11 +115,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Blog / Mintlify-adjacent */}
       <section className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
-        <p className="font-mono text-xs uppercase tracking-wider text-mute">Guides</p>
-        <h2 className="mt-2 text-2xl font-semibold tracking-display-sm text-ink">Blog</h2>
-        <p className="mt-2 text-body">HEIC, WebP, and AVIF guides for search and sharing.</p>
+        <p className="font-mono text-xs uppercase tracking-wider text-mute">{t("home.blogLabel")}</p>
+        <h2 className="mt-2 text-2xl font-semibold tracking-display-sm text-ink">{t("home.blogTitle")}</h2>
+        <p className="mt-2 text-body">{t("home.blogSubtitle")}</p>
         <ul className="mt-8 divide-y divide-hairline border-y border-hairline">
           {blogPosts.slice(0, 4).map((post) => (
             <li key={post.slug} className="py-6">
@@ -122,7 +135,7 @@ export default function HomePage() {
           href="/blog"
           className="mt-6 inline-flex items-center text-sm font-medium text-[var(--mintlify-green)] hover:underline"
         >
-          View all articles
+          {t("home.blogViewAll")}
           <ArrowRight className="ml-1 h-4 w-4" />
         </Link>
       </section>

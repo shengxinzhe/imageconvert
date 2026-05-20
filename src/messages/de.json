@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "convert": "Jetzt konvertieren",
+    "convertShort": "Konvertieren",
+    "moreTools": "Weitere Tools",
+    "about": "Über uns",
+    "blog": "Blog",
+    "mobileConverters": "Konverter",
+    "mobileMore": "Mehr",
+    "contact": "Kontakt",
+    "mobileCta": "HEIC jetzt konvertieren"
+  },
+  "language": {
+    "label": "Sprache",
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français"
+  },
+  "home": {
+    "heroBadge": "iPhone- & iPad-Fotos",
+    "heroTitle": "HEIC in JPG — ohne Upload Ihrer Fotos",
+    "heroSubtitle": "Apples Standardformat funktioniert nicht überall. Lokal im Browser konvertieren — privat, kostenlos, sofort für Windows, Mac und Teilen.",
+    "heroCtaHeic": "HEIC in JPG",
+    "heroCtaPng": "HEIC in PNG",
+    "heroTrust": "Dateien bleiben auf dem Gerät",
+    "devBadge": "WebP · AVIF · optimieren",
+    "devTitle": "Entwickler-Konverter",
+    "devSubtitle": "WebP und AVIF für moderne Websites — lokal konvertieren vor dem Deploy.",
+    "heicToolsTitle": "iPhone-Foto-Tools",
+    "blogLabel": "Ratgeber",
+    "blogTitle": "Blog",
+    "blogSubtitle": "HEIC-, WebP- und AVIF-Ratgeber (auf Englisch).",
+    "blogViewAll": "Alle Artikel"
+  },
+  "tool": {
+    "filesStay": "Dateien verlassen Ihr Gerät nicht",
+    "noSignup": "Keine Anmeldung · Kostenlos im Browser",
+    "howToTitle": "So konvertieren Sie ({from} → {to}) in 3 Schritten",
+    "privacyHeading": "Datenschutz: Dateien bleiben im Browser",
+    "faqHeading": "Häufige Fragen",
+    "relatedHeading": "Verwandte Tools"
+  },
+  "footer": {
+    "tagline": "Kostenlose Bildkonverter online. Dateien bleiben in Ihrem Browser.",
+    "tools": "Tools",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "dmca": "DMCA",
+    "about": "Über uns",
+    "blog": "Blog",
+    "contact": "Kontakt"
+  },
+  "blog": {
+    "back": "← Blog",
+    "englishNotice": "Dieser Artikel ist auf Englisch verfügbar."
+  }
+}

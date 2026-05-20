@@ -1,12 +1,14 @@
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import type { ToolConfig } from "@/lib/tools-config";
-import { getToolBySlug, tools } from "@/lib/tools-config";
-import { audienceStyles, getToolAudience } from "@/lib/design-variants";
-import { AdSlot } from "@/components/ads/ad-slot";
-import { hasAdSenseDisplayUnits } from "@/lib/adsense";
-import { ToolJsonLd } from "@/components/seo/tool-json-ld";
+import { getT } from "@/lib/i18n/translations";
 import { Lock, Zap } from "lucide-react";
+import { AdSlot } from "@/components/ads/ad-slot";
+import { ToolJsonLd } from "@/components/seo/tool-json-ld";
+import { Link } from "@/i18n/navigation";
+import type { AppLocale } from "@/i18n/routing";
+import { getLocalizedToolBySlug } from "@/lib/get-localized-tool";
+import { audienceStyles, getToolAudience } from "@/lib/design-variants";
+import { hasAdSenseDisplayUnits } from "@/lib/adsense";
+import type { ToolConfig } from "@/lib/tools-config";
 import { cn } from "@/lib/utils";
 
 const ImageConverter = dynamic(
@@ -22,13 +24,20 @@ const ImageConverter = dynamic(
   }
 );
 
-export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
+export async function ToolLandingPage({
+  tool,
+  locale,
+}: {
+  tool: ToolConfig;
+  locale: AppLocale;
+}) {
+  const t = getT(locale);
   const audience = getToolAudience(tool.slug);
   const style = audienceStyles[audience];
 
   return (
     <article>
-      <ToolJsonLd tool={tool} />
+      <ToolJsonLd tool={tool} locale={locale} />
       <section className={cn("border-b border-hairline", style.hero)}>
         <div className="mx-auto max-w-6xl px-4 py-12 lg:px-6">
           <span
@@ -53,11 +62,11 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
               <ul className="mt-6 space-y-4 text-sm text-body">
                 <li className="flex gap-3">
                   <Lock className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
-                  Files never leave your device
+                  {t("tool.filesStay")}
                 </li>
                 <li className="flex gap-3">
                   <Zap className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
-                  No signup · Free in-browser conversion
+                  {t("tool.noSignup")}
                 </li>
               </ul>
             </aside>
@@ -78,7 +87,10 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
         ))}
 
         <h2>
-          How to Convert ({tool.from.toUpperCase()} → {tool.to.toUpperCase()}) in 3 Steps
+          {t("tool.howToTitle", {
+            from: tool.from.toUpperCase(),
+            to: tool.to.toUpperCase(),
+          })}
         </h2>
         <ol>
           {tool.howToSteps.map((step) => (
@@ -86,7 +98,7 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
           ))}
         </ol>
 
-        <h2>Privacy: Files never leave your browser</h2>
+        <h2>{t("tool.privacyHeading")}</h2>
         <p>{tool.privacyNote}</p>
 
         {tool.seoSections.map((s) => (
@@ -99,7 +111,7 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
           </div>
         ))}
 
-        <h2>Frequently Asked Questions</h2>
+        <h2>{t("tool.faqHeading")}</h2>
         <div className="not-prose space-y-2">
           {tool.faqs.map((faq) => (
             <details
@@ -114,14 +126,14 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
           ))}
         </div>
 
-        <h2>Related Tools</h2>
+        <h2>{t("tool.relatedHeading")}</h2>
         <ul>
           {tool.relatedSlugs.map((slug) => {
-            const related = getToolBySlug(slug) ?? tools[slug as keyof typeof tools];
+            const related = getLocalizedToolBySlug(slug, locale);
             if (!related) return null;
             return (
               <li key={slug}>
-                <Link href={related.path}>{related.title.split("—")[0].trim()}</Link>
+                <Link href={`/${slug}`}>{related.title.split("—")[0].trim()}</Link>
               </li>
             );
           })}

@@ -1,21 +1,29 @@
 import type { Metadata } from "next";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import type { AppLocale } from "@/i18n/routing";
+import { SITE_NAME } from "@/lib/constants";
+import { absoluteUrl, getOgLocale, hreflangLanguages } from "@/lib/locale-path";
 import { OG_IMAGE } from "@/lib/site-metadata";
 import type { ToolConfig } from "@/lib/tools-config";
 
-export function toolMetadata(tool: ToolConfig): Metadata {
+export function toolMetadata(tool: ToolConfig, locale: AppLocale): Metadata {
+  const path = `/${tool.slug}`;
+  const url = absoluteUrl(path, locale);
+
   return {
     title: tool.title,
     description: tool.metaDescription,
     keywords: tool.keywords,
-    alternates: { canonical: `${SITE_URL}${tool.path}` },
+    alternates: {
+      canonical: url,
+      languages: hreflangLanguages(path),
+    },
     openGraph: {
       title: tool.title,
       description: tool.metaDescription,
-      url: `${SITE_URL}${tool.path}`,
+      url,
       siteName: SITE_NAME,
       type: "website",
-      locale: "en_US",
+      locale: getOgLocale(locale),
       images: [OG_IMAGE],
     },
     twitter: {

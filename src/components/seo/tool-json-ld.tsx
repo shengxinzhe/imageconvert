@@ -1,8 +1,16 @@
+import type { AppLocale } from "@/i18n/routing";
 import type { ToolConfig } from "@/lib/tools-config";
+import { absoluteUrl } from "@/lib/locale-path";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
-export function ToolJsonLd({ tool }: { tool: ToolConfig }) {
-  const pageUrl = `${SITE_URL}${tool.path}`;
+const SCHEMA_LANG: Record<AppLocale, string> = {
+  en: "en-US",
+  de: "de-DE",
+  fr: "fr-FR",
+};
+
+export function ToolJsonLd({ tool, locale }: { tool: ToolConfig; locale: AppLocale }) {
+  const pageUrl = absoluteUrl(`/${tool.slug}`, locale);
 
   const webApplication = {
     "@type": "WebApplication",
@@ -10,6 +18,7 @@ export function ToolJsonLd({ tool }: { tool: ToolConfig }) {
     name: tool.title.replace(" — Free & Online", ""),
     url: pageUrl,
     description: tool.metaDescription,
+    inLanguage: SCHEMA_LANG[locale],
     applicationCategory: "MultimediaApplication",
     operatingSystem: "Any",
     browserRequirements: "Requires JavaScript. Works in Chrome, Edge, Safari, and Firefox.",

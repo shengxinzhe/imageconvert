@@ -1,20 +1,34 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import type { AppLocale } from "@/i18n/routing";
+import { getT } from "@/lib/i18n/translations";
+import { Link, usePathname } from "@/i18n/navigation";
 import { SITE_NAME } from "@/lib/constants";
-import { toolList } from "@/lib/tools-config";
+import type { ToolConfig } from "@/lib/tools-config";
 import { cn } from "@/lib/utils";
 
 function formatToolLabel(slug: string) {
   return slug.replace(/-/g, " ");
 }
 
-export function MobileNav() {
+export function MobileNav({
+  tools,
+  locale,
+}: {
+  tools: ToolConfig[];
+  locale: AppLocale;
+}) {
+  const t = getT(locale);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const pathWithoutLocale =
+    locale === "en"
+      ? pathname
+      : pathname.startsWith(`/${locale}`)
+        ? pathname.slice(`/${locale}`.length) || "/"
+        : pathname;
 
   useEffect(() => {
     setOpen(false);
@@ -60,25 +74,26 @@ export function MobileNav() {
             aria-label="Mobile"
           >
             <p className="mb-2 px-2 text-xs font-medium uppercase tracking-wide text-mute">
-              Converters
+              {t("nav.mobileConverters")}
             </p>
             <ul className="space-y-0.5">
-              {toolList.map((t) => (
-                <li key={t.slug}>
+              {tools.map((tool) => (
+                <li key={tool.slug}>
                   <Link
-                    href={t.path}
+                    href={`/${tool.slug}`}
                     className={cn(
                       "block rounded-md px-3 py-2.5 text-sm capitalize text-body transition-colors hover:bg-canvas-soft hover:text-ink",
-                      pathname === t.path && "bg-canvas-soft font-medium text-ink",
+                      pathWithoutLocale === `/${tool.slug}` &&
+                        "bg-canvas-soft font-medium text-ink"
                     )}
                   >
-                    {formatToolLabel(t.slug)}
+                    {formatToolLabel(tool.slug)}
                   </Link>
                 </li>
               ))}
             </ul>
             <p className="mb-2 mt-6 px-2 text-xs font-medium uppercase tracking-wide text-mute">
-              More
+              {t("nav.mobileMore")}
             </p>
             <ul className="space-y-0.5">
               <li>
@@ -86,10 +101,10 @@ export function MobileNav() {
                   href="/about"
                   className={cn(
                     "block rounded-md px-3 py-2.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink",
-                    pathname === "/about" && "bg-canvas-soft font-medium text-ink",
+                    pathWithoutLocale === "/about" && "bg-canvas-soft font-medium text-ink"
                   )}
                 >
-                  About
+                  {t("nav.about")}
                 </Link>
               </li>
               <li>
@@ -97,11 +112,10 @@ export function MobileNav() {
                   href="/blog"
                   className={cn(
                     "block rounded-md px-3 py-2.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink",
-                    pathname.startsWith("/blog") &&
-                      "bg-canvas-soft font-medium text-ink",
+                    pathWithoutLocale.startsWith("/blog") && "bg-canvas-soft font-medium text-ink"
                   )}
                 >
-                  Blog
+                  {t("nav.blog")}
                 </Link>
               </li>
               <li>
@@ -109,10 +123,10 @@ export function MobileNav() {
                   href="/contact"
                   className={cn(
                     "block rounded-md px-3 py-2.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink",
-                    pathname === "/contact" && "bg-canvas-soft font-medium text-ink",
+                    pathWithoutLocale === "/contact" && "bg-canvas-soft font-medium text-ink"
                   )}
                 >
-                  Contact
+                  {t("nav.contact")}
                 </Link>
               </li>
             </ul>
@@ -122,7 +136,7 @@ export function MobileNav() {
               href="/heic-to-jpg"
               className="flex w-full items-center justify-center rounded-md bg-ink px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-[#333]"
             >
-              Convert HEIC now
+              {t("nav.mobileCta")}
             </Link>
           </div>
         </div>

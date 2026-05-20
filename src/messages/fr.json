@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "convert": "Convertir",
+    "convertShort": "Convertir",
+    "moreTools": "Plus d'outils",
+    "about": "À propos",
+    "blog": "Blog",
+    "mobileConverters": "Convertisseurs",
+    "mobileMore": "Plus",
+    "contact": "Contact",
+    "mobileCta": "Convertir HEIC"
+  },
+  "language": {
+    "label": "Langue",
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français"
+  },
+  "home": {
+    "heroBadge": "Photos iPhone et iPad",
+    "heroTitle": "HEIC en JPG — sans envoyer vos photos",
+    "heroSubtitle": "Le format Apple ne fonctionne pas partout. Convertissez localement dans le navigateur — privé, gratuit, instantané pour Windows, Mac et le partage.",
+    "heroCtaHeic": "HEIC en JPG",
+    "heroCtaPng": "HEIC en PNG",
+    "heroTrust": "Les fichiers restent sur l'appareil",
+    "devBadge": "WebP · AVIF · optimiser",
+    "devTitle": "Convertisseurs développeur",
+    "devSubtitle": "WebP et AVIF pour les sites modernes — conversion locale avant déploiement.",
+    "heicToolsTitle": "Outils photo iPhone",
+    "blogLabel": "Guides",
+    "blogTitle": "Blog",
+    "blogSubtitle": "Guides HEIC, WebP et AVIF (en anglais).",
+    "blogViewAll": "Tous les articles"
+  },
+  "tool": {
+    "filesStay": "Les fichiers ne quittent pas votre appareil",
+    "noSignup": "Sans compte · Gratuit dans le navigateur",
+    "howToTitle": "Comment convertir ({from} → {to}) en 3 étapes",
+    "privacyHeading": "Confidentialité : les fichiers restent dans le navigateur",
+    "faqHeading": "Questions fréquentes",
+    "relatedHeading": "Outils associés"
+  },
+  "footer": {
+    "tagline": "Convertisseurs d'images gratuits en ligne. Les fichiers restent dans votre navigateur.",
+    "tools": "Outils",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "terms": "Conditions d'utilisation",
+    "dmca": "DMCA",
+    "about": "À propos",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "blog": {
+    "back": "← Blog",
+    "englishNotice": "Cet article est disponible en anglais."
+  }
+}

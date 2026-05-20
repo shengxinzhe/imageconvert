@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import type { AppLocale } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
+import { SITE_NAME } from "@/lib/constants";
+import { absoluteUrl, getOgLocale, hreflangLanguages } from "@/lib/locale-path";
 
 export const OG_IMAGE = {
   url: "/og.png",
@@ -8,46 +11,80 @@ export const OG_IMAGE = {
   alt: `${SITE_NAME} — Free HEIC, WebP & AVIF converters`,
 } as const;
 
-const HOME_TITLE = `${SITE_NAME} — Free HEIC, WebP & AVIF Converters Online`;
-const HOME_DESCRIPTION =
-  "Free online image converters for HEIC, WebP, and AVIF. Convert in your browser—private, fast, no upload. Built for iPhone users and developers.";
-
-export const homeMetadata: Metadata = {
-  title: { absolute: HOME_TITLE },
-  description: HOME_DESCRIPTION,
-  alternates: { canonical: SITE_URL },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: SITE_URL,
-    siteName: SITE_NAME,
-    title: HOME_TITLE,
-    description: HOME_DESCRIPTION,
-    images: [OG_IMAGE],
+const HOME_COPY: Record<
+  AppLocale,
+  { title: string; description: string }
+> = {
+  en: {
+    title: `${SITE_NAME} — Free HEIC, WebP & AVIF Converters Online`,
+    description:
+      "Free online image converters for HEIC, WebP, and AVIF. Convert in your browser—private, fast, no upload. Built for iPhone users and developers.",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: HOME_TITLE,
-    description: HOME_DESCRIPTION,
-    images: [OG_IMAGE.url],
+  de: {
+    title: `${SITE_NAME} — HEIC, WebP & AVIF kostenlos online konvertieren`,
+    description:
+      "Kostenlose Bildkonverter für HEIC, WebP und AVIF im Browser. Privat, schnell, ohne Upload — für iPhone-Nutzer und Entwickler.",
   },
-  robots: { index: true, follow: true },
+  fr: {
+    title: `${SITE_NAME} — Convertisseurs HEIC, WebP et AVIF gratuits en ligne`,
+    description:
+      "Convertisseurs d'images gratuits pour HEIC, WebP et AVIF dans le navigateur. Privé, rapide, sans envoi — pour iPhone et développeurs.",
+  },
 };
 
-export function blogPostMetadata(post: {
-  slug: string;
-  title: string;
-  description: string;
-  publishedAt: string;
-}): Metadata {
-  const url = `${SITE_URL}/blog/${post.slug}`;
+export function homeMetadata(locale: AppLocale): Metadata {
+  const { title, description } = HOME_COPY[locale];
+  const url = absoluteUrl("/", locale);
+
+  return {
+    title: { absolute: title },
+    description,
+    alternates: {
+      canonical: url,
+      languages: hreflangLanguages("/"),
+    },
+    openGraph: {
+      type: "website",
+      locale: getOgLocale(locale),
+      url,
+      siteName: SITE_NAME,
+      title,
+      description,
+      images: [OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE.url],
+    },
+    robots: { index: true, follow: true },
+  };
+}
+
+export function blogPostMetadata(
+  post: {
+    slug: string;
+    title: string;
+    description: string;
+    publishedAt: string;
+  },
+  locale: AppLocale
+): Metadata {
+  const path = `/blog/${post.slug}`;
+  const url = absoluteUrl(path, locale);
+  const languages =
+    locale === routing.defaultLocale
+      ? { canonical: url }
+      : { canonical: url, languages: { [locale]: url, "x-default": absoluteUrl(path, "en") } };
+
   return {
     title: post.title,
     description: post.description,
-    alternates: { canonical: url },
+    alternates: languages,
     openGraph: {
       type: "article",
-      locale: "en_US",
+      locale: getOgLocale(locale),
       url,
       siteName: SITE_NAME,
       title: post.title,

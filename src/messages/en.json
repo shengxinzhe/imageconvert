@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "convert": "Convert now",
+    "convertShort": "Convert",
+    "moreTools": "More tools",
+    "about": "About",
+    "blog": "Blog",
+    "mobileConverters": "Converters",
+    "mobileMore": "More",
+    "contact": "Contact",
+    "mobileCta": "Convert HEIC now"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français"
+  },
+  "home": {
+    "heroBadge": "iPhone & iPad photos",
+    "heroTitle": "Convert HEIC to JPG — without uploading your photos",
+    "heroSubtitle": "Apple's default format doesn't work everywhere. Convert locally in your browser—private, free, and instant for Windows, Mac, and sharing.",
+    "heroCtaHeic": "HEIC to JPG",
+    "heroCtaPng": "HEIC to PNG",
+    "heroTrust": "Files stay on device",
+    "devBadge": "WebP · AVIF · optimize",
+    "devTitle": "Developer converters",
+    "devSubtitle": "WebP and AVIF for modern sites—convert locally before deploy or share.",
+    "heicToolsTitle": "iPhone photo tools",
+    "blogLabel": "Guides",
+    "blogTitle": "Blog",
+    "blogSubtitle": "HEIC, WebP, and AVIF guides for search and sharing.",
+    "blogViewAll": "View all articles"
+  },
+  "tool": {
+    "filesStay": "Files never leave your device",
+    "noSignup": "No signup · Free in-browser conversion",
+    "howToTitle": "How to convert ({from} → {to}) in 3 steps",
+    "privacyHeading": "Privacy: Files never leave your browser",
+    "faqHeading": "Frequently Asked Questions",
+    "relatedHeading": "Related Tools"
+  },
+  "footer": {
+    "tagline": "Free online image converters. Files never leave your browser.",
+    "tools": "Tools",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "dmca": "DMCA",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "blog": {
+    "back": "← Blog",
+    "englishNotice": "This article is available in English."
+  }
+}
