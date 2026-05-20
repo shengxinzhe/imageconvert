@@ -1,5 +1,1 @@
-# After Google AdSense approves heicsave.com:
-# AdSense → Account → ads.txt → copy the google.com line here, e.g.:
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
-#
-# File must be live at https://heicsave.com/ads.txt before ads serve fully.
+google.com, pub-1364330416083360, DIRECT, f08c47fec0942fa0
