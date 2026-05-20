@@ -1,6 +1,9 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
 
 # Host
 Host: https://heicsave.com

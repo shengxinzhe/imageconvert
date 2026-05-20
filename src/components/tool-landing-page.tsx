@@ -4,8 +4,7 @@ import type { ToolConfig } from "@/lib/tools-config";
 import { getToolBySlug, tools } from "@/lib/tools-config";
 import { audienceStyles, getToolAudience } from "@/lib/design-variants";
 import { AdSlot } from "@/components/ads/ad-slot";
-import { FaqJsonLd } from "@/components/seo/faq-json-ld";
-import { SITE_URL } from "@/lib/constants";
+import { ToolJsonLd } from "@/components/seo/tool-json-ld";
 import { Lock, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +27,7 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
 
   return (
     <article>
-      <FaqJsonLd faqs={tool.faqs} url={`${SITE_URL}${tool.path}`} />
+      <ToolJsonLd tool={tool} />
       <section className={cn("border-b border-hairline", style.hero)}>
         <div className="mx-auto max-w-6xl px-4 py-12 lg:px-6">
           <span
@@ -57,7 +56,7 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
                 </li>
                 <li className="flex gap-3">
                   <Zap className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
-                  No signup · Free batch of 5
+                  No signup · Free in-browser conversion
                 </li>
               </ul>
             </aside>
@@ -90,7 +89,10 @@ export function ToolLandingPage({ tool }: { tool: ToolConfig }) {
         {tool.seoSections.map((s) => (
           <div key={s.heading}>
             <h2>{s.heading}</h2>
-            <p>{s.content}</p>
+            {s.paragraphs?.map((p) => (
+              <p key={p.slice(0, 48)}>{p}</p>
+            ))}
+            {s.content && !s.paragraphs?.length ? <p>{s.content}</p> : null}
           </div>
         ))}
 

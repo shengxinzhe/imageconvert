@@ -20,7 +20,7 @@ export interface ToolConfig {
   privacyNote: string;
   faqs: FaqItem[];
   relatedSlugs: string[];
-  seoSections: { heading: string; content: string }[];
+  seoSections: { heading: string; content?: string; paragraphs?: string[] }[];
 }
 
 const allSlugs = [
@@ -49,7 +49,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
     title: "HEIC to JPG Converter — Free & Online",
     h1: "HEIC to JPG Converter — Free & Online",
     metaDescription:
-      "Convert iPhone HEIC photos to JPG free in your browser. No upload, no signup. Batch up to 5 images. Works on Windows, Mac, and mobile.",
+      "Convert iPhone HEIC photos to JPG free in your browser. No upload, no signup. Batch convert on Windows, Mac, iPhone, and Android.",
     keywords: [
       "heic to jpg",
       "heic to jpg converter",
@@ -64,11 +64,12 @@ export const tools: Record<ToolSlug, ToolConfig> = {
         "Apple uses HEIC (High Efficiency Image Container) by default on iPhones because it saves storage while keeping excellent quality. The tradeoff is compatibility: many Windows PCs, older apps, email clients, and websites still expect JPG.",
         "Converting HEIC to JPG makes your photos easy to share, print, and upload anywhere. JPG is the universal standard for photos on the web and in everyday workflows.",
         "Our converter runs entirely in your browser—files never leave your device, which is ideal for personal photos and GDPR-friendly privacy.",
+        "Whether you need one picture for a form or hundreds from a trip, HeicSave converts HEIC to JPG without installing codecs, creating an account, or uploading to a stranger's server.",
       ],
     },
     howToSteps: [
-      "Drag and drop your HEIC files (or click to browse). Up to 5 images at once.",
-      "Click Convert. Processing happens locally on your computer.",
+      "Drag and drop your HEIC files (or click Browse files). Add as many images as your device can handle.",
+      "Click Convert. Processing happens locally in your browser—nothing is uploaded.",
       "Download each JPG instantly. No watermarks, no account required.",
     ],
     privacyNote:
@@ -112,7 +113,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       {
         question: "Can I convert multiple HEIC files at once?",
         answer:
-          "Yes. Add up to 5 HEIC images per batch on the free plan.",
+          "Yes. Select many HEIC files in one session. Very large batches may be slow on phones; desktop Chrome or Edge is best for big folders.",
       },
       {
         question: "Why won't my HEIC open on my PC?",
@@ -129,13 +130,73 @@ export const tools: Record<ToolSlug, ToolConfig> = {
     seoSections: [
       {
         heading: "HEIC to JPG for iPhone users in the US and EU",
-        content:
-          "Millions of photos are captured in HEIC every day. If you email pictures to family, submit documents, or post to platforms that only accept JPG, a reliable HEIC to JPG converter saves time. HeicSave is built for privacy-conscious users in Europe and North America: no account, no cloud upload, and clear cookie consent under GDPR.",
+        paragraphs: [
+          "Millions of photos are captured in HEIC every day. If you email pictures to family, submit insurance documents, upload to a job portal, or post on a platform that only accepts JPG, you need a converter that is fast, free, and trustworthy.",
+          "HeicSave is built for privacy-conscious users in Europe and North America: no account, no cloud upload, and clear cookie consent under GDPR. Your photos stay on your device while you convert HEIC to JPG in the browser.",
+        ],
       },
       {
-        heading: "Batch HEIC to JPG online",
-        content:
-          "Need to convert a vacation folder? Select up to five files, convert in one session, and download each JPG. For larger batches, run multiple rounds—still faster than installing codecs on every Windows machine in your office.",
+        heading: "What is HEIC and why does iPhone use it?",
+        paragraphs: [
+          "HEIC (High Efficiency Image Container) is Apple's default photo format on modern iPhones and iPads. It uses advanced compression—often based on HEVC—so you get similar visual quality to JPEG at roughly half the file size. That saves iCloud storage and keeps your camera roll manageable.",
+          "The downside is compatibility. Windows PCs without the HEIC extension, older Android phones, many web forms, and legacy print-shop software still expect .jpg or .jpeg. When someone says \"I can't open your photos,\" HEIC is usually the reason.",
+        ],
+      },
+      {
+        heading: "HEIC vs JPG: when to convert",
+        paragraphs: [
+          "Keep HEIC on your iPhone for everyday shooting—it is excellent for storage. Convert to JPG when you share outside Apple's ecosystem: email attachments, USB drives for family, employer portals, real-estate listings, school projects, or social networks that reject HEIC uploads.",
+          "JPG has been the universal photo standard for decades. Every viewer, editor, and uploader understands it. Converting HEIC to JPG trades a little file size for maximum compatibility—almost always the right move for sharing.",
+        ],
+      },
+      {
+        heading: "Convert HEIC to JPG on Windows (no codec install)",
+        paragraphs: [
+          "Windows 10 and 11 often show a generic icon or \"unsupported format\" for .heic files unless you install Microsoft's HEIF Image Extensions from the Microsoft Store. Corporate laptops may block that install entirely.",
+          "Browser-based conversion sidesteps the problem: open HeicSave in Chrome or Edge, drop your .heic files, and download JPGs that open in Photos, Paint, Word, and every legacy app. No admin rights, no store extensions, no reboot.",
+        ],
+      },
+      {
+        heading: "Convert HEIC to JPG on Mac",
+        paragraphs: [
+          "macOS opens HEIC natively in Preview and Photos. For a single image, File → Export works. For dozens of vacation photos or a client folder, exporting one-by-one is tedious.",
+          "Use this page in Safari or Chrome to batch-convert HEIC to JPG in the browser. Downloads land in your Downloads folder as standard .jpg files ready for email, Slack, or Google Drive—without changing your iPhone camera settings.",
+        ],
+      },
+      {
+        heading: "Convert HEIC to JPG on iPhone and Android",
+        paragraphs: [
+          "On iPhone, the permanent fix is Settings → Camera → Formats → Most Compatible, which saves new shots as JPG. Existing HEIC photos still need conversion. AirDrop them to a Mac or PC, or open HeicSave in Safari on iOS and convert right on the phone.",
+          "Android does not open HEIC out of the box on many devices. Convert to JPG on a desktop browser first, then transfer the JPGs—your recipients on Android and Windows will thank you.",
+        ],
+      },
+      {
+        heading: "Batch HEIC to JPG online — private and free",
+        paragraphs: [
+          "Need to convert a vacation folder, wedding shoot, or office scan batch? Add multiple .heic files in one session and download each JPG separately. There is no fixed five-file cap; very large batches work best on a desktop with enough RAM.",
+          "Because processing is local, batch conversion is ideal for sensitive content: medical images, legal scans, family photos, and EU personal data you do not want on a random cloud converter's server.",
+        ],
+      },
+      {
+        heading: "Quality, EXIF, and file size after conversion",
+        paragraphs: [
+          "We encode JPG at high quality (about 90%) so everyday prints, Instagram, and document uploads look sharp. HEIC is already compressed; converting to JPG applies a second generation of compression—visually fine for sharing, but not ideal if you plan heavy editing afterward. For editing workflows, consider our HEIC to PNG tool for lossless-friendly output.",
+          "Some metadata (date taken, location) may not always copy into the exported JPG depending on browser and source file. For archival originals, keep your HEIC masters and treat JPG exports as delivery copies.",
+        ],
+      },
+      {
+        heading: "Why use HeicSave instead of cloud upload converters?",
+        paragraphs: [
+          "Many \"free online converters\" upload your files to their servers. That creates privacy risk, slower uploads on mobile data, and terms-of-use you may not read. HeicSave never receives your image bytes—conversion runs with WebAssembly and canvas APIs in your tab.",
+          "That architecture aligns with GDPR expectations: you are not sending personal photos to us for processing. We still show cookie consent for analytics and future ads, but your images are not part of that data flow.",
+        ],
+      },
+      {
+        heading: "Common HEIC to JPG problems (and fixes)",
+        paragraphs: [
+          "If conversion fails, try Chrome or Edge on a desktop, close other heavy tabs to free memory, or convert fewer files at once. Extremely large single images (high-megapixel RAW-like exports) may need to be exported smaller from Photos first.",
+          "If downloads look wrong, hard-refresh the page (Ctrl+F5) and ensure you selected actual .heic / .heif files, not Live Photo video companions (.mov). Rename extensions only if you are sure the file is a still image.",
+        ],
       },
     ],
   },
