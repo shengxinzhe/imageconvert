@@ -1,0 +1,5 @@
+# Replace with the full ads.txt from Ezoic dashboard:
+# Monetization → ads.txt → copy or redirect instructions for heicsave.com
+#
+# Example after Ezoic provides your lines:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

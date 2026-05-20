@@ -31,7 +31,8 @@ export function CookieBanner() {
         borderRadius: "9999px",
       }}
     >
-      We use cookies for analytics and ads (with your consent). Images are never uploaded.{" "}
+      We use cookies and ad partners (e.g. Ezoic) for analytics and ads. Images are never
+      uploaded.{" "}
       <a href="/privacy" className="!text-white underline">
         Privacy Policy
       </a>
