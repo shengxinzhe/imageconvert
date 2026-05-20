@@ -41,8 +41,7 @@ npm run dev
 
 ## Limits (V1)
 
-- 10 MB per file
-- 5 files per batch
+- No fixed file-size or batch cap (browser memory is the practical limit)
 - No server upload (privacy)
 
 ## License

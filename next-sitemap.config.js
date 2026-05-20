@@ -4,7 +4,7 @@ module.exports = {
   generateRobotsTxt: true,
   changefreq: "weekly",
   priority: 0.7,
-  exclude: [],
+  exclude: ["/icon.png", "/apple-icon.png", "/opengraph-image.png"],
   additionalPaths: async (config) => {
     const tools = [
       "/heic-to-jpg",

@@ -110,7 +110,7 @@ Conversion runs in your browser—nothing uploads to a server.
 
 ## Batch conversion
 
-Convert up to 5 files per batch (10 MB each). Repeat for larger folders.
+Convert many files in one go in your browser. For huge folders, split into smaller batches if your device slows down.
 
 ## Troubleshooting
 
@@ -136,7 +136,7 @@ Fine for one image; slow for dozens.
 
 ## Online batch tool
 
-Use [HEIC to JPG](/heic-to-jpg) in Safari or Chrome for up to 5 files at once without exporting one-by-one.
+Use [HEIC to JPG](/heic-to-jpg) in Safari or Chrome to convert multiple files at once without exporting one-by-one.
 
 ## Privacy
 
@@ -153,7 +153,7 @@ Browser tools that process locally never send your photos to a third-party serve
 
 ## Browser-local (recommended)
 
-**HeicSave** — [HEIC to JPG](/heic-to-jpg), no upload, GDPR-friendly, free tier 5×10MB.
+**HeicSave** — [HEIC to JPG](/heic-to-jpg), no upload, GDPR-friendly, no fixed size or batch cap.
 
 ## Desktop
 

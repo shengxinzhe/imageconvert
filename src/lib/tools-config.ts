@@ -102,7 +102,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       {
         question: "Is this HEIC to JPG converter really free?",
         answer:
-          "Yes. There is no signup, no watermark, and no paid tier in v1. Free limits: 10 MB per file and 5 files per batch.",
+          "Yes. There is no signup, no watermark, and no paid tier in v1. No fixed file-size or batch limits—conversion runs in your browser.",
       },
       {
         question: "Do you store my photos?",
@@ -159,7 +159,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       ],
     },
     howToSteps: [
-      "Upload up to 5 HEIC files (max 10 MB each).",
+      "Select one or more HEIC files.",
       "Click Convert to generate PNG files in your browser.",
       "Download your PNGs—ready for design tools or the web.",
     ],
@@ -180,7 +180,8 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       },
       {
         question: "Free limits?",
-        answer: "10 MB per file, 5 files per batch.",
+        answer:
+          "No artificial cap. Very large files or many images at once may be slow or fail on low-memory devices.",
       },
       {
         question: "Why PNG instead of JPG?",
@@ -242,7 +243,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       },
       {
         question: "Batch limit?",
-        answer: "Up to 5 files, 10 MB each, free.",
+        answer: "No fixed limit; performance depends on your browser and device memory.",
       },
     ],
     relatedSlugs: related("webp-to-png"),
@@ -274,7 +275,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       ],
     },
     howToSteps: [
-      "Add WebP images (max 5 per batch).",
+      "Add one or more WebP images.",
       "Click Convert for local JPG encoding.",
       "Download JPG files.",
     ],
@@ -298,7 +299,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       },
       {
         question: "Free?",
-        answer: "Yes, with 10 MB and 5-file limits.",
+        answer: "Yes. No fixed file-size or batch cap; large jobs may be slow on mobile.",
       },
     ],
     relatedSlugs: related("webp-to-jpg"),
@@ -357,7 +358,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       },
       {
         question: "Is conversion free?",
-        answer: "Yes—10 MB per file, 5 files per batch.",
+        answer: "Yes. No fixed limits; very large batches may need a desktop browser.",
       },
     ],
     relatedSlugs: related("avif-to-jpg"),
@@ -405,7 +406,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       },
       {
         question: "Batch support?",
-        answer: "Yes, up to 5 files.",
+        answer: "Yes, multiple files at once.",
       },
       {
         question: "Which browsers?",
@@ -469,7 +470,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       },
       {
         question: "Batch free tier?",
-        answer: "5 files, 10 MB each.",
+        answer: "No fixed limit; use a desktop browser for large batches.",
       },
     ],
     relatedSlugs: related("jpg-to-webp"),
@@ -525,7 +526,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       },
       {
         question: "Limits?",
-        answer: "10 MB per file, 5 per batch.",
+        answer: "No fixed cap; device memory is the practical limit.",
       },
     ],
     relatedSlugs: related("png-to-webp"),

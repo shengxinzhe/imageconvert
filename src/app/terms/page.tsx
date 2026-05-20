@@ -22,7 +22,9 @@ export default function TermsPage() {
       </p>
       <h2>Limits</h2>
       <p>
-        Free tier: up to 10 MB per file and 5 files per batch. We may change limits or features
+        Conversion runs in your browser; we do not impose a fixed file-size or batch count cap,
+        but very large files or many images at once may fail on low-memory devices. We may change
+        features
         without notice.
       </p>
       <h2>Liability</h2>

@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+import { getConverterSoftWarnings } from "@/lib/converter-warnings";
 import {
   acceptMimeForInput,
   convertImage,
@@ -8,7 +9,6 @@ import {
   type InputFormat,
   type OutputFormat,
 } from "@/lib/convert";
-import { MAX_BATCH, MAX_FREE_SIZE } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Download, Loader2, Upload, X } from "lucide-react";
 import type { ToolAudience } from "@/lib/design-variants";
@@ -42,22 +42,7 @@ export function ImageConverter({
 
   const addFiles = useCallback((incoming: FileList | File[]) => {
     setError(null);
-    const list = Array.from(incoming);
-    const valid: File[] = [];
-    for (const f of list) {
-      if (f.size > MAX_FREE_SIZE) {
-        setError(`"${f.name}" exceeds 10 MB free limit.`);
-        continue;
-      }
-      valid.push(f);
-    }
-    setFiles((prev) => {
-      const merged = [...prev, ...valid].slice(0, MAX_BATCH);
-      if (prev.length + valid.length > MAX_BATCH) {
-        setError(`Free batch limit is ${MAX_BATCH} files.`);
-      }
-      return merged;
-    });
+    setFiles((prev) => [...prev, ...Array.from(incoming)]);
   }, []);
 
   const onDrop = useCallback(
@@ -120,6 +105,7 @@ export function ImageConverter({
   };
 
   const accept = acceptMimeForInput(from);
+  const softWarnings = useMemo(() => getConverterSoftWarnings(files), [files]);
 
   return (
     <div className="space-y-4">
@@ -142,7 +128,7 @@ export function ImageConverter({
         <Upload className="mx-auto h-8 w-8 text-mute" aria-hidden />
         <p className="mt-4 text-sm font-medium text-ink">Drag & drop images here</p>
         <p className="mt-1 font-mono text-xs text-mute">
-          Up to {MAX_BATCH} files · Max 10 MB each
+          No upload · Multiple files OK · Large files depend on your device memory
         </p>
         <label className="mt-5 inline-flex cursor-pointer items-center justify-center rounded-full border border-hairline bg-canvas px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2">
           <span className="sr-only">Choose files</span>
@@ -171,6 +157,17 @@ export function ImageConverter({
             </li>
           ))}
         </ul>
+      )}
+
+      {softWarnings.length > 0 && (
+        <div
+          className="space-y-2 rounded-vercel border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950"
+          role="status"
+        >
+          {softWarnings.map((msg) => (
+            <p key={msg}>{msg}</p>
+          ))}
+        </div>
       )}
 
       {error && (
