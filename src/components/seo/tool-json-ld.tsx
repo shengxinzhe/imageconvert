@@ -20,7 +20,8 @@ export function ToolJsonLd({ tool }: { tool: ToolConfig }) {
     },
     featureList: [
       "Client-side conversion (no upload)",
-      "Batch conversion",
+      "Batch conversion with ZIP download",
+      "Adjustable JPEG/WebP quality",
       "Free to use",
       "No account required",
     ],

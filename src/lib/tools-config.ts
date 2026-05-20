@@ -68,9 +68,9 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       ],
     },
     howToSteps: [
-      "Drag and drop your HEIC files (or click Browse files). Add as many images as your device can handle.",
+      "Drag and drop your HEIC files (or click Browse files). Adjust JPEG quality with the slider if needed.",
       "Click Convert. Processing happens locally in your browser—nothing is uploaded.",
-      "Download each JPG instantly. No watermarks, no account required.",
+      "Download each JPG, or use Download all as ZIP when converting multiple photos.",
     ],
     privacyNote:
       "Your HEIC files are decoded in the browser using WebAssembly. Nothing is uploaded to our servers.",
@@ -83,7 +83,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       {
         question: "Can I convert HEIC to JPG without losing quality?",
         answer:
-          "Yes. We use high-quality JPEG encoding (90% quality by default). HEIC is already compressed; converting to JPG at high quality preserves detail for most everyday and social uses.",
+          "Yes. Use the quality slider (default 90%) before converting. HEIC is already compressed; high JPEG quality preserves detail for most everyday and social uses.",
       },
       {
         question: "How do I convert HEIC to JPG on Mac?",
@@ -173,7 +173,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       {
         heading: "Batch HEIC to JPG online — private and free",
         paragraphs: [
-          "Need to convert a vacation folder, wedding shoot, or office scan batch? Add multiple .heic files in one session and download each JPG separately. There is no fixed five-file cap; very large batches work best on a desktop with enough RAM.",
+          "Need to convert a vacation folder, wedding shoot, or office scan batch? Add multiple .heic files in one session, convert in one click, then download everything as a single ZIP—no fixed file cap.",
           "Because processing is local, batch conversion is ideal for sensitive content: medical images, legal scans, family photos, and EU personal data you do not want on a random cloud converter's server.",
         ],
       },
@@ -348,7 +348,8 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       },
       {
         question: "Quality settings?",
-        answer: "We default to 90% JPEG quality for a strong balance of size and clarity.",
+        answer:
+          "Use the quality slider on the converter (60–100%). Default is 90% JPEG for a strong balance of size and clarity.",
       },
       {
         question: "Transparency in WebP?",
@@ -523,7 +524,8 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       },
       {
         question: "Quality?",
-        answer: "Default WebP quality is 85%—adjust in future versions.",
+        answer:
+          "Use the WebP quality slider before converting. Default is 85%; raise it for sharper output or lower it for smaller files.",
       },
       {
         question: "Browser encode support?",

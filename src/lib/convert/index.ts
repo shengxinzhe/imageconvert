@@ -1,6 +1,5 @@
 import { DEFAULT_JPEG_QUALITY, DEFAULT_WEBP_QUALITY } from "@/lib/constants";
 import { canvasConvert } from "./canvas";
-import { convertHeic } from "./heic";
 
 export type InputFormat = "heic" | "webp" | "avif" | "jpg" | "jpeg" | "png";
 export type OutputFormat = "jpg" | "jpeg" | "png" | "webp";
@@ -27,9 +26,19 @@ export function getOutputFilename(originalName: string, to: OutputFormat): strin
   return `${base}.${outputExtension(to)}`;
 }
 
+export function outputSupportsQuality(to: OutputFormat): boolean {
+  return to === "jpg" || to === "jpeg" || to === "webp";
+}
+
+export function defaultQualityPercent(to: OutputFormat): number {
+  if (to === "webp") return Math.round(DEFAULT_WEBP_QUALITY * 100);
+  if (to === "jpg" || to === "jpeg") return Math.round(DEFAULT_JPEG_QUALITY * 100);
+  return 90;
+}
+
 export async function convertImage(
   file: File,
-  options: ConvertOptions
+  options: ConvertOptions,
 ): Promise<Blob> {
   const { from, to } = options;
   const mime = outputMime(to);
@@ -38,6 +47,7 @@ export async function convertImage(
     (mime === "image/webp" ? DEFAULT_WEBP_QUALITY : DEFAULT_JPEG_QUALITY);
 
   if (from === "heic") {
+    const { convertHeic } = await import("./heic");
     if (to === "webp") {
       const jpeg = await convertHeic(file, "image/jpeg", quality);
       const jpegFile = new File([jpeg], file.name.replace(/\.heic$/i, ".jpg"), {
@@ -48,7 +58,7 @@ export async function convertImage(
     return convertHeic(
       file,
       to === "png" ? "image/png" : "image/jpeg",
-      quality
+      quality,
     );
   }
 
