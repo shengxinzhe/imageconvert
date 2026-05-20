@@ -27,7 +27,7 @@ Windows 10/11 can open HEIC with optional codecs from the Microsoft Store. Many 
 
 ## How to convert HEIC
 
-Use a browser-based converter that processes files locally—no upload required. Our [HEIC to JPG](/heic-to-jpg) tool converts up to five images per batch for free.
+Use a browser-based converter that processes files locally—no upload required. Our [HEIC to JPG](/heic-to-jpg) tool converts multiple files at once and can download a ZIP.
 
 ## HEIC vs JPG
 

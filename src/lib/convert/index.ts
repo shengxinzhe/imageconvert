@@ -1,5 +1,6 @@
 import { DEFAULT_JPEG_QUALITY, DEFAULT_WEBP_QUALITY } from "@/lib/constants";
 import { canvasConvert } from "./canvas";
+import { preserveExifOnJpeg } from "./exif";
 
 export type InputFormat = "heic" | "webp" | "avif" | "jpg" | "jpeg" | "png";
 export type OutputFormat = "jpg" | "jpeg" | "png" | "webp";
@@ -46,6 +47,8 @@ export async function convertImage(
     options.quality ??
     (mime === "image/webp" ? DEFAULT_WEBP_QUALITY : DEFAULT_JPEG_QUALITY);
 
+  let blob: Blob;
+
   if (from === "heic") {
     const { convertHeic } = await import("./heic");
     if (to === "webp") {
@@ -53,16 +56,23 @@ export async function convertImage(
       const jpegFile = new File([jpeg], file.name.replace(/\.heic$/i, ".jpg"), {
         type: "image/jpeg",
       });
-      return canvasConvert(jpegFile, "image/webp", quality);
+      blob = await canvasConvert(jpegFile, "image/webp", quality);
+    } else {
+      blob = await convertHeic(
+        file,
+        to === "png" ? "image/png" : "image/jpeg",
+        quality,
+      );
     }
-    return convertHeic(
-      file,
-      to === "png" ? "image/png" : "image/jpeg",
-      quality,
-    );
+  } else {
+    blob = await canvasConvert(file, mime, mime === "image/png" ? undefined : quality);
   }
 
-  return canvasConvert(file, mime, mime === "image/png" ? undefined : quality);
+  if (to === "jpg" || to === "jpeg") {
+    return preserveExifOnJpeg(file, blob);
+  }
+
+  return blob;
 }
 
 export function acceptMimeForInput(from: InputFormat): string {

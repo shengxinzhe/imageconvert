@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
+import { formatConversionError } from "@/lib/convert-errors";
 import { getConverterSoftWarnings } from "@/lib/converter-warnings";
 import {
   acceptMimeForInput,
@@ -85,22 +86,26 @@ export function ImageConverter({
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
         setProgress({ current: i + 1, total: files.length });
-        const blob = await convertImage(file, { from, to, quality });
-        const outputName = getOutputFilename(file.name, to);
-        converted.push({
-          id: `${file.name}-${file.size}-${i}`,
-          originalName: file.name,
-          outputName,
-          blob,
-          previewUrl: URL.createObjectURL(blob),
-        });
+        try {
+          const blob = await convertImage(file, { from, to, quality });
+          const outputName = getOutputFilename(file.name, to);
+          converted.push({
+            id: `${file.name}-${file.size}-${i}`,
+            originalName: file.name,
+            outputName,
+            blob,
+            previewUrl: URL.createObjectURL(blob),
+          });
+        } catch (err) {
+          throw new Error(formatConversionError(err, from, file.name));
+        }
       }
       setResults(converted);
     } catch (err) {
       setError(
         err instanceof Error
           ? err.message
-          : "Conversion failed. Try Chrome for HEIC/AVIF support.",
+          : formatConversionError(err, from),
       );
     } finally {
       setConverting(false);

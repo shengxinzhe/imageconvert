@@ -64,6 +64,7 @@ module.exports = {
   },
   additionalPaths: async () => {
     const tools = [...TOOL_PATHS];
+    const pages = ["/contact", "/privacy", "/terms", "/dmca", "/blog"];
     const blogs = [
       "what-is-heic-file",
       "why-iphone-uses-heic",
@@ -79,6 +80,12 @@ module.exports = {
     const now = new Date().toISOString();
 
     return [
+      ...pages.map((path) => ({
+        loc: path,
+        changefreq: "monthly",
+        priority: path === "/contact" ? 0.5 : 0.7,
+        lastmod: now,
+      })),
       ...tools.map((path) => ({
         loc: path,
         changefreq: path === "/heic-to-jpg" ? "daily" : "weekly",

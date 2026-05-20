@@ -4,7 +4,7 @@ import type { ToolConfig } from "@/lib/tools-config";
 
 export function toolMetadata(tool: ToolConfig): Metadata {
   return {
-    title: `${tool.title} | ${SITE_NAME}`,
+    title: tool.title,
     description: tool.metaDescription,
     keywords: tool.keywords,
     alternates: { canonical: `${SITE_URL}${tool.path}` },

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SITE_NAME } from "@/lib/constants";
-import { toolList } from "@/lib/tools-config";
+import { DesktopToolsMenu } from "@/components/layout/desktop-tools-menu";
 import { MobileNav } from "@/components/layout/mobile-nav";
 
 function LogoMark() {
@@ -25,27 +25,17 @@ export function Header() {
           <LogoMark />
           {SITE_NAME}
         </Link>
-        <nav className="hidden items-center gap-0.5 md:flex" aria-label="Main">
-          {toolList.slice(0, 4).map((t) => (
-            <Link
-              key={t.slug}
-              href={t.path}
-              className="rounded-full px-3 py-1.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink"
-            >
-              {t.slug.replace(/-/g, " ")}
-            </Link>
-          ))}
-          <Link
-            href="/blog"
-            className="rounded-full px-3 py-1.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink"
-          >
-            Blog
-          </Link>
-        </nav>
+        <DesktopToolsMenu />
         <div className="flex items-center gap-2">
           <Link
             href="/heic-to-jpg"
-            className="hidden rounded-md bg-ink px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#333] sm:inline-flex"
+            className="inline-flex rounded-md bg-ink px-2.5 py-1.5 text-xs font-medium text-white transition-colors hover:bg-[#333] md:hidden"
+          >
+            Convert
+          </Link>
+          <Link
+            href="/heic-to-jpg"
+            className="hidden rounded-md bg-ink px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-[#333] md:inline-flex"
           >
             Convert now
           </Link>

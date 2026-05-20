@@ -39,6 +39,9 @@ export function Footer() {
             <li>
               <Link href="/blog">Blog</Link>
             </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
           </ul>
           <p className="mt-4 font-mono text-xs text-mute">DMCA: {DMCA_EMAIL}</p>
         </div>

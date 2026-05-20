@@ -181,7 +181,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
         heading: "Quality, EXIF, and file size after conversion",
         paragraphs: [
           "We encode JPG at high quality (about 90%) so everyday prints, Instagram, and document uploads look sharp. HEIC is already compressed; converting to JPG applies a second generation of compression—visually fine for sharing, but not ideal if you plan heavy editing afterward. For editing workflows, consider our HEIC to PNG tool for lossless-friendly output.",
-          "Some metadata (date taken, location) may not always copy into the exported JPG depending on browser and source file. For archival originals, keep your HEIC masters and treat JPG exports as delivery copies.",
+          "We copy common EXIF fields (date taken, camera model, orientation) into JPG when your browser allows it. GPS and rare tags may still be dropped. Keep HEIC originals for your full archive.",
         ],
       },
       {

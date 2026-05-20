@@ -93,6 +93,17 @@ export function MobileNav() {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className={cn(
+                    "block rounded-md px-3 py-2.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink",
+                    pathname === "/contact" && "bg-canvas-soft font-medium text-ink",
+                  )}
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </nav>
           <div className="border-t border-hairline p-4">
