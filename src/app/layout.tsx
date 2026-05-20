@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { Analytics } from "@vercel/analytics/react";
-import { EzoicRouteHandler } from "@/components/ads/ezoic-route-handler";
-import { EzoicScripts } from "@/components/ads/ezoic-scripts";
+import { AdSenseConsentMode } from "@/components/ads/consent-mode";
+import { AdSenseScripts } from "@/components/ads/adsense-scripts";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -53,8 +53,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="min-h-screen bg-canvas font-sans text-ink antialiased">
-        <EzoicScripts />
-        <EzoicRouteHandler />
+        <AdSenseConsentMode />
+        <AdSenseScripts />
         <Header />
         <main>{children}</main>
         <Footer />

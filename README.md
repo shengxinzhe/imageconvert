@@ -22,7 +22,7 @@ Free browser-local image converters for HEIC, WebP, and AVIF. Production domain:
 | `/jpg-to-webp` | JPG → WebP |
 | `/png-to-webp` | PNG → WebP |
 
-Plus `/blog/*`, `/privacy`, `/terms`, `/dmca`.
+Plus `/about`, `/contact`, `/blog/*`, `/privacy`, `/terms`, `/dmca`.
 
 ## Develop
 
@@ -35,9 +35,10 @@ npm run dev
 ## Deploy (Vercel)
 
 1. Import repo → set `NEXT_PUBLIC_SITE_URL` to your domain.
-2. Deploy. `postbuild` runs `next-sitemap`.
-3. Add AdSense / Cookiebot scripts in `src/components/ads/ad-slot.tsx` when approved.
-4. In Vercel → Settings → Domains, add `heicsave.com` and `www.heicsave.com`; set DNS at NameSilo per Vercel instructions.
+2. **Google AdSense only:** set `NEXT_PUBLIC_ADSENSE_CLIENT_ID=ca-pub-…` (from AdSense site setup). Do **not** enable `NEXT_PUBLIC_EZOIC_ENABLED`.
+3. After approval: paste `ads.txt` line into `public/ads.txt`, add ad unit IDs to `NEXT_PUBLIC_ADSENSE_SLOT_SIDEBAR` and `NEXT_PUBLIC_ADSENSE_SLOT_IN_CONTENT`.
+4. Deploy. `postbuild` runs `next-sitemap`.
+5. In Vercel → Settings → Domains, add `heicsave.com` and `www.heicsave.com`.
 
 ## Limits (V1)
 

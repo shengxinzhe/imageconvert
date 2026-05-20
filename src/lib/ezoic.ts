@@ -1,5 +1,6 @@
+/** Ezoic disabled — site uses Google AdSense only. */
 export function isEzoicEnabled(): boolean {
-  return process.env.NEXT_PUBLIC_EZOIC_ENABLED === "true";
+  return false;
 }
 
 export function runEzoic(fn: () => void) {

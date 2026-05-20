@@ -1,4 +1,5 @@
 import type { InputFormat, OutputFormat } from "@/lib/convert";
+import { extraToolSeoSections } from "@/lib/tool-seo-sections";
 
 export interface FaqItem {
   question: string;
@@ -188,7 +189,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
         heading: "Why use HeicSave instead of cloud upload converters?",
         paragraphs: [
           "Many \"free online converters\" upload your files to their servers. That creates privacy risk, slower uploads on mobile data, and terms-of-use you may not read. HeicSave never receives your image bytes—conversion runs with WebAssembly and canvas APIs in your tab.",
-          "That architecture aligns with GDPR expectations: you are not sending personal photos to us for processing. We still show cookie consent for analytics and future ads, but your images are not part of that data flow.",
+          "That architecture aligns with GDPR expectations: you are not sending personal photos to us for processing. We show cookie consent for analytics and Google AdSense ads, but your images are not part of that data flow.",
         ],
       },
       {
@@ -602,6 +603,13 @@ export const tools: Record<ToolSlug, ToolConfig> = {
     ],
   },
 };
+
+for (const slug of Object.keys(extraToolSeoSections) as ToolSlug[]) {
+  const extra = extraToolSeoSections[slug];
+  if (extra?.length && tools[slug]) {
+    tools[slug].seoSections = [...tools[slug].seoSections, ...extra];
+  }
+}
 
 export const toolList = Object.values(tools);
 

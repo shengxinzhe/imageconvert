@@ -47,6 +47,9 @@ export default function ContactPage() {
           <Link href="/heic-to-jpg">HEIC to JPG</Link> in Chrome or Edge on a desktop.
         </li>
         <li>
+          Who runs the site? See <Link href="/about">About</Link>.
+        </li>
+        <li>
           Privacy rights (EEA/UK)? See the <Link href="/privacy">Privacy Policy</Link>.
         </li>
       </ul>

@@ -291,7 +291,7 @@ There is no “5 files only” or “10 MB max” rule in our tools. Very large 
 
 ## GDPR & cookies
 
-EU users see a cookie banner for analytics and ad partners (e.g. Ezoic). You can accept or decline. Image bytes are not part of that processing.
+EU users see a cookie banner for analytics and Google AdSense. You can accept or decline. Image bytes are not part of that processing.
 
 ## What we collect
 

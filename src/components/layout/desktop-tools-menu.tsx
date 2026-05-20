@@ -84,6 +84,12 @@ export function DesktopToolsMenu() {
         )}
       </div>
       <Link
+        href="/about"
+        className="rounded-full px-3 py-1.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink"
+      >
+        About
+      </Link>
+      <Link
         href="/blog"
         className="rounded-full px-3 py-1.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink"
       >

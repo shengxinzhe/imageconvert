@@ -1,8 +1,12 @@
 "use client";
 
 import CookieConsent from "react-cookie-consent";
+import { denyAdConsent, grantAdConsent } from "@/components/ads/consent-mode";
+import { isAdSenseScriptEnabled } from "@/lib/adsense";
 
 export function CookieBanner() {
+  const adsense = isAdSenseScriptEnabled();
+
   return (
     <CookieConsent
       location="bottom"
@@ -10,6 +14,12 @@ export function CookieBanner() {
       declineButtonText="Decline"
       enableDeclineButton
       cookieName="heicsave_consent"
+      onAccept={() => {
+        if (adsense) grantAdConsent();
+      }}
+      onDecline={() => {
+        if (adsense) denyAdConsent();
+      }}
       style={{
         background: "#171717",
         fontSize: "14px",
@@ -31,8 +41,8 @@ export function CookieBanner() {
         borderRadius: "9999px",
       }}
     >
-      We use cookies and ad partners (e.g. Ezoic) for analytics and ads. Images are never
-      uploaded.{" "}
+      We use cookies for analytics
+      {adsense ? " and Google AdSense ads" : ""}. Your images are never uploaded.{" "}
       <a href="/privacy" className="!text-white underline">
         Privacy Policy
       </a>

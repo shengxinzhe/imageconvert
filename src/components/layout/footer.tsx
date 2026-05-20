@@ -37,6 +37,9 @@ export function Footer() {
               <Link href="/dmca">DMCA</Link>
             </li>
             <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
               <Link href="/blog">Blog</Link>
             </li>
             <li>

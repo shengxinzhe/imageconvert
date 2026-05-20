@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SITE_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -20,12 +21,17 @@ export default function TermsPage() {
         You may use our converters for lawful personal and commercial purposes. You must own or
         have rights to the images you convert. Do not use the service to process illegal content.
       </p>
+      <h2>Advertising</h2>
+      <p>
+        The site may display third-party advertisements (e.g. Google AdSense). Ads are separate
+        from image conversion, which runs locally in your browser. See our{" "}
+        <Link href="/privacy">Privacy Policy</Link> for cookies and ad partners.
+      </p>
       <h2>Limits</h2>
       <p>
         Conversion runs in your browser; we do not impose a fixed file-size or batch count cap,
         but very large files or many images at once may fail on low-memory devices. We may change
-        features
-        without notice.
+        features without notice.
       </p>
       <h2>Liability</h2>
       <p>

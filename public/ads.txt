@@ -1,5 +1,5 @@
-# Replace with the full ads.txt from Ezoic dashboard:
-# Monetization → ads.txt → copy or redirect instructions for heicsave.com
-#
-# Example after Ezoic provides your lines:
+# After Google AdSense approves heicsave.com:
+# AdSense → Account → ads.txt → copy the google.com line here, e.g.:
 # google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# File must be live at https://heicsave.com/ads.txt before ads serve fully.

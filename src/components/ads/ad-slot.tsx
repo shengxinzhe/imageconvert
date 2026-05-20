@@ -1,9 +1,16 @@
-import { EzoicAd } from "@/components/ads/ezoic-ad";
-import { getEzoicPlaceholderId, isEzoicEnabled } from "@/lib/ezoic";
+import { AdSenseAd } from "@/components/ads/adsense-ad";
+import { getAdSenseSlotId, hasAdSenseDisplayUnits } from "@/lib/adsense";
 
 export function AdSlot({ position }: { position: "sidebar" | "in-content" }) {
-  if (isEzoicEnabled()) {
-    return <EzoicAd id={getEzoicPlaceholderId(position)} />;
+  const slotId = getAdSenseSlotId(position);
+
+  if (hasAdSenseDisplayUnits() && slotId) {
+    return (
+      <AdSenseAd
+        slotId={slotId}
+        layout={position === "in-content" ? "in-article" : "display"}
+      />
+    );
   }
 
   return (

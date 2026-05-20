@@ -64,7 +64,7 @@ module.exports = {
   },
   additionalPaths: async () => {
     const tools = [...TOOL_PATHS];
-    const pages = ["/contact", "/privacy", "/terms", "/dmca", "/blog"];
+    const pages = ["/about", "/contact", "/privacy", "/terms", "/dmca", "/blog"];
     const blogs = [
       "what-is-heic-file",
       "why-iphone-uses-heic",
