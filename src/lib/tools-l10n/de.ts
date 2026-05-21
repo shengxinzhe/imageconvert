@@ -137,23 +137,52 @@ export const deTools: Record<ToolSlug, ToolLocaleFields> = {
     ],
   },
   "avif-to-jpg": {
-    title: "AVIF in JPG umwandeln — kostenlos online",
-    h1: "AVIF in JPG umwandeln — kostenlos online",
-    metaDescription: "AVIF in JPG im Browser konvertieren — kostenlos, ohne Upload.",
-    keywords: ["avif in jpg", "avif jpg konverter"],
-    heroSubtitle: "AVIF-Bilder für maximale Kompatibilität in JPG umwandeln",
+    title: "AVIF in JPG umwandeln — kostenlos online (ohne Upload)",
+    h1: "AVIF in JPG umwandeln — kostenlos im Browser",
+    metaDescription:
+      "AVIF in JPG kostenlos im Browser konvertieren. Kein Upload, Stapelverarbeitung, JPEG-Qualität wählen, ZIP-Download. Für Windows, Mac, Chrome und Edge.",
+    keywords: [
+      "avif in jpg",
+      "avif zu jpg",
+      "avif jpg konverter",
+      "avif in jpeg umwandeln",
+    ],
+    heroSubtitle:
+      "AVIF in universelle JPG-Dateien umwandeln — privat, schnell und kostenlos",
     whyConvert: {
-      title: "Warum AVIF in JPG?",
+      title: "Warum AVIF in JPG umwandeln?",
       paragraphs: [
-        "AVIF ist modern und klein, aber viele Programme erwarten noch JPG.",
+        "AVIF spart Speicher im Web, aber viele Desktop-Programme, E-Mail-Clients und Büro-Apps öffnen .avif noch nicht zuverlässig.",
+        "Wenn Sie JPG für Folien, Druck oder ältere Software brauchen, ist die Konvertierung im Browser die schnellste Lösung — ohne Upload.",
       ],
     },
-    howToSteps: ["AVIF-Dateien ablegen.", "Konvertieren.", "JPG herunterladen."],
-    privacyNote: "Lokale Verarbeitung — keine Cloud.",
+    howToSteps: [
+      "Seite in Chrome oder Edge öffnen, .avif-Dateien ablegen.",
+      "Optional JPEG-Qualität einstellen (Standard 90 %).",
+      "Konvertieren und JPGs oder ZIP herunterladen.",
+    ],
+    privacyNote: "AVIF wird nur lokal im Browser dekodiert — kein Server-Upload.",
     faqs: [
       {
-        question: "Funktioniert in Safari?",
-        answer: "Am besten Chrome oder Edge auf dem Desktop für AVIF.",
+        question: "AVIF in JPG — wie geht das?",
+        answer:
+          "Dateien hier ablegen, auf Konvertieren klicken, JPGs laden — kostenlos, ohne Konto.",
+      },
+      {
+        question: "Kostenlos und ohne Upload?",
+        answer: "Ja. Kein Wasserzeichen, keine feste Dateianzahl-Obergrenze.",
+      },
+      {
+        question: "Windows öffnet AVIF nicht?",
+        answer: "JPG öffnet in Fotos, Paint und Word — ohne Codec-Installation.",
+      },
+      {
+        question: "Mehrere AVIF-Dateien auf einmal?",
+        answer: "Ja, inklusive ZIP-Download für ganze Ordner.",
+      },
+      {
+        question: "Welcher Browser?",
+        answer: "Chrome oder Edge auf dem Desktop sind am zuverlässigsten.",
       },
     ],
   },

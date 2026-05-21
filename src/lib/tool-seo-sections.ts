@@ -73,22 +73,53 @@ export const extraToolSeoSections: Record<string, SeoSection[]> = {
   ],
   "avif-to-jpg": [
     {
-      heading: "AVIF adoption vs desktop reality",
+      heading: "What is AVIF and why sites use it",
       paragraphs: [
-        "Major browsers display AVIF well, but many desktop photo viewers, slide decks, and print shops do not. Converting AVIF to JPG gives you a copy that opens everywhere while you keep AVIF on the web for performance.",
-        "Use an updated Chrome or Edge for the most reliable in-browser AVIF decode.",
+        "AVIF (AV1 Image File Format) is a next-generation image codec with strong compression—often smaller than JPEG or WebP at similar visual quality. WordPress plugins, CDNs, and performance-focused frontends increasingly serve AVIF to improve Largest Contentful Paint.",
+        "That is great for the web, but your desktop workflow may still require JPG when an app, employer portal, or print shop does not decode AVIF yet.",
       ],
     },
     {
-      heading: "Quality slider and batch ZIP",
+      heading: "Convert AVIF to JPG on Windows",
       paragraphs: [
-        "Set JPEG quality before converting. Add multiple AVIF files, convert in one click, and download all JPGs in a ZIP—ideal when a CDN served AVIF but your team needs JPG attachments.",
+        "Windows Photos and many older viewers do not open .avif by default. Instead of hunting for codec packs, open HeicSave in Chrome or Edge, drop your AVIF files, and download JPGs that open in Photos, Paint, Word, and legacy software.",
+        "No admin install and no Microsoft Store extensions required.",
       ],
     },
     {
-      heading: "AVIF vs JPG size",
+      heading: "Convert AVIF to JPG on Mac",
       paragraphs: [
-        "AVIF is often smaller at similar visual quality. JPG output may be larger—that is the cost of compatibility. For archiving masters, keep the original AVIF when possible.",
+        "Safari and Chrome on macOS can decode AVIF in the browser. For a folder of assets pulled from a website or CDN, batch convert here and download a ZIP of JPGs for Preview, Photos, or design handoffs.",
+      ],
+    },
+    {
+      heading: "AVIF from a website or CDN",
+      paragraphs: [
+        "Right-click saving images from modern sites often yields .avif files. If your editor or messenger rejects them, convert to JPG locally before sharing. Because HeicSave never uploads files, it suits NDA marketing assets and client work.",
+      ],
+    },
+    {
+      heading: "Quality slider, batch convert, and ZIP download",
+      paragraphs: [
+        "Adjust JPEG quality (default 90%) before converting. Add multiple AVIF files in one session—there is no fixed batch cap—and download each JPG or everything as one ZIP. Desktop Chrome or Edge handles large folders best.",
+      ],
+    },
+    {
+      heading: "AVIF vs JPG vs WebP",
+      paragraphs: [
+        "AVIF often wins on file size. WebP is widely supported on the web. JPG is still the safest choice for email, USB drives, and older desktop apps. Convert AVIF to JPG when compatibility matters more than bytes.",
+      ],
+    },
+    {
+      heading: "AVIF to JPG without uploading (privacy)",
+      paragraphs: [
+        "Many online converters send your files to their servers. HeicSave decodes AVIF in your tab with canvas APIs—your images stay on your device. Pair with our [WebP to JPG](/webp-to-jpg) or [AVIF to PNG](/avif-to-png) tools when you need other outputs.",
+      ],
+    },
+    {
+      heading: "Troubleshooting AVIF to JPG conversion",
+      paragraphs: [
+        "If conversion fails, use Chrome or Edge on a desktop, confirm the file extension is .avif (not a mislabeled PNG), and try fewer files at once if the tab runs low on memory. Hard-refresh the page (Ctrl+F5) and retry.",
       ],
     },
   ],

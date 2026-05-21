@@ -379,57 +379,95 @@ export const tools: Record<ToolSlug, ToolConfig> = {
     path: "/avif-to-jpg",
     from: "avif",
     to: "jpg",
-    title: "AVIF to JPG Converter — Free & Online",
-    h1: "AVIF to JPG Converter — Free & Online",
+    title: "AVIF to JPG Converter — Free Online (No Upload)",
+    h1: "Convert AVIF to JPG — Free Online in Your Browser",
     metaDescription:
-      "Convert AVIF to JPG free online. Browser-based AVIF decoder. Perfect when apps don't support AVIF yet.",
-    keywords: ["avif to jpg", "convert avif to jpg", "avif to jpeg online"],
-    heroSubtitle: "Convert next-gen AVIF images to universal JPG",
+      "Convert AVIF to JPG free in your browser. No upload, no signup—batch convert .avif files, adjust JPEG quality, download ZIP. Works on Windows, Mac, and Chrome.",
+    keywords: [
+      "avif to jpg",
+      "convert avif to jpg",
+      "avif to jpg converter",
+      "avif to jpeg",
+      "avif to jpg online free",
+      "convert avif to jpg without uploading",
+    ],
+    heroSubtitle:
+      "Turn AVIF images into universal JPG files—private, instant, and free in your browser",
     whyConvert: {
       title: "Why Convert AVIF to JPG?",
       paragraphs: [
-        "AVIF offers outstanding compression but adoption in desktop software lags behind browsers.",
-        "JPG ensures your images open everywhere—from PowerPoint to older photo viewers.",
-        "Google and CDNs increasingly serve AVIF; conversion tools help when you need a local JPG copy.",
+        "AVIF (AV1 Image File Format) delivers excellent compression in Chrome, Firefox, and Edge—but many desktop apps, email clients, and slide decks still expect JPG or PNG.",
+        "Websites and CDNs increasingly serve AVIF for speed. When you need to edit in Photoshop (older versions), attach to email, or share with someone on legacy software, converting AVIF to JPG is the practical fix.",
+        "HeicSave runs entirely in your browser: your AVIF files are decoded locally and never uploaded to our servers.",
       ],
     },
     howToSteps: [
-      "Upload AVIF files (Chrome/Edge/Firefox recommended).",
-      "Convert to JPG in-browser.",
-      "Download results immediately.",
+      "Open this page in Chrome or Edge (best AVIF support). Drag .avif files into the drop zone or click Browse files.",
+      "Set JPEG quality with the slider (default 90%) if you want smaller or sharper JPGs.",
+      "Click Convert, then download each JPG or use Download all as ZIP for multiple files.",
     ],
-    privacyNote: "AVIF never leaves your device during conversion.",
+    privacyNote:
+      "AVIF is decoded in your browser using canvas APIs. Nothing is sent to our servers for conversion.",
     faqs: [
       {
-        question: "What is AVIF?",
+        question: "How do I convert AVIF to JPG?",
         answer:
-          "AVIF (AV1 Image File Format) is a modern image format with excellent compression, supported in major browsers.",
+          "Open this tool in Chrome or Edge, add your .avif files, click Convert, and download JPGs. No install and no account required.",
       },
       {
-        question: "Why can't I open AVIF on my computer?",
+        question: "Is AVIF to JPG conversion free?",
         answer:
-          "Many desktop apps lack AVIF codecs. Converting to JPG solves compatibility.",
+          "Yes. No watermark, no paid tier, and no fixed file-count cap. Very large batches work best on desktop browsers.",
       },
       {
-        question: "AVIF vs JPG quality?",
+        question: "Why can't I open AVIF on Windows or Mac?",
         answer:
-          "AVIF often looks better at smaller sizes. JPG is the compatibility choice.",
+          "Many photo viewers and office apps lack AVIF codecs. JPG opens in Photos, Preview, PowerPoint, and almost every legacy tool.",
       },
       {
-        question: "Browser requirements?",
-        answer: "Use an updated browser with AVIF decode support for canvas conversion.",
+        question: "Can I convert AVIF to JPG without losing quality?",
+        answer:
+          "Use the quality slider (default 90%). AVIF is already compressed; high JPEG quality keeps photos sharp for web and print sharing.",
       },
       {
-        question: "Is conversion free?",
-        answer: "Yes. No fixed limits; very large batches may need a desktop browser.",
+        question: "Can I convert multiple AVIF files at once?",
+        answer:
+          "Yes. Add many .avif files in one session and download everything as a single ZIP after conversion.",
+      },
+      {
+        question: "Do you upload my AVIF files?",
+        answer:
+          "No. Conversion is client-side only. We do not receive your image bytes.",
+      },
+      {
+        question: "What is an AVIF file?",
+        answer:
+          "AVIF is a modern image format based on AV1 video compression. It is common on performance-focused websites and in Chrome-based browsers.",
+      },
+      {
+        question: "AVIF vs JPG — which should I use?",
+        answer:
+          "Keep AVIF on your site for bandwidth savings. Use JPG when you need maximum compatibility outside the browser.",
+      },
+      {
+        question: "Which browser works best?",
+        answer:
+          "Chrome or Edge on desktop are the most reliable for decoding AVIF before export to JPG. Firefox also supports AVIF in current versions.",
+      },
+      {
+        question: "AVIF vs WebP vs JPG?",
+        answer:
+          "AVIF often beats both on size at similar quality. JPG remains the universal sharing format; use our WebP tools if you need that path instead.",
       },
     ],
     relatedSlugs: related("avif-to-jpg"),
     seoSections: [
       {
-        heading: "AVIF to JPG — the blue ocean converter",
-        content:
-          "Few dedicated AVIF tools exist compared to HEIC converters. HeicSave targets early adopters and SEO for avif-to-jpg queries as AVIF deployment grows across the web.",
+        heading: "Convert AVIF to JPG for email, slides, and print",
+        paragraphs: [
+          "Marketing sites and blogs increasingly ship AVIF to save bandwidth. Your team may still need JPG for Outlook attachments, PowerPoint decks, print proofs, or client portals that reject AVIF uploads.",
+          "Browser-local conversion avoids sending campaign assets to random cloud converters.",
+        ],
       },
     ],
   },
