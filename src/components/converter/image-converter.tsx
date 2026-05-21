@@ -1,6 +1,15 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
+import { useParams } from "next/navigation";
+import type { AppLocale } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
+import {
+  trackToolConvertError,
+  trackToolConvertStart,
+  trackToolConvertSuccess,
+  trackToolDownloadZip,
+} from "@/lib/analytics-events";
 import { formatConversionError } from "@/lib/convert-errors";
 import { getConverterSoftWarnings } from "@/lib/converter-warnings";
 import {
@@ -29,14 +38,20 @@ interface ConvertedFile {
 interface ImageConverterProps {
   from: InputFormat;
   to: OutputFormat;
+  toolSlug: string;
   audience?: ToolAudience;
 }
 
 export function ImageConverter({
   from,
   to,
+  toolSlug,
   audience = "heic",
 }: ImageConverterProps) {
+  const params = useParams();
+  const locale = (routing.locales.includes(params.locale as AppLocale)
+    ? params.locale
+    : routing.defaultLocale) as AppLocale;
   const isDev = audience === "developer";
   const [files, setFiles] = useState<File[]>([]);
   const [results, setResults] = useState<ConvertedFile[]>([]);
@@ -71,6 +86,13 @@ export function ImageConverter({
 
   const convertAll = async () => {
     if (!files.length) return;
+    trackToolConvertStart({
+      tool: toolSlug,
+      from,
+      to,
+      locale,
+      fileCount: files.length,
+    });
     setConverting(true);
     setError(null);
     setProgress({ current: 0, total: files.length });
@@ -101,7 +123,21 @@ export function ImageConverter({
         }
       }
       setResults(converted);
+      trackToolConvertSuccess({
+        tool: toolSlug,
+        from,
+        to,
+        locale,
+        fileCount: converted.length,
+      });
     } catch (err) {
+      trackToolConvertError({
+        tool: toolSlug,
+        from,
+        to,
+        locale,
+        fileCount: files.length,
+      });
       setError(
         err instanceof Error
           ? err.message
@@ -119,6 +155,13 @@ export function ImageConverter({
 
   const downloadZip = async () => {
     if (!results.length) return;
+    trackToolDownloadZip({
+      tool: toolSlug,
+      from,
+      to,
+      locale,
+      fileCount: results.length,
+    });
     setZipping(true);
     setError(null);
     try {

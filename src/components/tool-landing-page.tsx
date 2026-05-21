@@ -55,7 +55,12 @@ export async function ToolLandingPage({
 
           <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_260px]">
             <div className={cn("p-6", style.card)}>
-              <ImageConverter from={tool.from} to={tool.to} audience={audience} />
+              <ImageConverter
+                from={tool.from}
+                to={tool.to}
+                toolSlug={tool.slug}
+                audience={audience}
+              />
             </div>
             <aside className="hidden lg:block">
               <AdSlot position="sidebar" />

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
-import { Analytics } from "@vercel/analytics/react";
+import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -72,7 +72,7 @@ export default function LocaleLayout({
         <main>{children}</main>
         <Footer locale={locale as AppLocale} />
         <CookieBanner />
-        <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );

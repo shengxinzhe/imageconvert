@@ -4,6 +4,7 @@ import { useParams, usePathname, useRouter } from "next/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { getT } from "@/lib/i18n/translations";
+import { trackLocaleSwitch } from "@/lib/analytics-events";
 import { localePath } from "@/lib/locale-path";
 import { cn } from "@/lib/utils";
 
@@ -40,7 +41,10 @@ export function LanguageSwitcher() {
         <button
           key={loc}
           type="button"
-          onClick={() => router.push(localePath(pathWithoutLocale, loc))}
+          onClick={() => {
+            if (loc !== locale) trackLocaleSwitch({ from: locale, to: loc });
+            router.push(localePath(pathWithoutLocale, loc));
+          }}
           className={cn(
             "rounded px-2 py-1 font-mono text-xs transition",
             loc === locale
