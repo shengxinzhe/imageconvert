@@ -51,7 +51,8 @@ module.exports = {
   generateRobotsTxt: true,
   changefreq: "weekly",
   priority: 0.7,
-  exclude: [...EXCLUDED_PATHS],
+  // Next.js static routes use /en/... internally; middleware 301s them to unprefixed URLs.
+  exclude: [...EXCLUDED_PATHS, "/en", "/en/*"],
   robotsTxtOptions: {
     additionalSitemaps: [],
     policies: [
@@ -63,7 +64,7 @@ module.exports = {
     ],
   },
   transform: async (config, path) => {
-    if (EXCLUDED_PATHS.has(path)) {
+    if (EXCLUDED_PATHS.has(path) || path === "/en" || path.startsWith("/en/")) {
       return null;
     }
 
