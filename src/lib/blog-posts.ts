@@ -217,7 +217,142 @@ Batch and ZIP work the same as our HEIC tools: multiple files, download together
 
 ## Future
 
-As AVIF support spreads, converters remain a bridge format—similar to HEIC today.`,
+As AVIF support spreads, converters remain a bridge format—similar to HEIC today.
+
+**Need step-by-step on Windows?** Read [How to convert AVIF to JPG on Windows](/blog/convert-avif-to-jpg-windows).`,
+  },
+  {
+    slug: "convert-avif-to-jpg-windows",
+    title: "How to Convert AVIF to JPG on Windows (Free, No Upload, 2026)",
+    description:
+      "Convert AVIF images to JPG on Windows 10/11 in Chrome or Edge—batch files, adjust quality, download ZIP. No install, no server upload.",
+    publishedAt: "2026-05-19",
+    readMinutes: 11,
+    content: `You downloaded an **.avif** image—or a site exported one—and Windows will not open it in email, Word, or an old uploader. **JPG** is still the format everyone accepts. This guide shows reliable ways to convert **AVIF to JPG on Windows** without installing codecs or uploading photos to a random server.
+
+> **Quick answer:** Open our free **[AVIF to JPG](/avif-to-jpg)** tool in **Chrome or Edge**, drop your files, set JPEG quality, convert, and download JPGs or a ZIP—all in the browser.
+
+## What is AVIF?
+
+**AVIF** (AV1 Image File Format) uses modern compression. Websites and CDNs use it because files are small and sharp. Windows **Photos**, older **Paint** builds, and many desktop apps still expect **.jpg** or **.png**, not .avif.
+
+That gap is why searches like **“avif to jpg”** are common: the file is fine in a browser tab but stuck everywhere else.
+
+## Does Windows 10/11 open AVIF natively?
+
+Support has improved, but it is inconsistent:
+
+- **Microsoft Store codecs** may help in some apps—not every workflow (Outlook, legacy CMS, print shops).
+- **Paint** on older Windows builds often has no AVIF.
+- **Batch folders** from a CDN or design export are painful to open one-by-one.
+
+Converting to JPG once is usually faster than fighting codecs on every PC you touch.
+
+## Method 1: Browser conversion (recommended — no upload)
+
+**HeicSave** runs conversion **locally** in your tab using the browser’s image decoder and Canvas. Files are **not uploaded** to us for processing.
+
+### Steps on Windows
+
+1. Open **Chrome** or **Edge** (best AVIF decode support).
+2. Go to **[AVIF to JPG](/avif-to-jpg)**.
+3. Drag one or many **.avif** files into the drop zone (or click to browse).
+4. Move the **JPEG quality** slider if you need smaller files (default is tuned for sharing).
+5. Click **Convert**.
+6. Download each JPG or use **Download all as ZIP** for batches.
+
+### Why use the browser instead of a random “online converter”?
+
+| | Browser-local (HeicSave) | Typical cloud uploader |
+|---|---|---|
+| Privacy | Stays on your PC | Uploads to their server |
+| Batch | Many files + ZIP | Often limited |
+| Account | Not required | Often required |
+| Watermark | None on our tool | Common on free tiers |
+
+For client work, medical scans, or unreleased assets, local conversion avoids third-party storage.
+
+## Method 2: Windows Photos / Paint
+
+If AVIF already opens on your PC:
+
+1. Open the image in **Photos**.
+2. **⋯ → Save as** or **Print → Microsoft Print to PDF** workarounds are clumsy for batches.
+3. **Paint** (newer Windows 11) may open AVIF and **Save as → JPEG** for one file.
+
+For **dozens of files** from a download folder, Method 1 scales better.
+
+## Method 3: Desktop tools (offline, install required)
+
+- **XnConvert** — free, batch, scripts; good for power users.
+- **FFmpeg** — run **ffmpeg -i input.avif output.jpg** in a terminal; fast for IT teams.
+- **IrfanView** with plugins — lightweight viewer + batch.
+
+These shine when you need automation; for a one-off folder on a locked-down PC, the browser tool avoids admin rights.
+
+## JPEG quality: what slider value should you use?
+
+- **90–95%** — near-original look; larger JPGs; good for printing or archiving.
+- **80–85%** — sweet spot for email and chat; much smaller files.
+- **70% and below** — only when size matters more than fine detail.
+
+Our [AVIF to JPG](/avif-to-jpg) tool exposes the slider **before** you convert so you do not re-run a huge batch.
+
+## Batch conversion and ZIP download
+
+There is no artificial “5 files only” cap—practical limits are **RAM** and browser stability. Tips for large sets on Windows:
+
+- Close other heavy tabs before converting 100+ images.
+- Split into chunks of 50–80 if the tab slows down.
+- Prefer desktop Chrome/Edge over mobile browsers for big folders.
+- Use **ZIP** once at the end instead of clicking save on every file.
+
+## Common scenarios
+
+### Microsoft Designer / CDN exports
+
+Design tools and performance plugins sometimes deliver **.avif** assets. If a Windows app rejects them, convert to JPG, then import. For transparency, use **[AVIF to PNG](/avif-to-png)** instead.
+
+### Email and legacy upload forms
+
+Most web forms still accept **.jpg** only. Convert AVIF → JPG before attaching.
+
+### WordPress or static site assets
+
+Keep AVIF for the live site if you use a **picture** element with JPG fallbacks; keep a **JPG master** for editors and stakeholders on Windows.
+
+## Troubleshooting
+
+| Problem | What to try |
+|---|---|
+| File will not load | Confirm extension is .avif; try Chrome/Edge; re-download if corrupt |
+| Colors look dull | AVIF is often wide-gamut; JPG is sRGB—slight shift is normal |
+| Conversion fails mid-batch | Fewer files per run; close other tabs; check available RAM |
+| Need transparency | Use [AVIF to PNG](/avif-to-png); JPG has no alpha |
+| Animated AVIF | Our tool targets still images; export a frame first |
+
+## AVIF vs JPG at a glance
+
+| | AVIF | JPG |
+|---|---|---|
+| Size | Usually smaller | Larger |
+| Windows app support | Growing, uneven | Universal |
+| Best for | Web delivery, archives | Sharing, email, print |
+| Transparency | Yes (AVIF) | No |
+
+## Related tools and guides
+
+- **[AVIF to JPG](/avif-to-jpg)** — main converter (this guide’s shortcut)
+- **[AVIF to PNG](/avif-to-png)** — lossless-style raster for design
+- **[AVIF explained](/blog/avif-explained)** — format background
+- **[WebP to JPG](/webp-to-jpg)** — similar workflow for .webp files
+- **[HEIC to JPG](/heic-to-jpg)** — iPhone photos on Windows
+
+## Privacy
+
+Conversion runs in your browser. We do not receive your image bytes for processing. Analytics and ads (if enabled) follow our [Privacy](/privacy) page and cookie banner—separate from your files.
+
+**Ready?** Open **[AVIF to JPG](/avif-to-jpg)** and convert your first file in under a minute.`,
   },
   {
     slug: "webp-vs-jpg",
@@ -434,4 +569,10 @@ Need universal Windows compatibility? After conversion, JPG opens in Photos, Pai
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
+}
+
+export function getBlogPostsNewestFirst(): BlogPost[] {
+  return [...blogPosts].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
 }

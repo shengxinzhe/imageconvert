@@ -37,6 +37,7 @@ const BLOG_SLUGS = [
   "heic-mac-guide",
   "best-heic-converters-2026",
   "avif-explained",
+  "convert-avif-to-jpg-windows",
   "webp-vs-jpg",
   "webp-for-developers",
   "privacy-browser-image-conversion",
