@@ -68,6 +68,18 @@ export default function HomePage({ params }: PageProps) {
               {t("home.heroTrust")}
             </li>
           </ul>
+          <aside
+            aria-label={t("home.aiSummaryTitle")}
+            className="mx-auto mt-10 max-w-2xl rounded-vercel-lg border border-hairline bg-canvas px-5 py-4 text-left text-sm text-body shadow-card"
+          >
+            <h2 className="font-medium text-ink">{t("home.aiSummaryTitle")}</h2>
+            <ul className="mt-3 list-disc space-y-2 pl-5 marker:text-mute">
+              <li>{t("home.aiFact1")}</li>
+              <li>{t("home.aiFact2")}</li>
+              <li>{t("home.aiFact3")}</li>
+              <li>{t("home.aiFact4")}</li>
+            </ul>
+          </aside>
         </div>
       </section>
 

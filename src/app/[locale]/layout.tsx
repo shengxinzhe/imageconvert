@@ -59,6 +59,7 @@ export default function LocaleLayout({
   return (
     <html lang={locale} className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
         <meta name="google-adsense-account" content={ADSENSE_CLIENT_ID_DEFAULT} />
         <script
           async

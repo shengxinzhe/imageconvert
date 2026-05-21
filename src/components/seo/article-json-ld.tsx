@@ -28,6 +28,10 @@ export function ArticleJsonLd({ post }: { post: BlogPost }) {
     },
     image: `${SITE_URL}/og.png`,
     inLanguage: "en-US",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["article h1", "article p"],
+    },
   };
 
   return (

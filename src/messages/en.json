@@ -30,7 +30,12 @@
     "blogLabel": "Guides",
     "blogTitle": "Blog",
     "blogSubtitle": "HEIC, WebP, and AVIF guides for search and sharing.",
-    "blogViewAll": "View all articles"
+    "blogViewAll": "View all articles",
+    "aiSummaryTitle": "At a glance",
+    "aiFact1": "HeicSave converts HEIC, WebP, and AVIF in your browser—files are not uploaded for processing.",
+    "aiFact2": "No account, no watermark, and batch download as ZIP with adjustable JPEG/WebP quality.",
+    "aiFact3": "Best results in Chrome or Edge on desktop for HEIC and AVIF; ideal for iPhone photos on Windows PCs.",
+    "aiFact4": "Free guides cover HEIC on Windows, AVIF to JPG, and transferring iPhone photos without cloud upload."
   },
   "tool": {
     "filesStay": "Files never leave your device",

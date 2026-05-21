@@ -1,4 +1,5 @@
 import type { AppLocale } from "@/i18n/routing";
+import { AI_TOOL_CATALOG, SITE_AI_SUMMARY } from "@/lib/ai-discovery";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 const SITE_DESCRIPTION: Record<AppLocale, string> = {
@@ -32,6 +33,26 @@ export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
         name: SITE_NAME,
         url: SITE_URL,
         description: SITE_DESCRIPTION[locale],
+        knowsAbout: [
+          "HEIC image conversion",
+          "AVIF image conversion",
+          "WebP image conversion",
+          "Browser-local privacy-preserving tools",
+        ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${SITE_URL}/#tools`,
+        name: "Free image converters",
+        description: SITE_AI_SUMMARY.tagline,
+        numberOfItems: AI_TOOL_CATALOG.length,
+        itemListElement: AI_TOOL_CATALOG.map((tool, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: tool.name,
+          url: `${SITE_URL}/${tool.slug}`,
+          description: tool.useWhen,
+        })),
       },
     ],
   };

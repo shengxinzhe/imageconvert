@@ -1,4 +1,4 @@
-import type { AppLocale } from "@/i18n/routing";
+import { routing, type AppLocale } from "@/i18n/routing";
 import type { ToolConfig } from "@/lib/tools-config";
 import { absoluteUrl } from "@/lib/locale-path";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
@@ -67,9 +67,31 @@ export function ToolJsonLd({ tool, locale }: { tool: ToolConfig; locale: AppLoca
     })),
   };
 
+  const homeUrl =
+    locale === routing.defaultLocale ? SITE_URL : `${SITE_URL}/${locale}`;
+
+  const breadcrumbs = {
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: homeUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: tool.title.replace(" — Free & Online", ""),
+        item: pageUrl,
+      },
+    ],
+  };
+
   const graph = {
     "@context": "https://schema.org",
-    "@graph": [webApplication, howTo, faqPage],
+    "@graph": [webApplication, howTo, faqPage, breadcrumbs],
   };
 
   return (
