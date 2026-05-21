@@ -21,6 +21,7 @@ import {
   type OutputFormat,
 } from "@/lib/convert";
 import { buildZipBlob, downloadBlob } from "@/lib/download-zip";
+import { getT } from "@/lib/i18n/translations";
 import { QualityControl } from "@/components/converter/quality-control";
 import { Button } from "@/components/ui/button";
 import { Archive, Download, Loader2, Upload, X } from "lucide-react";
@@ -52,6 +53,7 @@ export function ImageConverter({
   const locale = (routing.locales.includes(params.locale as AppLocale)
     ? params.locale
     : routing.defaultLocale) as AppLocale;
+  const t = getT(locale);
   const isDev = audience === "developer";
   const [files, setFiles] = useState<File[]>([]);
   const [results, setResults] = useState<ConvertedFile[]>([]);
@@ -171,7 +173,7 @@ export function ImageConverter({
       const stamp = new Date().toISOString().slice(0, 10);
       downloadBlob(zip, `heicsave-${to}-${stamp}.zip`);
     } catch {
-      setError("Could not create ZIP. Try downloading files individually.");
+      setError(t("converter.zipError"));
     } finally {
       setZipping(false);
     }
@@ -216,12 +218,10 @@ export function ImageConverter({
         )}
       >
         <Upload className="mx-auto h-8 w-8 text-mute" aria-hidden />
-        <p className="mt-4 text-sm font-medium text-ink">Drag & drop images here</p>
-        <p className="mt-1 font-mono text-xs text-mute">
-          No upload · Multiple files · Download individually or as ZIP
-        </p>
+        <p className="mt-4 text-sm font-medium text-ink">{t("converter.dropTitle")}</p>
+        <p className="mt-1 font-mono text-xs text-mute">{t("converter.dropHint")}</p>
         <label className="mt-5 inline-flex cursor-pointer items-center justify-center rounded-full border border-hairline bg-canvas px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2">
-          <span className="sr-only">Choose files</span>
+          <span className="sr-only">{t("converter.browseSr")}</span>
           <input
             type="file"
             accept={accept}
@@ -229,7 +229,7 @@ export function ImageConverter({
             className="hidden"
             onChange={(e) => e.target.files && addFiles(e.target.files)}
           />
-          Browse files
+          {t("converter.browse")}
         </label>
       </div>
 
@@ -248,7 +248,7 @@ export function ImageConverter({
                 type="button"
                 onClick={() => removeFile(index)}
                 className="shrink-0 rounded p-1 text-mute hover:bg-canvas-soft-2 hover:text-ink"
-                aria-label={`Remove ${f.name}`}
+                aria-label={t("converter.remove", { name: f.name })}
                 disabled={converting}
               >
                 <X className="h-3.5 w-3.5" />
@@ -286,17 +286,20 @@ export function ImageConverter({
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               {progress
-                ? `Converting ${progress.current}/${progress.total}…`
-                : "Converting…"}
+                ? t("converter.convertingProgress", {
+                    current: progress.current,
+                    total: progress.total,
+                  })
+                : t("converter.converting")}
             </>
           ) : (
-            "Convert"
+            t("converter.convert")
           )}
         </Button>
         {(files.length > 0 || results.length > 0) && (
           <Button variant="secondary" onClick={clear} type="button" disabled={converting}>
             <X className="mr-1 h-4 w-4" />
-            Clear
+            {t("converter.clear")}
           </Button>
         )}
       </div>
@@ -313,12 +316,12 @@ export function ImageConverter({
               {zipping ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Building ZIP…
+                  {t("converter.buildingZip")}
                 </>
               ) : (
                 <>
                   <Archive className="mr-2 h-4 w-4" />
-                  Download all as ZIP ({results.length})
+                  {t("converter.downloadZip", { count: results.length })}
                 </>
               )}
             </Button>
@@ -332,7 +335,7 @@ export function ImageConverter({
                 <span className="truncate font-mono text-xs text-ink">{r.outputName}</span>
                 <Button size="sm" variant="ghost" onClick={() => download(r)}>
                   <Download className="mr-1 h-4 w-4" />
-                  Download
+                  {t("converter.download")}
                 </Button>
               </li>
             ))}

@@ -5,17 +5,23 @@ import ReactMarkdown from "react-markdown";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import type { AppLocale } from "@/i18n/routing";
+import { localePath } from "@/lib/locale-path";
 
 function MarkdownLink({
   href,
+  locale,
   children,
   ...props
-}: AnchorHTMLAttributes<HTMLAnchorElement>) {
+}: AnchorHTMLAttributes<HTMLAnchorElement> & { locale: AppLocale }) {
   if (!href) return <span>{children}</span>;
 
   if (href.startsWith("/")) {
     return (
-      <Link href={href} className="font-medium text-[var(--mintlify-green)] no-underline hover:underline">
+      <Link
+        href={localePath(href, locale)}
+        className="font-medium text-[var(--mintlify-green)] no-underline hover:underline"
+      >
         {children}
       </Link>
     );
@@ -35,15 +41,23 @@ function MarkdownLink({
   );
 }
 
-const components: Components = {
-  a: ({ href, children, ...props }) => (
-    <MarkdownLink href={href} {...props}>
-      {children}
-    </MarkdownLink>
-  ),
-};
+function markdownComponents(locale: AppLocale): Components {
+  return {
+    a: ({ href, children, ...props }) => (
+      <MarkdownLink href={href} locale={locale} {...props}>
+        {children}
+      </MarkdownLink>
+    ),
+  };
+}
 
-export function BlogMarkdown({ content }: { content: string }) {
+export function BlogMarkdown({
+  content,
+  locale,
+}: {
+  content: string;
+  locale: AppLocale;
+}) {
   return (
     <div className="prose-mint">
       <ReactMarkdown
@@ -52,7 +66,7 @@ export function BlogMarkdown({ content }: { content: string }) {
           rehypeSlug,
           [rehypeAutolinkHeadings, { behavior: "wrap" }],
         ]}
-        components={components}
+        components={markdownComponents(locale)}
       >
         {content}
       </ReactMarkdown>

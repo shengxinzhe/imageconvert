@@ -1,58 +1,32 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { DMCA_EMAIL, PRIVACY_EMAIL, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { LegalPage } from "@/components/legal/legal-page";
+import { routing, type AppLocale } from "@/i18n/routing";
+import { getLegalPage } from "@/lib/legal-l10n";
+import { absoluteUrl, hreflangLanguages } from "@/lib/locale-path";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: `Contact ${SITE_NAME} for support, privacy requests, and general questions.`,
-};
+type PageProps = { params: { locale: string } };
 
-export default function ContactPage() {
-  return (
-    <div className="mx-auto max-w-3xl px-4 py-16 prose-vercel lg:px-6">
-      <h1>Contact {SITE_NAME}</h1>
-      <p>
-        We run {SITE_NAME} at{" "}
-        <a href={SITE_URL} className="font-medium text-ink">
-          {SITE_URL.replace("https://", "")}
-        </a>
-        . Image conversion happens in your browser—we do not receive your photo files.
-      </p>
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
-      <h2>General &amp; privacy</h2>
-      <p>
-        Questions about cookies, GDPR, or how the site works:{" "}
-        <a href={`mailto:${PRIVACY_EMAIL}`}>{PRIVACY_EMAIL}</a>
-      </p>
+export function generateMetadata({ params }: PageProps): Metadata {
+  const locale = params.locale as AppLocale;
+  const { meta } = getLegalPage("contact", locale);
+  const url = absoluteUrl("/contact", locale);
 
-      <h2>Copyright (DMCA)</h2>
-      <p>
-        Copyright notices and takedown requests:{" "}
-        <a href={`mailto:${DMCA_EMAIL}`}>{DMCA_EMAIL}</a>
-      </p>
-      <p>
-        See our <Link href="/dmca">DMCA policy</Link> for required notice details.
-      </p>
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: url,
+      languages: hreflangLanguages("/contact"),
+    },
+  };
+}
 
-      <h2>Response time</h2>
-      <p>
-        We aim to reply within a few business days. We cannot recover converted files or
-        debug device-specific issues without steps to reproduce (browser, OS, file type).
-      </p>
-
-      <h2>Before you write</h2>
-      <ul>
-        <li>
-          Conversion problems? Try{" "}
-          <Link href="/heic-to-jpg">HEIC to JPG</Link> in Chrome or Edge on a desktop.
-        </li>
-        <li>
-          Who runs the site? See <Link href="/about">About</Link>.
-        </li>
-        <li>
-          Privacy rights (EEA/UK)? See the <Link href="/privacy">Privacy Policy</Link>.
-        </li>
-      </ul>
-    </div>
-  );
+export default function ContactPage({ params }: PageProps) {
+  const locale = params.locale as AppLocale;
+  const content = getLegalPage("contact", locale);
+  return <LegalPage content={content} locale={locale} />;
 }

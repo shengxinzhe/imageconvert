@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
-import { getBlogPostsNewestFirst } from "@/lib/blog-posts";
+import { getLocalizedBlogPostsNewestFirst } from "@/lib/blog-l10n";
 import { SITE_NAME } from "@/lib/constants";
 import { getT } from "@/lib/i18n/translations";
 import { absoluteUrl, hreflangLanguages } from "@/lib/locale-path";
@@ -17,12 +17,12 @@ const BLOG_META: Record<AppLocale, { title: string; description: string }> = {
   de: {
     title: "Blog — HEIC-, WebP- & AVIF-Ratgeber",
     description:
-      "Ratgeber zu HEIC, WebP, AVIF, iPhone-Fotos und privater Browser-Konvertierung (Artikel auf Englisch).",
+      "Ratgeber zu HEIC, WebP, AVIF, iPhone-Fotos und privater Browser-Konvertierung — auch auf Deutsch.",
   },
   fr: {
     title: "Blog — guides HEIC, WebP et AVIF",
     description:
-      "Guides HEIC, WebP, AVIF, photos iPhone et conversion privée dans le navigateur (articles en anglais).",
+      "Guides HEIC, WebP, AVIF, photos iPhone et conversion privée dans le navigateur — aussi en français.",
   },
 };
 
@@ -57,7 +57,7 @@ export default function BlogIndexPage({ params }: PageProps) {
         {t("home.blogSubtitle")} · {SITE_NAME}
       </p>
       <ul className="mt-12 divide-y divide-hairline border-y border-hairline">
-        {getBlogPostsNewestFirst().map((post) => (
+        {getLocalizedBlogPostsNewestFirst(locale).map((post) => (
           <li key={post.slug} className="py-8 first:pt-8">
             <Link href={`/blog/${post.slug}`} className="group block">
               <h2 className="text-xl font-medium text-ink group-hover:text-link">
@@ -65,7 +65,7 @@ export default function BlogIndexPage({ params }: PageProps) {
               </h2>
               <p className="mt-2 text-body">{post.description}</p>
               <p className="mt-3 font-mono text-xs text-mute">
-                {post.publishedAt} · {post.readMinutes} min read
+                {post.publishedAt} · {post.readMinutes} {t("blog.minRead")}
               </p>
             </Link>
           </li>

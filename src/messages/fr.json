@@ -29,7 +29,7 @@
     "heicToolsTitle": "Outils photo iPhone",
     "blogLabel": "Guides",
     "blogTitle": "Blog",
-    "blogSubtitle": "Guides HEIC, WebP et AVIF (en anglais).",
+    "blogSubtitle": "Guides HEIC, WebP et AVIF — certains en français.",
     "blogViewAll": "Tous les articles",
     "aiSummaryTitle": "En bref",
     "aiFact1": "HeicSave convertit HEIC, WebP et AVIF dans le navigateur—les fichiers ne sont pas envoyés pour traitement.",
@@ -58,6 +58,25 @@
   },
   "blog": {
     "back": "← Blog",
-    "englishNotice": "Cet article est disponible en anglais."
+    "englishNotice": "Cet article est disponible en anglais.",
+    "minRead": "min de lecture"
+  },
+  "converter": {
+    "dropTitle": "Déposez vos images ici",
+    "dropHint": "Sans envoi · Plusieurs fichiers · Téléchargement unitaire ou ZIP",
+    "browse": "Parcourir les fichiers",
+    "browseSr": "Choisir des fichiers",
+    "convert": "Convertir",
+    "converting": "Conversion…",
+    "convertingProgress": "Conversion {current}/{total}…",
+    "clear": "Effacer",
+    "remove": "Retirer {name}",
+    "download": "Télécharger",
+    "downloadZip": "Tout en ZIP ({count})",
+    "buildingZip": "Création du ZIP…",
+    "zipError": "Impossible de créer le ZIP. Téléchargez les fichiers un par un.",
+    "jpegQuality": "Qualité JPEG",
+    "webpQuality": "Qualité WebP",
+    "qualityHint": "Plus haut = plus net et plus lourd. Défaut {default}%."
   }
 }

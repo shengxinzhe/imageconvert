@@ -1,45 +1,32 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { SITE_NAME } from "@/lib/constants";
+import { LegalPage } from "@/components/legal/legal-page";
+import { routing, type AppLocale } from "@/i18n/routing";
+import { getLegalPage } from "@/lib/legal-l10n";
+import { absoluteUrl, hreflangLanguages } from "@/lib/locale-path";
 
-export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: `Terms of service for using ${SITE_NAME} free online image converters.`,
-};
+type PageProps = { params: { locale: string } };
 
-export default function TermsPage() {
-  return (
-    <div className="mx-auto max-w-3xl px-4 py-16 prose-vercel lg:px-6">
-      <h1>Terms of Service</h1>
-      <p>Last updated: May 19, 2026</p>
-      <p>
-        By using {SITE_NAME}, you agree to these terms. The service is provided &quot;as is&quot;
-        without warranty.
-      </p>
-      <h2>Use of service</h2>
-      <p>
-        You may use our converters for lawful personal and commercial purposes. You must own or
-        have rights to the images you convert. Do not use the service to process illegal content.
-      </p>
-      <h2>Advertising</h2>
-      <p>
-        The site may display third-party advertisements (e.g. Google AdSense). Ads are separate
-        from image conversion, which runs locally in your browser. See our{" "}
-        <Link href="/privacy">Privacy Policy</Link> for cookies and ad partners.
-      </p>
-      <h2>Limits</h2>
-      <p>
-        Conversion runs in your browser; we do not impose a fixed file-size or batch count cap,
-        but very large files or many images at once may fail on low-memory devices. We may change
-        features without notice.
-      </p>
-      <h2>Liability</h2>
-      <p>
-        We are not liable for data loss, conversion errors, or damages arising from use of the
-        tools. Always keep backups of original files.
-      </p>
-      <h2>Changes</h2>
-      <p>We may update these terms. Continued use constitutes acceptance.</p>
-    </div>
-  );
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export function generateMetadata({ params }: PageProps): Metadata {
+  const locale = params.locale as AppLocale;
+  const { meta } = getLegalPage("terms", locale);
+  const url = absoluteUrl("/terms", locale);
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: url,
+      languages: hreflangLanguages("/terms"),
+    },
+  };
+}
+
+export default function TermsPage({ params }: PageProps) {
+  const locale = params.locale as AppLocale;
+  const content = getLegalPage("terms", locale);
+  return <LegalPage content={content} locale={locale} />;
 }

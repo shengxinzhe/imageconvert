@@ -58,6 +58,25 @@
   },
   "blog": {
     "back": "← Blog",
-    "englishNotice": "This article is available in English."
+    "englishNotice": "This article is available in English.",
+    "minRead": "min read"
+  },
+  "converter": {
+    "dropTitle": "Drag & drop images here",
+    "dropHint": "No upload · Multiple files · Download individually or as ZIP",
+    "browse": "Browse files",
+    "browseSr": "Choose files",
+    "convert": "Convert",
+    "converting": "Converting…",
+    "convertingProgress": "Converting {current}/{total}…",
+    "clear": "Clear",
+    "remove": "Remove {name}",
+    "download": "Download",
+    "downloadZip": "Download all as ZIP ({count})",
+    "buildingZip": "Building ZIP…",
+    "zipError": "Could not create ZIP. Try downloading files individually.",
+    "jpegQuality": "JPEG quality",
+    "webpQuality": "WebP quality",
+    "qualityHint": "Higher = sharper and larger files. Default {default}%."
   }
 }

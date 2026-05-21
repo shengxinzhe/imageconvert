@@ -1,7 +1,8 @@
 import type { ToolSlug } from "@/lib/tools-config";
+import { deToolSeoSections } from "@/lib/tools-l10n/seo-sections-de";
 import type { ToolLocaleFields } from "@/lib/tools-l10n/types";
 
-export const deTools: Record<ToolSlug, ToolLocaleFields> = {
+const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "heic-to-jpg": {
     title: "HEIC in JPG umwandeln — kostenlos online",
     h1: "HEIC in JPG umwandeln — kostenlos online",
@@ -252,3 +253,10 @@ export const deTools: Record<ToolSlug, ToolLocaleFields> = {
     ],
   },
 };
+
+export const deTools: Record<ToolSlug, ToolLocaleFields> = Object.fromEntries(
+  (Object.entries(deToolsBase) as [ToolSlug, ToolLocaleFields][]).map(([slug, fields]) => [
+    slug,
+    { ...fields, seoSections: deToolSeoSections[slug] },
+  ]),
+) as Record<ToolSlug, ToolLocaleFields>;

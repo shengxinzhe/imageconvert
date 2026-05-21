@@ -16,7 +16,7 @@ export function getLocalizedTool(slug: ToolSlug, locale: AppLocale): ToolConfig 
     ...overlay,
     path,
     keywords: overlay.keywords ?? base.keywords,
-    seoSections: base.seoSections,
+    seoSections: overlay.seoSections ?? base.seoSections,
   };
 }
 

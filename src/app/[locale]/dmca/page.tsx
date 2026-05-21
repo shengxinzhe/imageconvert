@@ -1,36 +1,32 @@
 import type { Metadata } from "next";
-import { DMCA_EMAIL, SITE_NAME } from "@/lib/constants";
+import { LegalPage } from "@/components/legal/legal-page";
+import { routing, type AppLocale } from "@/i18n/routing";
+import { getLegalPage } from "@/lib/legal-l10n";
+import { absoluteUrl, hreflangLanguages } from "@/lib/locale-path";
 
-export const metadata: Metadata = {
-  title: "DMCA",
-  description: `DMCA copyright policy and agent contact for ${SITE_NAME}.`,
-};
+type PageProps = { params: { locale: string } };
 
-export default function DmcaPage() {
-  return (
-    <div className="mx-auto max-w-3xl px-4 py-16 prose-vercel lg:px-6">
-      <h1>DMCA Policy</h1>
-      <p>
-        {SITE_NAME} respects intellectual property rights. We respond to valid DMCA notices.
-      </p>
-      <h2>Designated agent</h2>
-      <p>
-        Email: <a href={`mailto:${DMCA_EMAIL}`}>{DMCA_EMAIL}</a>
-      </p>
-      <h2>Notice requirements</h2>
-      <p>Your notice should include:</p>
-      <ul>
-        <li>Identification of the copyrighted work</li>
-        <li>Identification of the infringing material and its location (URL)</li>
-        <li>Your contact information</li>
-        <li>A statement of good faith belief</li>
-        <li>A statement under penalty of perjury that the information is accurate</li>
-        <li>Your physical or electronic signature</li>
-      </ul>
-      <p>
-        Note: Our conversion tools process files locally in the user&apos;s browser; we do not
-        host user-uploaded images on our servers.
-      </p>
-    </div>
-  );
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export function generateMetadata({ params }: PageProps): Metadata {
+  const locale = params.locale as AppLocale;
+  const { meta } = getLegalPage("dmca", locale);
+  const url = absoluteUrl("/dmca", locale);
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: url,
+      languages: hreflangLanguages("/dmca"),
+    },
+  };
+}
+
+export default function DmcaPage({ params }: PageProps) {
+  const locale = params.locale as AppLocale;
+  const content = getLegalPage("dmca", locale);
+  return <LegalPage content={content} locale={locale} />;
 }

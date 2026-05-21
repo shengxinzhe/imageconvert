@@ -1,5 +1,7 @@
 import type { ToolConfig } from "@/lib/tools-config";
 
+export type ToolSeoSection = ToolConfig["seoSections"][number];
+
 export type ToolLocaleFields = Pick<
   ToolConfig,
   | "title"
@@ -12,4 +14,5 @@ export type ToolLocaleFields = Pick<
   | "faqs"
 > & {
   keywords?: string[];
+  seoSections?: ToolSeoSection[];
 };

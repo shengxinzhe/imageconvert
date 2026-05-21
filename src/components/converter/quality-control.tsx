@@ -1,7 +1,11 @@
 "use client";
 
+import { useParams } from "next/navigation";
+import type { AppLocale } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 import type { OutputFormat } from "@/lib/convert";
 import { defaultQualityPercent, outputSupportsQuality } from "@/lib/convert";
+import { getT } from "@/lib/i18n/translations";
 
 interface QualityControlProps {
   to: OutputFormat;
@@ -16,9 +20,15 @@ export function QualityControl({
   onChange,
   disabled,
 }: QualityControlProps) {
+  const params = useParams();
+  const locale = (routing.locales.includes(params.locale as AppLocale)
+    ? params.locale
+    : routing.defaultLocale) as AppLocale;
+  const t = getT(locale);
+
   if (!outputSupportsQuality(to)) return null;
 
-  const label = to === "webp" ? "WebP quality" : "JPEG quality";
+  const label = to === "webp" ? t("converter.webpQuality") : t("converter.jpegQuality");
 
   return (
     <div className="rounded-vercel border border-hairline bg-canvas-soft px-4 py-3">
@@ -40,7 +50,7 @@ export function QualityControl({
         className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full bg-hairline accent-ink disabled:opacity-50"
       />
       <p className="mt-2 text-xs text-mute">
-        Higher = sharper and larger files. Default {defaultQualityPercent(to)}%.
+        {t("converter.qualityHint", { default: defaultQualityPercent(to) })}
       </p>
     </div>
   );
