@@ -3,6 +3,10 @@ import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { SITE_NAME } from "@/lib/constants";
 import { absoluteUrl, getOgLocale, hreflangLanguages } from "@/lib/locale-path";
+import {
+  hasBlogTranslation,
+  hreflangBlogLanguages,
+} from "@/lib/blog-l10n";
 
 export const OG_IMAGE = {
   url: "/og.png",
@@ -68,20 +72,31 @@ export function blogPostMetadata(
     title: string;
     description: string;
     publishedAt: string;
+    updatedAt?: string;
   },
   locale: AppLocale
 ): Metadata {
   const path = `/blog/${post.slug}`;
   const url = absoluteUrl(path, locale);
-  const languages =
-    locale === routing.defaultLocale
-      ? { canonical: url }
-      : { canonical: url, languages: { [locale]: url, "x-default": absoluteUrl(path, "en") } };
+  const enUrl = absoluteUrl(path, routing.defaultLocale);
+  const translated = hasBlogTranslation(post.slug, locale);
+
+  if (locale !== routing.defaultLocale && !translated) {
+    return {
+      title: post.title,
+      description: post.description,
+      alternates: { canonical: enUrl },
+      robots: { index: false, follow: true },
+    };
+  }
 
   return {
     title: post.title,
     description: post.description,
-    alternates: languages,
+    alternates: {
+      canonical: url,
+      languages: hreflangBlogLanguages(post.slug, path),
+    },
     openGraph: {
       type: "article",
       locale: getOgLocale(locale),
@@ -90,6 +105,7 @@ export function blogPostMetadata(
       title: post.title,
       description: post.description,
       publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt ?? post.publishedAt,
       images: [OG_IMAGE],
     },
     twitter: {

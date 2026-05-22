@@ -1,8 +1,30 @@
 import type { BlogPost } from "@/lib/blog-posts";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { hasBlogTranslation } from "@/lib/blog-l10n";
+import type { AppLocale } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
+import { SITE_NAME } from "@/lib/constants";
+import { absoluteUrl } from "@/lib/locale-path";
 
-export function ArticleJsonLd({ post }: { post: BlogPost }) {
-  const url = `${SITE_URL}/blog/${post.slug}`;
+const IN_LANGUAGE: Record<AppLocale, string> = {
+  en: "en-US",
+  de: "de-DE",
+  fr: "fr-FR",
+};
+
+export function ArticleJsonLd({
+  post,
+  locale,
+  slug,
+}: {
+  post: BlogPost;
+  locale: AppLocale;
+  slug: string;
+}) {
+  const schemaLocale =
+    locale !== routing.defaultLocale && !hasBlogTranslation(slug, locale)
+      ? routing.defaultLocale
+      : locale;
+  const url = absoluteUrl(`/blog/${post.slug}`, schemaLocale);
 
   const article = {
     "@context": "https://schema.org",
@@ -11,23 +33,23 @@ export function ArticleJsonLd({ post }: { post: BlogPost }) {
     headline: post.title,
     description: post.description,
     datePublished: post.publishedAt,
-    dateModified: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
     author: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: absoluteUrl("/", routing.defaultLocale),
     },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: absoluteUrl("/", routing.defaultLocale),
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url,
     },
-    image: `${SITE_URL}/og.png`,
-    inLanguage: "en-US",
+    image: `${absoluteUrl("/", routing.defaultLocale).replace(/\/$/, "")}/og.png`,
+    inLanguage: IN_LANGUAGE[schemaLocale],
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: ["article h1", "article p"],

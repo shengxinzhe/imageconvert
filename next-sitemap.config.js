@@ -43,6 +43,18 @@ const BLOG_SLUGS = [
   "privacy-browser-image-conversion",
   "transfer-iphone-photos-to-windows",
   "heic-live-photo-guide",
+  "convert-webp-to-jpg-windows",
+  "heic-to-png-when-and-how",
+  "heic-google-drive-batch-convert",
+];
+
+/** de/fr blog slugs with real translations — sync with src/lib/blog-l10n/de.ts keys */
+const BLOG_SLUGS_L10N = [
+  "convert-avif-to-jpg-windows",
+  "transfer-iphone-photos-to-windows",
+  "convert-webp-to-jpg-windows",
+  "heic-to-png-when-and-how",
+  "heic-google-drive-batch-convert",
 ];
 
 /** @type {import('next-sitemap').IConfig} */
@@ -128,13 +140,24 @@ module.exports = {
         });
       }
 
-      for (const slug of BLOG_SLUGS) {
-        entries.push({
-          loc: localePath(`/blog/${slug}`, locale),
-          changefreq: "monthly",
-          priority: 0.6,
-          lastmod: now,
-        });
+      if (locale === DEFAULT_LOCALE) {
+        for (const slug of BLOG_SLUGS) {
+          entries.push({
+            loc: localePath(`/blog/${slug}`, DEFAULT_LOCALE),
+            changefreq: "monthly",
+            priority: 0.6,
+            lastmod: now,
+          });
+        }
+      } else {
+        for (const slug of BLOG_SLUGS_L10N) {
+          entries.push({
+            loc: localePath(`/blog/${slug}`, locale),
+            changefreq: "monthly",
+            priority: 0.65,
+            lastmod: now,
+          });
+        }
       }
     }
 

@@ -197,6 +197,264 @@ Bei HeicSave gibt es kein festes Dateilimit – Grenzen setzen **Arbeitsspeicher
 - **Foto falsch gedreht** – EXIF-Ausrichtung wird bei unterstützten Dateien ins JPG übernommen; bei Bedarf auf dem Mac erneut aus Fotos exportieren.
 - **Live Photo (.heic + .mov)** – nur die **.heic**-Stilldatei konvertieren; Details im [Live-Photo-Ratgeber](/blog/heic-live-photo-guide).
 
-Ausführlich nur für Windows: [HEIC unter Windows öffnen und konvertieren](/blog/heic-windows-guide).`,
+Ausführlich nur für Windows: [HEIC unter Windows öffnen und konvertieren](/blog/heic-windows-guide). Für Google-Drive-Alben: [HEIC aus Google Drive stapelweise konvertieren](/blog/heic-google-drive-batch-convert).`,
+  },
+  "convert-webp-to-jpg-windows": {
+    title: "WebP in JPG unter Windows umwandeln – kostenlos, ohne Upload (2026)",
+    description:
+      "WebP-Bilder unter Windows 10/11 in Chrome oder Edge in JPG konvertieren: Stapelverarbeitung, Qualitätsregler, ZIP-Download. Keine Installation, kein Server-Upload.",
+    content: `Sie haben eine **.webp**-Datei von einer Website, aus Slack oder einem Design-Export gespeichert – und Windows öffnet sie weder in Word noch in Outlook noch in älteren Upload-Formularen. **JPG** bleibt das Format, das praktisch überall funktioniert. Dieser Ratgeber zeigt zuverlässige Wege, **WebP unter Windows in JPG umzuwandeln**, ohne Software zu installieren oder Fotos an unbekannte Server zu senden.
+
+> **Kurzantwort:** Öffnen Sie unser kostenloses Tool **[WebP in JPG](/webp-to-jpg)** in **Chrome oder Edge**, legen Sie Ihre Dateien ab, stellen Sie die JPEG-Qualität ein, klicken Sie auf **Konvertieren** und laden Sie JPGs oder ein ZIP-Archiv herunter – alles im Browser.
+
+## Was ist WebP?
+
+**WebP** ist Googles modernes Bildformat fürs Web. Es ist oft 25–35 % kleiner als JPG bei ähnlicher Qualität. Browser decodieren WebP nativ; viele **Desktop-Apps unter Windows** tun das noch nicht.
+
+Deshalb sind Suchanfragen wie **„webp to jpg“** so verbreitet: Im Browser funktioniert die Datei, in E-Mail-Anhängen und Legacy-CMS oft nicht.
+
+## Unterstützt Windows 10/11 WebP nativ?
+
+Nur teilweise:
+
+- **Moderne Browser** zeigen WebP problemlos.
+- **Paint** auf neueren Windows-11-Builds kann WebP öffnen und als JPEG speichern – pro Datei.
+- **Fotos**, **Word** und viele Formulare erwarten weiterhin **.jpg**.
+
+Für einen **Ordner voller WebP-Assets** skaliert die Browser-Konvertierung besser als Datei für Datei.
+
+## Methode 1: Konvertierung im Browser (empfohlen)
+
+**HeicSave** wandelt **lokal im Tab** um – mit Browser-Decoder und Canvas. Ihre Dateien werden **nicht auf unsere Server hochgeladen**.
+
+### Schritte unter Windows
+
+1. **Chrome** oder **Edge** öffnen.
+2. **[WebP in JPG](/webp-to-jpg)** aufrufen.
+3. Eine oder mehrere **.webp**-Dateien in die Ablagezone ziehen.
+4. Den **JPEG-Qualitätsregler** anpassen.
+5. Auf **Konvertieren** klicken.
+6. Einzelne JPGs oder **Alles als ZIP** herunterladen.
+
+### Warum browser-lokal?
+
+| | Im Browser (HeicSave) | Typischer Cloud-Uploader |
+|---|---|---|
+| Datenschutz | Bleibt auf dem PC | Upload auf fremde Server |
+| Stapel | Viele Dateien + ZIP | Oft begrenzt |
+| Konto | Nicht nötig | Häufig Pflicht |
+| Wasserzeichen | Keines | Bei Gratis-Tarifen üblich |
+
+## Methode 2: Paint / Fotos (Einzeldateien)
+
+Wenn WebP bereits geöffnet werden kann: **Paint → Datei → Speichern unter → JPEG** – für viele Dateien mühsam.
+
+## Methode 3: Desktop-Tools (offline)
+
+- **XnConvert** — Stapelverarbeitung und Skripte.
+- **IrfanView** — schlanker Viewer mit Export.
+- **FFmpeg** — \`ffmpeg -i input.webp output.jpg\` in der Konsole.
+
+Sinnvoll mit Installationsrechten; der Browser-Weg vermeidet Admin-Rechte.
+
+## JPEG-Qualität am Regler
+
+- **90–95 %** — nahe am Original; gut für Druck.
+- **80–85 %** — ideal für E-Mail und Chat.
+- **70 % und darunter** — wenn die Dateigröße im Vordergrund steht.
+
+Stellen Sie die Qualität **vor** einer großen Stapel-Konvertierung ein.
+
+## Stapel-Tipps unter Windows
+
+- Speicherintensive Tabs vor 100+ Bildern schließen.
+- Bei langsamer Tab-Performance in Blöcken von 50–80 konvertieren.
+- Am Ende **ein ZIP** statt vieler Einzeldownloads.
+
+## Typische Szenarien
+
+### Website-Assets für Stakeholder
+
+Designer liefern WebP; Windows-Nutzer brauchen JPG für E-Mail und Präsentationen.
+
+### Discord / Slack
+
+Gespeicherte Bilder sind oft WebP – vor PowerPoint oder Druck konvertieren.
+
+### Transparenz nötig?
+
+JPG hat kein Alpha. Nutzen Sie **[WebP in PNG](/webp-to-png)**.
+
+## Fehlerbehebung
+
+| Problem | Lösung |
+|---|---|
+| Datei lädt nicht | Endung .webp prüfen; Chrome/Edge testen |
+| Farben wirken anders | WebP kann Wide-Gamut sein; leichte Verschiebung zu sRGB-JPG ist normal |
+| Stapel bricht ab | Weniger Dateien pro Durchgang; RAM prüfen |
+| Animiertes WebP | Tool für Standbilder; zuerst ein Frame exportieren |
+
+## Verwandte Tools
+
+- **[WebP in JPG](/webp-to-jpg)** — Hauptkonverter
+- **[WebP vs. JPG](/blog/webp-vs-jpg)** — Formate im Vergleich
+- **[AVIF in JPG unter Windows](/blog/convert-avif-to-jpg-windows)** — ähnlicher Ablauf für .avif
+- **[HEIC in JPG](/heic-to-jpg)** — iPhone-Fotos unter Windows
+
+## Datenschutz
+
+Die Konvertierung läuft in Ihrem Browser. Wir erhalten Ihre Bilddaten nicht zur Verarbeitung.
+
+**Los geht's:** **[WebP in JPG](/webp-to-jpg)** öffnen und die erste Datei in unter einer Minute umwandeln.`,
+  },
+  "heic-to-png-when-and-how": {
+    title: "HEIC in PNG: wann sinnvoll und wie konvertieren (2026)",
+    description:
+      "HEIC zu PNG statt JPG – für Bearbeitung, Transparenz und verlustfreie Workflows. Stapel-Konvertierung im Browser unter Windows und Mac.",
+    content: `Die meisten iPhone-Nutzer wandeln HEIC in **JPG** um – für E-Mail und Windows-Kompatibilität. Manchmal ist **PNG** das bessere Zielformat: vor der Bearbeitung, um JPEG-Artefakte zu vermeiden, oder wenn Ihr Workflow verlustfreie Rasterdaten erwartet.
+
+> **Kurzantwort:** **[HEIC in PNG](/heic-to-png)** in Chrome oder Edge öffnen, .heic-Dateien ablegen, konvertieren, einzeln oder als ZIP herunterladen – alles lokal im Browser.
+
+## HEIC → JPG vs. HEIC → PNG
+
+| | JPG-Ausgabe | PNG-Ausgabe |
+|---|---|---|
+| Dateigröße | Kleiner | Größer |
+| Kompression | Verlustbehaftet (Regler steuert Qualität) | Verlustfreies PNG |
+| Transparenz | Nein | Ja (wenn Quelle Alpha hat) |
+| Besonders geeignet für | E-Mail, Formulare, Teilen | Bearbeitung, Overlays, Master-Archive |
+| Unter Windows überall öffnen | Sehr gut | Sehr gut |
+
+Wenn das Ziel nur lautet: „Oma soll das Foto öffnen können“, reicht [HEIC in JPG](/heic-to-jpg). Wenn Sie **ohne weiteren verlustbehafteten Schritt** in einen Editor importieren wollen, ist PNG oft klüger.
+
+## Wann PNG sinnvoll ist
+
+1. **Weitere Bearbeitung** — Filter, Ebenen oder Compositing in Photoshop, GIMP oder Canva.
+2. **Screenshots mit scharfem Text** — JPEG kann Kanten weichzeichnen; PNG bleibt crisp.
+3. **Transparenz** — manche HEIC-Exporte enthalten Alpha; PNG behält es (JPG kann das nicht).
+4. **Druckvorbereitung** — manche Druckereien bevorzugen PNG- oder TIFF-Master gegenüber stark komprimiertem JPG.
+
+## Wann JPG weiterhin besser ist
+
+- E-Mail-Anhänge und Messenger (Größenlimits).
+- Behördenportale mit Dateigrößen-Obergrenze.
+- Dutzende Urlaubsfotos teilen — PNG-Ordner werden sehr groß.
+
+## HEIC in PNG umwandeln (Windows)
+
+1. **Chrome** oder **Edge** am Desktop öffnen.
+2. **[HEIC in PNG](/heic-to-png)** aufrufen.
+3. .heic-Dateien in die Ablagezone ziehen.
+4. Auf **Konvertieren** klicken.
+5. PNGs einzeln oder **Alles als ZIP** herunterladen.
+
+Die Verarbeitung bleibt im Browser – kein Upload zur Konvertierung.
+
+## Stapel-Tipps
+
+PNG-Ausgaben sind größer als JPG. Bei 100+ Fotos:
+
+- Genug Festplattenspeicher für das ZIP einplanen.
+- Bei langsamer Tab-Performance in Blöcken konvertieren.
+- .mov-Live-Photo-Begleitdateien überspringen – nur die **.heic-Stilldatei** konvertieren.
+
+## Live Photos
+
+Browser-Konverter erwarten ein **Standbild**. Die .heic-Datei ablegen, nicht die .mov-Video-Seite.
+
+## Nach der PNG-Konvertierung
+
+- **E-Mail?** Für Empfänger ggf. eine JPG-Kopie in hoher Qualität exportieren.
+- **Web?** PNG ist schwer; für die Auslieferung [PNG in WebP](/png-to-webp) mit JPG-Fallback erwägen.
+
+## Verwandte Ratgeber
+
+- [HEIC vs. JPG](/blog/heic-vs-jpg)
+- [HEIC unter Windows](/blog/heic-windows-guide)
+- [iPhone-Fotos auf Windows übertragen](/blog/transfer-iphone-photos-to-windows)
+
+**Hier starten:** **[HEIC in PNG](/heic-to-png)**`,
+  },
+  "heic-google-drive-batch-convert": {
+    title: "HEIC stapelweise aus Google Drive in JPG konvertieren (2026)",
+    description:
+      "HEIC-Fotos aus Google Drive herunterladen, im Browser stapelweise in JPG umwandeln ohne Software-Installation, dann erneut hochladen oder teilen.",
+    content: `Google Drive bietet keinen eingebauten **HEIC → JPG**-Button. Wenn Ihr iPhone-Backup oder ein geteilter Ordner voller .heic-Dateien ist, scheitern Windows-Vorschauen und E-Mail-Anhänge oft. Dieser Workflow konvertiert **viele HEIC-Dateien auf einmal**, ohne Codecs zu installieren oder Fotos auf fremde Server hochzuladen.
+
+> **Kurzantwort:** Aus Drive herunterladen → ZIP entpacken → **[HEIC in JPG](/heic-to-jpg)** in Chrome/Edge → JPG-ZIP laden → bei Bedarf zurück in Drive hochladen.
+
+## Warum Drive-Nutzer unter HEIC leiden
+
+- iPhone-Uploads oder **Google Fotos** können HEIC-Originale speichern.
+- Familienordner mischen HEIC und JPG.
+- Firmen-PCs haben oft keine HEIF-Codecs.
+- Die Drive-Vorschau zeigt für HEIC mitunter kaputte Thumbnails.
+
+Einmal nach JPG konvertieren löst die Kompatibilität überall.
+
+## Schritt-für-Schritt-Stapel-Workflow
+
+### 1. Aus Google Drive herunterladen
+
+1. Drive im Browser öffnen.
+2. HEIC-Dateien oder Ordner markieren (**Umschalt+Klick** oder **Strg+A**).
+3. **Rechtsklick → Herunterladen**.
+4. Bei mehreren Dateien liefert Drive ein **ZIP**.
+
+### 2. Auf dem PC entpacken
+
+1. ZIP rechtsklicken → **Alle extrahieren…** (Windows).
+2. Den Ordnerpfad merken – diese .heic-Dateien kommen in den Konverter.
+
+### 3. Lokal stapelweise konvertieren (ohne Installation)
+
+1. **Chrome** oder **Edge** unter Windows öffnen.
+2. **[HEIC in JPG](/heic-to-jpg)** aufrufen.
+3. Alle entpackten .heic-Dateien in die Ablagezone ziehen (oder in Gruppen à 50–100 bei wenig RAM).
+4. **JPEG-Qualität** einstellen (90 % Standard für Archiv; 85 % für E-Mail-Größe).
+5. **Konvertieren** → **Alles als ZIP** herunterladen.
+
+Die Konvertierung läuft **in Ihrem Browser**. HeicSave erhält Ihre Bilddaten nicht zur Verarbeitung.
+
+### 4. Optional: JPGs zurück in Drive
+
+1. Ordner anlegen, z. B. \`Fotos JPG 2026\`.
+2. JPG-ZIP oder Einzeldateien hochladen.
+3. JPG-Ordner mit der Familie teilen – ohne Codec-Probleme unter Windows.
+
+## Warum kein „Cloud-Konverter“?
+
+Viele Online-Tools **laden** Ihre Fotos auf Server hoch. Für private, medizinische oder Kunden-Alben in Drive hält browser-lokale Konvertierung die Dateien auf Ihrem PC. Mehr dazu: [Warum browser-lokale Konvertierung wichtig ist](/blog/privacy-browser-image-conversion).
+
+## Tipps für große Alben
+
+| Tipp | Grund |
+|---|---|
+| Blöcke à 50–100 | Schont den RAM auf 8-GB-PCs |
+| Andere Tabs schließen | Mehr Speicher für HEIC-Decode |
+| Chrome/Edge am Desktop | Beste HEIC-Unterstützung unter Windows |
+| .mov-Dateien überspringen | Live-Photo-Videos sind keine Standbilder |
+| Originale in Drive behalten | Erst JPGs prüfen, dann HEIC löschen |
+
+## Fehlerbehebung
+
+| Problem | Lösung |
+|---|---|
+| Download riesig / langsam | Weniger Ordner pro ZIP; WLAN nutzen |
+| Einzelne Dateien scheitern | HEIC neu laden; eine Datei isoliert testen |
+| JPG falsch gedreht | EXIF-Ausrichtung wird übernommen, wenn unterstützt |
+| Bearbeitung statt JPG | [HEIC in PNG](/heic-to-png) nutzen |
+
+## HEIC vor dem Upload vermeiden
+
+iPhone: **Einstellungen → Kamera → Formate → Kompatibel** speichert neue Aufnahmen als JPG. Bestehende Drive-HEIC müssen trotzdem konvertiert werden.
+
+## Verwandte Ratgeber
+
+- [HEIC unter Windows](/blog/heic-windows-guide)
+- [iPhone-Fotos auf Windows](/blog/transfer-iphone-photos-to-windows)
+- [Was ist eine HEIC-Datei?](/blog/what-is-heic-file)
+
+**Jetzt konvertieren:** **[HEIC in JPG](/heic-to-jpg)**`,
   },
 };

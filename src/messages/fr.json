@@ -73,7 +73,8 @@
   "blog": {
     "back": "← Blog",
     "englishNotice": "Cet article est disponible en anglais.",
-    "minRead": "min de lecture"
+    "minRead": "min de lecture",
+    "updated": "Mis à jour"
   },
   "converter": {
     "dropTitle": "Déposez vos images ici",

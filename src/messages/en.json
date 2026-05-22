@@ -73,7 +73,8 @@
   "blog": {
     "back": "← Blog",
     "englishNotice": "This article is available in English.",
-    "minRead": "min read"
+    "minRead": "min read",
+    "updated": "Updated"
   },
   "converter": {
     "dropTitle": "Drag & drop images here",

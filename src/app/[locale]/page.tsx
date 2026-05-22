@@ -1,7 +1,7 @@
 import { WebsiteJsonLd } from "@/components/seo/website-json-ld";
 import { Link } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
-import { getBlogPostsNewestFirst } from "@/lib/blog-posts";
+import { getLocalizedBlogPostsNewestFirst } from "@/lib/blog-l10n";
 import { audienceStyles, getToolAudience, homeStyles } from "@/lib/design-variants";
 import { getLocalizedToolList } from "@/lib/get-localized-tool";
 import { getT } from "@/lib/i18n/translations";
@@ -147,7 +147,7 @@ export default function HomePage({ params }: PageProps) {
         <h2 className="mt-2 text-2xl font-semibold tracking-display-sm text-ink">{t("home.blogTitle")}</h2>
         <p className="mt-2 text-body">{t("home.blogSubtitle")}</p>
         <ul className="mt-8 divide-y divide-hairline border-y border-hairline">
-          {getBlogPostsNewestFirst().slice(0, 4).map((post) => (
+          {getLocalizedBlogPostsNewestFirst(locale).slice(0, 4).map((post) => (
             <li key={post.slug} className="py-6">
               <Link href={`/blog/${post.slug}`} className="group block">
                 <h3 className="font-medium text-ink group-hover:text-[var(--mintlify-green)]">

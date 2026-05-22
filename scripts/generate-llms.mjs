@@ -20,8 +20,11 @@ const TOOLS = [
 
 const GUIDES = [
   ["convert-avif-to-jpg-windows", "How to convert AVIF to JPG on Windows (step-by-step)"],
+  ["convert-webp-to-jpg-windows", "How to convert WebP to JPG on Windows (step-by-step)"],
   ["transfer-iphone-photos-to-windows", "Transfer iPhone photos to a Windows PC"],
+  ["heic-google-drive-batch-convert", "Batch convert HEIC to JPG from Google Drive"],
   ["heic-windows-guide", "Open and convert HEIC on Windows"],
+  ["heic-to-png-when-and-how", "When to convert HEIC to PNG instead of JPG"],
   ["avif-explained", "What AVIF is and when to convert it"],
 ];
 

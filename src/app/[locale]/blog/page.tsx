@@ -4,7 +4,8 @@ import { routing, type AppLocale } from "@/i18n/routing";
 import { getLocalizedBlogPostsNewestFirst } from "@/lib/blog-l10n";
 import { SITE_NAME } from "@/lib/constants";
 import { getT } from "@/lib/i18n/translations";
-import { absoluteUrl, hreflangLanguages } from "@/lib/locale-path";
+import { OG_IMAGE } from "@/lib/site-metadata";
+import { absoluteUrl, getOgLocale, hreflangLanguages } from "@/lib/locale-path";
 
 type PageProps = { params: { locale: string } };
 
@@ -42,6 +43,22 @@ export function generateMetadata({ params }: PageProps): Metadata {
       canonical: url,
       languages: hreflangLanguages("/blog"),
     },
+    openGraph: {
+      type: "website",
+      locale: getOgLocale(locale),
+      url,
+      siteName: SITE_NAME,
+      title,
+      description,
+      images: [OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE.url],
+    },
+    robots: { index: true, follow: true },
   };
 }
 
