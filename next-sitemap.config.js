@@ -49,13 +49,24 @@ const BLOG_SLUGS = [
 ];
 
 /** de/fr blog slugs with real translations — sync with src/lib/blog-l10n/de.ts keys */
-const BLOG_SLUGS_L10N = [
+const BLOG_SLUGS_L10N = new Set([
   "convert-avif-to-jpg-windows",
   "transfer-iphone-photos-to-windows",
   "convert-webp-to-jpg-windows",
   "heic-to-png-when-and-how",
   "heic-google-drive-batch-convert",
-];
+]);
+
+function isUntranslatedLocaleBlogPath(path) {
+  for (const locale of ["de", "fr"]) {
+    const prefix = `/${locale}/blog/`;
+    if (path.startsWith(prefix)) {
+      const slug = path.slice(prefix.length).replace(/\/$/, "");
+      if (!BLOG_SLUGS_L10N.has(slug)) return true;
+    }
+  }
+  return false;
+}
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
@@ -71,12 +82,22 @@ module.exports = {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/icon.png", "/apple-icon.png", "/opengraph-image.png"],
+        disallow: [
+          "/icon.png",
+          "/apple-icon.png",
+          "/opengraph-image.png",
+          "/cdn-cgi/",
+        ],
       },
     ],
   },
   transform: async (config, path) => {
-    if (EXCLUDED_PATHS.has(path) || path === "/en" || path.startsWith("/en/")) {
+    if (
+      EXCLUDED_PATHS.has(path) ||
+      path === "/en" ||
+      path.startsWith("/en/") ||
+      isUntranslatedLocaleBlogPath(path)
+    ) {
       return null;
     }
 

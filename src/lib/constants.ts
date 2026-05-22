@@ -11,3 +11,6 @@ export const SOFT_WARN_BATCH_COUNT = 20;
 
 export const DMCA_EMAIL = "dmca@heicsave.com";
 export const PRIVACY_EMAIL = "privacy@heicsave.com";
+
+/** IndexNow key — file must exist at /{INDEXNOW_KEY}.txt (Bing/Yandex). */
+export const INDEXNOW_KEY = "7c4e9a2b8f1d3e6a9c0b5d8e2f4a1b6c";

@@ -62,7 +62,7 @@ export function middleware(request: NextRequest) {
       pathname === `/${defaultLocale}`
         ? "/"
         : pathname.slice(`/${defaultLocale}`.length);
-    return NextResponse.redirect(new URL(stripped, request.url));
+    return NextResponse.redirect(new URL(stripped, request.url), 301);
   }
 
   const url = request.nextUrl.clone();

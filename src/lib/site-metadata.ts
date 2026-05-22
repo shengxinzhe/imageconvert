@@ -66,6 +66,39 @@ export function homeMetadata(locale: AppLocale): Metadata {
   };
 }
 
+export function legalPageMetadata(
+  path: string,
+  meta: { title: string; description: string },
+  locale: AppLocale,
+): Metadata {
+  const url = absoluteUrl(path, locale);
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: url,
+      languages: hreflangLanguages(path),
+    },
+    openGraph: {
+      type: "website",
+      locale: getOgLocale(locale),
+      url,
+      siteName: SITE_NAME,
+      title: meta.title,
+      description: meta.description,
+      images: [OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.title,
+      description: meta.description,
+      images: [OG_IMAGE.url],
+    },
+    robots: { index: true, follow: true },
+  };
+}
+
 export function blogPostMetadata(
   post: {
     slug: string;

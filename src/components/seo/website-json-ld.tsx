@@ -32,6 +32,10 @@ export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
         "@id": `${SITE_URL}/#organization`,
         name: SITE_NAME,
         url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/apple-touch-icon.png`,
+        },
         description: SITE_DESCRIPTION[locale],
         knowsAbout: [
           "HEIC image conversion",

@@ -347,7 +347,7 @@ As AVIF support spreads, converters remain a bridge format—similar to HEIC tod
   },
   {
     slug: "convert-avif-to-jpg-windows",
-    title: "How to Convert AVIF to JPG on Windows (Free, No Upload, 2026)",
+    title: "Convert AVIF to JPG on Windows (Free, No Upload)",
     description:
       "Convert AVIF images to JPG on Windows 10/11 in Chrome or Edge—batch files, adjust quality, download ZIP. No install, no server upload.",
     publishedAt: "2026-05-19",

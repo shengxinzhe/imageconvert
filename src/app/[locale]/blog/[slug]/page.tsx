@@ -15,7 +15,13 @@ type PageProps = { params: { locale: string; slug: string } };
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
-    blogPosts.map((post) => ({ locale, slug: post.slug }))
+    blogPosts
+      .filter(
+        (post) =>
+          locale === routing.defaultLocale ||
+          hasBlogTranslation(post.slug, locale)
+      )
+      .map((post) => ({ locale, slug: post.slug }))
   );
 }
 

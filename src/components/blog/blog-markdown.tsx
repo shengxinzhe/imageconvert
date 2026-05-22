@@ -27,10 +27,17 @@ function MarkdownLink({
     );
   }
 
+  if (href.startsWith("mailto:")) {
+    return (
+      <a href={href} rel="nofollow noopener noreferrer" {...props}>
+        {children}
+      </a>
+    );
+  }
+
   const safe =
     href.startsWith("https://") ||
-    href.startsWith("http://") ||
-    href.startsWith("mailto:");
+    href.startsWith("http://");
 
   if (!safe) return <span>{children}</span>;
 

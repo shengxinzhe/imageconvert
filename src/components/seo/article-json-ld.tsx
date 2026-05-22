@@ -11,6 +11,12 @@ const IN_LANGUAGE: Record<AppLocale, string> = {
   fr: "fr-FR",
 };
 
+const BLOG_LABEL: Record<AppLocale, string> = {
+  en: "Blog",
+  de: "Blog",
+  fr: "Blog",
+};
+
 export function ArticleJsonLd({
   post,
   locale,
@@ -25,41 +31,72 @@ export function ArticleJsonLd({
       ? routing.defaultLocale
       : locale;
   const url = absoluteUrl(`/blog/${post.slug}`, schemaLocale);
+  const homeUrl = absoluteUrl("/", schemaLocale);
+  const blogUrl = absoluteUrl("/blog", schemaLocale);
+  const siteRoot = absoluteUrl("/", routing.defaultLocale).replace(/\/$/, "");
 
-  const article = {
+  const graph = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "@id": `${url}#article`,
-    headline: post.title,
-    description: post.description,
-    datePublished: post.publishedAt,
-    dateModified: post.updatedAt ?? post.publishedAt,
-    author: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      url: absoluteUrl("/", routing.defaultLocale),
-    },
-    publisher: {
-      "@type": "Organization",
-      name: SITE_NAME,
-      url: absoluteUrl("/", routing.defaultLocale),
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": url,
-    },
-    image: `${absoluteUrl("/", routing.defaultLocale).replace(/\/$/, "")}/og.png`,
-    inLanguage: IN_LANGUAGE[schemaLocale],
-    speakable: {
-      "@type": "SpeakableSpecification",
-      cssSelector: ["article h1", "article p"],
-    },
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${url}#article`,
+        headline: post.title,
+        description: post.description,
+        datePublished: post.publishedAt,
+        dateModified: post.updatedAt ?? post.publishedAt,
+        author: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: absoluteUrl("/", routing.defaultLocale),
+        },
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: absoluteUrl("/", routing.defaultLocale),
+        },
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": url,
+        },
+        image: `${siteRoot}/og.png`,
+        inLanguage: IN_LANGUAGE[schemaLocale],
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["article h1", "article p"],
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: homeUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: BLOG_LABEL[schemaLocale],
+            item: blogUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: post.title,
+            item: url,
+          },
+        ],
+      },
+    ],
   };
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
     />
   );
 }

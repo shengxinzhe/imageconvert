@@ -28,6 +28,7 @@ export function Header({ locale }: { locale: AppLocale }) {
         <Link
           href="/"
           className="flex items-center gap-2 text-sm font-semibold text-ink"
+          aria-label={SITE_NAME}
         >
           <LogoMark />
           {SITE_NAME}
