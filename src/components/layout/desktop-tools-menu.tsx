@@ -4,13 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import type { ToolConfig } from "@/lib/tools-config";
+import { toolShortTitle } from "@/lib/tool-display";
 import { cn } from "@/lib/utils";
 import type { AppLocale } from "@/i18n/routing";
 import { getT } from "@/lib/i18n/translations";
-
-function formatLabel(slug: string) {
-  return slug.replace(/-/g, " ");
-}
 
 export function DesktopToolsMenu({
   tools,
@@ -51,7 +48,7 @@ export function DesktopToolsMenu({
           href={`/${tool.slug}`}
           className="rounded-full px-3 py-1.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink"
         >
-          {formatLabel(tool.slug)}
+          {toolShortTitle(tool)}
         </Link>
       ))}
       <div ref={ref} className="relative">
@@ -84,7 +81,7 @@ export function DesktopToolsMenu({
                   className="block px-4 py-2 text-sm capitalize text-body hover:bg-canvas-soft hover:text-ink"
                   onClick={() => setOpen(false)}
                 >
-                  {formatLabel(tool.slug)}
+                  {toolShortTitle(tool)}
                 </Link>
               </li>
             ))}

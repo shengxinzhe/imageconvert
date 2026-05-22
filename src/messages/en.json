@@ -8,7 +8,10 @@
     "mobileConverters": "Converters",
     "mobileMore": "More",
     "contact": "Contact",
-    "mobileCta": "Convert HEIC now"
+    "mobileCta": "Convert HEIC now",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "menuLabel": "Site menu"
   },
   "language": {
     "label": "Language",
@@ -22,7 +25,10 @@
     "heroSubtitle": "Apple's default format doesn't work everywhere. Convert locally in your browser—private, free, and instant for Windows, Mac, and sharing.",
     "heroCtaHeic": "HEIC to JPG",
     "heroCtaPng": "HEIC to PNG",
-    "heroTrust": "Files stay on device",
+    "heroCtaAvif": "AVIF to JPG",
+    "heroTrust1": "Files stay on your device",
+    "heroTrust2": "Batch convert + ZIP download",
+    "heroTrust3": "No account or watermark",
     "devBadge": "WebP · AVIF · optimize",
     "devTitle": "Developer converters",
     "devSubtitle": "WebP and AVIF for modern sites—convert locally before deploy or share.",
@@ -88,6 +94,28 @@
     "qualityHint": "Higher = sharper and larger files. Default {default}%.",
     "successOne": "1 file converted — ready to download below.",
     "successMany": "{count} files converted — ready to download below.",
-    "successGuidePrefix": "Next:"
+    "successGuidePrefix": "Next:",
+    "errorGuidePrefix": "Help:"
+  },
+  "errors": {
+    "thisFile": "This file",
+    "theFile": "the file",
+    "memory": "{file} is too large for this browser tab. Close other tabs, convert fewer files at once, or use Chrome or Edge on a desktop PC.",
+    "decodeAvif": "{file} could not be decoded as AVIF. Use the latest Chrome or Edge on a desktop—Firefox and older Safari often fail.",
+    "decodeWebp": "{file} could not be decoded as WebP. Try Chrome or Edge, or re-export from your editor.",
+    "decodeGeneric": "{file} could not be loaded. The file may be corrupt or use an unsupported variant.",
+    "heic": "{file} could not be converted from HEIC. Use Chrome or Edge on a desktop, pick a still photo (.heic/.heif, not a Live Photo .mov), and try one file at a time.",
+    "security": "The browser blocked reading {file}. Reload the page and avoid cross-origin files.",
+    "unsupported": "Your browser does not support this conversion. Update the browser or switch to Chrome, Edge, or a recent Safari.",
+    "generic": "Could not convert {file}. Try Chrome or Edge on a desktop, use smaller files, or convert fewer images per batch. ({detail})"
+  },
+  "warnings": {
+    "largeBatch": "You selected {count} files. Large batches can be slow or fail on phones—try a desktop browser or smaller groups.",
+    "largeFileOne": "\"{name}\" is over {mb} MB. Heavy files need more memory—desktop Chrome or Edge works best.",
+    "largeFileMany": "{count} files are over {mb} MB each. Very large images may fail on mobile—use a desktop browser if you see errors."
+  },
+  "browserHint": {
+    "message": "For best results with HEIC and AVIF, use Chrome or Edge on a desktop. Firefox and Safari may fail on some files.",
+    "dismiss": "Dismiss browser tip"
   }
 }

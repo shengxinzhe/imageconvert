@@ -10,7 +10,12 @@ import {
   trackToolConvertSuccess,
   trackToolDownloadZip,
 } from "@/lib/analytics-events";
-import { formatConversionError } from "@/lib/convert-errors";
+import { BrowserCompatHint } from "@/components/converter/browser-compat-hint";
+import {
+  ConversionError,
+  formatConversionError,
+  type ConversionErrorDisplay,
+} from "@/lib/convert-errors";
 import { getConverterSoftWarnings } from "@/lib/converter-warnings";
 import {
   acceptMimeForInput,
@@ -62,7 +67,7 @@ export function ImageConverter({
   const isDev = audience === "developer";
   const [files, setFiles] = useState<File[]>([]);
   const [results, setResults] = useState<ConvertedFile[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<ConversionErrorDisplay | null>(null);
   const [converting, setConverting] = useState(false);
   const [zipping, setZipping] = useState(false);
   const [dragOver, setDragOver] = useState(false);
@@ -126,7 +131,9 @@ export function ImageConverter({
             previewUrl: URL.createObjectURL(blob),
           });
         } catch (err) {
-          throw new Error(formatConversionError(err, from, file.name));
+          throw new ConversionError(
+            formatConversionError(err, from, locale, file.name),
+          );
         }
       }
       setResults(converted);
@@ -146,9 +153,9 @@ export function ImageConverter({
         fileCount: files.length,
       });
       setError(
-        err instanceof Error
-          ? err.message
-          : formatConversionError(err, from),
+        err instanceof ConversionError
+          ? err.display
+          : formatConversionError(err, from, locale),
       );
     } finally {
       setConverting(false);
@@ -178,7 +185,7 @@ export function ImageConverter({
       const stamp = new Date().toISOString().slice(0, 10);
       downloadBlob(zip, `heicsave-${to}-${stamp}.zip`);
     } catch {
-      setError(t("converter.zipError"));
+      setError({ message: t("converter.zipError") });
     } finally {
       setZipping(false);
     }
@@ -195,13 +202,20 @@ export function ImageConverter({
   };
 
   const accept = acceptMimeForInput(from);
-  const softWarnings = useMemo(() => getConverterSoftWarnings(files), [files]);
+  const softWarnings = useMemo(
+    () => getConverterSoftWarnings(files, locale),
+    [files, locale],
+  );
+  const errorGuide = error?.guideSlug
+    ? getLocalizedBlogPost(error.guideSlug, locale)
+    : undefined;
   const postConvertGuide = postConvertGuideSlug
     ? getLocalizedBlogPost(postConvertGuideSlug, locale)
     : undefined;
 
   return (
     <div className="space-y-4">
+      <BrowserCompatHint from={from} />
       <QualityControl
         to={to}
         value={qualityPercent}
@@ -278,9 +292,20 @@ export function ImageConverter({
       )}
 
       {error && (
-        <p className="rounded-vercel border border-[var(--error-soft)] bg-[var(--error-soft)] px-3 py-2 text-sm text-[var(--error)]">
-          {error}
-        </p>
+        <div className="space-y-2 rounded-vercel border border-[var(--error-soft)] bg-[var(--error-soft)] px-3 py-2 text-sm text-[var(--error)]">
+          <p>{error.message}</p>
+          {errorGuide ? (
+            <p>
+              {t("converter.errorGuidePrefix")}{" "}
+              <Link
+                href={`/blog/${errorGuide.slug}`}
+                className="font-medium underline"
+              >
+                {errorGuide.title}
+              </Link>
+            </p>
+          ) : null}
+        </div>
       )}
 
       <div className="flex flex-wrap items-center gap-2">

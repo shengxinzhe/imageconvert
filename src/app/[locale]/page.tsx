@@ -6,7 +6,8 @@ import { audienceStyles, getToolAudience, homeStyles } from "@/lib/design-varian
 import { getLocalizedToolList } from "@/lib/get-localized-tool";
 import { getT } from "@/lib/i18n/translations";
 import { homeMetadata } from "@/lib/site-metadata";
-import { ArrowRight, Lock } from "lucide-react";
+import { Archive, ArrowRight, Lock, Sparkles } from "lucide-react";
+import { toolShortTitle } from "@/lib/tool-display";
 import { cn } from "@/lib/utils";
 
 type PageProps = { params: { locale: string } };
@@ -61,11 +62,25 @@ export default function HomePage({ params }: PageProps) {
             >
               {t("home.heroCtaPng")}
             </Link>
+            <Link
+              href="/avif-to-jpg"
+              className="inline-flex h-12 items-center rounded-full border border-hairline bg-canvas px-6 text-sm font-medium text-ink hover:bg-canvas-soft"
+            >
+              {t("home.heroCtaAvif")}
+            </Link>
           </div>
-          <ul className="mx-auto mt-14 flex max-w-lg flex-wrap justify-center gap-8 text-sm text-body">
+          <ul className="mx-auto mt-14 flex max-w-2xl flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-body">
             <li className="flex items-center gap-2">
-              <Lock className="h-4 w-4 text-ink" aria-hidden />
-              {t("home.heroTrust")}
+              <Lock className="h-4 w-4 shrink-0 text-ink" aria-hidden />
+              {t("home.heroTrust1")}
+            </li>
+            <li className="flex items-center gap-2">
+              <Archive className="h-4 w-4 shrink-0 text-ink" aria-hidden />
+              {t("home.heroTrust2")}
+            </li>
+            <li className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4 shrink-0 text-ink" aria-hidden />
+              {t("home.heroTrust3")}
             </li>
           </ul>
           <aside
@@ -100,8 +115,8 @@ export default function HomePage({ params }: PageProps) {
                 <p className="font-mono text-xs text-[#5e6ad2]">
                   {tool.from} → {tool.to}
                 </p>
-                <h3 className="mt-2 font-medium capitalize text-ink group-hover:text-[#5e6ad2]">
-                  {tool.slug.replace(/-/g, " ")}
+                <h3 className="mt-2 font-medium text-ink group-hover:text-[#5e6ad2]">
+                  {toolShortTitle(tool)}
                 </h3>
               </Link>
             ))}
@@ -119,7 +134,7 @@ export default function HomePage({ params }: PageProps) {
                 href={`/${tool.slug}`}
                 className={cn("p-5 transition hover:shadow-card-hover", audienceStyles.heic.card)}
               >
-                <h3 className="font-medium capitalize text-ink">{tool.slug.replace(/-/g, " ")}</h3>
+                <h3 className="font-medium text-ink">{toolShortTitle(tool)}</h3>
                 <p className="mt-2 line-clamp-2 text-sm text-body">{tool.metaDescription}</p>
               </Link>
             ))}

@@ -5,13 +5,9 @@ import { Menu, X } from "lucide-react";
 import type { AppLocale } from "@/i18n/routing";
 import { getT } from "@/lib/i18n/translations";
 import { Link, usePathname } from "@/i18n/navigation";
-import { SITE_NAME } from "@/lib/constants";
 import type { ToolConfig } from "@/lib/tools-config";
+import { toolShortTitle } from "@/lib/tool-display";
 import { cn } from "@/lib/utils";
-
-function formatToolLabel(slug: string) {
-  return slug.replace(/-/g, " ");
-}
 
 export function MobileNav({
   tools,
@@ -56,7 +52,7 @@ export function MobileNav({
         className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-hairline bg-canvas-soft text-ink transition-colors hover:bg-canvas-soft-2"
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
-        aria-label={open ? "Close menu" : "Open menu"}
+        aria-label={open ? t("nav.menuClose") : t("nav.menuOpen")}
       >
         {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
@@ -67,7 +63,7 @@ export function MobileNav({
           id="mobile-nav-panel"
           role="dialog"
           aria-modal="true"
-          aria-label={`${SITE_NAME} menu`}
+          aria-label={t("nav.menuLabel")}
         >
           <nav
             className="flex-1 overflow-y-auto border-t border-hairline px-4 py-4"
@@ -82,12 +78,12 @@ export function MobileNav({
                   <Link
                     href={`/${tool.slug}`}
                     className={cn(
-                      "block rounded-md px-3 py-2.5 text-sm capitalize text-body transition-colors hover:bg-canvas-soft hover:text-ink",
+                      "block rounded-md px-3 py-2.5 text-sm text-body transition-colors hover:bg-canvas-soft hover:text-ink",
                       pathWithoutLocale === `/${tool.slug}` &&
                         "bg-canvas-soft font-medium text-ink"
                     )}
                   >
-                    {formatToolLabel(tool.slug)}
+                    {toolShortTitle(tool)}
                   </Link>
                 </li>
               ))}

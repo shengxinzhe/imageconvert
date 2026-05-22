@@ -8,7 +8,10 @@
     "mobileConverters": "Konverter",
     "mobileMore": "Mehr",
     "contact": "Kontakt",
-    "mobileCta": "HEIC jetzt konvertieren"
+    "mobileCta": "HEIC jetzt konvertieren",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen",
+    "menuLabel": "Website-Menü"
   },
   "language": {
     "label": "Sprache",
@@ -22,7 +25,10 @@
     "heroSubtitle": "Apples Standardformat funktioniert nicht überall. Lokal im Browser konvertieren — privat, kostenlos, sofort für Windows, Mac und Teilen.",
     "heroCtaHeic": "HEIC in JPG",
     "heroCtaPng": "HEIC in PNG",
-    "heroTrust": "Dateien bleiben auf dem Gerät",
+    "heroCtaAvif": "AVIF in JPG",
+    "heroTrust1": "Dateien bleiben auf Ihrem Gerät",
+    "heroTrust2": "Stapelverarbeitung + ZIP",
+    "heroTrust3": "Kein Konto, kein Wasserzeichen",
     "devBadge": "WebP · AVIF · optimieren",
     "devTitle": "Entwickler-Konverter",
     "devSubtitle": "WebP und AVIF für moderne Websites — lokal konvertieren vor dem Deploy.",
@@ -88,6 +94,28 @@
     "qualityHint": "Höher = schärfer und größer. Standard {default}%.",
     "successOne": "1 Datei konvertiert — unten herunterladen.",
     "successMany": "{count} Dateien konvertiert — unten herunterladen.",
-    "successGuidePrefix": "Weiter:"
+    "successGuidePrefix": "Weiter:",
+    "errorGuidePrefix": "Hilfe:"
+  },
+  "errors": {
+    "thisFile": "Diese Datei",
+    "theFile": "die Datei",
+    "memory": "{file} ist für diesen Browser-Tab zu groß. Schließen Sie andere Tabs, konvertieren Sie weniger Dateien oder nutzen Sie Chrome/Edge am Desktop.",
+    "decodeAvif": "{file} konnte nicht als AVIF dekodiert werden. Nutzen Sie aktuelles Chrome oder Edge am Desktop—Firefox und älteres Safari scheitern oft.",
+    "decodeWebp": "{file} konnte nicht als WebP dekodiert werden. Versuchen Sie Chrome/Edge oder exportieren Sie das Bild neu.",
+    "decodeGeneric": "{file} konnte nicht geladen werden. Die Datei ist evtl. beschädigt oder nicht unterstützt.",
+    "heic": "{file} konnte nicht von HEIC konvertiert werden. Chrome/Edge am Desktop, nur Stillfoto (.heic/.heif, keine Live-Photo-.mov), ggf. eine Datei zuerst.",
+    "security": "Der Browser blockierte das Lesen von {file}. Seite neu laden, keine Cross-Origin-Dateien.",
+    "unsupported": "Ihr Browser unterstützt diese Konvertierung nicht. Aktualisieren Sie den Browser oder wechseln Sie zu Chrome, Edge oder neuem Safari.",
+    "generic": "{file} konnte nicht konvertiert werden. Chrome/Edge am Desktop, kleinere Dateien oder weniger Bilder pro Durchgang. ({detail})"
+  },
+  "warnings": {
+    "largeBatch": "{count} Dateien ausgewählt. Große Stapel sind auf dem Handy langsam—Desktop-Browser oder kleinere Gruppen.",
+    "largeFileOne": "\"{name}\" ist über {mb} MB. Schwere Dateien brauchen viel RAM—am besten Chrome/Edge am Desktop.",
+    "largeFileMany": "{count} Dateien über {mb} MB. Auf dem Handy können Fehler auftreten—bei Problemen Desktop-Browser nutzen."
+  },
+  "browserHint": {
+    "message": "Für HEIC und AVIF am besten Chrome oder Edge am Desktop. Firefox und Safari können bei einzelnen Dateien scheitern.",
+    "dismiss": "Browser-Hinweis schließen"
   }
 }

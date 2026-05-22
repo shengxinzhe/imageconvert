@@ -8,7 +8,10 @@
     "mobileConverters": "Convertisseurs",
     "mobileMore": "Plus",
     "contact": "Contact",
-    "mobileCta": "Convertir HEIC"
+    "mobileCta": "Convertir HEIC",
+    "menuOpen": "Ouvrir le menu",
+    "menuClose": "Fermer le menu",
+    "menuLabel": "Menu du site"
   },
   "language": {
     "label": "Langue",
@@ -22,7 +25,10 @@
     "heroSubtitle": "Le format Apple ne fonctionne pas partout. Convertissez localement dans le navigateur — privé, gratuit, instantané pour Windows, Mac et le partage.",
     "heroCtaHeic": "HEIC en JPG",
     "heroCtaPng": "HEIC en PNG",
-    "heroTrust": "Les fichiers restent sur l'appareil",
+    "heroCtaAvif": "AVIF en JPG",
+    "heroTrust1": "Les fichiers restent sur votre appareil",
+    "heroTrust2": "Lots + téléchargement ZIP",
+    "heroTrust3": "Sans compte ni filigrane",
     "devBadge": "WebP · AVIF · optimiser",
     "devTitle": "Convertisseurs développeur",
     "devSubtitle": "WebP et AVIF pour les sites modernes — conversion locale avant déploiement.",
@@ -88,6 +94,28 @@
     "qualityHint": "Plus haut = plus net et plus lourd. Défaut {default}%.",
     "successOne": "1 fichier converti — téléchargez ci-dessous.",
     "successMany": "{count} fichiers convertis — téléchargez ci-dessous.",
-    "successGuidePrefix": "Suite :"
+    "successGuidePrefix": "Suite :",
+    "errorGuidePrefix": "Aide :"
+  },
+  "errors": {
+    "thisFile": "Ce fichier",
+    "theFile": "le fichier",
+    "memory": "{file} est trop volumineux pour cet onglet. Fermez d'autres onglets, convertissez moins de fichiers ou utilisez Chrome/Edge sur ordinateur.",
+    "decodeAvif": "{file} n'a pas pu être décodé en AVIF. Utilisez Chrome ou Edge récent sur ordinateur—Firefox et vieux Safari échouent souvent.",
+    "decodeWebp": "{file} n'a pas pu être décodé en WebP. Essayez Chrome/Edge ou réexportez depuis votre éditeur.",
+    "decodeGeneric": "{file} n'a pas pu être chargé. Fichier peut-être corrompu ou variante non prise en charge.",
+    "heic": "{file} n'a pas pu être converti depuis HEIC. Chrome/Edge sur ordinateur, image fixe (.heic/.heif, pas le .mov Live Photo), un fichier à la fois.",
+    "security": "Le navigateur a bloqué la lecture de {file}. Rechargez la page sans fichiers cross-origin.",
+    "unsupported": "Votre navigateur ne prend pas en charge cette conversion. Mettez à jour ou passez à Chrome, Edge ou Safari récent.",
+    "generic": "Impossible de convertir {file}. Chrome/Edge sur ordinateur, fichiers plus petits ou moins d'images par lot. ({detail})"
+  },
+  "warnings": {
+    "largeBatch": "{count} fichiers sélectionnés. Les gros lots sont lents sur mobile—ordinateur ou groupes plus petits.",
+    "largeFileOne": "\"{name}\" dépasse {mb} Mo. Fichiers lourds : préférez Chrome/Edge sur ordinateur.",
+    "largeFileMany": "{count} fichiers dépassent {mb} Mo. Sur mobile, des erreurs sont possibles—utilisez un navigateur bureau."
+  },
+  "browserHint": {
+    "message": "Pour HEIC et AVIF, préférez Chrome ou Edge sur ordinateur. Firefox et Safari peuvent échouer sur certains fichiers.",
+    "dismiss": "Fermer l'astuce navigateur"
   }
 }
