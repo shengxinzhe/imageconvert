@@ -43,7 +43,15 @@
     "howToTitle": "Comment convertir ({from} → {to}) en 3 étapes",
     "privacyHeading": "Confidentialité : les fichiers restent dans le navigateur",
     "faqHeading": "Questions fréquentes",
-    "relatedHeading": "Outils associés"
+    "relatedHeading": "Outils associés",
+    "relatedGuidesHeading": "Guides associés"
+  },
+  "cookie": {
+    "message": "Nous utilisons des cookies pour les statistiques{ads}. Vos images ne sont jamais envoyées.",
+    "messageAds": " et les annonces Google AdSense",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "privacyLink": "Confidentialité"
   },
   "footer": {
     "tagline": "Convertisseurs d'images gratuits en ligne. Les fichiers restent dans votre navigateur.",
@@ -77,6 +85,9 @@
     "zipError": "Impossible de créer le ZIP. Téléchargez les fichiers un par un.",
     "jpegQuality": "Qualité JPEG",
     "webpQuality": "Qualité WebP",
-    "qualityHint": "Plus haut = plus net et plus lourd. Défaut {default}%."
+    "qualityHint": "Plus haut = plus net et plus lourd. Défaut {default}%.",
+    "successOne": "1 fichier converti — téléchargez ci-dessous.",
+    "successMany": "{count} fichiers convertis — téléchargez ci-dessous.",
+    "successGuidePrefix": "Suite :"
   }
 }

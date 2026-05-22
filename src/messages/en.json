@@ -43,7 +43,15 @@
     "howToTitle": "How to convert ({from} → {to}) in 3 steps",
     "privacyHeading": "Privacy: Files never leave your browser",
     "faqHeading": "Frequently Asked Questions",
-    "relatedHeading": "Related Tools"
+    "relatedHeading": "Related Tools",
+    "relatedGuidesHeading": "Related guides"
+  },
+  "cookie": {
+    "message": "We use cookies for analytics{ads}. Your images are never uploaded.",
+    "messageAds": " and Google AdSense ads",
+    "accept": "Accept",
+    "decline": "Decline",
+    "privacyLink": "Privacy Policy"
   },
   "footer": {
     "tagline": "Free online image converters. Files never leave your browser.",
@@ -77,6 +85,9 @@
     "zipError": "Could not create ZIP. Try downloading files individually.",
     "jpegQuality": "JPEG quality",
     "webpQuality": "WebP quality",
-    "qualityHint": "Higher = sharper and larger files. Default {default}%."
+    "qualityHint": "Higher = sharper and larger files. Default {default}%.",
+    "successOne": "1 file converted — ready to download below.",
+    "successMany": "{count} files converted — ready to download below.",
+    "successGuidePrefix": "Next:"
   }
 }

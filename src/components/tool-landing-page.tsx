@@ -8,7 +8,9 @@ import type { AppLocale } from "@/i18n/routing";
 import { getLocalizedToolBySlug } from "@/lib/get-localized-tool";
 import { audienceStyles, getToolAudience } from "@/lib/design-variants";
 import { hasAdSenseDisplayUnits } from "@/lib/adsense";
-import type { ToolConfig } from "@/lib/tools-config";
+import { RelatedGuides } from "@/components/tool/related-guides";
+import type { ToolConfig, ToolSlug } from "@/lib/tools-config";
+import { toolRelatedGuides } from "@/lib/tool-related-guides";
 import { cn } from "@/lib/utils";
 
 const ImageConverter = dynamic(
@@ -34,6 +36,7 @@ export async function ToolLandingPage({
   const t = getT(locale);
   const audience = getToolAudience(tool.slug);
   const style = audienceStyles[audience];
+  const guideConfig = toolRelatedGuides[tool.slug as ToolSlug];
 
   return (
     <article>
@@ -60,7 +63,18 @@ export async function ToolLandingPage({
                 to={tool.to}
                 toolSlug={tool.slug}
                 audience={audience}
+                postConvertGuideSlug={guideConfig?.postConvertGuide}
               />
+              <ul className="mt-6 flex flex-col gap-3 border-t border-hairline pt-6 text-sm text-body lg:hidden">
+                <li className="flex gap-3">
+                  <Lock className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
+                  {t("tool.filesStay")}
+                </li>
+                <li className="flex gap-3">
+                  <Zap className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
+                  {t("tool.noSignup")}
+                </li>
+              </ul>
             </div>
             <aside className="hidden lg:block">
               <AdSlot position="sidebar" />
@@ -115,6 +129,10 @@ export async function ToolLandingPage({
             {s.content && !s.paragraphs?.length ? <p>{s.content}</p> : null}
           </div>
         ))}
+
+        {guideConfig?.guides?.length ? (
+          <RelatedGuides slugs={guideConfig.guides} locale={locale} />
+        ) : null}
 
         <h2>{t("tool.faqHeading")}</h2>
         <div className="not-prose space-y-2">

@@ -43,7 +43,15 @@
     "howToTitle": "So konvertieren Sie ({from} → {to}) in 3 Schritten",
     "privacyHeading": "Datenschutz: Dateien bleiben im Browser",
     "faqHeading": "Häufige Fragen",
-    "relatedHeading": "Verwandte Tools"
+    "relatedHeading": "Verwandte Tools",
+    "relatedGuidesHeading": "Passende Ratgeber"
+  },
+  "cookie": {
+    "message": "Wir nutzen Cookies für Statistik{ads}. Ihre Bilder werden nicht hochgeladen.",
+    "messageAds": " und Google AdSense-Werbung",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "privacyLink": "Datenschutz"
   },
   "footer": {
     "tagline": "Kostenlose Bildkonverter online. Dateien bleiben in Ihrem Browser.",
@@ -77,6 +85,9 @@
     "zipError": "ZIP fehlgeschlagen. Laden Sie Dateien einzeln herunter.",
     "jpegQuality": "JPEG-Qualität",
     "webpQuality": "WebP-Qualität",
-    "qualityHint": "Höher = schärfer und größer. Standard {default}%."
+    "qualityHint": "Höher = schärfer und größer. Standard {default}%.",
+    "successOne": "1 Datei konvertiert — unten herunterladen.",
+    "successMany": "{count} Dateien konvertiert — unten herunterladen.",
+    "successGuidePrefix": "Weiter:"
   }
 }

@@ -21,6 +21,8 @@ import {
   type OutputFormat,
 } from "@/lib/convert";
 import { buildZipBlob, downloadBlob } from "@/lib/download-zip";
+import { Link } from "@/i18n/navigation";
+import { getLocalizedBlogPost } from "@/lib/blog-l10n";
 import { getT } from "@/lib/i18n/translations";
 import { QualityControl } from "@/components/converter/quality-control";
 import { Button } from "@/components/ui/button";
@@ -41,6 +43,8 @@ interface ImageConverterProps {
   to: OutputFormat;
   toolSlug: string;
   audience?: ToolAudience;
+  /** Blog slug for optional post-convert guide link */
+  postConvertGuideSlug?: string;
 }
 
 export function ImageConverter({
@@ -48,6 +52,7 @@ export function ImageConverter({
   to,
   toolSlug,
   audience = "heic",
+  postConvertGuideSlug,
 }: ImageConverterProps) {
   const params = useParams();
   const locale = (routing.locales.includes(params.locale as AppLocale)
@@ -191,6 +196,9 @@ export function ImageConverter({
 
   const accept = acceptMimeForInput(from);
   const softWarnings = useMemo(() => getConverterSoftWarnings(files), [files]);
+  const postConvertGuide = postConvertGuideSlug
+    ? getLocalizedBlogPost(postConvertGuideSlug, locale)
+    : undefined;
 
   return (
     <div className="space-y-4">
@@ -306,6 +314,25 @@ export function ImageConverter({
 
       {results.length > 0 && (
         <div className="space-y-3">
+          <div
+            className="rounded-vercel border border-emerald-200 bg-emerald-50 px-3 py-2.5 text-sm text-emerald-950"
+            role="status"
+          >
+            {results.length === 1
+              ? t("converter.successOne")
+              : t("converter.successMany", { count: results.length })}
+          </div>
+          {postConvertGuide ? (
+            <p className="text-sm text-body">
+              {t("converter.successGuidePrefix")}{" "}
+              <Link
+                href={`/blog/${postConvertGuide.slug}`}
+                className="font-medium text-link hover:text-link-deep"
+              >
+                {postConvertGuide.title}
+              </Link>
+            </p>
+          ) : null}
           {results.length > 1 && (
             <Button
               variant="secondary"
