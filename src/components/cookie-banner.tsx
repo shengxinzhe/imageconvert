@@ -41,6 +41,7 @@ export function CookieBanner() {
         fontSize: "14px",
         alignItems: "center",
         fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
+        zIndex: 99999,
       }}
       buttonStyle={{
         background: "#ffffff",

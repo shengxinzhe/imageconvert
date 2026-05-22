@@ -24,17 +24,17 @@ function Ga4Scripts() {
   if (!id) return null;
 
   return (
-    <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
-        strategy="afterInteractive"
-      />
-      <Script id="ga4-config" strategy="afterInteractive">
-        {`
-          gtag('config', '${id}', { send_page_view: false });
-        `}
-      </Script>
-    </>
+    <Script
+      id="ga4-gtag"
+      src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
+      strategy="afterInteractive"
+      onLoad={() => {
+        const gtag = (window as Window & { gtag?: (...args: unknown[]) => void })
+          .gtag;
+        gtag?.("js", new Date());
+        gtag?.("config", id, { send_page_view: false });
+      }}
+    />
   );
 }
 

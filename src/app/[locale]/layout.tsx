@@ -5,6 +5,7 @@ import { GeistSans } from "geist/font/sans";
 import { Ga4Analytics } from "@/components/analytics/ga4-analytics";
 import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
 import { CookieBanner } from "@/components/cookie-banner";
+import { ConsentRestore } from "@/components/consent-restore";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { routing, type AppLocale } from "@/i18n/routing";
@@ -97,6 +98,7 @@ export default function LocaleLayout({
         <main>{children}</main>
         <Footer locale={locale as AppLocale} />
         <CookieBanner />
+        <ConsentRestore />
         <VercelAnalytics />
         <Ga4Analytics />
       </body>
