@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import { Ga4Analytics } from "@/components/analytics/ga4-analytics";
 import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Footer } from "@/components/layout/footer";
@@ -97,6 +98,7 @@ export default function LocaleLayout({
         <Footer locale={locale as AppLocale} />
         <CookieBanner />
         <VercelAnalytics />
+        <Ga4Analytics />
       </body>
     </html>
   );

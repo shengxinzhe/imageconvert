@@ -2,11 +2,12 @@
 
 import CookieConsent from "react-cookie-consent";
 import { useParams } from "next/navigation";
-import { denyAdConsent, grantAdConsent } from "@/components/ads/consent-mode";
+import { denyCookieConsent, grantCookieConsent } from "@/components/ads/consent-mode";
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { isAdSenseScriptEnabled } from "@/lib/adsense";
+import { trackGaPageview } from "@/lib/ga4";
 import { getT } from "@/lib/i18n/translations";
 
 export function CookieBanner() {
@@ -29,10 +30,11 @@ export function CookieBanner() {
       enableDeclineButton
       cookieName="heicsave_consent"
       onAccept={() => {
-        if (adsense) grantAdConsent();
+        grantCookieConsent(adsense);
+        trackGaPageview();
       }}
       onDecline={() => {
-        if (adsense) denyAdConsent();
+        denyCookieConsent(adsense);
       }}
       style={{
         background: "#171717",

@@ -23,6 +23,20 @@ export function AdSenseConsentMode() {
   );
 }
 
+export function grantAnalyticsConsent() {
+  if (typeof window === "undefined") return;
+  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+  if (!gtag) return;
+  gtag("consent", "update", { analytics_storage: "granted" });
+}
+
+export function denyAnalyticsConsent() {
+  if (typeof window === "undefined") return;
+  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+  if (!gtag) return;
+  gtag("consent", "update", { analytics_storage: "denied" });
+}
+
 export function grantAdConsent() {
   if (typeof window === "undefined") return;
   const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
@@ -31,7 +45,6 @@ export function grantAdConsent() {
     ad_storage: "granted",
     ad_user_data: "granted",
     ad_personalization: "granted",
-    analytics_storage: "granted",
   });
 }
 
@@ -43,6 +56,17 @@ export function denyAdConsent() {
     ad_storage: "denied",
     ad_user_data: "denied",
     ad_personalization: "denied",
-    analytics_storage: "denied",
   });
+}
+
+/** Cookie banner Accept — analytics always; ads only when AdSense is enabled. */
+export function grantCookieConsent(ads: boolean) {
+  grantAnalyticsConsent();
+  if (ads) grantAdConsent();
+}
+
+/** Cookie banner Decline — deny analytics; deny ads when AdSense is enabled. */
+export function denyCookieConsent(ads: boolean) {
+  denyAnalyticsConsent();
+  if (ads) denyAdConsent();
 }
