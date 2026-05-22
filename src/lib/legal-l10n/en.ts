@@ -12,11 +12,11 @@ export const enLegal: LegalCatalog = {
 
 ## General & privacy
 
-Questions about cookies, GDPR, or how the site works: [privacy@heicsave.com](mailto:privacy@heicsave.com)
+Questions about cookies, GDPR, or how the site works — see the addresses at the bottom of this page.
 
 ## Copyright (DMCA)
 
-Copyright notices and takedown requests: [dmca@heicsave.com](mailto:dmca@heicsave.com)
+Copyright notices and takedown requests — see our [DMCA policy](/dmca) and the DMCA address below.
 
 See our [DMCA policy](/dmca) for required notice details.
 
@@ -60,7 +60,7 @@ We maintain a [blog](/blog) with original guides on HEIC, WebP, AVIF, and browse
 
 ## Contact
 
-Questions or GDPR requests: [privacy@heicsave.com](mailto:privacy@heicsave.com) or our [Contact](/contact) page.
+Questions or GDPR requests: [Contact page](/contact) or our [Contact](/contact) page.
 
 See also [Privacy Policy](/privacy) and [Terms of Service](/terms).`,
   },
@@ -100,7 +100,7 @@ We publish an [ads.txt](/ads.txt) file listing authorized digital sellers after 
 
 ## GDPR (EEA/UK users)
 
-If you are in the European Economic Area or UK, you have rights to access, rectify, erase, restrict processing, and object to processing of personal data we control (such as analytics or ad identifiers tied to cookies—not your image files). Contact us at [privacy@heicsave.com](mailto:privacy@heicsave.com).
+If you are in the European Economic Area or UK, you have rights to access, rectify, erase, restrict processing, and object to processing of personal data we control (such as analytics or ad identifiers tied to cookies—not your image files). Contact us at [Contact page](/contact).
 
 Legal bases may include consent (cookies/ads), legitimate interests (security and site operation), and contractual necessity where applicable.
 
@@ -110,7 +110,7 @@ Our service is not directed at children under 13. We do not knowingly collect pe
 
 ## Contact
 
-Email: [privacy@heicsave.com](mailto:privacy@heicsave.com) · [Contact page](/contact) · [About HeicSave](/about)`,
+Email: [Contact page](/contact) · [Contact page](/contact) · [About HeicSave](/about)`,
   },
   terms: {
     meta: {
@@ -151,7 +151,7 @@ We may update these terms. Continued use constitutes acceptance.`,
 
 ## Designated agent
 
-Email: [dmca@heicsave.com](mailto:dmca@heicsave.com)
+Email: [DMCA policy](/dmca)
 
 ## Notice requirements
 

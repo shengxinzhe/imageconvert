@@ -18,5 +18,5 @@ export function generateMetadata({ params }: PageProps) {
 export default function DmcaPage({ params }: PageProps) {
   const locale = params.locale as AppLocale;
   const content = getLegalPage("dmca", locale);
-  return <LegalPage content={content} locale={locale} />;
+  return <LegalPage content={content} locale={locale} showDmcaEmail />;
 }

@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
-import { DMCA_EMAIL, SITE_NAME } from "@/lib/constants";
+import { SITE_NAME } from "@/lib/constants";
 import { getLocalizedToolList } from "@/lib/get-localized-tool";
 import { getT } from "@/lib/i18n/translations";
 
@@ -49,7 +49,12 @@ export function Footer({ locale }: { locale: AppLocale }) {
               <Link href="/contact">{t("footer.contact")}</Link>
             </li>
           </ul>
-          <p className="mt-4 font-mono text-xs text-mute">DMCA: {DMCA_EMAIL}</p>
+          <p className="mt-4 text-xs text-mute">
+            DMCA:{" "}
+            <Link href="/dmca" className="hover:text-ink">
+              {t("footer.dmca")}
+            </Link>
+          </p>
         </div>
       </div>
       <div className="border-t border-hairline px-4 py-6 text-center font-mono text-xs text-mute">

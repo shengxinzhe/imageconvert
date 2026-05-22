@@ -4,7 +4,6 @@ Allow: /
 Disallow: /icon.png
 Disallow: /apple-icon.png
 Disallow: /opengraph-image.png
-Disallow: /cdn-cgi/
 
 # Host
 Host: https://heicsave.com

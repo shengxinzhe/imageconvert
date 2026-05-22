@@ -28,12 +28,21 @@ function MarkdownLink({
   }
 
   if (href.startsWith("mailto:")) {
+    const isDmca = href.includes("dmca@");
+    const path = isDmca ? "/dmca" : "/contact";
+    const label =
+      typeof children === "string" && children.includes("@")
+        ? isDmca
+          ? "DMCA policy"
+          : "Contact us"
+        : children;
+
     return (
       <Link
-        href={localePath("/contact", locale)}
+        href={localePath(path, locale)}
         className="font-medium text-[var(--mintlify-green)] no-underline hover:underline"
       >
-        {children}
+        {label}
       </Link>
     );
   }

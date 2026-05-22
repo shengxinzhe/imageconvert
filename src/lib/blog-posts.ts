@@ -556,7 +556,7 @@ EU users see a cookie banner for analytics and Google AdSense. You can accept or
 
 ## What we collect
 
-Analytics (with consent) and standard server logs—not your image files. Questions: [privacy@heicsave.com](mailto:privacy@heicsave.com) or our [Contact](/contact) page.
+Analytics (with consent) and standard server logs—not your image files. Questions: see our [Contact](/contact) page.
 
 ## Try it
 

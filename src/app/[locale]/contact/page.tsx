@@ -18,5 +18,5 @@ export function generateMetadata({ params }: PageProps) {
 export default function ContactPage({ params }: PageProps) {
   const locale = params.locale as AppLocale;
   const content = getLegalPage("contact", locale);
-  return <LegalPage content={content} locale={locale} />;
+  return <LegalPage content={content} locale={locale} showContactEmails />;
 }

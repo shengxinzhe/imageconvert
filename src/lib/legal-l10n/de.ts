@@ -12,11 +12,11 @@ export const deLegal: LegalCatalog = {
 
 ## Allgemein & Datenschutz
 
-Fragen zu Cookies, DSGVO oder zur Funktionsweise der Website: [privacy@heicsave.com](mailto:privacy@heicsave.com)
+Fragen zu Cookies, DSGVO oder zur Funktionsweise der Website — siehe die Adressen am Ende dieser Seite.
 
 ## Urheberrecht (DMCA)
 
-Hinweise und Abmahnungen zum Urheberrecht: [dmca@heicsave.com](mailto:dmca@heicsave.com)
+Hinweise und Abmahnungen zum Urheberrecht — siehe unsere [DMCA-Richtlinie](/dmca) und die DMCA-Adresse unten.
 
 Details zu Pflichtangaben finden Sie in unserer [DMCA-Richtlinie](/dmca).
 
@@ -60,7 +60,7 @@ Im [Blog](/blog) finden Sie eigene Artikel zu HEIC, WebP, AVIF und privater Brow
 
 ## Kontakt
 
-Fragen oder DSGVO-Anfragen: [privacy@heicsave.com](mailto:privacy@heicsave.com) oder unsere [Kontaktseite](/contact).
+Fragen oder DSGVO-Anfragen: [Kontaktseite](/contact) oder unsere [Kontaktseite](/contact).
 
 Weitere Informationen: [Datenschutzerklärung](/privacy) und [Nutzungsbedingungen](/terms).`,
   },
@@ -100,7 +100,7 @@ Nach Freigabe durch AdSense veröffentlichen wir eine [ads.txt](/ads.txt)-Datei 
 
 ## DSGVO (Nutzer im EWR / UK)
 
-Wenn Sie im Europäischen Wirtschaftsraum oder im Vereinigten Königreich ansässig sind, haben Sie Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch gegen die Verarbeitung personenbezogener Daten, die wir kontrollieren (z. B. Analytics- oder Werbe-IDs über Cookies – nicht Ihre Bilddateien). Kontakt: [privacy@heicsave.com](mailto:privacy@heicsave.com).
+Wenn Sie im Europäischen Wirtschaftsraum oder im Vereinigten Königreich ansässig sind, haben Sie Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch gegen die Verarbeitung personenbezogener Daten, die wir kontrollieren (z. B. Analytics- oder Werbe-IDs über Cookies – nicht Ihre Bilddateien). Kontakt: [Kontaktseite](/contact).
 
 Rechtsgrundlagen können Einwilligung (Cookies/Werbung), berechtigte Interessen (Sicherheit und Betrieb) und Vertragserfüllung sein, soweit anwendbar.
 
@@ -110,7 +110,7 @@ Der Dienst richtet sich nicht an Kinder unter 13 Jahren. Wir erheben wissentlich
 
 ## Kontakt
 
-E-Mail: [privacy@heicsave.com](mailto:privacy@heicsave.com) · [Kontaktseite](/contact) · [Über HeicSave](/about)`,
+E-Mail: [Kontaktseite](/contact) · [Kontaktseite](/contact) · [Über HeicSave](/about)`,
   },
   terms: {
     meta: {
@@ -153,7 +153,7 @@ Wir können diese Bedingungen aktualisieren. Die weitere Nutzung gilt als Zustim
 
 ## Beauftragter
 
-E-Mail: [dmca@heicsave.com](mailto:dmca@heicsave.com)
+E-Mail: [DMCA-Richtlinie](/dmca)
 
 ## Pflichtangaben in der Mitteilung
 

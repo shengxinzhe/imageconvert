@@ -82,12 +82,7 @@ module.exports = {
       {
         userAgent: "*",
         allow: "/",
-        disallow: [
-          "/icon.png",
-          "/apple-icon.png",
-          "/opengraph-image.png",
-          "/cdn-cgi/",
-        ],
+        disallow: ["/icon.png", "/apple-icon.png", "/opengraph-image.png"],
       },
     ],
   },
