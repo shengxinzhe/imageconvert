@@ -4,7 +4,7 @@ export const deBlogPosts: Record<
   { title: string; description: string; content: string }
 > = {
   "convert-avif-to-jpg-windows": {
-    title: "AVIF in JPG unter Windows umwandeln – kostenlos, ohne Upload (2026)",
+    title: "AVIF in JPG unter Windows (kostenlos, ohne Upload)",
     description:
       "AVIF-Bilder unter Windows 10/11 in Chrome oder Edge in JPG konvertieren: Stapelverarbeitung, Qualitätsregler, ZIP-Download. Keine Installation, keine Uploads auf fremde Server.",
     content: `Sie haben eine **.avif**-Datei heruntergeladen – oder eine Website liefert Bilder nur noch als AVIF – und Windows öffnet sie weder in der E-Mail, in Word noch in älteren Upload-Formularen. **JPG** bleibt das Format, das praktisch überall funktioniert. In diesem Ratgeber erfahren Sie, wie Sie **AVIF unter Windows zuverlässig in JPG umwandeln** – ohne Codec-Pakete und ohne Ihre Fotos an unbekannte Online-Dienste zu senden.
@@ -200,7 +200,7 @@ Bei HeicSave gibt es kein festes Dateilimit – Grenzen setzen **Arbeitsspeicher
 Ausführlich nur für Windows: [HEIC unter Windows öffnen und konvertieren](/blog/heic-windows-guide). Für Google-Drive-Alben: [HEIC aus Google Drive stapelweise konvertieren](/blog/heic-google-drive-batch-convert).`,
   },
   "convert-webp-to-jpg-windows": {
-    title: "WebP in JPG unter Windows umwandeln – kostenlos, ohne Upload (2026)",
+    title: "WebP in JPG unter Windows (kostenlos, ohne Upload)",
     description:
       "WebP-Bilder unter Windows 10/11 in Chrome oder Edge in JPG konvertieren: Stapelverarbeitung, Qualitätsregler, ZIP-Download. Keine Installation, kein Server-Upload.",
     content: `Sie haben eine **.webp**-Datei von einer Website, aus Slack oder einem Design-Export gespeichert – und Windows öffnet sie weder in Word noch in Outlook noch in älteren Upload-Formularen. **JPG** bleibt das Format, das praktisch überall funktioniert. Dieser Ratgeber zeigt zuverlässige Wege, **WebP unter Windows in JPG umzuwandeln**, ohne Software zu installieren oder Fotos an unbekannte Server zu senden.
@@ -376,7 +376,7 @@ Browser-Konverter erwarten ein **Standbild**. Die .heic-Datei ablegen, nicht die
 **Hier starten:** **[HEIC in PNG](/heic-to-png)**`,
   },
   "heic-google-drive-batch-convert": {
-    title: "HEIC stapelweise aus Google Drive in JPG konvertieren (2026)",
+    title: "HEIC aus Google Drive stapelweise in JPG (2026)",
     description:
       "HEIC-Fotos aus Google Drive herunterladen, im Browser stapelweise in JPG umwandeln ohne Software-Installation, dann erneut hochladen oder teilen.",
     content: `Google Drive bietet keinen eingebauten **HEIC → JPG**-Button. Wenn Ihr iPhone-Backup oder ein geteilter Ordner voller .heic-Dateien ist, scheitern Windows-Vorschauen und E-Mail-Anhänge oft. Dieser Workflow konvertiert **viele HEIC-Dateien auf einmal**, ohne Codecs zu installieren oder Fotos auf fremde Server hochzuladen.

@@ -29,9 +29,12 @@ function MarkdownLink({
 
   if (href.startsWith("mailto:")) {
     return (
-      <a href={href} rel="nofollow noopener noreferrer" {...props}>
+      <Link
+        href={localePath("/contact", locale)}
+        className="font-medium text-[var(--mintlify-green)] no-underline hover:underline"
+      >
         {children}
-      </a>
+      </Link>
     );
   }
 

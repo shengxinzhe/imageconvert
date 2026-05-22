@@ -693,7 +693,7 @@ Need universal Windows compatibility? After conversion, JPG opens in Photos, Pai
   },
   {
     slug: "convert-webp-to-jpg-windows",
-    title: "How to Convert WebP to JPG on Windows (Free, No Upload, 2026)",
+    title: "Convert WebP to JPG on Windows (Free, No Upload)",
     description:
       "Convert WebP images to JPG on Windows 10/11 in Chrome or Edge—batch files, adjust quality, download ZIP. No install, no server upload.",
     publishedAt: "2026-05-22",

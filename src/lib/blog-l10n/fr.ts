@@ -4,7 +4,7 @@ export const frBlogPosts: Record<
   { title: string; description: string; content: string }
 > = {
   "convert-avif-to-jpg-windows": {
-    title: "Convertir AVIF en JPG sur Windows – gratuit, sans envoi (2026)",
+    title: "Convertir AVIF en JPG sur Windows (gratuit, sans envoi)",
     description:
       "Convertir des images AVIF en JPG sur Windows 10/11 dans Chrome ou Edge : traitement par lots, réglage de qualité, ZIP. Sans installation ni envoi vers un serveur tiers.",
     content: `Vous avez téléchargé une image **.avif** — ou un site ne fournit que ce format — et Windows refuse de l’ouvrir dans Outlook, Word ou un ancien formulaire d’envoi. Le **JPG** reste le format que tout le monde accepte. Ce guide présente des méthodes fiables pour **convertir AVIF en JPG sur Windows** sans installer de codecs ni envoyer vos photos vers un convertisseur en ligne inconnu.
@@ -200,7 +200,7 @@ HeicSave n’impose pas de nombre fixe de fichiers — les limites viennent de l
 Pour un parcours dédié Windows : [Ouvrir et convertir HEIC sur Windows](/blog/heic-windows-guide). Pour les albums Google Drive : [Convertir HEIC en lot depuis Google Drive](/blog/heic-google-drive-batch-convert).`,
   },
   "convert-webp-to-jpg-windows": {
-    title: "Convertir WebP en JPG sur Windows – gratuit, sans envoi (2026)",
+    title: "Convertir WebP en JPG sur Windows (gratuit, sans envoi)",
     description:
       "Convertir des images WebP en JPG sur Windows 10/11 dans Chrome ou Edge : lots, réglage qualité, ZIP. Sans installation ni envoi vers un serveur.",
     content: `Vous avez enregistré une image **.webp** depuis un site, Slack ou un export design — et Windows refuse de l’ouvrir dans Word, Outlook ou un ancien formulaire. Le **JPG** reste le format universel. Ce guide présente des méthodes fiables pour **convertir WebP en JPG sur Windows** sans installer de logiciel ni envoyer vos photos vers un serveur inconnu.
@@ -308,7 +308,7 @@ La conversion s’exécute dans votre navigateur. Nous ne recevons pas vos donn�
 **C’est parti :** ouvrez **[WebP en JPG](/webp-to-jpg)** et convertissez votre premier fichier en moins d’une minute.`,
   },
   "heic-to-png-when-and-how": {
-    title: "HEIC en PNG : quand choisir le PNG et comment convertir (2026)",
+    title: "HEIC en PNG : quand et comment convertir (2026)",
     description:
       "HEIC vers PNG plutôt que JPG — pour retouche, transparence et flux sans perte. Conversion par lots dans le navigateur sur Windows et Mac.",
     content: `La plupart des utilisateurs iPhone convertissent HEIC en **JPG** pour l’e-mail et Windows. Parfois le **PNG** est le meilleur choix : avant retouche, pour éviter les artefacts JPEG, ou quand le workflow exige un raster sans perte.
