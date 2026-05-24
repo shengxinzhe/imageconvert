@@ -14,6 +14,11 @@ export const AI_TOOL_CATALOG = [
     useWhen: "Need lossless PNG from iPhone HEIC for design or editing workflows.",
   },
   {
+    slug: "heic-to-webp",
+    name: "HEIC to WebP",
+    useWhen: "Need smaller web-ready images from iPhone HEIC for CMS or site uploads.",
+  },
+  {
     slug: "webp-to-png",
     name: "WebP to PNG",
     useWhen: "WebP assets must open in apps that only accept PNG.",

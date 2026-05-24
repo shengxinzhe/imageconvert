@@ -1,14 +1,19 @@
 import { DEFAULT_JPEG_QUALITY, DEFAULT_WEBP_QUALITY } from "@/lib/constants";
 import { canvasConvert } from "./canvas";
 import { preserveExifOnJpeg } from "./exif";
+import { decodeHeic } from "./heic";
 
-export type InputFormat = "heic" | "webp" | "avif" | "jpg" | "jpeg" | "png";
-export type OutputFormat = "jpg" | "jpeg" | "png" | "webp";
+export type { InputFormat, OutputFormat } from "./conversion-types";
+import type { InputFormat, OutputFormat } from "./conversion-types";
 
 export interface ConvertOptions {
   from: InputFormat;
   to: OutputFormat;
   quality?: number;
+  /** Max output width in pixels; height scales proportionally. */
+  maxWidth?: number | null;
+  /** HEIC→JPG only. Default true. WebP/PNG ignore EXIF embedding. */
+  preserveExif?: boolean;
 }
 
 function outputMime(to: OutputFormat): string {
@@ -41,7 +46,7 @@ export async function convertImage(
   file: File,
   options: ConvertOptions,
 ): Promise<Blob> {
-  const { from, to } = options;
+  const { from, to, maxWidth = null, preserveExif = true } = options;
   const mime = outputMime(to);
   const quality =
     options.quality ??
@@ -50,25 +55,31 @@ export async function convertImage(
   let blob: Blob;
 
   if (from === "heic") {
-    const { convertHeic } = await import("./heic");
     if (to === "webp") {
-      const jpeg = await convertHeic(file, "image/jpeg", quality);
+      const jpeg = await decodeHeic(file, "image/jpeg", quality, maxWidth, false);
       const jpegFile = new File([jpeg], file.name.replace(/\.heic$/i, ".jpg"), {
         type: "image/jpeg",
       });
-      blob = await canvasConvert(jpegFile, "image/webp", quality);
+      blob = await canvasConvert(jpegFile, "image/webp", quality, null);
     } else {
-      blob = await convertHeic(
+      blob = await decodeHeic(
         file,
         to === "png" ? "image/png" : "image/jpeg",
         quality,
+        maxWidth,
+        false,
       );
     }
   } else {
-    blob = await canvasConvert(file, mime, mime === "image/png" ? undefined : quality);
+    blob = await canvasConvert(
+      file,
+      mime,
+      mime === "image/png" ? undefined : quality,
+      maxWidth,
+    );
   }
 
-  if (to === "jpg" || to === "jpeg") {
+  if ((to === "jpg" || to === "jpeg") && from === "heic" && preserveExif) {
     return preserveExifOnJpeg(file, blob);
   }
 
@@ -85,4 +96,8 @@ export function acceptMimeForInput(from: InputFormat): string {
     png: "image/png,.png",
   };
   return map[from];
+}
+
+export function supportsExifToggle(from: InputFormat, to: OutputFormat): boolean {
+  return from === "heic" && (to === "jpg" || to === "jpeg");
 }

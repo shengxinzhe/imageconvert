@@ -16,6 +16,10 @@ export const toolRelatedGuides: Partial<
     guides: ["heic-to-png-when-and-how", "heic-live-photo-guide", "heic-windows-guide"],
     postConvertGuide: "heic-to-png-when-and-how",
   },
+  "heic-to-webp": {
+    guides: ["webp-for-developers", "heic-google-drive-batch-convert", "heic-windows-guide"],
+    postConvertGuide: "webp-for-developers",
+  },
   "avif-to-jpg": {
     guides: ["convert-avif-to-jpg-windows", "avif-explained"],
     postConvertGuide: "convert-avif-to-jpg-windows",

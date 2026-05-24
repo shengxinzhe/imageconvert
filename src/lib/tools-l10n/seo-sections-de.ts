@@ -102,6 +102,15 @@ export const deToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
       ],
     },
   ],
+  "heic-to-webp": [
+    {
+      heading: "HEIC in WebP für schnellere Website-Uploads",
+      paragraphs: [
+        "Moderne CMS und Blogs akzeptieren WebP für kleinere Uploads. iPhone-HEIC muss zuerst konvertiert werden — lokal im Browser, ohne Cloud.",
+        "Nutzen Sie Breiten-Presets, wenn Formulare maximale Bildgrößen vorgeben.",
+      ],
+    },
+  ],
   "webp-to-png": [
     {
       heading: "WebP in PNG für Entwickler",

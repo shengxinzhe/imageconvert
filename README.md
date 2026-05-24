@@ -6,7 +6,7 @@ Free browser-local image converters for HEIC, WebP, and AVIF. Production domain:
 
 - Next.js 14 (App Router)
 - Tailwind CSS + lightweight UI components
-- `heic2any` (HEIC) + Canvas API (WebP/AVIF/JPEG/PNG)
+- `heic-to` (libheif WASM, lazy-loaded) + Canvas API (WebP/AVIF/JPEG/PNG)
 - Vercel Analytics + `react-cookie-consent` (GDPR banner)
 
 ## Routes
@@ -15,6 +15,7 @@ Free browser-local image converters for HEIC, WebP, and AVIF. Production domain:
 |------|------|
 | `/heic-to-jpg` | HEIC → JPG |
 | `/heic-to-png` | HEIC → PNG |
+| `/heic-to-webp` | HEIC → WebP |
 | `/webp-to-png` | WebP → PNG |
 | `/webp-to-jpg` | WebP → JPG |
 | `/avif-to-jpg` | AVIF → JPG |

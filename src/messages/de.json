@@ -93,6 +93,18 @@
     "jpegQuality": "JPEG-Qualität",
     "webpQuality": "WebP-Qualität",
     "qualityHint": "Höher = schärfer und größer. Standard {default}%.",
+    "resizeLabel": "Max. Breite",
+    "resizeHint": "Breite Fotos verkleinern, Seitenverhältnis bleibt. Original = volle Auflösung.",
+    "resizePreset": {
+      "original": "Original",
+      "2048": "2048 px",
+      "1920": "1920 px",
+      "1280": "1280 px"
+    },
+    "exifLabel": "EXIF-Metadaten behalten (nur JPG)",
+    "exifHint": "Datum, Kameramodell und Ausrichtung ins JPG kopieren. GPS wird nicht übernommen. WebP/PNG ignorieren diese Option.",
+    "partialSuccess": "{failed} Datei(en) fehlgeschlagen — siehe Fehler unten.",
+    "failedHeading": "Fehlgeschlagen ({count})",
     "successOne": "1 Datei konvertiert — unten herunterladen.",
     "successMany": "{count} Dateien konvertiert — unten herunterladen.",
     "successGuidePrefix": "Weiter:",

@@ -29,6 +29,15 @@ export const extraToolSeoSections: Record<string, SeoSection[]> = {
       ],
     },
   ],
+  "heic-to-webp": [
+    {
+      heading: "HEIC to WebP for faster website uploads",
+      paragraphs: [
+        "Modern CMS and blog platforms accept WebP for smaller uploads and faster pages. iPhone HEIC must be converted first—this tool does it locally without a cloud upload step.",
+        "Use max-width presets when forms cap image dimensions or when you want consistent hero sizes.",
+      ],
+    },
+  ],
   "webp-to-png": [
     {
       heading: "Why WebP to PNG is still common in 2026",

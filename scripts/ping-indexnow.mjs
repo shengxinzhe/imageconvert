@@ -9,6 +9,7 @@ const HOST = new URL(SITE_URL).host;
 const PRIORITY_PATHS = [
   "/",
   "/heic-to-jpg",
+  "/heic-to-webp",
   "/blog/heic-google-drive-batch-convert",
   "/blog/convert-webp-to-jpg-windows",
   "/blog/heic-to-png-when-and-how",

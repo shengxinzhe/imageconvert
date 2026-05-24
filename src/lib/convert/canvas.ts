@@ -14,18 +14,45 @@ function loadImageFromFile(file: File): Promise<HTMLImageElement> {
   });
 }
 
+function scaledDimensions(
+  naturalWidth: number,
+  naturalHeight: number,
+  maxWidth: number | null,
+): { width: number; height: number } {
+  if (!maxWidth || naturalWidth <= maxWidth) {
+    return { width: naturalWidth, height: naturalHeight };
+  }
+  const scale = maxWidth / naturalWidth;
+  return {
+    width: maxWidth,
+    height: Math.max(1, Math.round(naturalHeight * scale)),
+  };
+}
+
 export async function canvasConvert(
   file: File,
   mimeType: string,
-  quality?: number
+  quality?: number,
+  maxWidth: number | null = null,
 ): Promise<Blob> {
   const img = await loadImageFromFile(file);
+  const { width, height } = scaledDimensions(
+    img.naturalWidth,
+    img.naturalHeight,
+    maxWidth,
+  );
   const canvas = document.createElement("canvas");
-  canvas.width = img.naturalWidth;
-  canvas.height = img.naturalHeight;
+  canvas.width = width;
+  canvas.height = height;
   const ctx = canvas.getContext("2d");
   if (!ctx) throw new Error("Canvas not supported");
-  ctx.drawImage(img, 0, 0);
+
+  if (mimeType === "image/jpeg") {
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, width, height);
+  }
+
+  ctx.drawImage(img, 0, 0, width, height);
 
   return new Promise((resolve, reject) => {
     canvas.toBlob(
@@ -34,7 +61,7 @@ export async function canvasConvert(
         else reject(new Error(`Failed to convert to ${mimeType}`));
       },
       mimeType,
-      quality
+      quality,
     );
   });
 }

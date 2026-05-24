@@ -93,6 +93,18 @@
     "jpegQuality": "JPEG quality",
     "webpQuality": "WebP quality",
     "qualityHint": "Higher = sharper and larger files. Default {default}%.",
+    "resizeLabel": "Max width",
+    "resizeHint": "Scale down wide photos while keeping aspect ratio. Original keeps full resolution.",
+    "resizePreset": {
+      "original": "Original",
+      "2048": "2048 px",
+      "1920": "1920 px",
+      "1280": "1280 px"
+    },
+    "exifLabel": "Preserve EXIF metadata (JPG only)",
+    "exifHint": "Copy date taken, camera model, and orientation into JPG. GPS is not copied. WebP/PNG ignore this setting.",
+    "partialSuccess": "{failed} file(s) could not be converted — see errors below.",
+    "failedHeading": "Failed ({count})",
     "successOne": "1 file converted — ready to download below.",
     "successMany": "{count} files converted — ready to download below.",
     "successGuidePrefix": "Next:",

@@ -101,6 +101,15 @@ export const frToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
       ],
     },
   ],
+  "heic-to-webp": [
+    {
+      heading: "HEIC en WebP pour des uploads web plus légers",
+      paragraphs: [
+        "Les CMS modernes acceptent le WebP pour des fichiers plus petits. Les HEIC iPhone doivent d’abord être convertis — localement, sans cloud.",
+        "Utilisez les presets de largeur max si les formulaires imposent une taille.",
+      ],
+    },
+  ],
   "webp-to-png": [
     {
       heading: "WebP en PNG pour les développeurs",

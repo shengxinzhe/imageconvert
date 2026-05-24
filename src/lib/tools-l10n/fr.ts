@@ -87,6 +87,38 @@ const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
       },
     ],
   },
+  "heic-to-webp": {
+    title: "Convertir HEIC en WebP — gratuit en ligne",
+    h1: "Convertir HEIC en WebP — gratuit en ligne",
+    metaDescription:
+      "Convertissez les photos HEIC iPhone en WebP dans le navigateur. Sans envoi, lot, presets de taille et ZIP.",
+    keywords: ["heic en webp", "convertir heic webp"],
+    heroSubtitle: "Transformez HEIC en WebP plus léger pour le web",
+    whyConvert: {
+      title: "Pourquoi HEIC en WebP ?",
+      paragraphs: [
+        "Le WebP convient aux sites modernes et produit souvent des fichiers plus petits que le JPG.",
+        "Conversion locale dans le navigateur — vos photos ne quittent pas l'appareil.",
+      ],
+    },
+    howToSteps: [
+      "Ajoutez vos HEIC, réglez la qualité WebP et la largeur max si besoin.",
+      "Convertissez — traitement parallèle local.",
+      "Téléchargez chaque WebP ou un ZIP.",
+    ],
+    privacyNote: "Décodage HEIC via libheif WebAssembly — aucun envoi serveur.",
+    faqs: [
+      {
+        question: "L'EXIF est-il conservé en WebP ?",
+        answer:
+          "Non. Utilisez HEIC en JPG si vous avez besoin des métadonnées appareil.",
+      },
+      {
+        question: "Conversion par lot ?",
+        answer: "Oui, plusieurs HEIC avec téléchargement ZIP.",
+      },
+    ],
+  },
   "webp-to-png": {
     title: "Convertir WebP en PNG — gratuit en ligne",
     h1: "Convertir WebP en PNG — gratuit en ligne",

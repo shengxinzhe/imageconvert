@@ -27,6 +27,7 @@ export interface ToolConfig {
 const allSlugs = [
   "heic-to-jpg",
   "heic-to-png",
+  "heic-to-webp",
   "webp-to-png",
   "webp-to-jpg",
   "avif-to-jpg",
@@ -256,6 +257,75 @@ export const tools: Record<ToolSlug, ToolConfig> = {
         heading: "HEIC to PNG for designers",
         content:
           "Graphic designers and developers often need PNG assets. This tool bridges iPhone HEIC exports and PNG-based pipelines without sending client photos to a server.",
+      },
+    ],
+  },
+  "heic-to-webp": {
+    slug: "heic-to-webp",
+    path: "/heic-to-webp",
+    from: "heic",
+    to: "webp",
+    title: "HEIC to WebP Converter — Free & Online",
+    h1: "HEIC to WebP Converter — Free & Online",
+    metaDescription:
+      "Convert iPhone HEIC photos to WebP free in your browser. No upload, batch convert, resize presets, and ZIP download for modern websites.",
+    keywords: [
+      "heic to webp",
+      "convert heic to webp",
+      "heic to webp online free",
+      "iphone heic to webp",
+    ],
+    heroSubtitle: "Turn iPhone HEIC photos into smaller WebP files for the web",
+    whyConvert: {
+      title: "Why Convert HEIC to WebP?",
+      paragraphs: [
+        "WebP is widely supported in modern browsers and often produces smaller files than JPG at similar quality—ideal for blogs, portfolios, and CMS uploads.",
+        "iPhone HEIC photos are efficient on device but rarely accepted by website upload forms. Converting to WebP gives you a web-ready format without sending files to a cloud converter.",
+        "HeicSave runs entirely in your browser: batch convert, optional resize presets, and ZIP download with no account required.",
+      ],
+    },
+    howToSteps: [
+      "Drag and drop HEIC files (or click Browse). Set WebP quality and optional max width (2048, 1920, or 1280 px).",
+      "Click Convert. Processing runs locally in parallel—nothing is uploaded.",
+      "Download each WebP or grab all files as a ZIP.",
+    ],
+    privacyNote:
+      "HEIC is decoded with libheif WebAssembly in your browser. Your photos never reach our servers.",
+    faqs: [
+      {
+        question: "Is HEIC to WebP conversion free?",
+        answer:
+          "Yes. No signup, no watermark, and no fixed batch cap. Very large folders work best on desktop Chrome or Edge.",
+      },
+      {
+        question: "Does WebP keep EXIF from HEIC?",
+        answer:
+          "WebP output from browser canvas does not embed EXIF. Use our HEIC to JPG tool if you need date and camera metadata preserved.",
+      },
+      {
+        question: "HEIC to WebP vs HEIC to JPG?",
+        answer:
+          "Choose WebP for websites and smaller file sizes on modern browsers. Choose JPG for email, print, and maximum compatibility.",
+      },
+      {
+        question: "Can I resize while converting?",
+        answer:
+          "Yes. Pick a max-width preset (2048, 1920, or 1280 px) before converting to match upload limits or page layouts.",
+      },
+      {
+        question: "Batch convert HEIC to WebP?",
+        answer:
+          "Yes. Add many .heic files, convert in one click, and download a ZIP of WebP files.",
+      },
+    ],
+    relatedSlugs: related("heic-to-webp"),
+    seoSections: [
+      {
+        heading: "HEIC to WebP for websites and CMS uploads",
+        paragraphs: [
+          "WordPress, Shopify, and many headless CMS tools accept WebP for faster pages. iPhone HEIC exports need a conversion step first—this tool does it privately in the browser.",
+          "Use resize presets when upload forms cap image dimensions or when you want hero images at a consistent max width.",
+        ],
       },
     ],
   },

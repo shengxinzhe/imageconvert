@@ -11,17 +11,22 @@ import {
   trackToolDownloadZip,
 } from "@/lib/analytics-events";
 import { BrowserCompatHint } from "@/components/converter/browser-compat-hint";
+import { ExifControl } from "@/components/converter/exif-control";
+import {
+  maxWidthForPreset,
+  ResizeControl,
+} from "@/components/converter/resize-control";
 import {
   ConversionError,
   formatConversionError,
   type ConversionErrorDisplay,
 } from "@/lib/convert-errors";
+import { convertBatch } from "@/lib/convert/conversion-pool";
 import { getConverterSoftWarnings } from "@/lib/converter-warnings";
 import {
   acceptMimeForInput,
-  convertImage,
   defaultQualityPercent,
-  getOutputFilename,
+  supportsExifToggle,
   type InputFormat,
   type OutputFormat,
 } from "@/lib/convert";
@@ -31,6 +36,7 @@ import { getLocalizedBlogPost } from "@/lib/blog-l10n";
 import { getT } from "@/lib/i18n/translations";
 import { QualityControl } from "@/components/converter/quality-control";
 import { Button } from "@/components/ui/button";
+import type { ResizePresetId } from "@/lib/constants";
 import { Archive, Download, Loader2, Upload, X } from "lucide-react";
 import type { ToolAudience } from "@/lib/design-variants";
 import { cn } from "@/lib/utils";
@@ -41,6 +47,12 @@ interface ConvertedFile {
   outputName: string;
   blob: Blob;
   previewUrl: string;
+}
+
+interface FailedFile {
+  id: string;
+  name: string;
+  message: string;
 }
 
 interface ImageConverterProps {
@@ -65,8 +77,10 @@ export function ImageConverter({
     : routing.defaultLocale) as AppLocale;
   const t = getT(locale);
   const isDev = audience === "developer";
+  const showExif = supportsExifToggle(from, to);
   const [files, setFiles] = useState<File[]>([]);
   const [results, setResults] = useState<ConvertedFile[]>([]);
+  const [failedFiles, setFailedFiles] = useState<FailedFile[]>([]);
   const [error, setError] = useState<ConversionErrorDisplay | null>(null);
   const [converting, setConverting] = useState(false);
   const [zipping, setZipping] = useState(false);
@@ -77,9 +91,12 @@ export function ImageConverter({
   const [qualityPercent, setQualityPercent] = useState(() =>
     defaultQualityPercent(to),
   );
+  const [resizePreset, setResizePreset] = useState<ResizePresetId>("original");
+  const [preserveExif, setPreserveExif] = useState(true);
 
   const addFiles = useCallback((incoming: FileList | File[]) => {
     setError(null);
+    setFailedFiles([]);
     setFiles((prev) => [...prev, ...Array.from(incoming)]);
   }, []);
 
@@ -107,6 +124,7 @@ export function ImageConverter({
     });
     setConverting(true);
     setError(null);
+    setFailedFiles([]);
     setProgress({ current: 0, total: files.length });
     setResults((prev) => {
       prev.forEach((r) => URL.revokeObjectURL(r.previewUrl));
@@ -114,36 +132,61 @@ export function ImageConverter({
     });
 
     const quality = qualityPercent / 100;
-    const converted: ConvertedFile[] = [];
+    const maxWidth = maxWidthForPreset(resizePreset);
 
     try {
-      for (let i = 0; i < files.length; i++) {
-        const file = files[i];
-        setProgress({ current: i + 1, total: files.length });
-        try {
-          const blob = await convertImage(file, { from, to, quality });
-          const outputName = getOutputFilename(file.name, to);
-          converted.push({
-            id: `${file.name}-${file.size}-${i}`,
-            originalName: file.name,
-            outputName,
-            blob,
-            previewUrl: URL.createObjectURL(blob),
-          });
-        } catch (err) {
-          throw new ConversionError(
-            formatConversionError(err, from, locale, file.name),
-          );
-        }
-      }
-      setResults(converted);
-      trackToolConvertSuccess({
-        tool: toolSlug,
-        from,
-        to,
-        locale,
-        fileCount: converted.length,
+      const { successes, failures } = await convertBatch(
+        files,
+        {
+          from,
+          to,
+          quality,
+          maxWidth,
+          preserveExif: showExif ? preserveExif : undefined,
+        },
+        (current, total) => setProgress({ current, total }),
+      );
+
+      const converted: ConvertedFile[] = successes.map((item, i) => ({
+        id: `${item.file.name}-${item.file.size}-${i}`,
+        originalName: item.file.name,
+        outputName: item.outputName,
+        blob: item.blob,
+        previewUrl: URL.createObjectURL(item.blob),
+      }));
+
+      const perFileFailures: FailedFile[] = failures.map((item, i) => {
+        const display = formatConversionError(item.error, from, locale, item.file.name);
+        return {
+          id: `fail-${item.file.name}-${i}`,
+          name: item.file.name,
+          message: display.message,
+        };
       });
+
+      setResults(converted);
+      setFailedFiles(perFileFailures);
+
+      if (converted.length) {
+        trackToolConvertSuccess({
+          tool: toolSlug,
+          from,
+          to,
+          locale,
+          fileCount: converted.length,
+        });
+      }
+
+      if (!converted.length && failures.length) {
+        trackToolConvertError({
+          tool: toolSlug,
+          from,
+          to,
+          locale,
+          fileCount: files.length,
+        });
+        setError(formatConversionError(failures[0].error, from, locale, failures[0].file.name));
+      }
     } catch (err) {
       trackToolConvertError({
         tool: toolSlug,
@@ -193,6 +236,7 @@ export function ImageConverter({
 
   const clear = () => {
     setFiles([]);
+    setFailedFiles([]);
     setResults((prev) => {
       prev.forEach((r) => URL.revokeObjectURL(r.previewUrl));
       return [];
@@ -222,6 +266,18 @@ export function ImageConverter({
         onChange={setQualityPercent}
         disabled={converting}
       />
+      <ResizeControl
+        value={resizePreset}
+        onChange={setResizePreset}
+        disabled={converting}
+      />
+      {showExif ? (
+        <ExifControl
+          checked={preserveExif}
+          onChange={setPreserveExif}
+          disabled={converting}
+        />
+      ) : null}
 
       <div
         onDragOver={(e) => {
@@ -346,6 +402,9 @@ export function ImageConverter({
             {results.length === 1
               ? t("converter.successOne")
               : t("converter.successMany", { count: results.length })}
+            {failedFiles.length > 0
+              ? ` ${t("converter.partialSuccess", { failed: failedFiles.length })}`
+              : null}
           </div>
           {postConvertGuide ? (
             <p className="text-sm text-body">
@@ -389,6 +448,22 @@ export function ImageConverter({
                   <Download className="mr-1 h-4 w-4" />
                   {t("converter.download")}
                 </Button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {failedFiles.length > 0 && (
+        <div className="space-y-2">
+          <p className="text-sm font-medium text-[var(--error)]">
+            {t("converter.failedHeading", { count: failedFiles.length })}
+          </p>
+          <ul className="space-y-1 rounded-vercel border border-[var(--error-soft)] bg-[var(--error-soft)] px-3 py-2">
+            {failedFiles.map((f) => (
+              <li key={f.id} className="text-sm text-[var(--error)]">
+                <span className="font-mono text-xs">{f.name}</span>
+                <span className="mt-0.5 block text-xs opacity-90">{f.message}</span>
               </li>
             ))}
           </ul>

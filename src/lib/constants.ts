@@ -9,6 +9,16 @@ export const DEFAULT_WEBP_QUALITY = 0.85;
 export const SOFT_WARN_FILE_SIZE = 50 * 1024 * 1024; // 50 MB
 export const SOFT_WARN_BATCH_COUNT = 20;
 
+/** Output max-width presets (px). null = original size. */
+export const RESIZE_PRESETS = [
+  { id: "original", maxWidth: null },
+  { id: "2048", maxWidth: 2048 },
+  { id: "1920", maxWidth: 1920 },
+  { id: "1280", maxWidth: 1280 },
+] as const;
+
+export type ResizePresetId = (typeof RESIZE_PRESETS)[number]["id"];
+
 export const DMCA_EMAIL = "dmca@heicsave.com";
 export const PRIVACY_EMAIL = "privacy@heicsave.com";
 
