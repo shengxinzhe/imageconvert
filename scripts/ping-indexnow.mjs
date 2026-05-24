@@ -10,6 +10,8 @@ const PRIORITY_PATHS = [
   "/",
   "/heic-to-jpg",
   "/heic-to-webp",
+  "/blog/heic-chromebook-convert",
+  "/blog/heicsave-vs-browser-heic-converters",
   "/blog/heic-google-drive-batch-convert",
   "/blog/convert-webp-to-jpg-windows",
   "/blog/heic-to-png-when-and-how",

@@ -65,6 +65,22 @@ export const AI_GUIDE_CATALOG = [
     title: "HEIC on Windows Guide",
   },
   {
+    slug: "heic-chromebook-convert",
+    title: "Convert HEIC on Chromebook",
+  },
+  {
+    slug: "heic-android-open-convert",
+    title: "Open iPhone HEIC on Android",
+  },
+  {
+    slug: "heicsave-vs-browser-heic-converters",
+    title: "HeicSave vs HEIC.dev & HEICcon",
+  },
+  {
+    slug: "privacy-browser-image-conversion",
+    title: "Browser-Local Privacy & DevTools Verify",
+  },
+  {
     slug: "avif-explained",
     title: "AVIF Explained",
   },

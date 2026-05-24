@@ -410,7 +410,7 @@ Einmal nach JPG konvertieren löst die Kompatibilität überall.
 
 1. **Chrome** oder **Edge** unter Windows öffnen.
 2. **[HEIC in JPG](/heic-to-jpg)** aufrufen.
-3. Alle entpackten .heic-Dateien in die Ablagezone ziehen (oder in Gruppen à 50–100 bei wenig RAM).
+3. Alle entpackten .heic-Dateien in die Ablagezone ziehen — oder **Ordner wählen**, um den entpackten Ordner in einem Schritt zu laden (bei wenig RAM in Gruppen à 50–100).
 4. **JPEG-Qualität** einstellen (90 % Standard für Archiv; 85 % für E-Mail-Größe).
 5. **Konvertieren** → **Alles als ZIP** herunterladen.
 
@@ -456,5 +456,177 @@ iPhone: **Einstellungen → Kamera → Formate → Kompatibel** speichert neue A
 - [Was ist eine HEIC-Datei?](/blog/what-is-heic-file)
 
 **Jetzt konvertieren:** **[HEIC in JPG](/heic-to-jpg)**`,
+  },
+  "privacy-browser-image-conversion": {
+    title: "Warum browser-lokale Bildkonvertierung Datenschutz schützt",
+    description:
+      "DSGVO, Kundenfotos und warum HEIC/AVIF auf dem Gerät bleiben sollten — inkl. DevTools-Check ohne Upload.",
+    content: `Fotos an zufällige Online-Konverter hochzuladen birgt DSGVO- und Sicherheitsrisiken.
+
+## Client-seitige Verarbeitung
+
+Tools mit WebAssembly (HEIC) oder Canvas (WebP/AVIF) halten Bytes auf Ihrem Gerät. HeicSave erhält Ihre Bilddateien nicht zur Konvertierung.
+
+## Keine künstlichen Limits
+
+Kein „nur 5 Dateien“ oder „max. 10 MB“. Sehr große Stapel können bei wenig RAM scheitern — wir warnen freundlich, ohne Paywall.
+
+## DSGVO & Cookies
+
+EU-Nutzer sehen ein Cookie-Banner für Analytics und Google AdSense. Bilddaten sind davon getrennt.
+
+## Null-Upload selbst prüfen (DevTools)
+
+1. **[HEIC in JPG](/heic-to-jpg)** in Chrome oder Edge öffnen.
+2. **F12** → **Netzwerk** → **Protokoll beibehalten** aktivieren.
+3. HEIC konvertieren.
+4. Nach **Fetch/XHR** filtern oder \`upload\` suchen.
+
+Es sollten **keine** Anfragen mit Ihren Bildbytes an HeicSave gehen. Analytics nur nach Cookie-Einwilligung.
+
+Auf den Tool-Seiten gibt es einen aufklappbaren Hinweis **Kein Upload prüfen**.
+
+## Ausprobieren
+
+[HEIC in JPG](/heic-to-jpg) · [AVIF in PNG](/avif-to-png) · [WebP in JPG](/webp-to-jpg)`,
+  },
+  "heic-chromebook-convert": {
+    title: "HEIC auf Chromebook konvertieren (Schul-IT)",
+    description:
+      "Chromebooks öffnen iPhone-HEIC nicht nativ. HEIC im Browser in JPG umwandeln — ohne Linux, ohne Erweiterungen.",
+    content: `ChromeOS hat **keinen HEIC-Support**. Schul-Chromebooks blockieren oft Linux und Desktop-Apps. iPhone-.heic scheitern in Classroom oder Jahrbuch-Tools.
+
+> **Kurz:** **[HEIC in JPG](/heic-to-jpg)** in **Chrome** öffnen, Dateien oder **Ordner wählen**, lokal konvertieren, JPGs laden.
+
+## Warum Chromebooks scheitern
+
+- **Dateien-App** zeigt kein Foto-Thumbnail.
+- **Chrome** zeigt .heic nicht an.
+- **Verwaltete Geräte** sperren Linux und Drittanbieter-Apps.
+
+Browser-Konvertierung braucht **keine Admin-Rechte**.
+
+## Schritte für Schul-IT
+
+1. **Chrome** öffnen.
+2. **[HEIC in JPG](/heic-to-jpg)** aufrufen.
+3. **Ordner wählen** nach Kopie aus Drive/USB — oder Dateien ziehen.
+4. **JPEG-Qualität** (90 % Standard).
+5. **Konvertieren** → JPG oder **ZIP**.
+
+Verarbeitung per libheif WASM **auf dem Chromebook**. Kein Upload an HeicSave. Prüfung per DevTools: [Datenschutz-Ratgeber](/blog/privacy-browser-image-conversion).
+
+## Stapel-Tipps
+
+| Tipp | Grund |
+|---|---|
+| HEIC lokal in Ordner kopieren | Ordner-Picker ist schneller |
+| Auf 4-GB-Geräten in Blöcken | HEIC braucht RAM |
+| **Alles als ZIP** | Einfache Übergabe an Redaktion |
+
+## Verwandt
+
+- [HEIC aus Google Drive stapelweise](/blog/heic-google-drive-batch-convert)
+- [HeicSave vs. andere Browser-Tools](/blog/heicsave-vs-browser-heic-converters)
+
+**Start:** **[HEIC in JPG](/heic-to-jpg)**`,
+  },
+  "heic-android-open-convert": {
+    title: "iPhone-HEIC auf Android öffnen",
+    description:
+      "Android scheitert oft an HEIC vom iPhone. HEIC im Browser in JPG — am PC oder in Chrome auf dem Handy.",
+    content: `iPhone-Nutzer teilen .heic — Android-Empfänger sehen oft kein Vorschaubild in Galerie, WhatsApp oder Schulportalen.
+
+> **Kurz:** Am PC **[HEIC in JPG](/heic-to-jpg)**, JPGs erneut teilen. Oder direkt in **Chrome auf Android** konvertieren.
+
+## Warum Android + HEIC bricht
+
+- **Google Fotos** zeigt manches HEIC, Export als JPG ist uneinheitlich.
+- **Samsung Galerie** und **Nachrichten** lehnen HEIC oft ab.
+- Familiengruppen iPhone → Android sind der häufigste Fall.
+
+## Methode 1: Am PC konvertieren (zuverlässig)
+
+1. HEIC per Drive/USB auf Windows/Mac.
+2. **[HEIC in JPG](/heic-to-jpg)** in Chrome/Edge.
+3. **Alles als ZIP** → JPGs teilen.
+
+## Methode 2: In Chrome auf Android
+
+1. Chrome → **[HEIC in JPG](/heic-to-jpg)**.
+2. **Dateien auswählen** aus Downloads oder Drive.
+3. Konvertieren und JPGs speichern.
+
+## iPhone künftig auf JPG
+
+**Einstellungen → Kamera → Formate → Kompatibel**. Bestehende HEIC müssen trotzdem konvertiert werden.
+
+## Datenschutz
+
+Keine Upload-Konverter für Familienfotos — [DevTools-Check](/blog/privacy-browser-image-conversion).
+
+**Konvertieren:** **[HEIC in JPG](/heic-to-jpg)**`,
+  },
+  "heic-color-washed-out-after-convert": {
+    title: "Blasse Farben nach HEIC→JPG — Ursache & Fix",
+    description:
+      "HEIC nutzt Display P3, JPG meist sRGB. Warum konvertierte Fotos fade wirken und was hilft.",
+    content: `Manche Nutzer finden JPG nach HEIC-Konvertierung **flach oder blass**. Meist ist es **Farbraum-Mapping**, kein defektes Tool.
+
+## HEIC vs. JPG Farbe
+
+- iPhone-HEIC oft **Display P3** (10-Bit).
+- JPG typisch **8-Bit sRGB** für Kompatibilität.
+- P3 → sRGB kann Sättigung auf Nicht-P3-Displays dämpfen.
+
+Das betrifft **jedes** HEIC→JPG-Tool.
+
+## Was hilft
+
+1. **Hohe JPEG-Qualität (90 %+)** auf [HEIC in JPG](/heic-to-jpg).
+2. **Am iPhone-Display wirkte das Original knacksiger** — P3 vs. sRGB.
+3. **PNG für Bearbeitung:** [HEIC in PNG](/heic-to-png) — größere Dateien.
+
+## HeicSave
+
+libheif-Decode + Canvas-JPG bei Ihrer Qualität. Keine künstliche Entsättigung.
+
+## Verwandt
+
+- [HEIC vs. JPG](/blog/heic-vs-jpg)
+- [HEIC in PNG — wann?](/blog/heic-to-png-when-and-how)
+
+**Tools:** **[HEIC in JPG](/heic-to-jpg)** · **[HEIC in PNG](/heic-to-png)**`,
+  },
+  "heicsave-vs-browser-heic-converters": {
+    title: "HeicSave vs. HEIC.dev & HEICcon (2026)",
+    description:
+      "Ehrlicher Vergleich browser-lokaler HEIC-Konverter: Datenschutz, Stapel-Limits, Sprachen, EXIF.",
+    content: `Mehrere Seiten werben mit „kein Upload“. **HeicSave** vs. **[HEIC.dev](https://heic.dev)** und **[HEICcon](https://heiccon.com)** — ehrlich verglichen.
+
+> **Kurz:** Alle drei konvertieren lokal. HeicSave: **kein Stapel-Hardcap**, **de/fr**, **AVIF/WebP-Toolkette**. HEIC.dev: mehr Ausgabeformate. HEICcon: Drive-Import, 50er-Stapel.
+
+## Tabelle
+
+| | **HeicSave** | HEIC.dev | HEICcon |
+|---|---|---|---|
+| Upload | **Nein** | Nein | Nein |
+| Stapel-Cap | **Kein festes Limit** | 500 | 50 |
+| ZIP | Ja | Ja | Ja |
+| HEIC→WebP | Ja | Ja | Ja |
+| AVIF/WebP same site | **Ja** | HEIC-fokus | HEIC-fokus |
+| Sprachen | **de, en, fr** | v. a. en | v. a. en |
+| Ordner wählen | **Ja** | Ordner-Drag | Datei-Picker |
+
+## Wann HeicSave passt
+
+- **DACH/FR** mit lokalisierten Tool-Seiten.
+- **Große Stapel** ohne 50/500-Deckel (RAM bleibt Limit).
+- **Entwickler** mit [AVIF in JPG](/avif-to-jpg) auf derselben Domain.
+- **DevTools-Privacy-Check** auf Tool-Seiten.
+
+## Probieren
+
+[HEIC in JPG](/heic-to-jpg) · [HEIC in WebP](/heic-to-webp) · [Vergleichs-Rundown](/blog/best-heic-converters-2026)`,
   },
 };

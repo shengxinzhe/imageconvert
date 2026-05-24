@@ -12,6 +12,8 @@ import {
 } from "@/lib/analytics-events";
 import { BrowserCompatHint } from "@/components/converter/browser-compat-hint";
 import { ExifControl } from "@/components/converter/exif-control";
+import { FilePreviewGrid } from "@/components/converter/file-preview-grid";
+import { PrivacyVerifyHint } from "@/components/converter/privacy-verify-hint";
 import {
   maxWidthForPreset,
   ResizeControl,
@@ -37,9 +39,11 @@ import { getT } from "@/lib/i18n/translations";
 import { QualityControl } from "@/components/converter/quality-control";
 import { Button } from "@/components/ui/button";
 import type { ResizePresetId } from "@/lib/constants";
-import { Archive, Download, Loader2, Upload, X } from "lucide-react";
+import { Archive, Download, FolderOpen, Loader2, Upload, X } from "lucide-react";
 import type { ToolAudience } from "@/lib/design-variants";
 import { cn } from "@/lib/utils";
+import { collectFilesFromDataTransfer } from "@/lib/collect-drop-files";
+import { filterFilesForInput } from "@/lib/converter-file-filter";
 
 interface ConvertedFile {
   id: string;
@@ -93,24 +97,44 @@ export function ImageConverter({
   );
   const [resizePreset, setResizePreset] = useState<ResizePresetId>("original");
   const [preserveExif, setPreserveExif] = useState(true);
+  const [dropBusy, setDropBusy] = useState(false);
 
-  const addFiles = useCallback((incoming: FileList | File[]) => {
-    setError(null);
-    setFailedFiles([]);
-    setFiles((prev) => [...prev, ...Array.from(incoming)]);
-  }, []);
+  const ingestFiles = useCallback(
+    (incoming: File[]) => {
+      const matched = filterFilesForInput(incoming, from);
+      if (!matched.length) return;
+      setError(null);
+      setFailedFiles([]);
+      setFiles((prev) => [...prev, ...matched]);
+    },
+    [from],
+  );
+
+  const addFiles = useCallback(
+    (incoming: FileList | File[]) => {
+      ingestFiles(Array.from(incoming));
+    },
+    [ingestFiles],
+  );
 
   const removeFile = (index: number) => {
     setFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
   const onDrop = useCallback(
-    (e: React.DragEvent) => {
+    async (e: React.DragEvent) => {
       e.preventDefault();
       setDragOver(false);
-      if (e.dataTransfer.files.length) addFiles(e.dataTransfer.files);
+      if (!e.dataTransfer.files.length && !e.dataTransfer.items.length) return;
+      setDropBusy(true);
+      try {
+        const collected = await collectFilesFromDataTransfer(e.dataTransfer);
+        ingestFiles(collected);
+      } finally {
+        setDropBusy(false);
+      }
     },
-    [addFiles],
+    [ingestFiles],
   );
 
   const convertAll = async () => {
@@ -278,6 +302,7 @@ export function ImageConverter({
           disabled={converting}
         />
       ) : null}
+      <PrivacyVerifyHint />
 
       <div
         onDragOver={(e) => {
@@ -298,42 +323,46 @@ export function ImageConverter({
         <Upload className="mx-auto h-8 w-8 text-mute" aria-hidden />
         <p className="mt-4 text-sm font-medium text-ink">{t("converter.dropTitle")}</p>
         <p className="mt-1 font-mono text-xs text-mute">{t("converter.dropHint")}</p>
-        <label className="mt-5 inline-flex cursor-pointer items-center justify-center rounded-full border border-hairline bg-canvas px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2">
-          <span className="sr-only">{t("converter.browseSr")}</span>
-          <input
-            type="file"
-            accept={accept}
-            multiple
-            className="hidden"
-            onChange={(e) => e.target.files && addFiles(e.target.files)}
-          />
-          {t("converter.browse")}
-        </label>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+          <label className="inline-flex cursor-pointer items-center justify-center rounded-full border border-hairline bg-canvas px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2">
+            <span className="sr-only">{t("converter.browseSr")}</span>
+            <input
+              type="file"
+              accept={accept}
+              multiple
+              className="hidden"
+              disabled={converting || dropBusy}
+              onChange={(e) => e.target.files && addFiles(e.target.files)}
+            />
+            {t("converter.browse")}
+          </label>
+          <label className="inline-flex cursor-pointer items-center justify-center rounded-full border border-hairline bg-canvas px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2">
+            <span className="sr-only">{t("converter.browseFolderSr")}</span>
+            <input
+              type="file"
+              accept={accept}
+              multiple
+              className="hidden"
+              disabled={converting || dropBusy}
+              // @ts-expect-error webkitdirectory is supported in Chromium/Safari
+              webkitdirectory=""
+              directory=""
+              onChange={(e) => e.target.files && addFiles(e.target.files)}
+            />
+            <FolderOpen className="mr-1.5 h-4 w-4" aria-hidden />
+            {t("converter.browseFolder")}
+          </label>
+        </div>
+        {dropBusy ? (
+          <p className="mt-3 flex items-center justify-center gap-2 text-xs text-mute">
+            <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden />
+            {t("converter.readingFolder")}
+          </p>
+        ) : null}
       </div>
 
       {files.length > 0 && (
-        <ul className="space-y-1 rounded-vercel border border-hairline bg-canvas p-3">
-          {files.map((f, index) => (
-            <li
-              key={`${f.name}-${f.size}-${index}`}
-              className="flex items-center justify-between gap-2 rounded-md px-2 py-1.5 text-sm text-body"
-            >
-              <span className="min-w-0 truncate font-mono text-xs">{f.name}</span>
-              <span className="shrink-0 font-mono text-xs text-mute">
-                {(f.size / 1024 / 1024).toFixed(2)} MB
-              </span>
-              <button
-                type="button"
-                onClick={() => removeFile(index)}
-                className="shrink-0 rounded p-1 text-mute hover:bg-canvas-soft-2 hover:text-ink"
-                aria-label={t("converter.remove", { name: f.name })}
-                disabled={converting}
-              >
-                <X className="h-3.5 w-3.5" />
-              </button>
-            </li>
-          ))}
-        </ul>
+        <FilePreviewGrid files={files} onRemove={removeFile} disabled={converting} />
       )}
 
       {softWarnings.length > 0 && (
@@ -441,9 +470,17 @@ export function ImageConverter({
             {results.map((r) => (
               <li
                 key={r.id}
-                className="flex items-center justify-between rounded-vercel border border-hairline bg-canvas-soft px-3 py-2.5"
+                className="flex items-center gap-3 rounded-vercel border border-hairline bg-canvas-soft px-3 py-2.5"
               >
-                <span className="truncate font-mono text-xs text-ink">{r.outputName}</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={r.previewUrl}
+                  alt=""
+                  className="h-12 w-12 shrink-0 rounded-md border border-hairline object-cover"
+                />
+                <span className="min-w-0 flex-1 truncate font-mono text-xs text-ink">
+                  {r.outputName}
+                </span>
                 <Button size="sm" variant="ghost" onClick={() => download(r)}>
                   <Download className="mr-1 h-4 w-4" />
                   {t("converter.download")}
