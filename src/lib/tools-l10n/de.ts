@@ -4,15 +4,17 @@ import type { ToolLocaleFields } from "@/lib/tools-l10n/types";
 
 const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "heic-to-jpg": {
-    title: "HEIC in JPG umwandeln — kostenlos online",
-    h1: "HEIC in JPG umwandeln — kostenlos online",
+    title: "HEIC in JPG — gratis, Stapel, kein Upload",
+    h1: "HEIC in JPG umwandeln",
     metaDescription:
-      "iPhone-HEIC-Fotos kostenlos im Browser in JPG umwandeln. Kein Upload, keine Anmeldung. Stapelverarbeitung für Windows, Mac, iPhone und Android.",
+      "HEIC kostenlos im Browser in JPG umwandeln. Stapel ohne Limit, ZIP-Download—kein Server-Upload. Windows, Mac, Chromebook.",
     keywords: [
       "heic in jpg",
+      "heic in jpg umwandeln",
+      "heic in jpg umwandeln kostenlos",
       "heic zu jpg konverter",
-      "heic in jpg umwandeln online",
       "heic jpg kostenlos",
+      "heic stapel konvertieren",
     ],
     heroSubtitle: "iPhone-HEIC-Fotos sofort im Browser in JPG konvertieren",
     whyConvert: {

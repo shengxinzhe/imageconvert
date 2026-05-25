@@ -4,15 +4,17 @@ import type { ToolLocaleFields } from "@/lib/tools-l10n/types";
 
 const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "heic-to-jpg": {
-    title: "Convertir HEIC en JPG — gratuit en ligne",
-    h1: "Convertir HEIC en JPG — gratuit en ligne",
+    title: "HEIC en JPG — gratuit, lot, sans envoi",
+    h1: "Convertir HEIC en JPG",
     metaDescription:
-      "Convertissez les photos HEIC de l'iPhone en JPG gratuitement dans le navigateur. Sans envoi, sans inscription. Lot sur Windows, Mac, iPhone et Android.",
+      "Convertissez HEIC en JPG gratuitement dans le navigateur. Lot illimité, ZIP—aucun envoi serveur. Windows, Mac, Chromebook.",
     keywords: [
       "heic en jpg",
       "convertir heic en jpg",
-      "heic jpg en ligne",
+      "convertir heic en jpg en ligne",
       "heic jpg gratuit",
+      "heic sans envoi",
+      "convertir heic lot",
     ],
     heroSubtitle: "Convertissez les photos HEIC de l'iPhone en JPG instantanément dans le navigateur",
     whyConvert: {

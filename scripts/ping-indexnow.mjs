@@ -7,16 +7,21 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://heicsave.com";
 const HOST = new URL(SITE_URL).host;
 
 const PRIORITY_PATHS = [
-  "/",
   "/heic-to-jpg",
-  "/heic-to-webp",
+  "/de/heic-to-jpg",
+  "/fr/heic-to-jpg",
   "/blog/heic-chromebook-convert",
+  "/blog/heic-android-open-convert",
+  "/blog/heic-color-washed-out-after-convert",
   "/blog/heicsave-vs-browser-heic-converters",
-  "/blog/heic-google-drive-batch-convert",
-  "/blog/convert-webp-to-jpg-windows",
-  "/blog/heic-to-png-when-and-how",
-  "/de/blog/heic-google-drive-batch-convert",
-  "/fr/blog/heic-google-drive-batch-convert",
+  "/de/blog/heic-chromebook-convert",
+  "/de/blog/heic-android-open-convert",
+  "/de/blog/heic-color-washed-out-after-convert",
+  "/de/blog/heicsave-vs-browser-heic-converters",
+  "/fr/blog/heic-chromebook-convert",
+  "/fr/blog/heic-android-open-convert",
+  "/fr/blog/heic-color-washed-out-after-convert",
+  "/fr/blog/heicsave-vs-browser-heic-converters",
 ];
 
 async function main() {
