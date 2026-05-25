@@ -13,6 +13,7 @@ const EXCLUDED_PATHS = new Set([
 const TOOL_SLUGS = [
   "heic-to-jpg",
   "heic-to-png",
+  "heic-to-webp",
   "webp-to-png",
   "webp-to-jpg",
   "avif-to-jpg",
@@ -46,6 +47,10 @@ const BLOG_SLUGS = [
   "convert-webp-to-jpg-windows",
   "heic-to-png-when-and-how",
   "heic-google-drive-batch-convert",
+  "heic-chromebook-convert",
+  "heic-android-open-convert",
+  "heic-color-washed-out-after-convert",
+  "heicsave-vs-browser-heic-converters",
 ];
 
 /** de/fr blog slugs with real translations — sync with src/lib/blog-l10n/de.ts keys */
@@ -55,6 +60,11 @@ const BLOG_SLUGS_L10N = new Set([
   "convert-webp-to-jpg-windows",
   "heic-to-png-when-and-how",
   "heic-google-drive-batch-convert",
+  "privacy-browser-image-conversion",
+  "heic-chromebook-convert",
+  "heic-android-open-convert",
+  "heic-color-washed-out-after-convert",
+  "heicsave-vs-browser-heic-converters",
 ]);
 
 function isUntranslatedLocaleBlogPath(path) {
