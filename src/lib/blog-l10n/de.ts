@@ -7,15 +7,15 @@ export const deBlogPosts: Record<
     title: "AVIF in JPG unter Windows (kostenlos, ohne Upload)",
     description:
       "AVIF-Bilder unter Windows 10/11 in Chrome oder Edge in JPG konvertieren: Stapelverarbeitung, Qualitätsregler, ZIP-Download. Keine Installation, keine Uploads auf fremde Server.",
-    content: `Sie haben eine **.avif**-Datei heruntergeladen – oder eine Website liefert Bilder nur noch als AVIF – und Windows öffnet sie weder in der E-Mail, in Word noch in älteren Upload-Formularen. **JPG** bleibt das Format, das praktisch überall funktioniert. In diesem Ratgeber erfahren Sie, wie Sie **AVIF unter Windows zuverlässig in JPG umwandeln** – ohne Codec-Pakete und ohne Ihre Fotos an unbekannte Online-Dienste zu senden.
+    content: `Sie haben eine **.avif**-Datei heruntergeladen (oder eine Website liefert nur noch AVIF), und Windows öffnet sie weder in der E-Mail, in Word noch in älteren Upload-Formularen. **JPG** funktioniert praktisch überall.
 
-> **Kurzantwort:** Öffnen Sie unser kostenloses Tool **[AVIF in JPG](/avif-to-jpg)** in **Chrome oder Edge**, legen Sie Ihre Dateien ab, stellen Sie die JPEG-Qualität ein, klicken Sie auf **Konvertieren** und laden Sie einzelne JPGs oder ein ZIP-Archiv herunter – die gesamte Verarbeitung läuft im Browser.
+Öffnen Sie **[AVIF in JPG](/avif-to-jpg)** in **Chrome oder Edge**, legen Sie Ihre Dateien ab, stellen Sie die JPEG-Qualität ein und laden Sie JPGs oder ein ZIP herunter. Alles läuft im Browser; nichts wird auf unsere Server hochgeladen.
 
 ## Was ist AVIF?
 
-**AVIF** (AV1 Image File Format) ist ein modernes Bildformat mit sehr effizienter Kompression. Websites und CDNs nutzen es, weil die Dateien oft kleiner sind und trotzdem scharf wirken. Unter Windows erwarten **Fotos**, ältere **Paint**-Versionen und viele Desktop-Programme jedoch weiterhin **.jpg** oder **.png** – nicht .avif.
+**AVIF** (AV1 Image File Format) ist ein modernes Bildformat mit sehr effizienter Kompression. Websites und CDNs nutzen es, weil die Dateien oft kleiner sind und trotzdem scharf wirken. Unter Windows erwarten **Fotos**, ältere **Paint**-Versionen und viele Desktop-Programme jedoch weiterhin **.jpg** oder **.png**, nicht .avif.
 
-Genau deshalb sind Suchanfragen wie **„avif to jpg“** so verbreitet: Im Browser sieht alles gut aus, am PC bleibt die Datei sonst oft hängen.
+Suchanfragen wie **„avif to jpg“** sind häufig, weil die Datei im Browser gut aussieht, am PC aber oft hängen bleibt.
 
 ## Unterstützt Windows 10/11 AVIF von Haus aus?
 
@@ -27,7 +27,7 @@ Die Unterstützung hat sich verbessert, ist aber weiterhin uneinheitlich:
 
 Einmal in JPG zu konvertieren ist meist schneller, als auf jedem Rechner erneut mit Codecs zu experimentieren.
 
-## Methode 1: Konvertierung im Browser (empfohlen – ohne Upload)
+## Methode 1: Im Browser konvertieren (ohne Upload)
 
 **HeicSave** führt die Umwandlung **lokal in Ihrem Browser-Tab** aus – mit dem eingebauten Bilddecoder und der Canvas-API. Ihre Dateien werden **nicht auf unsere Server hochgeladen**.
 
@@ -130,7 +130,7 @@ AVIF kann live bleiben, wenn Sie ein **picture**-Element mit JPG-Fallback nutzen
 
 Die Konvertierung läuft in Ihrem Browser. Wir erhalten Ihre Bilddaten nicht zur Verarbeitung. Analytics und Werbung (falls aktiviert) sind in unserer [Datenschutzerklärung](/privacy) und im Cookie-Banner beschrieben – getrennt von Ihren Dateien.
 
-**Bereit?** Öffnen Sie **[AVIF in JPG](/avif-to-jpg)** und wandeln Sie Ihre erste Datei in unter einer Minute um.`,
+Öffnen Sie **[AVIF in JPG](/avif-to-jpg)**.`,
   },
   "transfer-iphone-photos-to-windows": {
     title: "iPhone-Fotos auf den Windows-PC übertragen – Ratgeber 2026",
@@ -203,15 +203,15 @@ Ausführlich nur für Windows: [HEIC unter Windows öffnen und konvertieren](/bl
     title: "WebP in JPG unter Windows (kostenlos, ohne Upload)",
     description:
       "WebP-Bilder unter Windows 10/11 in Chrome oder Edge in JPG konvertieren: Stapelverarbeitung, Qualitätsregler, ZIP-Download. Keine Installation, kein Server-Upload.",
-    content: `Sie haben eine **.webp**-Datei von einer Website, aus Slack oder einem Design-Export gespeichert – und Windows öffnet sie weder in Word noch in Outlook noch in älteren Upload-Formularen. **JPG** bleibt das Format, das praktisch überall funktioniert. Dieser Ratgeber zeigt zuverlässige Wege, **WebP unter Windows in JPG umzuwandeln**, ohne Software zu installieren oder Fotos an unbekannte Server zu senden.
+    content: `Sie haben eine **.webp** von einer Website, aus Slack oder einem Design-Export gespeichert, und Windows öffnet sie weder in Word noch in Outlook noch in älteren Upload-Formularen. **JPG** funktioniert praktisch überall.
 
-> **Kurzantwort:** Öffnen Sie unser kostenloses Tool **[WebP in JPG](/webp-to-jpg)** in **Chrome oder Edge**, legen Sie Ihre Dateien ab, stellen Sie die JPEG-Qualität ein, klicken Sie auf **Konvertieren** und laden Sie JPGs oder ein ZIP-Archiv herunter – alles im Browser.
+Öffnen Sie **[WebP in JPG](/webp-to-jpg)** in **Chrome oder Edge**, legen Sie Ihre Dateien ab, stellen Sie die JPEG-Qualität ein und laden Sie JPGs oder ein ZIP herunter. Alles läuft im Browser; nichts wird hochgeladen.
 
 ## Was ist WebP?
 
 **WebP** ist Googles modernes Bildformat fürs Web. Es ist oft 25–35 % kleiner als JPG bei ähnlicher Qualität. Browser decodieren WebP nativ; viele **Desktop-Apps unter Windows** tun das noch nicht.
 
-Deshalb sind Suchanfragen wie **„webp to jpg“** so verbreitet: Im Browser funktioniert die Datei, in E-Mail-Anhängen und Legacy-CMS oft nicht.
+Suchanfragen wie **„webp to jpg“** sind häufig, weil die Datei im Browser funktioniert, in E-Mail-Anhängen und Legacy-CMS oft nicht.
 
 ## Unterstützt Windows 10/11 WebP nativ?
 
@@ -313,7 +313,7 @@ Die Konvertierung läuft in Ihrem Browser. Wir erhalten Ihre Bilddaten nicht zur
       "HEIC zu PNG statt JPG – für Bearbeitung, Transparenz und verlustfreie Workflows. Stapel-Konvertierung im Browser unter Windows und Mac.",
     content: `Die meisten iPhone-Nutzer wandeln HEIC in **JPG** um – für E-Mail und Windows-Kompatibilität. Manchmal ist **PNG** das bessere Zielformat: vor der Bearbeitung, um JPEG-Artefakte zu vermeiden, oder wenn Ihr Workflow verlustfreie Rasterdaten erwartet.
 
-> **Kurzantwort:** **[HEIC in PNG](/heic-to-png)** in Chrome oder Edge öffnen, .heic-Dateien ablegen, konvertieren, einzeln oder als ZIP herunterladen – alles lokal im Browser.
+**[HEIC in PNG](/heic-to-png)** in Chrome oder Edge öffnen, .heic-Dateien ablegen, konvertieren, einzeln oder als ZIP herunterladen – alles lokal im Browser.
 
 ## HEIC → JPG vs. HEIC → PNG
 
@@ -381,7 +381,7 @@ Browser-Konverter erwarten ein **Standbild**. Die .heic-Datei ablegen, nicht die
       "HEIC-Fotos aus Google Drive herunterladen, im Browser stapelweise in JPG umwandeln ohne Software-Installation, dann erneut hochladen oder teilen.",
     content: `Google Drive bietet keinen eingebauten **HEIC → JPG**-Button. Wenn Ihr iPhone-Backup oder ein geteilter Ordner voller .heic-Dateien ist, scheitern Windows-Vorschauen und E-Mail-Anhänge oft. Dieser Workflow konvertiert **viele HEIC-Dateien auf einmal**, ohne Codecs zu installieren oder Fotos auf fremde Server hochzuladen.
 
-> **Kurzantwort:** Aus Drive herunterladen → ZIP entpacken → **[HEIC in JPG](/heic-to-jpg)** in Chrome/Edge → JPG-ZIP laden → bei Bedarf zurück in Drive hochladen.
+Aus Drive herunterladen → ZIP entpacken → **[HEIC in JPG](/heic-to-jpg)** in Chrome/Edge → JPG-ZIP laden → bei Bedarf zurück in Drive hochladen.
 
 ## Warum Drive-Nutzer unter HEIC leiden
 

@@ -7,15 +7,15 @@ export const frBlogPosts: Record<
     title: "Convertir AVIF en JPG sur Windows (gratuit, sans envoi)",
     description:
       "Convertir des images AVIF en JPG sur Windows 10/11 dans Chrome ou Edge : traitement par lots, réglage de qualité, ZIP. Sans installation ni envoi vers un serveur tiers.",
-    content: `Vous avez téléchargé une image **.avif** — ou un site ne fournit que ce format — et Windows refuse de l’ouvrir dans Outlook, Word ou un ancien formulaire d’envoi. Le **JPG** reste le format que tout le monde accepte. Ce guide présente des méthodes fiables pour **convertir AVIF en JPG sur Windows** sans installer de codecs ni envoyer vos photos vers un convertisseur en ligne inconnu.
+    content: `Vous avez téléchargé une image **.avif** (ou un site ne fournit que ce format), et Windows refuse de l’ouvrir dans Outlook, Word ou un ancien formulaire d’envoi. Le **JPG** fonctionne partout.
 
-> **Réponse rapide :** ouvrez notre outil gratuit **[AVIF en JPG](/avif-to-jpg)** dans **Chrome ou Edge**, déposez vos fichiers, réglez la qualité JPEG, cliquez sur **Convertir**, puis téléchargez des JPG ou une archive ZIP — le tout dans le navigateur.
+Ouvrez **[AVIF en JPG](/avif-to-jpg)** dans **Chrome ou Edge**, déposez vos fichiers, réglez la qualité JPEG et téléchargez des JPG ou une archive ZIP. Tout se passe dans le navigateur ; rien n’est envoyé sur nos serveurs.
 
 ## Qu’est-ce que l’AVIF ?
 
 **AVIF** (AV1 Image File Format) repose sur une compression moderne. Les sites et CDN l’utilisent pour des fichiers souvent plus légers tout en restant nets. Sous Windows, **Photos**, d’anciennes versions de **Paint** et de nombreuses applications attendent encore le **.jpg** ou le **.png** — pas le .avif.
 
-D’où la popularité des recherches **« avif to jpg »** : le fichier s’affiche bien dans un onglet, mais bloque ailleurs sur le PC.
+Les recherches **« avif to jpg »** sont fréquentes : le fichier s’affiche dans un onglet, mais bloque ailleurs sur le PC.
 
 ## Windows 10/11 ouvre-t-il l’AVIF nativement ?
 
@@ -27,7 +27,7 @@ La prise en charge progresse, mais reste inégale :
 
 Convertir une fois en JPG est en général plus rapide que de chercher des codecs sur chaque machine.
 
-## Méthode 1 : conversion dans le navigateur (recommandée — sans envoi)
+## Méthode 1 : convertir dans le navigateur (sans envoi)
 
 **HeicSave** effectue la conversion **localement dans votre onglet**, via le décodeur d’images du navigateur et l’API Canvas. Vos fichiers **ne sont pas envoyés sur nos serveurs** pour traitement.
 
@@ -130,13 +130,13 @@ Vous pouvez garder l’AVIF en production avec un élément **picture** et un re
 
 La conversion s’exécute dans votre navigateur. Nous ne recevons pas vos données image pour traitement. Les statistiques et publicités (si activées) sont décrites dans notre page [Confidentialité](/privacy) et la bannière cookies — séparément de vos fichiers.
 
-**Prêt ?** Ouvrez **[AVIF en JPG](/avif-to-jpg)** et convertissez votre premier fichier en moins d’une minute.`,
+Ouvrez **[AVIF en JPG](/avif-to-jpg)** et convertissez votre premier fichier en moins d’une minute.`,
   },
   "transfer-iphone-photos-to-windows": {
     title: "Transférer les photos iPhone sur un PC Windows – guide 2026",
     description:
       "Copier les photos iPhone sur Windows sans blocage HEIC : USB, iCloud pour Windows et conversion HEIC→JPG locale dans le navigateur.",
-    content: `Transférer des photos d’un iPhone vers un PC Windows devrait être simple — mais le format **HEIC** d’Apple interrompt souvent le parcours. Voici ce qui fonctionne en 2026.
+    content: `Copier des photos iPhone vers un PC Windows paraît simple, jusqu’à ce que le **HEIC** bloque le flux. Voici ce qui fonctionne encore en 2026.
 
 ## Pourquoi Windows peine avec les photos iPhone
 
@@ -203,9 +203,9 @@ Pour un parcours dédié Windows : [Ouvrir et convertir HEIC sur Windows](/blog/
     title: "Convertir WebP en JPG sur Windows (gratuit, sans envoi)",
     description:
       "Convertir des images WebP en JPG sur Windows 10/11 dans Chrome ou Edge : lots, réglage qualité, ZIP. Sans installation ni envoi vers un serveur.",
-    content: `Vous avez enregistré une image **.webp** depuis un site, Slack ou un export design — et Windows refuse de l’ouvrir dans Word, Outlook ou un ancien formulaire. Le **JPG** reste le format universel. Ce guide présente des méthodes fiables pour **convertir WebP en JPG sur Windows** sans installer de logiciel ni envoyer vos photos vers un serveur inconnu.
+    content: `Vous avez enregistré une **.webp** depuis un site, Slack ou un export design, et Windows refuse de l’ouvrir dans Word, Outlook ou un ancien formulaire. Le **JPG** fonctionne partout.
 
-> **Réponse rapide :** ouvrez **[WebP en JPG](/webp-to-jpg)** dans **Chrome ou Edge**, déposez vos fichiers, réglez la qualité JPEG, convertissez, téléchargez des JPG ou un ZIP — le tout dans le navigateur.
+Ouvrez **[WebP en JPG](/webp-to-jpg)** dans **Chrome ou Edge**, déposez vos fichiers, réglez la qualité JPEG et téléchargez des JPG ou un ZIP. Tout se passe dans le navigateur ; rien n’est envoyé sur nos serveurs.
 
 ## Qu’est-ce que le WebP ?
 
@@ -313,7 +313,7 @@ La conversion s’exécute dans votre navigateur. Nous ne recevons pas vos donn�
       "HEIC vers PNG plutôt que JPG — pour retouche, transparence et flux sans perte. Conversion par lots dans le navigateur sur Windows et Mac.",
     content: `La plupart des utilisateurs iPhone convertissent HEIC en **JPG** pour l’e-mail et Windows. Parfois le **PNG** est le meilleur choix : avant retouche, pour éviter les artefacts JPEG, ou quand le workflow exige un raster sans perte.
 
-> **Réponse rapide :** ouvrez **[HEIC en PNG](/heic-to-png)** dans Chrome ou Edge, déposez vos .heic, convertissez, téléchargez individuellement ou en ZIP — le tout localement dans le navigateur.
+Ouvrez **[HEIC en PNG](/heic-to-png)** dans Chrome ou Edge, déposez vos .heic, convertissez et téléchargez individuellement ou en ZIP. Tout reste dans le navigateur.
 
 ## HEIC → JPG vs HEIC → PNG
 
@@ -381,7 +381,7 @@ Les convertisseurs navigateur attendent une **image fixe**. Déposez le .heic, p
       "Télécharger des photos HEIC depuis Google Drive, les convertir en JPG par lot dans le navigateur sans installation, puis les remettre en ligne ou les partager.",
     content: `Google Drive n’a pas de bouton **HEIC → JPG** intégré. Si votre sauvegarde iPhone ou un dossier partagé regorge de fichiers .heic, les aperçus Windows échouent et les pièces jointes sont refusées. Ce flux convertit **beaucoup de HEIC d’un coup** sans installer de codecs ni envoyer vos photos vers un serveur inconnu.
 
-> **Réponse rapide :** télécharger depuis Drive → extraire le ZIP → **[HEIC en JPG](/heic-to-jpg)** dans Chrome/Edge → ZIP JPG → remettre sur Drive si besoin.
+télécharger depuis Drive → extraire le ZIP → **[HEIC en JPG](/heic-to-jpg)** dans Chrome/Edge → ZIP JPG → remettre sur Drive si besoin.
 
 ## Pourquoi les utilisateurs Drive souffrent du HEIC
 
@@ -496,7 +496,7 @@ Indice repliable **Vérifier zéro envoi** sur les pages outils.
       "ChromeOS n'ouvre pas les HEIC iPhone. Convertir HEIC en JPG dans le navigateur — sans Linux ni extensions.",
     content: `ChromeOS **ne supporte pas HEIC**. Les Chromebooks scolaires bloquent souvent Linux. Les .heic échouent dans Classroom ou outils d'annuaire.
 
-> **Réponse rapide :** **[HEIC en JPG](/heic-to-jpg)** dans **Chrome**, fichiers ou **dossier**, conversion locale, télécharger JPG.
+**[HEIC en JPG](/heic-to-jpg)** dans **Chrome**, fichiers ou **dossier**, conversion locale, télécharger JPG.
 
 ## Pourquoi les Chromebooks échouent
 
@@ -537,7 +537,7 @@ Traitement libheif WASM **sur le Chromebook**. Pas d'envoi à HeicSave. Vérif D
       "Android échoue souvent avec les HEIC iPhone. Convertir HEIC en JPG dans le navigateur — PC ou Chrome mobile.",
     content: `Les iPhone envoient des .heic — Android affiche souvent pas d'aperçu dans Galerie, WhatsApp ou portails scolaires.
 
-> **Réponse rapide :** Sur PC **[HEIC en JPG](/heic-to-jpg)**, repartager en JPG. Ou **Chrome sur Android**.
+Sur PC **[HEIC en JPG](/heic-to-jpg)**, repartager en JPG. Ou **Chrome sur Android**.
 
 ## Pourquoi Android + HEIC casse
 
