@@ -2,7 +2,8 @@
  * Notify Bing/Yandex of recently updated URLs via IndexNow.
  * Skips when INDEXNOW_SKIP=1.
  */
-const KEY = "7c4e9a2b8f1d3e6a9c0b5d8e2f4a1b6c";
+const KEY =
+  process.env.INDEXNOW_KEY || "7c4e9a2b8f1d3e6a9c0b5d8e2f4a1b6c";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://heicsave.com";
 const HOST = new URL(SITE_URL).host;
 
@@ -34,9 +35,11 @@ async function main() {
     return;
   }
 
-  console.warn(`IndexNow: ping failed (${res.status})`);
+  console.error(`IndexNow: ping failed (${res.status})`);
+  process.exitCode = 1;
 }
 
 main().catch((err) => {
-  console.warn("IndexNow:", err.message);
+  console.error("IndexNow:", err.message);
+  process.exitCode = 1;
 });

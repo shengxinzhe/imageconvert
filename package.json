@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap && node scripts/ping-indexnow.mjs && node scripts/ping-google-sitemap.mjs",
+    "postbuild": "next-sitemap && node scripts/ping-google-sitemap.mjs",
+    "indexnow": "node scripts/ping-indexnow.mjs",
     "start": "next start",
     "lint": "next lint",
     "compress:brand": "node scripts/compress-brand-assets.mjs",

@@ -1,0 +1,42 @@
+# Submit priority URLs to IndexNow after Vercel production deploy succeeds.
+# Requires Vercel GitHub integration (creates deployment_status events).
+name: IndexNow after deploy
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Wait for live sitemap
+        run: |
+          SITE="${NEXT_PUBLIC_SITE_URL:-https://heicsave.com}"
+          for i in $(seq 1 12); do
+            if curl -fsS "${SITE}/sitemap.xml" > /dev/null; then
+              echo "Sitemap reachable"
+              exit 0
+            fi
+            echo "Waiting for deploy... (${i}/12)"
+            sleep 15
+          done
+          echo "Site not reachable after 3 minutes"
+          exit 1
+        env:
+          NEXT_PUBLIC_SITE_URL: https://heicsave.com
+
+      - name: Submit to IndexNow
+        run: node scripts/ping-indexnow.mjs
+        env:
+          NEXT_PUBLIC_SITE_URL: https://heicsave.com
