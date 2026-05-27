@@ -3,6 +3,425 @@ export const deBlogPosts: Record<
   string,
   { title: string; description: string; content: string }
 > = {
+  "what-is-heic-file": {
+    title: "Was ist eine HEIC-Datei? Kompletter Ratgeber (2026)",
+    description:
+      "Was HEIC ist, warum iPhones es nutzen und wie Sie HEIC unter Windows und Mac öffnen oder konvertieren.",
+    content: `*Zuletzt aktualisiert: 26. Mai 2026*
+
+**HEIC** (High Efficiency Image Container) ist Apples Standard-Fotoformat auf modernen iPhones. Dank effizienter Kompression braucht es oft nur etwa halb so viel Speicher wie JPEG bei ähnlicher Bildqualität.
+
+Eine **.heic** unter Windows, abgelehnte E-Mail-Anhänge oder kaputte Vorschaubilder in Google Drive? Millionen iPhone-Nutzer kennen das. Wenn Outlook oder Gmail den Anhang ablehnt, starten Sie mit unserem [HEIC-E-Mail-Anhang-Ratgeber](/blog/heic-outlook-email-attachment).
+
+## Warum nutzt Apple HEIC?
+
+Speicher auf dem Handy ist knapp. HEIC hält mehr Fotos auf dem Gerät und in iCloud, oft mit gutem Detail. Seit iOS 11 setzt Apple darauf. Der Preis: Kompatibilität außerhalb des Apple-Ökosystems.
+
+## HEIC vs. HEIF (dieselbe Familie)
+
+Sie sehen **.heic**, **.heif** oder **.HEIC**. Für iPhone-Standfotos praktisch dasselbe. Unser [HEIC in JPG](/heic-to-jpg)-Tool akzeptiert gängige Varianten.
+
+## Kann Windows HEIC öffnen?
+
+Windows 10/11 öffnet HEIC **nach** optionalen Codecs aus dem Microsoft Store (HEIF Image Extensions, manchmal HEVC). Viele konvertieren lieber zu JPG – besonders auf Firmen-PCs ohne Admin-Rechte.
+
+Ausführlich: [HEIC unter Windows öffnen und konvertieren](/blog/heic-windows-guide).
+
+## HEIC konvertieren (ohne Upload)
+
+Browser-Konverter, die lokal arbeiten. Mit [HEIC in JPG](/heic-to-jpg) können Sie:
+
+- **Viele Dateien in einer Sitzung** konvertieren (kein festes Stapel-Limit)
+- **JPEG-Qualität** per Regler vor dem Export einstellen
+- Einzeln oder als **ZIP** herunterladen
+- Gängige **EXIF**-Daten (Datum, Kameramodell) ins JPG übernehmen, wenn möglich
+
+Nichts wird auf unsere Server hochgeladen. Für Transparenz oder Bearbeitung: [HEIC in PNG](/heic-to-png). Für kleinere Web-Uploads danach: [HEIC in WebP](/heic-to-webp).
+
+## E-Mail und Outlook mögen HEIC oft nicht
+
+Firmen-Mail, Gmail und Outlook blockieren **.heic** oft, obwohl das Foto auf dem iPhone normal aussieht. Fast immer hilft: vor dem Anhängen in JPG umwandeln oder iPhone-Transfer so einstellen, dass der PC per USB JPEGs bekommt. Schritt für Schritt: [HEIC-Anhang abgelehnt](/blog/heic-outlook-email-attachment).
+
+## Typische Situationen 2026
+
+| Situation | Vorgehen |
+|---|---|
+| E-Mail-Anhang abgelehnt | [Zuerst in JPG konvertieren](/blog/heic-outlook-email-attachment) |
+| Google-Drive-Ordner voller HEIC | ZIP laden → stapelweise konvertieren → JPGs hochladen ([Ratgeber](/blog/heic-google-drive-batch-convert)) |
+| iPhone → Windows per USB, trotzdem HEIC | Normal; nach dem Kopieren konvertieren ([Transfer-Ratgeber](/blog/transfer-iphone-photos-to-windows)) |
+| Verlustfreies Raster nötig | [HEIC in PNG](/heic-to-png) |
+| Live Photo (.heic + .mov) | Nur die **.heic**-Stilldatei ([Live-Photo-Ratgeber](/blog/heic-live-photo-guide)) |
+
+## HEIC vs. JPG
+
+| | HEIC | JPG |
+|---|---|---|
+| Größe | Kleiner | Größer |
+| Kompatibilität | Apple zuerst | Überall |
+| Am besten für | iPhone-Speicher | Teilen überall |
+| Druckerei / Behörden | Oft abgelehnt | Akzeptiert |
+
+Für Familien-E-Mail oder Legacy-Portale bleibt JPG die sichere Wahl.
+
+## Verwandte Ratgeber
+
+- [Warum das iPhone HEIC nutzt](/blog/why-iphone-uses-heic)
+- [HEIC vs. JPG im Vergleich](/blog/heic-vs-jpg)
+- [iPhone-Fotos auf Windows übertragen](/blog/transfer-iphone-photos-to-windows)
+- [HEIC-E-Mail-Anhang abgelehnt](/blog/heic-outlook-email-attachment)`,
+  },
+  "why-iphone-uses-heic": {
+    title: "Warum das iPhone HEIC statt JPG nutzt",
+    description:
+      "Apple setzt auf HEIC wegen Speichereffizienz. Was das für Teilen und Kompatibilität bedeutet.",
+    content: `*Zuletzt aktualisiert: 25. Mai 2026*
+
+Seit iOS 11 speichert die iPhone-Kamera Fotos standardmäßig als HEIC. Apple wollte Effizienz: mehr Fotos auf dem Gerät, weniger iCloud-Traffic.
+
+## Das Teilen-Problem
+
+Empfänger unter Windows oder auf älteren Android-Geräten öffnen HEIC oft nur mit Zusatzsoftware. E-Mail, Schulportale und Druckereien erwarten weiterhin JPG. Deshalb sind Konverter so gefragt.
+
+## „An Mac oder PC übertragen“: Automatisch vs. Kompatibel
+
+**Einstellungen → Fotos → An Mac oder PC übertragen** steuert, was per USB vom iPhone kommt:
+
+- **Automatisch** — iOS wandelt nur in JPG um, **wenn** es meint, der PC kann kein HEIC. Treiber- und Codec-Änderungen unter Windows verwirren das; oft landen trotzdem HEIC-Dateien auf dem PC.
+- **Originale behalten** — immer HEIC.
+
+Liefert Windows weiter HEIC trotz Automatisch: nach dem Kopieren konvertieren oder Kameraformat umstellen (unten).
+
+## Auf dem iPhone auf JPG umstellen (nur neue Fotos)
+
+**Einstellungen → Kamera → Formate → Kompatibel** erzwingt JPEG für neue Aufnahmen. Bestehende HEIC-Dateien müssen Sie separat konvertieren.
+
+## Bestehende HEIC umwandeln
+
+Unser kostenloser [HEIC-in-JPG-Konverter](/heic-to-jpg): privat, im Browser, ohne Konto, ohne Wasserzeichen. Mehrere Fotos hinzufügen, JPEG-Qualität wählen, bei ganzen Alben als ZIP laden.
+
+Windows-Schritte nach USB-Kopie: [iPhone-Fotos auf Windows übertragen](/blog/transfer-iphone-photos-to-windows).`,
+  },
+  "heic-vs-jpg": {
+    title: "HEIC vs. JPG: Qualität, Größe und wann welches Format",
+    description:
+      "HEIC und JPG 2026 vergleichen: Qualität, Dateigröße und Kompatibilität.",
+    content: `*Zuletzt aktualisiert: 25. Mai 2026*
+
+Beide Formate speichern Fotos, zielen aber auf verschiedene Ziele. Das falsche Format kostet Zeit, wenn ein Portal den Upload ablehnt oder Windows leere Vorschaubilder zeigt.
+
+## Dateigröße
+
+HEIC gewinnt bei gleicher wahrgenommener Qualität oft — häufig etwa halb so groß wie JPG. Deshalb nutzt das iPhone es standardmäßig.
+
+## Kompatibilität
+
+JPG funktioniert überall: E-Mail, Druckerei, Behördenportale, 20 Jahre alte Software. HEIC braucht moderne Unterstützung oder einen Konvertierungsschritt.
+
+## HEIC behalten vs. in JPG konvertieren
+
+| Ziel | Format |
+|---|---|
+| iPhone-Speicher maximieren | HEIC auf dem Handy |
+| E-Mail an beliebige Empfänger | JPG |
+| Upload in altes Webformular | JPG |
+| Langzeitarchiv auf Windows-HDD | JPG (oder PNG verlustfrei) |
+| Bearbeitung in Photoshop ohne Codecs | Zuerst konvertieren |
+
+## Wann PNG statt JPG?
+
+[HEIC in PNG](/heic-to-png), wenn Sie verlustfreies Raster, Transparenz aus bearbeiteten Exporten brauchen oder JPEG-Artefakte vor weiterer Bearbeitung vermeiden wollen. PNG ist größer; zum Teilen eher JPG.
+
+Mehr: [HEIC in PNG: wann und wie](/blog/heic-to-png-when-and-how).
+
+## Qualität bei der Konvertierung
+
+Bei hoher JPEG-Qualität sehen beide exzellent aus. Bei [HeicSave](/heic-to-jpg) stellen Sie den Regler ein (Standard 90 %). Gängige EXIF-Tags übernehmen wir ins JPG; GPS und seltene Felder können fehlen.
+
+## Empfehlung
+
+- **HEIC behalten** auf dem iPhone für Speicher.
+- **In JPG konvertieren**, wenn Sie außerhalb von Apple teilen.
+- [HEIC in PNG](/heic-to-png) für verlustfreie Bearbeitungs-Workflows.`,
+  },
+  "heic-windows-guide": {
+    title: "HEIC unter Windows öffnen und konvertieren (Ratgeber 2026)",
+    description:
+      "Schritt für Schritt: HEIC unter Windows 10/11 ohne Codecs öffnen oder online in JPG konvertieren.",
+    content: `*Zuletzt aktualisiert: 25. Mai 2026*
+
+Windows-Nutzer bekommen täglich HEIC-Dateien von iPhone-Besitzern — per USB, iCloud oder ZIP aus Google Drive.
+
+## Option 1: HEIC-Codecs installieren (Admin evtl. nötig)
+
+Im Microsoft Store: **HEIF Image Extensions** (oft gratis) und manchmal **HEVC Video Extensions** (auf manchen PCs kostenpflichtig). Danach öffnet Fotos HEIC, der Explorer zeigt Vorschaubilder.
+
+Schnell per winget (PowerShell):
+
+\`\`\`
+winget install Microsoft.HEIFImageExtension
+\`\`\`
+
+**Grenzen:** gesperrte Firmen-PCs, fehlendes HEVC für manche Farbprofile, Stapel-Workflows bleiben umständlicher als einmalig JPG.
+
+## Option 2: Im Browser konvertieren (ohne Installation)
+
+1. [HEIC in JPG](/heic-to-jpg) in **Chrome oder Edge** öffnen (beste HEIC-Dekodierung unter Windows).
+2. .heic-Dateien in die Ablagezone ziehen — oder **Dateien durchsuchen**.
+3. **JPEG-Qualität** einstellen für kleinere oder schärfere Dateien.
+4. **Konvertieren**, dann einzelne JPGs oder **Alles als ZIP** laden.
+
+Konvertierung läuft im Browser. Kein Server-Upload.
+
+### Browser-lokal vs. zufällige Upload-Seiten
+
+| | HeicSave (browser-lokal) | Cloud-Uploader |
+|---|---|---|
+| Datenschutz | Dateien bleiben auf dem PC | Upload an Dritte |
+| Stapel + ZIP | Ja | Oft begrenzt |
+| Admin-Rechte | Nicht nötig | Nicht nötig |
+| Konto | Keines | Oft Pflicht |
+
+## Option 3: Fotos-App einzeln
+
+Mit installierten Codecs: in **Fotos → ⋯ → Speichern unter → JPEG**. Für wenige Dateien OK; für Urlaubsordner mühsam.
+
+## Tipps für Stapelverarbeitung
+
+Bei HeicSave gibt es kein festes „5 Dateien“- oder „10 MB“-Limit. Sehr große Ordner können den PC bremsen; bei Problemen in Gruppen von 50–100 konvertieren. HeicSave warnt, wenn Stapel oder Dateigröße für Ihr Gerät heavy wirken.
+
+Google Drive: [HEIC aus Google Drive stapelweise konvertieren](/blog/heic-google-drive-batch-convert).
+
+## Fehlerbehebung (2026)
+
+| Problem | Was versuchen |
+|---|---|
+| Fotos-App lädt ewig | Codecs fehlen; Browser-Konvertierung |
+| E-Mail hängt HEIC nicht an | Zuerst in JPG konvertieren |
+| Leere Vorschaubilder im Explorer | HEIF-Erweiterung oder konvertieren |
+| USB-Kopie liefert HEIC | Normal; [Transfer-Ratgeber](/blog/transfer-iphone-photos-to-windows) |
+| Konvertierung schlägt fehl | Chrome/Edge; .heic prüfen, nicht .mov Live-Photo-Video |
+| Transparenz / verlustfrei | [HEIC in PNG](/heic-to-png) |
+
+## Verwandte Ratgeber
+
+- [iPhone-Fotos auf Windows übertragen](/blog/transfer-iphone-photos-to-windows)
+- [Was ist eine HEIC-Datei?](/blog/what-is-heic-file)
+- [HEIC in PNG, wenn nötig](/blog/heic-to-png-when-and-how)`,
+  },
+  "heic-mac-guide": {
+    title: "HEIC in JPG auf dem Mac: Vorschau vs. Online-Tools",
+    description:
+      "Vorschau für Einzelbilder oder kostenloser Online-Stapel-Konverter für Tempo.",
+    content: `Der Mac öffnet HEIC nativ in Vorschau und Fotos.
+
+## Methode Vorschau
+
+1. HEIC in Vorschau öffnen.
+2. Ablage → Exportieren.
+3. JPEG wählen, Qualität setzen, speichern.
+
+Für ein Bild OK; für Dutzende langsam.
+
+## Online-Stapel-Tool
+
+[HEIC in JPG](/heic-to-jpg) in Safari oder Chrome:
+
+- Viele Dateien auf einmal ablegen
+- JPEG-Qualität am Regler
+- **ZIP** mit allen JPGs laden
+- EXIF (Aufnahmedatum, Kamera) wird wenn möglich übernommen
+
+## Datenschutz
+
+Browser-Tools mit lokaler Verarbeitung senden Fotos nicht an fremde Server. Praktisch für Kundenarbeit unter NDA.`,
+  },
+  "best-heic-converters-2026": {
+    title: "Beste HEIC-Konverter 2026 (kostenlos & privat)",
+    description:
+      "Desktop-Apps, Cloud-Uploads und browser-lokale HEIC-Konverter im Vergleich.",
+    content: `*Zuletzt aktualisiert: 25. Mai 2026*
+
+HEIC-Konverter nach Datenschutz, Stapelgröße und Installationsmöglichkeit wählen. Das nutzen Leute 2026 wirklich.
+
+## Browser-lokal (empfohlen)
+
+**HeicSave** — [HEIC in JPG](/heic-to-jpg):
+
+- Kein Upload; Dateien bleiben im Browser
+- Kein Konto, kein Wasserzeichen, kostenlos
+- **Kein festes** Datei- oder 10-MB-Limit (praktisch: Gerätespeicher)
+- Stapel + **ZIP-Download**
+- **JPEG-Qualitätsregler**
+- **EXIF** ins JPG, wenn unterstützt
+
+Außerdem: [HEIC in PNG](/heic-to-png), [WebP](/webp-to-jpg) und [AVIF](/avif-to-jpg).
+
+**Am besten für:** Windows ohne Admin-Rechte, sensible Fotos, schnelle Stapel aus Google Drive oder USB.
+
+## Desktop (Offline-Installation)
+
+- **iMazing HEIC Converter** — gratis Mac/Windows, offline, klare Stapel.
+- **XnConvert** — Power-User, Skripte, viele Formate.
+- **IrfanView + Plugins** — schlanker Viewer mit Stapel-Export.
+
+**Am besten für:** wiederkehrende Offline-Workflows, IT-Automatisierung, air-gapped Rechner.
+
+## Cloud-Upload (Vorsicht)
+
+Seiten, die Fotos auf Server laden, können Datenschutz bei medizinischen oder rechtlichen Bildern verletzen. Richtlinie lesen, bevor Sie Kunden- oder Familienfotos hochladen.
+
+**Nur**, wenn Sie Betreiber und Policy ausdrücklich vertrauen.
+
+## Windows-Codec-Weg
+
+HEIF/HEVC aus dem Microsoft Store — Fotos öffnet HEIC nativ. Ansehen ja; Stapel-Export nach JPG bleibt mühsam vs. Browser-Stapel + ZIP.
+
+## Szenario-Auswahl
+
+| Sie brauchen… | Zuerst probieren |
+|---|---|
+| 50+ iPhone-Fotos unter Windows, ohne Install | [HEIC in JPG](/heic-to-jpg) in Chrome/Edge |
+| Google-Drive-Ordner mit HEIC | [Drive-Stapel-Ratgeber](/blog/heic-google-drive-batch-convert) |
+| Verlustfreie Bearbeitung | [HEIC in PNG](/heic-to-png) |
+| AVIF vom CDN unter Windows | [AVIF in JPG](/avif-to-jpg) + [Windows-Ratgeber](/blog/convert-avif-to-jpg-windows) |
+| WebP-Assets für E-Mail | [WebP in JPG](/webp-to-jpg) + [Windows-Ratgeber](/blog/convert-webp-to-jpg-windows) |
+
+## Unser Tipp
+
+Für schnelle private Konvertierung ohne Installation: browser-lokal zuerst. Desktop-Apps, wenn Sie wöchentlich skriptierte Offline-Automatisierung brauchen.`,
+  },
+  "avif-explained": {
+    title: "AVIF erklärt: Das Bildformat der nächsten Web-Generation",
+    description:
+      "AVIF-Grundlagen, Browser-Unterstützung und wann Sie in JPG oder PNG konvertieren.",
+    content: `AVIF basiert auf AV1-Videokompression und liefert starke Qualität bei kleinen Dateien.
+
+## Wer nutzt AVIF?
+
+CDNs, WordPress-Plugins und performance-orientierte Sites liefern AVIF mit JPG-Fallback.
+
+## Browser-Unterstützung
+
+Große Browser dekodieren AVIF im Tab. Desktop-Apps oft nicht — daher Nachfrage nach [AVIF in JPG](/avif-to-jpg). Chrome oder Edge für zuverlässigste Browser-Konvertierung.
+
+## Konvertieren wenn nötig
+
+- **[AVIF in JPG](/avif-to-jpg)** für universelles Teilen — JPEG-Qualität am Regler.
+- **[AVIF in PNG](/avif-to-png)** für Design-Pipelines.
+
+Stapel und ZIP wie bei HEIC: mehrere Dateien, gemeinsam laden wenn nötig.
+
+## Zukunft
+
+AVIF-Unterstützung auf Desktops bleibt uneinheitlich. Konverter füllen dieselbe Lücke wie HEIC-Tools.
+
+Unter Windows? [AVIF in JPG unter Windows](/blog/convert-avif-to-jpg-windows).`,
+  },
+  "webp-vs-jpg": {
+    title: "WebP vs. JPG: Welches Format 2026?",
+    description:
+      "WebP vs. JPG für Websites, E-Mail und Speicher — mit kostenlosen Konverter-Tools.",
+    content: `WebP ist Googles modernes Web-Bildformat; JPG der universelle Foto-Standard.
+
+## Größe
+
+WebP ist bei ähnlicher Qualität oft 25–35 % kleiner als JPG.
+
+## Kompatibilität
+
+JPG gewinnt bei E-Mail und Legacy-Apps. WebP gewinnt auf modernen Websites mit Fallback.
+
+## Konverter-Tools
+
+- [JPG in WebP](/jpg-to-webp) — für Ihre Site optimieren; **WebP-Qualität** am Regler (Standard 85 %).
+- [WebP in JPG](/webp-to-jpg) — an jeden teilen; Stapel + ZIP.
+
+**Schritt für Schritt unter Windows:** [WebP in JPG unter Windows](/blog/convert-webp-to-jpg-windows).
+
+Konvertierung läuft lokal im Browser — kein Upload.
+
+## Best Practice
+
+WebP mit <picture> und JPG-Fallback ausliefern. Master in JPG oder RAW behalten.`,
+  },
+  "webp-for-developers": {
+    title: "WebP für Entwickler: Enkodieren, Dekodieren, Konvertieren",
+    description:
+      "WebP für Frontend-Devs: PNG/JPG in beide Richtungen enkodieren und dekodieren.",
+    content: `Entwickler setzen WebP für Lighthouse-Scores und Bandbreite ein.
+
+## Lokal enkodieren
+
+Vor CI: [PNG in WebP](/png-to-webp) oder [JPG in WebP](/jpg-to-webp) für Marketing-Assets. Qualität in der UI, kein festes Dateigrößen-Gate.
+
+## Für Stakeholder dekodieren
+
+[WebP in PNG](/webp-to-png), wenn Design PNG in Figma-Handoffs braucht. [WebP in JPG](/webp-to-jpg) für E-Mail-Anhänge.
+
+## Canvas-API
+
+Moderne Browser enkodieren WebP via canvas.toBlob — unser Tool wrappt das clientseitig, wie in Produktion.
+
+## Fallbacks nicht vergessen
+
+Immer JPG/PNG-Fallback für E-Mail-Clients und alte Browser mitliefern.`,
+  },
+  "heic-live-photo-guide": {
+    title: "iPhone Live Photos und HEIC: JPG-Standbilder exportieren",
+    description:
+      "Live-Photo-HEIC, .mov-Verwechslung und JPG-Export unter Windows und Mac.",
+    content: `Live Photos speichern wenige Sekunden Bewegung um ein Standbild. Auf der Festplatte oft **zwei Dateien**: .heic (oder .jpg) plus **.mov**. Das verwirrt Windows-Nutzer und bricht Stapel-Konvertierung, wenn Sie die falsche Datei wählen.
+
+## Was ist ein Live Photo?
+
+Mit Live Photos an (**Einstellungen → Kamera → Live Photos**) speichert jede Aufnahme:
+
+- Ein **Standbild** (HEIC standardmäßig auf modernen iPhones)
+- Ein kurzer **Video-Clip** (.mov) für den Live-Effekt
+
+In Fotos eine Kachel; auf dem PC manchmal zwei Dateien mit ähnlichen Namen.
+
+## Warum Konvertierung an der falschen Datei scheitert
+
+Browser-Konverter, auch [HEIC in JPG](/heic-to-jpg), erwarten ein **Standbild**. .mov in das HEIC-Tool → Fehler oder nutzloses Ergebnis.
+
+**Fix:** nur die **.heic** (oder .heif)-Stilldatei wählen, nicht die .mov-Begleitdatei.
+
+## JPG-Standbild vom iPhone (ohne PC)
+
+1. Foto in **Fotos** öffnen.
+2. **Teilen** tippen.
+3. Steht **Als Video sichern**, teilen Sie den Clip — zurück und Still über Mac/PC exportieren.
+4. Am Mac: Vorschau → **Ablage → Exportieren** → JPEG.
+
+Für viele Fotos: HEIC-Stills auf den Rechner, stapelweise konvertieren.
+
+## Live-Photo-Stills stapelweise unter Windows
+
+1. Nur **.heic**-Dateien vom iPhone oder iCloud-Ordner kopieren.
+2. [HEIC in JPG](/heic-to-jpg) in Chrome oder Edge öffnen.
+3. Stills ablegen, Qualität setzen, konvertieren, ZIP laden.
+
+.mov im selben Ordner überspringen — nicht das Foto für E-Mail oder Druck.
+
+## Live Photos aus für einfacheres Teilen
+
+**Kamera-App → Live-Photos-Symbol (oben)** — Aus, wenn Sie nur ein normales JPG/HEIC-Still brauchen. Weniger Doppeldateien unter Windows.
+
+## Live Photo vs. normales HEIC
+
+| | Live-Photo-Paar | Normales HEIC |
+|---|---|---|
+| Dateien | .heic + .mov | nur .heic |
+| Gut für | Erinnerungen in Fotos | E-Mail, Druck, Windows |
+| Mit HeicSave | nur .heic-Still | Ja |
+
+## Datenschutz-Hinweis
+
+Live-Photo-**Video**-Clips können Ton und Hintergrund enthalten, die Sie nicht teilen wollten. Für Uploads: **Still** HEIC→JPG und JPG vor dem Senden prüfen.
+
+Universelle Windows-Kompatibilität? Nach Konvertierung öffnet JPG Fotos, Paint, Word und jeden Legacy-Uploader. Verlustfrei: [HEIC in PNG](/heic-to-png) nur für die Stilldatei.`,
+  },
   "convert-avif-to-jpg-windows": {
     title: "AVIF in JPG unter Windows (kostenlos, ohne Upload)",
     description:
@@ -628,5 +1047,38 @@ libheif-Decode + Canvas-JPG bei Ihrer Qualität. Keine künstliche Entsättigung
 ## Probieren
 
 [HEIC in JPG](/heic-to-jpg) · [HEIC in WebP](/heic-to-webp) · [Vergleichs-Rundown](/blog/best-heic-converters-2026)`,
+  },
+  "heic-outlook-email-attachment": {
+    title: "HEIC-Anhang abgelehnt? Outlook & Gmail (2026)",
+    description:
+      "Outlook, Gmail und Firmen-Mail blockieren oft HEIC. Vor dem Anhängen in JPG umwandeln — am iPhone oder PC.",
+    content: `Fotos in Mail ausgewählt, Senden gedrückt — Outlook oder Gmail meldet „nicht unterstützt“ oder entfernt den Anhang. Auf dem iPhone sieht alles normal aus. Schuld ist meist **.heic**, nicht das Bild.
+
+## Warum Mail HEIC ablehnt
+
+HEIC passt gut zu Apple. Viele Firmen-Gateways und ältere Outlook-Versionen erlauben nur **.jpg** / **.png**.
+
+## Am iPhone vor dem Senden
+
+**Über Dateien (1–5 Fotos):** Fotos → Teilen → **Foto kopieren** → Dateien → einfügen → die neue **.jpg** aus Dateien an Mail/Outlook hängen.
+
+**Stapel:** Kurzbefehle → Fotos auswählen → Bild konvertieren (JPEG) → in Album speichern.
+
+**Künftig JPG:** Einstellungen → Kamera → Formate → **Kompatibel**.
+
+## Am PC nach USB/iCloud-Export
+
+Für Outlook-Anhänge trotzdem **JPG**. **[HEIC in JPG](/heic-to-jpg)** in Chrome/Edge, Dateien ablegen, JPG oder ZIP laden — Verarbeitung lokal im Browser.
+
+## Outlook-Besonderheiten
+
+Desktop-Outlook blockiert HEIC oft, auch wenn die Vorschau auf dem iPhone funktionierte. Firmen-Exchange ist strenger als Gmail. Im Zweifel JPG mit 85–90 % Qualität.
+
+## Verwandt
+
+- [Was ist HEIC?](/blog/what-is-heic-file)
+- [iPhone-Fotos auf Windows](/blog/transfer-iphone-photos-to-windows)
+
+**Tool:** **[HEIC in JPG](/heic-to-jpg)**`,
   },
 };

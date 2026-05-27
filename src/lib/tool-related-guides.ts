@@ -11,6 +11,7 @@ export const toolRelatedGuides: Partial<
       "heic-google-drive-batch-convert",
       "heic-chromebook-convert",
       "heic-android-open-convert",
+      "heic-outlook-email-attachment",
       "heicsave-vs-browser-heic-converters",
     ],
     postConvertGuide: "transfer-iphone-photos-to-windows",

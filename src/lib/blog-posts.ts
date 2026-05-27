@@ -16,13 +16,13 @@ export const blogPosts: BlogPost[] = [
     description:
       "What HEIC is, why iPhones use it, and how to open or convert on Windows and Mac.",
     publishedAt: "2026-01-15",
-    updatedAt: "2026-05-25",
-    readMinutes: 10,
-    content: `*Last updated: May 25, 2026*
+    updatedAt: "2026-05-26",
+    readMinutes: 11,
+    content: `*Last updated: May 26, 2026*
 
 HEIC (High Efficiency Image Container) is Apple's default photo format on modern iPhones. It uses advanced compression to store photos at roughly half the size of JPEG with similar visual quality.
 
-Got a .heic on Windows, failed to email it, or saw broken thumbnails in Google Drive? Same problem millions of iPhone users hit every week.
+Got a .heic on Windows, failed to email it, or saw broken thumbnails in Google Drive? Same problem millions of iPhone users hit every week. If Outlook or Gmail rejected the attachment, start with our [HEIC email attachment guide](/blog/heic-outlook-email-attachment).
 
 ## Why does Apple use HEIC?
 
@@ -47,13 +47,17 @@ Use a browser-based converter that processes files locally. Our [HEIC to JPG](/h
 - Download results individually or as a **ZIP**
 - Keep common **EXIF** data (date, camera model) in JPG when possible
 
-Nothing is uploaded to our servers. For transparency or editing workflows, use [HEIC to PNG](/heic-to-png) instead.
+Nothing is uploaded to our servers. For transparency or editing workflows, use [HEIC to PNG](/heic-to-png) instead. For smaller web uploads after conversion, try [HEIC to WebP](/heic-to-webp).
+
+## Email and Outlook still hate HEIC
+
+Work mail, Gmail, and Outlook often block **.heic** even when the photo looks fine on your iPhone. The fix is almost always the same: convert to JPG before you attach, or change iPhone transfer settings so the PC gets JPEGs over USB. Step-by-step for Outlook and webmail: [HEIC email attachment rejected](/blog/heic-outlook-email-attachment).
 
 ## Common scenarios in 2026
 
 | Situation | What to do |
 |---|---|
-| Email attachment rejected | Convert to JPG first |
+| Email attachment rejected | [Convert to JPG first](/blog/heic-outlook-email-attachment) |
 | Google Drive folder full of HEIC | Download ZIP → batch convert → re-upload JPGs ([guide](/blog/heic-google-drive-batch-convert)) |
 | iPhone → Windows USB copy still HEIC | Normal; convert after transfer ([transfer guide](/blog/transfer-iphone-photos-to-windows)) |
 | Need lossless raster | [HEIC to PNG](/heic-to-png) |
@@ -74,7 +78,8 @@ When you need to email photos to family or upload to a legacy portal, JPG remain
 
 - [Why iPhone uses HEIC](/blog/why-iphone-uses-heic)
 - [HEIC vs JPG comparison](/blog/heic-vs-jpg)
-- [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows)`,
+- [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows)
+- [HEIC email attachment rejected](/blog/heic-outlook-email-attachment)`,
   },
   {
     slug: "why-iphone-uses-heic",
@@ -1171,6 +1176,71 @@ Bottom line: All three can convert locally. HeicSave emphasizes **no artificial 
 - [HEIC to WebP](/heic-to-webp) — websites
 
 Also read: [Best HEIC converters roundup](/blog/best-heic-converters-2026) · [Google Drive batch workflow](/blog/heic-google-drive-batch-convert)`,
+  },
+  {
+    slug: "heic-outlook-email-attachment",
+    title: "HEIC Email Attachment Rejected? Outlook & Gmail Fix (2026)",
+    description:
+      "Outlook, Gmail, and work mail often block HEIC. Convert to JPG on iPhone or PC before attaching.",
+    publishedAt: "2026-05-26",
+    readMinutes: 8,
+    content: `You picked photos in Mail, hit send, and Outlook or Gmail bounced back with "unsupported file type" or stripped the attachment. The photos open fine on your iPhone. The problem is the **.heic** container, not the image itself.
+
+## Why email clients reject HEIC
+
+HEIC is great on Apple devices. Most corporate mail gateways, older Outlook builds, and web forms still whitelist **.jpg** and **.png**. They never got the memo about HEIF.
+
+iPhone sometimes converts when you share to Mail, sometimes it does not. Do not assume the recipient can open what you see in Photos.
+
+## Fix on iPhone before you attach
+
+**Copy through Files (one or two photos):**
+
+1. Photos → Share → **Copy Photo**
+2. Files → On My iPhone → long-press empty space → **Paste**
+3. Share the new **.jpg** from Files into Mail or Outlook
+
+**Batch on iPhone:** Shortcuts app → Select Photos → Convert Image (JPEG) → Save to album. One-time setup, reuse whenever you mail a vacation folder.
+
+**New photos only:** Settings → Camera → Formats → **Most Compatible** saves JPEG from the camera. Old HEIC files stay HEIC until you convert them.
+
+## Fix on Windows after you already exported HEIC
+
+If USB copy or iCloud dropped **.heic** files on your PC:
+
+1. Install **HEIF Image Extensions** + **HEVC Video Extensions** from Microsoft Store if you just need to preview.
+2. For attaching to Outlook, convert to JPG anyway. Gateways do not care that your PC can open HEIC.
+
+Open **[HEIC to JPG](/heic-to-jpg)** in Chrome or Edge, drop the files, pick quality, download JPGs or a ZIP, attach those. Processing stays in your browser; nothing uploads to our servers.
+
+## Outlook-specific quirks
+
+- **Outlook desktop** on Windows may show a generic icon and block send for HEIC even when web Outlook accepts JPG.
+- **Compress attachments** in Outlook can re-encode; start from JPG to avoid double surprises.
+- **Corporate Exchange** rules are stricter than Gmail. When in doubt, JPG at 85–90% quality is the boring choice that works.
+
+## Gmail and web forms
+
+Gmail usually accepts JPG under 25 MB. HEIC often fails silently in compose. Same converter workflow as above if you sync photos to a desktop folder first.
+
+Government portals, insurance uploads, and school forms: assume **JPG only**. Convert once, upload once.
+
+## Quick comparison
+
+| Method | Best for |
+|---|---|
+| Files copy/paste on iPhone | 1–5 photos, no PC |
+| Shortcuts batch | Many photos before sending from phone |
+| [HEIC to JPG](/heic-to-jpg) on PC | Folder from USB/iCloud/OneDrive |
+| Most Compatible camera setting | Stop future HEIC pain |
+
+## Related
+
+- [What is a HEIC file?](/blog/what-is-heic-file)
+- [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows)
+- [HEIC on Windows guide](/blog/heic-windows-guide)
+
+**Convert now:** **[HEIC to JPG](/heic-to-jpg)**`,
   },
 ];
 

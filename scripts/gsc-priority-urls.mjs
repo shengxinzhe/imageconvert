@@ -17,14 +17,17 @@ const PATHS = [
   "/blog/heic-android-open-convert",
   "/blog/heic-color-washed-out-after-convert",
   "/blog/heicsave-vs-browser-heic-converters",
+  "/blog/heic-outlook-email-attachment",
   "/de/blog/heic-chromebook-convert",
   "/de/blog/heic-android-open-convert",
   "/de/blog/heic-color-washed-out-after-convert",
   "/de/blog/heicsave-vs-browser-heic-converters",
+  "/de/blog/heic-outlook-email-attachment",
   "/fr/blog/heic-chromebook-convert",
   "/fr/blog/heic-android-open-convert",
   "/fr/blog/heic-color-washed-out-after-convert",
   "/fr/blog/heicsave-vs-browser-heic-converters",
+  "/fr/blog/heic-outlook-email-attachment",
 ];
 
 export const PRIORITY_URLS = PATHS.map((p) => `${SITE_URL}${p}`);

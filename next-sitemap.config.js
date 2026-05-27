@@ -51,21 +51,11 @@ const BLOG_SLUGS = [
   "heic-android-open-convert",
   "heic-color-washed-out-after-convert",
   "heicsave-vs-browser-heic-converters",
+  "heic-outlook-email-attachment",
 ];
 
 /** de/fr blog slugs with real translations — sync with src/lib/blog-l10n/de.ts keys */
-const BLOG_SLUGS_L10N = new Set([
-  "convert-avif-to-jpg-windows",
-  "transfer-iphone-photos-to-windows",
-  "convert-webp-to-jpg-windows",
-  "heic-to-png-when-and-how",
-  "heic-google-drive-batch-convert",
-  "privacy-browser-image-conversion",
-  "heic-chromebook-convert",
-  "heic-android-open-convert",
-  "heic-color-washed-out-after-convert",
-  "heicsave-vs-browser-heic-converters",
-]);
+const BLOG_SLUGS_L10N = new Set(BLOG_SLUGS);
 
 function isUntranslatedLocaleBlogPath(path) {
   for (const locale of ["de", "fr"]) {

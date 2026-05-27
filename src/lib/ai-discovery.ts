@@ -73,6 +73,10 @@ export const AI_GUIDE_CATALOG = [
     title: "Open iPhone HEIC on Android",
   },
   {
+    slug: "heic-outlook-email-attachment",
+    title: "HEIC Email Attachment Rejected (Outlook & Gmail)",
+  },
+  {
     slug: "heicsave-vs-browser-heic-converters",
     title: "HeicSave vs HEIC.dev & HEICcon",
   },
