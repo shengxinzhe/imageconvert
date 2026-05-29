@@ -1,5 +1,6 @@
 import type { AppLocale } from "@/i18n/routing";
 import { AI_TOOL_CATALOG, SITE_AI_SUMMARY } from "@/lib/ai-discovery";
+import { absoluteUrl } from "@/lib/locale-path";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 const SITE_DESCRIPTION: Record<AppLocale, string> = {
@@ -15,13 +16,15 @@ const SCHEMA_LANG: Record<AppLocale, string> = {
 };
 
 export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
+  const homeUrl = absoluteUrl("/", locale);
+
   const graph = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": `${SITE_URL}/#website`,
-        url: SITE_URL,
+        "@id": `${homeUrl}#website`,
+        url: homeUrl,
         name: SITE_NAME,
         description: SITE_DESCRIPTION[locale],
         inLanguage: SCHEMA_LANG[locale],
@@ -46,7 +49,7 @@ export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
       },
       {
         "@type": "ItemList",
-        "@id": `${SITE_URL}/#tools`,
+        "@id": `${homeUrl}#tools`,
         name: "Free image converters",
         description: SITE_AI_SUMMARY.tagline,
         numberOfItems: AI_TOOL_CATALOG.length,
@@ -54,7 +57,7 @@ export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
           "@type": "ListItem",
           position: index + 1,
           name: tool.name,
-          url: `${SITE_URL}/${tool.slug}`,
+          url: absoluteUrl(`/${tool.slug}`, locale),
           description: tool.useWhen,
         })),
       },

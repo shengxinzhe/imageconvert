@@ -68,13 +68,17 @@
     "dmca": "DMCA",
     "about": "À propos",
     "blog": "Blog",
+    "guides": "Guides populaires",
     "contact": "Contact"
   },
   "blog": {
     "back": "← Blog",
     "englishNotice": "Cet article est disponible en anglais.",
     "minRead": "min de lecture",
-    "updated": "Mis à jour"
+    "updated": "Mis à jour",
+    "tryToolHeading": "Essayer le convertisseur gratuit",
+    "tryToolCta": "Ouvrir {tool}",
+    "relatedHeading": "Autres guides"
   },
   "converter": {
     "dropTitle": "Déposez vos images ici",

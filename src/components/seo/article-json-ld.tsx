@@ -54,6 +54,18 @@ export function ArticleJsonLd({
           "@type": "Organization",
           name: SITE_NAME,
           url: absoluteUrl("/", routing.defaultLocale),
+          logo: {
+            "@type": "ImageObject",
+            url: `${siteRoot}/apple-touch-icon.png`,
+            width: 180,
+            height: 180,
+          },
+        },
+        isPartOf: {
+          "@type": "Blog",
+          "@id": `${blogUrl}#blog`,
+          name: `${SITE_NAME} Blog`,
+          url: blogUrl,
         },
         mainEntityOfPage: {
           "@type": "WebPage",

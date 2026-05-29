@@ -6,13 +6,17 @@ export const toolRelatedGuides: Partial<
 > = {
   "heic-to-jpg": {
     guides: [
+      "what-is-heic-file",
       "transfer-iphone-photos-to-windows",
       "heic-windows-guide",
+      "heic-vs-jpg",
       "heic-google-drive-batch-convert",
       "heic-chromebook-convert",
       "heic-android-open-convert",
       "heic-outlook-email-attachment",
       "heicsave-vs-browser-heic-converters",
+      "privacy-browser-image-conversion",
+      "best-heic-converters-2026",
     ],
     postConvertGuide: "transfer-iphone-photos-to-windows",
   },
@@ -37,7 +41,7 @@ export const toolRelatedGuides: Partial<
     postConvertGuide: "convert-webp-to-jpg-windows",
   },
   "webp-to-png": {
-    guides: ["webp-for-developers"],
+    guides: ["webp-for-developers", "webp-vs-jpg", "convert-webp-to-jpg-windows"],
   },
   "jpg-to-webp": {
     guides: ["webp-for-developers", "webp-vs-jpg"],

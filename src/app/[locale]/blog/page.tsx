@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BlogIndexJsonLd } from "@/components/seo/blog-index-json-ld";
 import { Link } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { getLocalizedBlogPostsNewestFirst } from "@/lib/blog-l10n";
@@ -68,6 +69,7 @@ export default function BlogIndexPage({ params }: PageProps) {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
+      <BlogIndexJsonLd locale={locale} />
       <p className="font-mono text-xs uppercase tracking-wider text-mute">{t("home.blogLabel")}</p>
       <h1 className="mt-2 text-3xl font-semibold tracking-display-sm text-ink">{t("home.blogTitle")}</h1>
       <p className="mt-3 text-body">

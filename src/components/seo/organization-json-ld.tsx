@@ -8,7 +8,12 @@ export function OrganizationJsonLd() {
     "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/apple-touch-icon.png`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/apple-touch-icon.png`,
+      width: 180,
+      height: 180,
+    },
     contactPoint: [
       {
         "@type": "ContactPoint",

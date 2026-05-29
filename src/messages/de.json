@@ -68,13 +68,17 @@
     "dmca": "DMCA",
     "about": "Über uns",
     "blog": "Blog",
+    "guides": "Beliebte Ratgeber",
     "contact": "Kontakt"
   },
   "blog": {
     "back": "← Blog",
     "englishNotice": "Dieser Artikel ist auf Englisch verfügbar.",
     "minRead": "Min. Lesezeit",
-    "updated": "Aktualisiert"
+    "updated": "Aktualisiert",
+    "tryToolHeading": "Kostenlosen Konverter testen",
+    "tryToolCta": "{tool} öffnen",
+    "relatedHeading": "Weitere Ratgeber"
   },
   "converter": {
     "dropTitle": "Bilder hier ablegen",

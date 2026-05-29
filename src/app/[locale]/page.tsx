@@ -147,7 +147,7 @@ export default function HomePage({ params }: PageProps) {
         <h2 className="mt-2 text-2xl font-semibold tracking-display-sm text-ink">{t("home.blogTitle")}</h2>
         <p className="mt-2 text-body">{t("home.blogSubtitle")}</p>
         <ul className="mt-8 divide-y divide-hairline border-y border-hairline">
-          {getLocalizedBlogPostsNewestFirst(locale).slice(0, 4).map((post) => (
+          {getLocalizedBlogPostsNewestFirst(locale).slice(0, 6).map((post) => (
             <li key={post.slug} className="py-6">
               <Link href={`/blog/${post.slug}`} className="group block">
                 <h3 className="font-medium text-ink group-hover:text-[var(--mintlify-green)]">

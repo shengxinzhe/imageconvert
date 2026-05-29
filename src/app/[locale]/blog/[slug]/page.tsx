@@ -1,4 +1,5 @@
 import { BlogMarkdown } from "@/components/blog/blog-markdown";
+import { BlogPostFooter } from "@/components/blog/blog-post-footer";
 import { ArticleJsonLd } from "@/components/seo/article-json-ld";
 import { Link } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
@@ -61,6 +62,7 @@ export default function BlogPostPage({ params }: PageProps) {
       <div className="mt-10">
         <BlogMarkdown content={post.content} locale={locale} />
       </div>
+      <BlogPostFooter slug={params.slug} locale={locale} />
     </article>
   );
 }
