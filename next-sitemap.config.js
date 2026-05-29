@@ -84,6 +84,26 @@ module.exports = {
         allow: "/",
         disallow: ["/icon.png", "/apple-icon.png", "/opengraph-image.png"],
       },
+      // Explicit Allow for AI crawlers (GEO / llms.txt discoverability)
+      ...[
+        "GPTBot",
+        "ChatGPT-User",
+        "OAI-SearchBot",
+        "ClaudeBot",
+        "anthropic-ai",
+        "PerplexityBot",
+        "Google-Extended",
+        "Applebot-Extended",
+        "Bytespider",
+        "CCBot",
+        "cohere-ai",
+        "Meta-ExternalAgent",
+        "FacebookBot",
+      ].map((userAgent) => ({
+        userAgent,
+        allow: "/",
+        disallow: ["/icon.png", "/apple-icon.png", "/opengraph-image.png"],
+      })),
     ],
   },
   transform: async (config, path) => {

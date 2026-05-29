@@ -25,11 +25,14 @@
    - 工具页：`WebApplication` + `HowTo` + `FAQPage` + `BreadcrumbList`  
    - 博客：`BlogPosting` + `SpeakableSpecification`  
 
-3. **首页「At a glance / 简要说明」**  
+3. **首页「At a glance / 简要说明」** + **FAQ 区块**  
    - 短句、可事实性摘抄，便于 AI 概览抽取  
+   - `FAQPage` + `DefinedTermSet`（HEIC/AVIF/WebP）JSON-LD  
 
-4. **`<link rel="alternate" href="/llms.txt">`**  
+4. **`<link rel="alternate" href="/llms.txt">`** + **`/llms-full.txt`**  
    - 提示存在 LLM 摘要文件  
+
+5. **About 页 `AboutPage` schema** — 实体清晰度（谁、做什么、如何盈利）  
 
 ---
 
@@ -59,12 +62,14 @@
 
 ---
 
-## 可选后续（未做）
+## 可选后续（部分已完成）
 
-- [ ] **IndexNow**：新文章发布后主动通知 Bing/Yandex  
+- [x] **IndexNow**：`npm run indexnow` / GitHub Actions workflow  
+- [x] **robots 允许 AI 爬虫**：GPTBot、ClaudeBot、PerplexityBot、Google-Extended 等（`next-sitemap.config.js`）  
+- [x] **首页 FAQPage + DefinedTermSet** JSON-LD  
+- [x] **About 页 AboutPage** JSON-LD  
 - [ ] **Organization `sameAs`**：若有官方 Twitter/GitHub 再写入 schema  
 - [ ] **德/法博客翻译**：减少多语言 URL 低质信号  
-- [ ] **robots 中是否允许 GPTBot / ClaudeBot**：视你是否希望被第三方 AI 训练集收录（与 Google AIO 无关）  
 
 ---
 

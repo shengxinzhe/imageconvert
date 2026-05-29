@@ -1,5 +1,10 @@
 import type { AppLocale } from "@/i18n/routing";
-import { AI_TOOL_CATALOG, SITE_AI_SUMMARY } from "@/lib/ai-discovery";
+import {
+  AI_DEFINED_TERMS,
+  AI_TOOL_CATALOG,
+  HOME_FAQ_BY_LOCALE,
+  SITE_AI_SUMMARY,
+} from "@/lib/ai-discovery";
 import { absoluteUrl } from "@/lib/locale-path";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
@@ -59,6 +64,29 @@ export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
           name: tool.name,
           url: absoluteUrl(`/${tool.slug}`, locale),
           description: tool.useWhen,
+        })),
+      },
+      {
+        "@type": "DefinedTermSet",
+        "@id": `${homeUrl}#terms`,
+        name: "Image formats HeicSave converts",
+        hasDefinedTerm: AI_DEFINED_TERMS.map((term) => ({
+          "@type": "DefinedTerm",
+          name: term.name,
+          description: term.description,
+          url: `${SITE_URL}${term.urlPath}`,
+        })),
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${homeUrl}#faq`,
+        mainEntity: HOME_FAQ_BY_LOCALE[locale].map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
         })),
       },
     ],

@@ -1,6 +1,7 @@
 import { WebsiteJsonLd } from "@/components/seo/website-json-ld";
 import { Link } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { HOME_FAQ_BY_LOCALE } from "@/lib/ai-discovery";
 import { getLocalizedBlogPostsNewestFirst } from "@/lib/blog-l10n";
 import { audienceStyles, getToolAudience, homeStyles } from "@/lib/design-variants";
 import { getLocalizedToolList } from "@/lib/get-localized-tool";
@@ -27,6 +28,7 @@ export default function HomePage({ params }: PageProps) {
   const tools = getLocalizedToolList(locale);
   const heicTools = tools.filter((tool) => getToolAudience(tool.slug) === "heic");
   const devTools = tools.filter((tool) => getToolAudience(tool.slug) === "developer");
+  const homeFaqs = HOME_FAQ_BY_LOCALE[locale];
 
   return (
     <>
@@ -139,6 +141,23 @@ export default function HomePage({ params }: PageProps) {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
+        <h2 className="text-2xl font-semibold tracking-display-sm text-ink">{t("tool.faqHeading")}</h2>
+        <div className="mt-6 space-y-2">
+          {homeFaqs.map((faq) => (
+            <details
+              key={faq.question}
+              className="rounded-vercel border border-hairline bg-canvas p-4"
+            >
+              <summary className="cursor-pointer text-sm font-medium text-ink">
+                {faq.question}
+              </summary>
+              <p className="mt-2 text-sm text-body">{faq.answer}</p>
+            </details>
+          ))}
         </div>
       </section>
 

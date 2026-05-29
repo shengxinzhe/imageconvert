@@ -5,6 +5,97 @@ Disallow: /icon.png
 Disallow: /apple-icon.png
 Disallow: /opengraph-image.png
 
+# GPTBot
+User-agent: GPTBot
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# ChatGPT-User
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# OAI-SearchBot
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# anthropic-ai
+User-agent: anthropic-ai
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# Applebot-Extended
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# Bytespider
+User-agent: Bytespider
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# CCBot
+User-agent: CCBot
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# cohere-ai
+User-agent: cohere-ai
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# Meta-ExternalAgent
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
+# FacebookBot
+User-agent: FacebookBot
+Allow: /
+Disallow: /icon.png
+Disallow: /apple-icon.png
+Disallow: /opengraph-image.png
+
 # Host
 Host: https://heicsave.com
 

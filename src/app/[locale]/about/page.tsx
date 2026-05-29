@@ -1,4 +1,5 @@
 import { LegalPage } from "@/components/legal/legal-page";
+import { AboutJsonLd } from "@/components/seo/about-json-ld";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { getLegalPage } from "@/lib/legal-l10n";
 import { legalPageMetadata } from "@/lib/site-metadata";
@@ -18,5 +19,10 @@ export function generateMetadata({ params }: PageProps) {
 export default function AboutPage({ params }: PageProps) {
   const locale = params.locale as AppLocale;
   const content = getLegalPage("about", locale);
-  return <LegalPage content={content} locale={locale} />;
+  return (
+    <>
+      <AboutJsonLd locale={locale} />
+      <LegalPage content={content} locale={locale} />
+    </>
+  );
 }
