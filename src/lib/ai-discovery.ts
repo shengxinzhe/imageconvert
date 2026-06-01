@@ -83,6 +83,10 @@ export const AI_GUIDE_CATALOG = [
     title: "HEIC email attachment rejected (Outlook & Gmail)",
   },
   {
+    slug: "heic-premiere-pro-import",
+    title: "Import HEIC into Premiere Pro without crashing",
+  },
+  {
     slug: "heicsave-vs-browser-heic-converters",
     title: "HeicSave vs HEIC.dev & HEICcon (2026)",
   },

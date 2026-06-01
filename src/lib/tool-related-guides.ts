@@ -6,6 +6,7 @@ export const toolRelatedGuides: Partial<
 > = {
   "heic-to-jpg": {
     guides: [
+      "heic-premiere-pro-import",
       "what-is-heic-file",
       "transfer-iphone-photos-to-windows",
       "heic-windows-guide",

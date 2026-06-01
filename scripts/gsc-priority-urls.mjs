@@ -27,6 +27,7 @@ const PATHS = [
   "/blog/heic-color-washed-out-after-convert",
   "/blog/heicsave-vs-browser-heic-converters",
   "/blog/heic-outlook-email-attachment",
+  "/blog/heic-premiere-pro-import",
   "/de/about",
   "/de/contact",
   "/de/blog",
@@ -38,6 +39,7 @@ const PATHS = [
   "/de/blog/heic-color-washed-out-after-convert",
   "/de/blog/heicsave-vs-browser-heic-converters",
   "/de/blog/heic-outlook-email-attachment",
+  "/de/blog/heic-premiere-pro-import",
   "/fr/about",
   "/fr/contact",
   "/fr/blog",
@@ -49,6 +51,7 @@ const PATHS = [
   "/fr/blog/heic-color-washed-out-after-convert",
   "/fr/blog/heicsave-vs-browser-heic-converters",
   "/fr/blog/heic-outlook-email-attachment",
+  "/fr/blog/heic-premiere-pro-import",
 ];
 
 export const PRIORITY_URLS = PATHS.map((p) => `${SITE_URL}${p}`);

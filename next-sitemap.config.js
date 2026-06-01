@@ -52,6 +52,7 @@ const BLOG_SLUGS = [
   "heic-color-washed-out-after-convert",
   "heicsave-vs-browser-heic-converters",
   "heic-outlook-email-attachment",
+  "heic-premiere-pro-import",
 ];
 
 /** de/fr blog slugs with real translations — sync with src/lib/blog-l10n/de.ts keys */
