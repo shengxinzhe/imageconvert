@@ -3,9 +3,9 @@ import type { LegalCatalog } from "@/lib/legal-l10n/types";
 export const enLegal: LegalCatalog = {
   contact: {
     meta: {
-      title: "Contact",
+      title: "Contact HeicSave — Support, Privacy Requests & Help",
       description:
-        "Contact HeicSave for support, privacy requests, and general questions.",
+        "Contact HeicSave for conversion help, GDPR privacy requests, and general questions. We reply within a few business days — your images are never uploaded.",
     },
     h1: "Contact HeicSave",
     body: `We operate **HeicSave** at [heicsave.com](https://heicsave.com). Image conversion runs in your browser—we do not receive your photo files.
@@ -32,9 +32,9 @@ We aim to reply within a few business days. We cannot recover converted files or
   },
   about: {
     meta: {
-      title: "About",
+      title: "About HeicSave — Free Browser-Local HEIC & WebP Tools",
       description:
-        "About HeicSave: free browser-local HEIC, WebP, and AVIF converters for iPhone users and developers.",
+        "Learn about HeicSave: free browser-local HEIC, WebP, and AVIF converters for iPhone users. No upload, no account — photos stay private on your device.",
     },
     h1: "About HeicSave",
     lastUpdated: "Last updated: May 19, 2026",

@@ -14,17 +14,17 @@ const BLOG_META: Record<AppLocale, { title: string; description: string }> = {
   en: {
     title: "Blog — HEIC, WebP & AVIF Guides",
     description:
-      "Guides on HEIC, WebP, AVIF, iPhone photos, Windows compatibility, and private browser conversion.",
+      "HeicSave blog: practical guides on HEIC, WebP, AVIF, iPhone photos, Windows compatibility, and private browser-local conversion — no upload required.",
   },
   de: {
     title: "Blog — HEIC-, WebP- & AVIF-Ratgeber",
     description:
-      "Ratgeber zu HEIC, WebP, AVIF, iPhone-Fotos und privater Browser-Konvertierung — auch auf Deutsch.",
+      "HeicSave Blog: praxisnahe Ratgeber zu HEIC, WebP, AVIF, iPhone-Fotos, Windows-Kompatibilität und privater Browser-Konvertierung — ohne Upload, auf Deutsch.",
   },
   fr: {
     title: "Blog — guides HEIC, WebP et AVIF",
     description:
-      "Guides HEIC, WebP, AVIF, photos iPhone et conversion privée dans le navigateur — aussi en français.",
+      "Blog HeicSave : guides pratiques sur HEIC, WebP, AVIF, photos iPhone, compatibilité Windows et conversion locale dans le navigateur — sans envoi, en français.",
   },
 };
 

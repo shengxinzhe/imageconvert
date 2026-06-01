@@ -6,7 +6,7 @@ export const frBlogPosts: Record<
   "what-is-heic-file": {
     title: "Qu’est-ce qu’un fichier HEIC ? Guide complet (2026)",
     description:
-      "Définition du HEIC, pourquoi l’iPhone l’utilise, et comment l’ouvrir ou le convertir sur Windows et Mac.",
+      "Découvrez le HEIC, pourquoi l'iPhone l'utilise et comment ouvrir ou convertir des photos HEIC sur Windows et Mac — outils gratuits dans le navigateur, sans envoi.",
     content: `*Dernière mise à jour : 26 mai 2026*
 
 Le **HEIC** (High Efficiency Image Container) est le format photo par défaut d’Apple sur les iPhone récents. Grâce à une compression avancée, il occupe souvent environ deux fois moins d’espace qu’un JPEG pour une qualité visuelle comparable.
@@ -879,7 +879,7 @@ iPhone : **Réglages → Appareil photo → Formats → Plus compatible** enregi
   "privacy-browser-image-conversion": {
     title: "Pourquoi la conversion locale protège la vie privée",
     description:
-      "RGPD, photos clients et pourquoi HEIC/AVIF doivent rester sur l'appareil — avec vérif DevTools sans envoi.",
+      "Pourquoi la conversion locale protège la vie privée : RGPD, photos clients et HEIC/AVIF — vos fichiers restent sur l'appareil, jamais envoyés sur serveurs.",
     content: `Envoyer des photos à des convertisseurs aléatoires crée des risques RGPD et sécurité.
 
 ## Traitement côté client

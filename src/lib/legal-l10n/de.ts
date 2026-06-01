@@ -3,9 +3,9 @@ import type { LegalCatalog } from "@/lib/legal-l10n/types";
 export const deLegal: LegalCatalog = {
   contact: {
     meta: {
-      title: "Kontakt",
+      title: "Kontakt zu HeicSave — Support, Datenschutz & Hilfe",
       description:
-        "Kontakt zu HeicSave: Support, Datenschutzanfragen und allgemeine Fragen.",
+        "Kontakt zu HeicSave für Konvertierungshilfe, DSGVO-Anfragen und allgemeine Fragen. Antwort in wenigen Werktagen — Ihre Bilder werden nie auf Server hochgeladen.",
     },
     h1: "Kontakt zu HeicSave",
     body: `**HeicSave** betreiben wir unter [heicsave.com](https://heicsave.com). Die Bildkonvertierung läuft in Ihrem Browser – wir erhalten Ihre Fotodateien nicht.
@@ -32,9 +32,9 @@ Wir antworten in der Regel innerhalb weniger Werktage. Konvertierte Dateien kön
   },
   about: {
     meta: {
-      title: "Über uns",
+      title: "Über HeicSave — Kostenlose Browser-Konverter für HEIC",
       description:
-        "Über HeicSave: kostenlose HEIC-, WebP- und AVIF-Konverter im Browser für iPhone-Nutzer und Entwickler.",
+        "Erfahren Sie mehr über HeicSave: kostenlose HEIC-, WebP- und AVIF-Konverter im Browser für iPhone-Nutzer. Kein Upload, kein Konto — Fotos bleiben auf Ihrem Gerät.",
     },
     h1: "Über HeicSave",
     lastUpdated: "Zuletzt aktualisiert: 19. Mai 2026",

@@ -6,7 +6,7 @@ export const deBlogPosts: Record<
   "what-is-heic-file": {
     title: "Was ist eine HEIC-Datei? Kompletter Ratgeber (2026)",
     description:
-      "Was HEIC ist, warum iPhones es nutzen und wie Sie HEIC unter Windows und Mac öffnen oder konvertieren.",
+      "Erfahren Sie, was HEIC ist, warum iPhones es nutzen und wie Sie HEIC unter Windows und Mac öffnen oder konvertieren — kostenlos im Browser, ohne Upload.",
     content: `*Zuletzt aktualisiert: 26. Mai 2026*
 
 **HEIC** (High Efficiency Image Container) ist Apples Standard-Fotoformat auf modernen iPhones. Dank effizienter Kompression braucht es oft nur etwa halb so viel Speicher wie JPEG bei ähnlicher Bildqualität.
@@ -879,7 +879,7 @@ iPhone: **Einstellungen → Kamera → Formate → Kompatibel** speichert neue A
   "privacy-browser-image-conversion": {
     title: "Warum browser-lokale Bildkonvertierung Datenschutz schützt",
     description:
-      "DSGVO, Kundenfotos und warum HEIC/AVIF auf dem Gerät bleiben sollten — inkl. DevTools-Check ohne Upload.",
+      "Warum browser-lokale Konvertierung Datenschutz schützt: DSGVO, Kundenfotos und HEIC/AVIF — Dateien bleiben auf Ihrem Gerät, nie auf Server hochgeladen.",
     content: `Fotos an zufällige Online-Konverter hochzuladen birgt DSGVO- und Sicherheitsrisiken.
 
 ## Client-seitige Verarbeitung

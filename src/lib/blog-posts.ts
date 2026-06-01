@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     slug: "what-is-heic-file",
     title: "What Is a HEIC File? Complete Guide (2026)",
     description:
-      "What HEIC is, why iPhones use it, and how to open or convert on Windows and Mac.",
+      "Learn what a HEIC file is, why iPhones use it, and how to open or convert HEIC on Windows and Mac — free browser-local tools that keep your images private.",
     publishedAt: "2026-01-15",
     updatedAt: "2026-05-26",
     readMinutes: 11,
@@ -542,7 +542,7 @@ Always ship JPG/PNG fallbacks for email clients and ancient browsers.`,
     slug: "privacy-browser-image-conversion",
     title: "Why Browser-Local Image Conversion Matters for Privacy",
     description:
-      "Why browser-local conversion matters for GDPR, client photos, and HEIC/AVIF workflows.",
+      "Learn why browser-local image conversion protects privacy for GDPR, client photos, and HEIC or AVIF — files stay on your device, never uploaded to servers.",
     publishedAt: "2026-03-01",
     readMinutes: 6,
     content: `Uploading family photos or client assets to random converters creates GDPR and security risk.
