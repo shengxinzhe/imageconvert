@@ -9,23 +9,35 @@ const SCHEMA_LANG: Record<AppLocale, string> = {
   fr: "fr-FR",
 };
 
+function schemaAppName(tool: ToolConfig): string {
+  const dash = tool.title.indexOf(" — ");
+  return dash >= 0 ? tool.title.slice(0, dash) : tool.title;
+}
+
 export function ToolJsonLd({ tool, locale }: { tool: ToolConfig; locale: AppLocale }) {
   const pageUrl = absoluteUrl(`/${tool.slug}`, locale);
+  const appName = schemaAppName(tool);
 
   const webApplication = {
     "@type": "WebApplication",
     "@id": `${pageUrl}#app`,
-    name: tool.title.replace(" — Free & Online", ""),
+    name: appName,
     url: pageUrl,
     description: tool.metaDescription,
     inLanguage: SCHEMA_LANG[locale],
     applicationCategory: "MultimediaApplication",
     operatingSystem: "Any",
     browserRequirements: "Requires JavaScript. Works in Chrome, Edge, Safari, and Firefox.",
+    isAccessibleForFree: true,
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["article h1", "article h1 + p", "article details p"],
     },
     featureList: [
       "Client-side conversion (no upload)",
@@ -83,7 +95,7 @@ export function ToolJsonLd({ tool, locale }: { tool: ToolConfig; locale: AppLoca
       {
         "@type": "ListItem",
         position: 2,
-        name: tool.title.replace(" — Free & Online", ""),
+        name: appName,
         item: pageUrl,
       },
     ],

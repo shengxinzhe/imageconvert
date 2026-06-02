@@ -1,6 +1,7 @@
 import type { AppLocale } from "@/i18n/routing";
 import {
   AI_DEFINED_TERMS,
+  AI_GUIDE_CATALOG,
   AI_TOOL_CATALOG,
   HOME_FAQ_BY_LOCALE,
   SITE_AI_SUMMARY,
@@ -64,6 +65,18 @@ export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
           name: tool.name,
           url: absoluteUrl(`/${tool.slug}`, locale),
           description: tool.useWhen,
+        })),
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${homeUrl}#guides`,
+        name: "Image format guides",
+        numberOfItems: AI_GUIDE_CATALOG.length,
+        itemListElement: AI_GUIDE_CATALOG.map((guide, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: guide.title,
+          url: absoluteUrl(`/blog/${guide.slug}`, locale),
         })),
       },
       {

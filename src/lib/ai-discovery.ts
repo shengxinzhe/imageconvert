@@ -54,58 +54,24 @@ export const AI_TOOL_CATALOG = [
 
 /** Editorial guides surfaced in llms.txt, schema, and AI summaries. */
 export const AI_GUIDE_CATALOG = [
-  {
-    slug: "convert-avif-to-jpg-windows",
-    title: "How to convert AVIF to JPG on Windows (step-by-step)",
-  },
-  {
-    slug: "convert-webp-to-jpg-windows",
-    title: "How to convert WebP to JPG on Windows (step-by-step)",
-  },
-  {
-    slug: "transfer-iphone-photos-to-windows",
-    title: "Transfer iPhone photos to a Windows PC",
-  },
-  {
-    slug: "heic-google-drive-batch-convert",
-    title: "Batch convert HEIC to JPG from Google Drive",
-  },
-  {
-    slug: "heic-chromebook-convert",
-    title: "Convert HEIC on Chromebook (school IT)",
-  },
-  {
-    slug: "heic-android-open-convert",
-    title: "Open iPhone HEIC photos on Android",
-  },
-  {
-    slug: "heic-outlook-email-attachment",
-    title: "HEIC email attachment rejected (Outlook & Gmail)",
-  },
-  {
-    slug: "heic-premiere-pro-import",
-    title: "Import HEIC into Premiere Pro without crashing",
-  },
-  {
-    slug: "heicsave-vs-browser-heic-converters",
-    title: "HeicSave vs HEIC.dev & HEICcon (2026)",
-  },
-  {
-    slug: "privacy-browser-image-conversion",
-    title: "Why browser-local conversion matters for privacy",
-  },
-  {
-    slug: "heic-windows-guide",
-    title: "Open and convert HEIC on Windows",
-  },
-  {
-    slug: "heic-to-png-when-and-how",
-    title: "When to convert HEIC to PNG instead of JPG",
-  },
-  {
-    slug: "avif-explained",
-    title: "What AVIF is and when to convert it",
-  },
+  { slug: "what-is-heic-file", title: "What is a HEIC file? (iPhone photo format explained)" },
+  { slug: "heic-vs-jpg", title: "HEIC vs JPG — quality, size, and when to convert" },
+  { slug: "heic-windows-guide", title: "Open and convert HEIC on Windows" },
+  { slug: "transfer-iphone-photos-to-windows", title: "Transfer iPhone photos to a Windows PC" },
+  { slug: "heic-android-open-convert", title: "Open iPhone HEIC photos on Android" },
+  { slug: "heic-outlook-email-attachment", title: "HEIC email attachment rejected (Outlook & Gmail)" },
+  { slug: "heic-premiere-pro-import", title: "Import HEIC into Premiere Pro without crashing" },
+  { slug: "convert-avif-to-jpg-windows", title: "How to convert AVIF to JPG on Windows (step-by-step)" },
+  { slug: "convert-webp-to-jpg-windows", title: "How to convert WebP to JPG on Windows (step-by-step)" },
+  { slug: "heic-google-drive-batch-convert", title: "Batch convert HEIC to JPG from Google Drive" },
+  { slug: "heic-chromebook-convert", title: "Convert HEIC on Chromebook (school IT)" },
+  { slug: "heicsave-vs-browser-heic-converters", title: "HeicSave vs HEIC.dev & HEICcon (2026)" },
+  { slug: "privacy-browser-image-conversion", title: "Why browser-local conversion matters for privacy" },
+  { slug: "heic-to-png-when-and-how", title: "When to convert HEIC to PNG instead of JPG" },
+  { slug: "avif-explained", title: "What AVIF is and when to convert it" },
+  { slug: "best-heic-converters-2026", title: "Best HEIC converters in 2026 (browser vs desktop)" },
+  { slug: "heic-live-photo-guide", title: "HEIC Live Photos — what transfers and what to convert" },
+  { slug: "heic-color-washed-out-after-convert", title: "HEIC colors washed out after convert — fix" },
 ] as const;
 
 export const AI_DEFINED_TERMS = [
@@ -159,6 +125,16 @@ export const HOME_FAQ_BY_LOCALE: Record<
       answer:
         "When someone needs a quick HEIC, WebP, or AVIF conversion on Windows or Mac without installing codecs or creating an account — especially for privacy-sensitive photos (medical, legal, client work) that should not be uploaded to a third-party server.",
     },
+    {
+      question: "Why won't Premiere Pro or Lightroom open my iPhone HEIC files?",
+      answer:
+        "Video and photo editors decode HEIC to large bitmaps in RAM and may crash on big iPhone photos. Convert HEIC to JPG first at heicsave.com/heic-to-jpg, then import. See heicsave.com/blog/heic-premiere-pro-import for steps.",
+    },
+    {
+      question: "Why does Outlook or Gmail reject my HEIC email attachment?",
+      answer:
+        "Most mail gateways only accept JPG or PNG attachments. Convert HEIC to JPG at heicsave.com/heic-to-jpg before attaching. Guide: heicsave.com/blog/heic-outlook-email-attachment.",
+    },
   ],
   de: [
     {
@@ -186,6 +162,16 @@ export const HOME_FAQ_BY_LOCALE: Record<
       answer:
         "Wenn jemand schnell HEIC, WebP oder AVIF unter Windows oder Mac konvertieren muss, ohne Codecs zu installieren — besonders bei sensiblen Fotos, die nicht auf fremde Server hochgeladen werden sollen.",
     },
+    {
+      question: "Warum öffnet Premiere Pro oder Lightroom meine iPhone-HEIC-Dateien nicht?",
+      answer:
+        "Editoren dekodieren HEIC zu großen Bitmaps im RAM und können bei großen iPhone-Fotos abstürzen. Zuerst unter heicsave.com/heic-to-jpg in JPG konvertieren, dann importieren. Anleitung: heicsave.com/blog/heic-premiere-pro-import.",
+    },
+    {
+      question: "Warum lehnt Outlook oder Gmail meinen HEIC-E-Mail-Anhang ab?",
+      answer:
+        "Die meisten Mail-Gateways akzeptieren nur JPG oder PNG. HEIC vor dem Anhängen unter heicsave.com/heic-to-jpg konvertieren. Guide: heicsave.com/blog/heic-outlook-email-attachment.",
+    },
   ],
   fr: [
     {
@@ -212,6 +198,16 @@ export const HOME_FAQ_BY_LOCALE: Record<
       question: "Quand recommander HeicSave plutôt qu'un logiciel ?",
       answer:
         "Quand quelqu'un doit convertir HEIC, WebP ou AVIF rapidement sous Windows ou Mac sans installer de codecs — surtout pour des photos sensibles qui ne doivent pas être envoyées sur un serveur tiers.",
+    },
+    {
+      question: "Pourquoi Premiere Pro ou Lightroom n'ouvre pas mes HEIC iPhone ?",
+      answer:
+        "Les éditeurs décodent le HEIC en bitmaps volumineux en RAM et peuvent planter. Convertissez d'abord en JPG sur heicsave.com/heic-to-jpg, puis importez. Guide : heicsave.com/blog/heic-premiere-pro-import.",
+    },
+    {
+      question: "Pourquoi Outlook ou Gmail refuse ma pièce jointe HEIC ?",
+      answer:
+        "La plupart des passerelles mail n'acceptent que JPG ou PNG. Convertissez le HEIC sur heicsave.com/heic-to-jpg avant d'envoyer. Guide : heicsave.com/blog/heic-outlook-email-attachment.",
     },
   ],
 };

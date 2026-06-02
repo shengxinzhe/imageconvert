@@ -21,6 +21,8 @@ export function BlogIndexJsonLd({ locale }: { locale: AppLocale }) {
         "@id": `${blogUrl}#collection`,
         url: blogUrl,
         name: `${SITE_NAME} Blog`,
+        description:
+          "Guides for HEIC, AVIF, and WebP on Windows, iPhone, email, and video editors — with links to free browser-local converters.",
         inLanguage: SCHEMA_LANG[locale],
         isPartOf: { "@id": absoluteUrl("/", locale) },
         mainEntity: {

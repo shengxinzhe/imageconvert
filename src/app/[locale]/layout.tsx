@@ -85,6 +85,12 @@ export default function LocaleLayout({
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full catalog" />
+        <link
+          rel="alternate"
+          type="application/json"
+          href="/ai.json"
+          title="AI discovery catalog"
+        />
         <meta name="google-adsense-account" content={ADSENSE_CLIENT_ID_DEFAULT} />
         <script
           async
