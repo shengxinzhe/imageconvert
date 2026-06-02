@@ -66,9 +66,9 @@ Voir aussi la [politique de confidentialité](/privacy) et les [conditions d’u
   },
   privacy: {
     meta: {
-      title: "Politique de confidentialité",
+      title: "Politique de confidentialité — HeicSave (navigateur)",
       description:
-        "Politique de confidentialité HeicSave : conversion dans le navigateur, RGPD, cookies, Google AdSense et statistiques.",
+        "Confidentialité HeicSave : conversion HEIC, WebP et AVIF dans le navigateur — vos photos ne sont pas envoyées. Droits RGPD, cookies, AdSense et statistiques expliqués.",
     },
     h1: "Politique de confidentialité",
     lastUpdated: "Dernière mise à jour : 19 mai 2026",
@@ -114,9 +114,9 @@ E-mail : [Page contact](/contact) · [Page contact](/contact) · [À propos de H
   },
   terms: {
     meta: {
-      title: "Conditions d’utilisation",
+      title: "Conditions d’utilisation — convertisseurs HeicSave",
       description:
-        "Conditions d’utilisation des convertisseurs d’images en ligne gratuits HeicSave.",
+        "Conditions pour les convertisseurs HEIC, WebP et AVIF gratuits de HeicSave dans le navigateur. Traitement local, sans compte, publicité distincte de la conversion.",
     },
     h1: "Conditions d’utilisation",
     lastUpdated: "Dernière mise à jour : 19 mai 2026",
@@ -144,9 +144,9 @@ Nous pouvons mettre à jour ces conditions. La poursuite de l’utilisation vaut
   },
   dmca: {
     meta: {
-      title: "DMCA",
+      title: "Politique DMCA — HeicSave droits d’auteur",
       description:
-        "Politique DMCA et contact de l’agent désigné pour HeicSave.",
+        "Politique DMCA HeicSave (heicsave.com) : envoyer une notification de contrefaçon, informations requises et contact de l’agent désigné pour les demandes de retrait.",
     },
     h1: "Politique DMCA",
     body: `**HeicSave** respecte les droits de propriété intellectuelle. Nous traitons les notifications DMCA valides.

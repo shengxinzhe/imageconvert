@@ -78,7 +78,7 @@ module.exports = {
   // Next.js static routes use /en/... internally; middleware 301s them to unprefixed URLs.
   exclude: [...EXCLUDED_PATHS, "/en", "/en/*"],
   robotsTxtOptions: {
-    additionalSitemaps: [],
+    additionalSitemaps: [`${SITE_URL}/sitemap-0.xml`],
     policies: [
       {
         userAgent: "*",

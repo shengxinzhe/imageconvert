@@ -80,8 +80,9 @@
 ### 2. 提交 Sitemap
 
 1. **站点配置** → **Sitemaps**
-2. 提交：`https://heicsave.com/sitemap.xml`
-3. 可选再提交：`https://heicsave.com/sitemap-0.xml`（若存在分片）
+2. 提交：`https://heicsave.com/sitemap.xml`（索引，指向 `sitemap-0.xml`）
+3. **务必再提交**：`https://heicsave.com/sitemap-0.xml`（实际 URL 列表；仅提交索引时 Bing 可能只显示 **1** 条 discovered）
+4. 部署后 `postbuild` 会自动 ping Bing（`scripts/ping-bing-sitemap.mjs`）；也可在后台对两条 sitemap 点 **Resubmit**
 
 ### 3. URL 提交（Bing 无 GSC 式单 URL 检查时）
 
@@ -94,9 +95,11 @@
    ```
 3. 每日有配额；优先提交博客 + 核心工具页
 
-### 4. IndexNow（可选，需后续开发）
+### 4. IndexNow（已集成）
 
-Bing 支持 [IndexNow](https://www.indexnow.org/) 主动推送。当前项目未集成；若日后添加 API key，可在发布时自动 ping Bing/Yandex。
+- 密钥文件：`https://heicsave.com/{INDEXNOW_KEY}.txt`（见 `src/lib/constants.ts`）
+- 部署后：GitHub Action `indexnow.yml` 或本地 `npm run indexnow`
+- URL 列表：`scripts/sitemap-paths.mjs` → `scripts/gsc-priority-urls.mjs`（全站工具页 + 博客 + en/de/fr 静态页，与 sitemap 同步）
 
 ### 5. 重定向检查
 

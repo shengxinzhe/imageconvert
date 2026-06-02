@@ -66,9 +66,9 @@ See also [Privacy Policy](/privacy) and [Terms of Service](/terms).`,
   },
   privacy: {
     meta: {
-      title: "Privacy Policy",
+      title: "Privacy Policy — HeicSave Browser-Local Image Tools",
       description:
-        "Privacy policy for HeicSave. Browser-local conversion, GDPR, cookies, Google AdSense, and analytics.",
+        "HeicSave privacy policy: HEIC, WebP, and AVIF conversion runs in your browser—photos are not uploaded. GDPR rights, cookies, AdSense, and analytics explained.",
     },
     h1: "Privacy Policy",
     lastUpdated: "Last updated: May 19, 2026",
@@ -114,8 +114,9 @@ Email: [Contact page](/contact) · [Contact page](/contact) · [About HeicSave](
   },
   terms: {
     meta: {
-      title: "Terms of Service",
-      description: "Terms of service for using HeicSave free online image converters.",
+      title: "Terms of Service — HeicSave Free Image Converters",
+      description:
+        "Terms for using HeicSave free HEIC, WebP, and AVIF converters in your browser. Local processing, no account, advertising separate from conversion tools.",
     },
     h1: "Terms of Service",
     lastUpdated: "Last updated: May 19, 2026",
@@ -143,8 +144,9 @@ We may update these terms. Continued use constitutes acceptance.`,
   },
   dmca: {
     meta: {
-      title: "DMCA",
-      description: "DMCA copyright policy and agent contact for HeicSave.",
+      title: "DMCA Policy — HeicSave Copyright & Takedown",
+      description:
+        "DMCA policy for HeicSave (heicsave.com): how to send copyright notices, required notice details, and designated agent contact for takedown requests.",
     },
     h1: "DMCA Policy",
     body: `**HeicSave** respects intellectual property rights. We respond to valid DMCA notices.

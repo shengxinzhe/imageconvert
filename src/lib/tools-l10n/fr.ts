@@ -62,7 +62,7 @@ const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
     title: "Convertir HEIC en PNG — gratuit en ligne",
     h1: "Convertir HEIC en PNG — gratuit en ligne",
     metaDescription:
-      "HEIC iPhone en PNG dans le navigateur, sans envoi. Idéal pour retouche et compatibilité.",
+      "Convertissez HEIC iPhone en PNG gratuitement dans le navigateur. Sans envoi, lot et ZIP — idéal pour retouche, transparence et logiciels qui n’ouvrent pas le HEIC.",
     keywords: ["heic en png", "convertir heic png"],
     heroSubtitle: "Convertissez HEIC en PNG dans le navigateur",
     whyConvert: {
@@ -124,7 +124,8 @@ const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "webp-to-png": {
     title: "Convertir WebP en PNG — gratuit en ligne",
     h1: "Convertir WebP en PNG — gratuit en ligne",
-    metaDescription: "WebP en PNG dans le navigateur. Gratuit, sans envoi de fichiers.",
+    metaDescription:
+      "Convertissez WebP en PNG gratuitement dans le navigateur. Sans envoi, lot et transparence conservée — pour Photoshop, anciennes apps et workflows d’impression.",
     keywords: ["webp en png", "convertir webp png"],
     heroSubtitle: "WebP en PNG localement dans le navigateur",
     whyConvert: {
@@ -143,7 +144,8 @@ const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "webp-to-jpg": {
     title: "Convertir WebP en JPG — gratuit en ligne",
     h1: "Convertir WebP en JPG — gratuit en ligne",
-    metaDescription: "WebP en JPG dans le navigateur — privé, gratuit, sans compte.",
+    metaDescription:
+      "WebP en JPG gratuit dans le navigateur — privé, sans compte. Qualité JPEG réglable, lot et ZIP. Le JPG s’ouvre dans mail, Word et presque tous les logiciels.",
     keywords: ["webp en jpg", "convertir webp jpg"],
     heroSubtitle: "WebP en JPG compatible partout",
     whyConvert: {
@@ -217,7 +219,8 @@ const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "avif-to-png": {
     title: "Convertir AVIF en PNG — gratuit en ligne",
     h1: "Convertir AVIF en PNG — gratuit en ligne",
-    metaDescription: "AVIF en PNG dans le navigateur — privé et gratuit.",
+    metaDescription:
+      "AVIF en PNG gratuit dans le navigateur — sans envoi, lot et ZIP. Le PNG s’ouvre dans les outils design et anciennes apps qui ne lisent pas encore l’AVIF.",
     keywords: ["avif en png", "convertir avif png"],
     heroSubtitle: "AVIF en PNG pour vos workflows design",
     whyConvert: {
@@ -236,7 +239,8 @@ const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "jpg-to-webp": {
     title: "Convertir JPG en WebP — gratuit en ligne",
     h1: "Convertir JPG en WebP — gratuit en ligne",
-    metaDescription: "JPG en WebP pour des sites plus rapides — conversion locale dans le navigateur.",
+    metaDescription:
+      "JPG en WebP pour des sites plus rapides — conversion locale gratuite dans le navigateur. Sans envoi, réglage qualité, lot et ZIP. Vos fichiers restent sur votre appareil.",
     keywords: ["jpg en webp", "jpeg webp convertir"],
     heroSubtitle: "JPG en WebP plus léger pour le web",
     whyConvert: {
@@ -259,7 +263,8 @@ const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "png-to-webp": {
     title: "Convertir PNG en WebP — gratuit en ligne",
     h1: "Convertir PNG en WebP — gratuit en ligne",
-    metaDescription: "PNG en WebP — fichiers plus petits, traitement local dans le navigateur.",
+    metaDescription:
+      "PNG en WebP gratuit dans le navigateur — fichiers plus petits pour charger plus vite. Sans envoi, lot, transparence conservée et téléchargement ZIP inclus.",
     keywords: ["png en webp", "convertir png webp"],
     heroSubtitle: "PNG en WebP pour accélérer le chargement",
     whyConvert: {

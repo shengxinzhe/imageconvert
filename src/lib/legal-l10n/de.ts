@@ -66,9 +66,9 @@ Weitere Informationen: [Datenschutzerklärung](/privacy) und [Nutzungsbedingunge
   },
   privacy: {
     meta: {
-      title: "Datenschutzerklärung",
+      title: "Datenschutzerklärung — HeicSave (Browser-Konverter)",
       description:
-        "Datenschutzerklärung für HeicSave: Browser-Konvertierung, DSGVO, Cookies, Google AdSense und Analytics.",
+        "Datenschutz bei HeicSave: HEIC-, WebP- und AVIF-Konvertierung läuft im Browser, Fotos werden nicht hochgeladen. DSGVO-Rechte, Cookies, AdSense und Analytics erklärt.",
     },
     h1: "Datenschutzerklärung",
     lastUpdated: "Zuletzt aktualisiert: 19. Mai 2026",
@@ -114,9 +114,9 @@ E-Mail: [Kontaktseite](/contact) · [Kontaktseite](/contact) · [Über HeicSave]
   },
   terms: {
     meta: {
-      title: "Nutzungsbedingungen",
+      title: "Nutzungsbedingungen — HeicSave kostenlose Konverter",
       description:
-        "Nutzungsbedingungen für die kostenlosen Online-Bildkonverter von HeicSave.",
+        "Nutzungsbedingungen für die kostenlosen HEIC-, WebP- und AVIF-Konverter von HeicSave im Browser. Lokale Verarbeitung, kein Konto, Werbung getrennt von der Konvertierung.",
     },
     h1: "Nutzungsbedingungen",
     lastUpdated: "Zuletzt aktualisiert: 19. Mai 2026",
@@ -144,9 +144,9 @@ Wir können diese Bedingungen aktualisieren. Die weitere Nutzung gilt als Zustim
   },
   dmca: {
     meta: {
-      title: "DMCA",
+      title: "DMCA-Richtlinie — HeicSave Urheberrecht & Takedown",
       description:
-        "DMCA-Urheberrechtsrichtlinie und Kontakt des Beauftragten für HeicSave.",
+        "DMCA-Richtlinie für HeicSave (heicsave.com): Mitteilungen zu Urheberrechtsverletzungen, Pflichtangaben und Kontakt des Beauftragten für Takedown-Anfragen.",
     },
     h1: "DMCA-Richtlinie",
     body: `**HeicSave** respektiert geistige Eigentumsrechte. Wir bearbeiten gültige DMCA-Mitteilungen.

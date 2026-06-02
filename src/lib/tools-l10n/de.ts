@@ -62,7 +62,7 @@ const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
     title: "HEIC in PNG umwandeln — kostenlos online",
     h1: "HEIC in PNG umwandeln — kostenlos online",
     metaDescription:
-      "HEIC von iPhone in PNG konvertieren — im Browser, ohne Upload. Für Bearbeitung und Transparenz.",
+      "HEIC von iPhone kostenlos in PNG im Browser konvertieren. Kein Upload, Stapelverarbeitung und ZIP-Download — ideal für Bearbeitung, Transparenz und ältere Programme.",
     keywords: ["heic in png", "heic png konverter", "heic png online"],
     heroSubtitle: "HEIC-Fotos im Browser in verlustfreies PNG umwandeln",
     whyConvert: {
@@ -124,7 +124,8 @@ const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "webp-to-png": {
     title: "WebP in PNG umwandeln — kostenlos online",
     h1: "WebP in PNG umwandeln — kostenlos online",
-    metaDescription: "WebP-Bilder im Browser in PNG konvertieren. Kein Upload, kostenlos.",
+    metaDescription:
+      "WebP kostenlos in PNG im Browser konvertieren. Kein Upload, Stapelverarbeitung, Transparenz bleibt erhalten — für Photoshop, ältere Apps und Druck-Workflows auf Windows und Mac.",
     keywords: ["webp in png", "webp png konverter"],
     heroSubtitle: "WebP lokal im Browser in PNG umwandeln",
     whyConvert: {
@@ -149,7 +150,8 @@ const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "webp-to-jpg": {
     title: "WebP in JPG umwandeln — kostenlos online",
     h1: "WebP in JPG umwandeln — kostenlos online",
-    metaDescription: "WebP in JPG konvertieren — im Browser, privat, ohne Anmeldung.",
+    metaDescription:
+      "WebP in JPG kostenlos im Browser konvertieren. Kein Upload, JPEG-Qualität wählbar, Stapel + ZIP — JPG funktioniert in E-Mail, Word und überall sonst.",
     keywords: ["webp in jpg", "webp jpg konverter"],
     heroSubtitle: "WebP-Fotos für überall kompatibles JPG konvertieren",
     whyConvert: {
@@ -224,7 +226,8 @@ const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "avif-to-png": {
     title: "AVIF in PNG umwandeln — kostenlos online",
     h1: "AVIF in PNG umwandeln — kostenlos online",
-    metaDescription: "AVIF in PNG konvertieren — browserbasiert, privat, kostenlos.",
+    metaDescription:
+      "AVIF in PNG kostenlos im Browser umwandeln. Kein Upload, Stapelverarbeitung und ZIP — PNG öffnet in Design-Tools und älterer Software, die AVIF noch nicht unterstützt.",
     keywords: ["avif in png", "avif png konverter"],
     heroSubtitle: "AVIF im Browser in PNG für Design-Workflows umwandeln",
     whyConvert: {
@@ -243,7 +246,8 @@ const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "jpg-to-webp": {
     title: "JPG in WebP umwandeln — kostenlos online",
     h1: "JPG in WebP umwandeln — kostenlos online",
-    metaDescription: "JPG in WebP für schnellere Websites — lokal im Browser konvertieren.",
+    metaDescription:
+      "JPG in WebP für schnellere Websites — kostenlos im Browser konvertieren. Kein Upload, Qualitätsregler, Stapel und ZIP. Dateien bleiben auf Ihrem PC oder Mac.",
     keywords: ["jpg in webp", "jpeg webp konverter"],
     heroSubtitle: "JPG-Fotos für das Web in kleineres WebP umwandeln",
     whyConvert: {
@@ -268,7 +272,8 @@ const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "png-to-webp": {
     title: "PNG in WebP umwandeln — kostenlos online",
     h1: "PNG in WebP umwandeln — kostenlos online",
-    metaDescription: "PNG in WebP konvertieren — kleinere Dateien, lokale Browser-Verarbeitung.",
+    metaDescription:
+      "PNG in WebP kostenlos im Browser konvertieren — kleinere Dateien für schnellere Seiten. Kein Upload, Stapelverarbeitung, Transparenz bleibt erhalten, ZIP-Download inklusive.",
     keywords: ["png in webp", "png webp konverter"],
     heroSubtitle: "PNG-Grafiken für schnellere Ladezeiten in WebP umwandeln",
     whyConvert: {
