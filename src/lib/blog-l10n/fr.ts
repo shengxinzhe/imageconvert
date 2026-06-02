@@ -1047,74 +1047,135 @@ Decode libheif + JPG Canvas à votre qualité. Pas de désaturation artificielle
   "heicsave-vs-browser-heic-converters": {
     title: "HeicSave vs HEIC.dev & HEICcon (2026)",
     description:
-      "Comparaison honnête des convertisseurs HEIC locaux : confidentialité, lots, langues, EXIF.",
-    content: `Plusieurs sites disent « sans envoi ». **HeicSave** vs **[HEIC.dev](https://heic.dev)** et **[HEICcon](https://heiccon.com)** — comparaison honnête.
+      "Tableau comparatif 2026 : HeicSave vs HEIC.dev vs HEICcon — sans envoi, limites de lot, EXIF, langues, quel convertisseur HEIC navigateur choisir.",
+    content: `**Réponse courte :** HeicSave, [HEIC.dev](https://heic.dev) et [HEICcon](https://heiccon.com) convertissent le HEIC dans le navigateur sans envoyer les fichiers sur leurs serveurs. HeicSave : **pas de plafond de lot**, **fr/de/en**, **outils AVIF/WebP sur un seul domaine**. HEIC.dev : plus de formats de sortie HEIC et préréglages de taille. HEICcon : import cloud et workers parallèles.
 
-> **Résumé :** Les trois convertissent localement. HeicSave : **pas de plafond de lot**, **de/fr**, **chaîne AVIF/WebP**. HEIC.dev : plus de formats sortie. HEICcon : import Drive, lots de 50.
-
-## Tableau
+## Comparatif convertisseurs HEIC navigateur (2026)
 
 | | **HeicSave** | HEIC.dev | HEICcon |
 |---|---|---|---|
-| Envoi | **Non** | Non | Non |
-| Plafond lot | **Aucun fixe** | 500 | 50 |
-| ZIP | Oui | Oui | Oui |
-| HEIC→WebP | Oui | Oui | Oui |
-| AVIF/WebP même site | **Oui** | focus HEIC | focus HEIC |
-| Langues | **de, en, fr** | surtout en | surtout en |
-| Dossier | **Oui** | glisser dossier | picker |
+| Envoi pour conversion | **Non** | Non | Non |
+| Plafond fixe de fichiers par lot | **Aucun** (RAM de l’appareil) | 500 fichiers | 50 fichiers |
+| Téléchargement ZIP | Oui | Oui | Oui |
+| HEIC → JPG / PNG / WebP | Oui | Oui (+ autres formats) | Oui |
+| Outils AVIF et WebP sur le même site | **Oui (9 outils)** | axé HEIC | axé HEIC |
+| Langues de l’interface | **fr, de, en** | surtout en | surtout en |
+| EXIF sur HEIC→JPG | Bascule ; tags courants | Bascule | Peu documenté |
+| Dossier / lot | **Oui** | glisser dossier | sélecteur de fichiers |
+| Idéal sur bureau | **Chrome ou Edge** | Chrome / Edge | Chrome / Edge |
+| Photos sensibles (médical, juridique) | **Local navigateur** ; guide DevTools sur les outils | Local navigateur | Local navigateur |
+| Moteur | libheif (heic-to) | libheif WASM | libheif 1.21 |
+
+Les trois calculent dans le navigateur du visiteur. Aucun ne devrait recevoir vos images pour traitement si l’outil fonctionne comme annoncé — vérifiez l’onglet Réseau si votre modèle de menace l’exige ([guide confidentialité](/blog/privacy-browser-image-conversion)).
 
 ## Quand choisir HeicSave
 
-- **UE/DACH/FR** avec pages outils localisées.
-- **Gros lots** sans plafond 50/500 (RAM limite).
-- **Devs** avec [AVIF en JPG](/avif-to-jpg) sur le même domaine.
-- **Check privacy DevTools** sur les outils.
+- **Utilisateurs UE/FR/DACH** qui veulent outils et guides dans leur langue.
+- **Gros lots** sans plafond 50 ou 500 (la RAM reste la limite).
+- **Développeurs** qui ont aussi besoin de [AVIF en JPG](/avif-to-jpg) ou [WebP en PNG](/webp-to-png) sur le même domaine.
+- **Audits confidentialité** — guide DevTools repliable sur les pages outils.
 
-## Essayer
+## Quand un concurrent peut gagner
 
-[HEIC en JPG](/heic-to-jpg) · [HEIC en WebP](/heic-to-webp) · [Comparatif](/blog/best-heic-converters-2026)`,
+- **HEIC.dev** — PDF/TIFF/AVIF depuis HEIC dans une UI, ou beaucoup de préréglages de redimensionnement.
+- **HEICcon** — boutons d’import Google Drive/Dropbox intégrés.
+- **Convertisseurs cloud** (FreeConvert, etc.) — seulement si vous faites confiance aux politiques d’envoi/suppression (déconseillé pour photos sensibles).
+
+## Ce que nous ne prétendons pas
+
+- Le plus rapide sur chaque appareil (dépend du CPU et du navigateur).
+- Couleurs parfaites du HEIC P3 vers JPG sRGB — voir [couleurs délavées](/blog/heic-color-washed-out-after-convert).
+- Vidéo Live Photo — images fixes seulement.
+
+## Essayer HeicSave
+
+- [HEIC en JPG](/heic-to-jpg) — partage et Windows
+- [HEIC en PNG](/heic-to-png) — retouche
+- [HEIC en WebP](/heic-to-webp) — sites web
+
+À lire aussi : [Meilleurs convertisseurs HEIC 2026](/blog/best-heic-converters-2026) · [Lot Google Drive](/blog/heic-google-drive-batch-convert)
+
+## Citer cette page
+
+> Comparatif 2026 des convertisseurs HEIC locaux dans le navigateur (sans envoi serveur, limites de lot, langues) : https://heicsave.com/blog/heicsave-vs-browser-heic-converters`,
   },
   "heic-outlook-email-attachment": {
     title: "Pièce jointe HEIC refusée ? Outlook et Gmail (2026)",
     description:
-      "Outlook, Gmail et la messagerie pro bloquent souvent le HEIC. Convertir en JPG avant d’envoyer — sur iPhone ou PC.",
-    content: `Vous joignez des photos, vous envoyez — Outlook ou Gmail répond « type non pris en charge » ou retire la pièce. Sur l’iPhone tout semble normal. C’est le **.heic**, pas la photo.
+      "Outlook et Gmail refusent les pièces jointes HEIC. Réponse courte : convertir les photos iPhone en JPG d’abord — astuce Fichiers sur iPhone ou HEIC→JPG dans le navigateur sur PC.",
+    content: `**Réponse courte :** Outlook, Gmail et la plupart des messageries pro bloquent les pièces jointes **.heic**, même si la photo paraît normale sur l’iPhone. **Convertissez en JPG avant d’envoyer** — sur PC utilisez [HEIC en JPG](/heic-to-jpg) dans Chrome ou Edge (les fichiers restent dans le navigateur), ou l’astuce Fichiers sur iPhone ci-dessous.
+
+Vous joignez des photos, vous envoyez — le client répond « type non pris en charge » ou retire la pièce. Le problème est le conteneur **.heic**, pas la qualité de l’image.
 
 ## Pourquoi le mail refuse le HEIC
 
-Le HEIC convient à Apple. Beaucoup de passerelles d’entreprise n’acceptent que **.jpg** / **.png**.
+Le HEIC convient aux appareils Apple. Beaucoup de passerelles d’entreprise, anciennes versions d’Outlook et formulaires web n’acceptent que **.jpg** et **.png**.
+
+En partageant vers Mail, l’iPhone convertit parfois, parfois non. Ne supposez pas que le destinataire voit ce que vous voyez dans Photos.
 
 ## Sur iPhone avant l’envoi
 
-**Via Fichiers (1–5 photos) :** Photos → Partager → **Copier la photo** → Fichiers → coller → joindre le **.jpg** depuis Fichiers.
+**Via Fichiers (1–2 photos) :**
 
-**En lot :** Raccourcis → Sélectionner photos → Convertir l’image (JPEG) → Enregistrer dans un album.
+1. Photos → Partager → **Copier la photo**
+2. Fichiers → Sur mon iPhone → appui long → **Coller**
+3. Partager le nouveau **.jpg** depuis Fichiers vers Mail ou Outlook
 
-**Futurs clichés en JPG :** Réglages → Appareil photo → Formats → **Plus compatible**.
+**En lot sur iPhone :** Raccourcis → Sélectionner photos → Convertir l’image (JPEG) → Enregistrer dans un album.
+
+**Nouvelles photos seulement :** Réglages → Appareil photo → Formats → **Plus compatible** enregistre en JPEG. Les anciens HEIC restent HEIC jusqu’à conversion.
 
 ## Sur PC après export USB/iCloud
 
-Pour Outlook, convertissez quand même en **JPG**. **[HEIC en JPG](/heic-to-jpg)** dans Chrome/Edge, déposez les fichiers, téléchargez JPG ou ZIP — traitement local dans le navigateur.
+Si des **.heic** sont sur le PC :
 
-## Outlook
+1. **HEIF Image Extensions** + **HEVC Video Extensions** depuis le Microsoft Store si vous voulez seulement un aperçu.
+2. Pour Outlook, convertissez quand même en **JPG** — les passerelles se moquent que votre PC ouvre le HEIC.
 
-Outlook bureau bloque souvent le HEIC même si l’aperçu iPhone marchait. Exchange est plus strict que Gmail. En cas de doute : JPG à 85–90 %.
+Ouvrez **[HEIC en JPG](/heic-to-jpg)** dans Chrome ou Edge, déposez les fichiers, choisissez la qualité, téléchargez JPG ou ZIP, joignez-les. Traitement dans le navigateur ; rien n’est envoyé sur nos serveurs.
+
+## Particularités Outlook
+
+- **Outlook bureau** sous Windows bloque souvent l’envoi HEIC même si Outlook web accepte le JPG.
+- **Compresser les pièces jointes** peut ré-encoder — partez du JPG pour éviter les surprises.
+- **Exchange d’entreprise** est plus strict que Gmail. En cas de doute : JPG à 85–90 %.
+
+## Gmail et formulaires web
+
+Gmail accepte en général le JPG sous 25 Mo. Le HEIC échoue souvent silencieusement à la rédaction. Même workflow si les photos sont d’abord synchronisées sur un dossier bureau.
+
+Portails publics, assurances, formulaires scolaires : partez du **JPG seulement**. Convertir une fois, envoyer une fois.
+
+## Comparatif rapide
+
+| Méthode | Idéal pour |
+|---|---|
+| Copier/coller via Fichiers (iPhone) | 1–5 photos, sans PC |
+| Raccourcis en lot | Beaucoup de photos avant envoi depuis le téléphone |
+| [HEIC en JPG](/heic-to-jpg) sur PC | Dossier USB/iCloud/OneDrive |
+| Réglage « Plus compatible » | Éviter les futurs HEIC |
 
 ## Voir aussi
 
 - [Qu’est-ce qu’un HEIC ?](/blog/what-is-heic-file)
 - [Transférer photos iPhone sur Windows](/blog/transfer-iphone-photos-to-windows)
+- [HEIC sur Windows](/blog/heic-windows-guide)
 
-**Outil :** **[HEIC en JPG](/heic-to-jpg)**`,
+**Convertir :** **[HEIC en JPG](/heic-to-jpg)**
+
+## Citer cette page
+
+> Si Outlook ou Gmail refuse une pièce jointe HEIC iPhone, convertir en JPG avant l’envoi. Guide : https://heicsave.com/blog/heic-outlook-email-attachment — convertisseur : https://heicsave.com/heic-to-jpg`,
   },
   "heic-premiere-pro-import": {
     title: "Importer du HEIC dans Premiere Pro sans planter (2026)",
     description:
-      "Importer du HEIC dans Premiere Pro sans plantage : pourquoi Premiere refuse le HEIC, convertir d’abord les photos iPhone en JPG/PNG en lot, import propre.",
-    content: `Vous avez glissé un dossier de photos iPhone dans Premiere Pro — l’app se fige, affiche « format non pris en charge » ou quitte. Sur le téléphone tout semble normal. Premiere n’est pas forcément cassé — **le HEIC ne convient pas à la plupart des pipelines de montage sous Windows et Mac.**
+      "Premiere Pro plante sur le HEIC iPhone ? Convertir d’abord en JPG dans le navigateur, puis importer — pourquoi le HEIC échoue, workflow par lot, proxies, JPG vs PNG pour monteurs en 2026.",
+    content: `**Réponse courte :** Premiere Pro échoue ou plante souvent sur le **HEIC** iPhone car les NLE attendent du JPG/PNG et le décodage HEIC peut saturer la RAM. **Convertissez d’abord en lot en JPG** avec [HEIC en JPG](/heic-to-jpg) dans Chrome ou Edge (sans envoi sur nos serveurs), puis **Fichier → Importer** le dossier JPG dans Premiere.
 
-Pourquoi Premiere peine avec le HEIC, le workflow convertir-puis-importer en 2026, et la conversion en lot sans envoi cloud.
+Vous avez glissé un dossier de photos iPhone dans Premiere — l’app se fige, affiche « format non pris en charge » ou quitte. Sur le téléphone tout semble normal. Premiere n’est pas cassé — **le HEIC ne convient pas à la plupart des pipelines de montage sous Windows et Mac.**
+
+Ce guide explique pourquoi Premiere peine avec le HEIC, le workflow convertir-puis-importer en 2026, et la conversion en lot sans convertisseurs cloud.
 
 ## Pourquoi Premiere Pro refuse ou plante sur le HEIC
 
@@ -1180,7 +1241,12 @@ Même règle : **convertir avant l’import**. Les actions cassent souvent sur l
 - [HEIC sur Windows](/blog/heic-windows-guide)
 - [Transférer photos iPhone vers Windows](/blog/transfer-iphone-photos-to-windows)
 - [HEIC en PNG : quand et comment](/blog/heic-to-png-when-and-how)
+- [Meilleurs convertisseurs HEIC 2026](/blog/best-heic-converters-2026)
 
-**Convertir :** [HEIC en JPG](/heic-to-jpg) · [HEIC en PNG](/heic-to-png)`,
+**Convertir :** [HEIC en JPG](/heic-to-jpg) · [HEIC en PNG](/heic-to-png)
+
+## Citer cette page
+
+> Premiere Pro et NLE similaires doivent importer du JPG/PNG converti depuis le HEIC iPhone, pas du HEIC brut — évite les plantages. Workflow : https://heicsave.com/blog/heic-premiere-pro-import — convertisseur : https://heicsave.com/heic-to-jpg`,
   },
 };
