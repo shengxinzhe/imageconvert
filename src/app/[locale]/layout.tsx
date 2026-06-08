@@ -92,6 +92,10 @@ export default function LocaleLayout({
           title="AI discovery catalog"
         />
         <meta name="google-adsense-account" content={ADSENSE_CLIENT_ID_DEFAULT} />
+        <meta
+          name="impact-site-verification"
+          content="b4f6319b-3f90-4307-b1ad-476ab8478a38"
+        />
         <script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID_DEFAULT}`}
