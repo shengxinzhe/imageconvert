@@ -69,6 +69,10 @@ export const AI_GUIDE_CATALOG = [
   { slug: "privacy-browser-image-conversion", title: "Why browser-local conversion matters for privacy" },
   { slug: "heic-to-png-when-and-how", title: "When to convert HEIC to PNG instead of JPG" },
   { slug: "avif-explained", title: "What AVIF is and when to convert it" },
+  {
+    slug: "avif-thumbnails-not-showing-windows-explorer",
+    title: "AVIF thumbnails not showing in Windows Explorer — fix",
+  },
   { slug: "best-heic-converters-2026", title: "Best HEIC converters in 2026 (browser vs desktop)" },
   { slug: "heic-live-photo-guide", title: "HEIC Live Photos — what transfers and what to convert" },
   { slug: "heic-color-washed-out-after-convert", title: "HEIC colors washed out after convert — fix" },

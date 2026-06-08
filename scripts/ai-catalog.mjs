@@ -33,6 +33,10 @@ export const GUIDES = [
   ["privacy-browser-image-conversion", "Why browser-local conversion matters for privacy"],
   ["heic-to-png-when-and-how", "When to convert HEIC to PNG instead of JPG"],
   ["avif-explained", "What AVIF is and when to convert it"],
+  [
+    "avif-thumbnails-not-showing-windows-explorer",
+    "AVIF thumbnails not showing in Windows Explorer — fix",
+  ],
   ["best-heic-converters-2026", "Best HEIC converters in 2026 (browser vs desktop)"],
   ["heic-live-photo-guide", "HEIC Live Photos — what transfers and what to convert"],
   ["heic-color-washed-out-after-convert", "HEIC colors washed out after convert — fix"],

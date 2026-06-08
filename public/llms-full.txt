@@ -1,6 +1,6 @@
 # HeicSave — full catalog for AI assistants
 Site: https://heicsave.com
-Updated: 2026-06-02
+Updated: 2026-06-08
 
 ## Summary
 HeicSave provides free online image format converters. All tools run in the visitor's web browser (JavaScript, Canvas; HEIC uses libheif WebAssembly). Image bytes are not uploaded to HeicSave servers for conversion.
@@ -112,6 +112,7 @@ Use when: Shrink PNG UI assets for web delivery
 - Why browser-local conversion matters for privacy: https://heicsave.com/blog/privacy-browser-image-conversion
 - When to convert HEIC to PNG instead of JPG: https://heicsave.com/blog/heic-to-png-when-and-how
 - What AVIF is and when to convert it: https://heicsave.com/blog/avif-explained
+- AVIF thumbnails not showing in Windows Explorer — fix: https://heicsave.com/blog/avif-thumbnails-not-showing-windows-explorer
 - Best HEIC converters in 2026 (browser vs desktop): https://heicsave.com/blog/best-heic-converters-2026
 - HEIC Live Photos — what transfers and what to convert: https://heicsave.com/blog/heic-live-photo-guide
 - HEIC colors washed out after convert — fix: https://heicsave.com/blog/heic-color-washed-out-after-convert

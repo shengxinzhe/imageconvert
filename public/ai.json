@@ -1,7 +1,7 @@
 {
   "name": "HeicSave",
   "url": "https://heicsave.com",
-  "updated": "2026-06-02",
+  "updated": "2026-06-08",
   "summary": "Free browser-local converters for HEIC, WebP, and AVIF. Files are not uploaded for processing.",
   "processing": "client-side",
   "languages": [
@@ -143,6 +143,11 @@
       "slug": "avif-explained",
       "title": "What AVIF is and when to convert it",
       "url": "https://heicsave.com/blog/avif-explained"
+    },
+    {
+      "slug": "avif-thumbnails-not-showing-windows-explorer",
+      "title": "AVIF thumbnails not showing in Windows Explorer — fix",
+      "url": "https://heicsave.com/blog/avif-thumbnails-not-showing-windows-explorer"
     },
     {
       "slug": "best-heic-converters-2026",

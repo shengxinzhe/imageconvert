@@ -30,7 +30,11 @@ export const toolRelatedGuides: Partial<
     postConvertGuide: "webp-for-developers",
   },
   "avif-to-jpg": {
-    guides: ["convert-avif-to-jpg-windows", "avif-explained"],
+    guides: [
+      "convert-avif-to-jpg-windows",
+      "avif-thumbnails-not-showing-windows-explorer",
+      "avif-explained",
+    ],
     postConvertGuide: "convert-avif-to-jpg-windows",
   },
   "avif-to-png": {

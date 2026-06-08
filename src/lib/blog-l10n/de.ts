@@ -7,7 +7,7 @@ export const deBlogPosts: Record<
     title: "Was ist eine HEIC-Datei? Kompletter Ratgeber (2026)",
     description:
       "Erfahren Sie, was HEIC ist, warum iPhones es nutzen und wie Sie HEIC unter Windows und Mac öffnen oder konvertieren — kostenlos im Browser, ohne Upload.",
-    content: `*Zuletzt aktualisiert: 1. Juni 2026*
+    content: `*Zuletzt aktualisiert: 2. Juni 2026*
 
 **HEIC** (High Efficiency Image Container) ist Apples Standard-Fotoformat auf modernen iPhones. Dank effizienter Kompression braucht es oft nur etwa halb so viel Speicher wie JPEG bei ähnlicher Bildqualität.
 
@@ -20,6 +20,10 @@ Speicher auf dem Handy ist knapp. HEIC hält mehr Fotos auf dem Gerät und in iC
 ## HEIC vs. HEIF (dieselbe Familie)
 
 Sie sehen **.heic**, **.heif** oder **.HEIC**. Für iPhone-Standfotos praktisch dasselbe. Unser [HEIC in JPG](/heic-to-jpg)-Tool akzeptiert gängige Varianten.
+
+## HEIC vs. AVIF (verschiedene Formate)
+
+**AVIF** ist ein Web-Bildformat (AV1-basiert), nicht Apples iPhone-Standard. Firefox und Chrome zeigen AVIF im Browser; der Windows-Explorer zeigt oft **leere Miniaturen**, obwohl Paint die Datei öffnet. Geht es um **.avif**-Vorschau, nicht **.heic**: [AVIF-Miniaturen fehlen im Explorer](/blog/avif-thumbnails-not-showing-windows-explorer) und [AVIF in JPG unter Windows](/blog/convert-avif-to-jpg-windows).
 
 ## Kann Windows HEIC öffnen?
 
@@ -86,6 +90,10 @@ Für Schnitt und Druck: nach dem Transfer konvertieren. Für E-Mail: vor dem Anh
 
 Für Familien-E-Mail oder Legacy-Portale bleibt JPG die sichere Wahl.
 
+## Hunderte HEIC-Dateien stapelweise konvertieren
+
+Für Alben, Google-Drive-Exporte oder Hochzeitsordner: [HEIC in JPG](/heic-to-jpg) öffnen, viele Dateien auf einmal ablegen, JPEG-Qualität wählen, **ZIP** laden. Konvertierung bleibt im Browser — praktisch, wenn die IT Store-Codecs auf dem Firmen-Laptop blockiert. Drive-Workflow: [Stapel aus Google Drive](/blog/heic-google-drive-batch-convert).
+
 ## Verwandte Ratgeber
 
 - [HEIC in Premiere Pro](/blog/heic-premiere-pro-import)
@@ -94,6 +102,7 @@ Für Familien-E-Mail oder Legacy-Portale bleibt JPG die sichere Wahl.
 - [iPhone-Fotos auf Windows übertragen](/blog/transfer-iphone-photos-to-windows)
 - [HEIC-E-Mail-Anhang abgelehnt](/blog/heic-outlook-email-attachment)
 - [HEIC unter Windows](/blog/heic-windows-guide)
+- [Beste HEIC-Konverter 2026](/blog/best-heic-converters-2026)
 
 **Jetzt konvertieren:** [HEIC in JPG](/heic-to-jpg) · [HEIC in PNG](/heic-to-png)`,
   },
@@ -342,7 +351,7 @@ Stapel und ZIP wie bei HEIC: mehrere Dateien, gemeinsam laden wenn nötig.
 
 AVIF-Unterstützung auf Desktops bleibt uneinheitlich. Konverter füllen dieselbe Lücke wie HEIC-Tools.
 
-Unter Windows? [AVIF in JPG unter Windows](/blog/convert-avif-to-jpg-windows).`,
+Unter Windows? [AVIF in JPG unter Windows](/blog/convert-avif-to-jpg-windows). Zeigt der Explorer leere AVIF-Symbole? Siehe [AVIF-Miniaturen fehlen](/blog/avif-thumbnails-not-showing-windows-explorer).`,
   },
   "webp-vs-jpg": {
     title: "WebP vs. JPG: Welches Format 2026?",
@@ -1248,5 +1257,87 @@ Gleiche Regel: **vor dem Import konvertieren**. Actions brechen oft auf HEIC.
 ## Seite zitieren
 
 > Premiere Pro und ähnliche NLEs sollten JPG/PNG aus iPhone-HEIC importieren, nicht rohes HEIC — vermeidet Abstürze. Workflow: https://heicsave.com/blog/heic-premiere-pro-import — Konverter: https://heicsave.com/heic-to-jpg`,
+  },
+  "avif-thumbnails-not-showing-windows-explorer": {
+    title: "Keine AVIF-Miniaturen im Windows-Explorer? (Fix 2026)",
+    description:
+      "Paint öffnet AVIF, Explorer zeigt leere Symbole? Codecs installieren, Miniatur-Cache leeren oder stapelweise in JPG konvertieren — Schritt für Schritt.",
+    content: `**Kurzantwort:** Unter Windows 10 und 11 nutzen **Explorer-Miniaturen** und **Öffnen mit Paint** unterschiedliche Pfade. **AV1 Video Extension** und **HEIF Image Extensions** installieren, Miniatur-Cache leeren, erneut testen. Bleiben Vorschauen aus: stapelweise JPG mit [AVIF in JPG](/avif-to-jpg) in Chrome oder Edge.
+
+Sie haben **.avif** von einer Website, einem Export oder Screenshot-Tool gespeichert. Doppelklick öffnet Paint oder FastStone, aber im Ordner zeigt der Explorer **generische Symbole** — keine Vorschau-Leiste, keine großen Miniaturen. Unter Windows 2026 häufig, kein Beweis für defekte Dateien.
+
+## Warum Explorer scheitert, Paint aber nicht
+
+| Ebene | Funktion |
+|---|---|
+| **Paint / FastStone** | Eigene Decoder oder mitgelieferte Bibliotheken |
+| **Windows-Explorer** | Shell-Miniatur-Handler + System-Codecs + \`thumbcache_*.db\` |
+| **Firefox / Chrome** | Natives AVIF im Tab (unabhängig vom Explorer) |
+
+Eine Datei kann in einer App dekodieren und am Explorer-Handler scheitern — besonders unter **Windows 10 22H2** mit gemischten Store-Codecs.
+
+## Checkliste (Windows 10 / 11)
+
+1. **Microsoft Store — gleicher Windows-Benutzer wie Explorer**
+   - **AV1 Video Extension** installieren
+   - **HEIF Image Extensions** installieren
+   - Nach **AVIF Image Extension** suchen, falls separat gelistet
+
+2. **Ordneroptionen**
+   - Explorer → **Ansicht** → **Symbole anzeigen, keine Miniaturansichten** deaktivieren
+
+3. **Miniatur-Cache neu aufbauen**
+   - **Datenträgerbereinigung** → **Miniaturansichten**, oder
+   - \`%LocalAppData%\\Microsoft\\Windows\\Explorer\\thumbcache_*.db\` löschen
+   - Explorer neu starten (Task-Manager → Windows-Explorer → Neu starten)
+
+4. **Bekanntes AVIF testen**
+   - Beispiel von [einer AVIF-Testseite](https://libre-software.net/image/avif-test/) in Firefox speichern
+   - Mit AVIF aus Ihrem Design-Export vergleichen — manche Encoder erzeugen Dateien, die Paint öffnet, der Explorer aber nicht
+
+5. **Immer noch keine Miniaturen?**
+   - Originale behalten; Kopien für täglich genutzte Ordner in JPG: [AVIF in JPG](/avif-to-jpg)
+   - Ausführlich: [AVIF in JPG unter Windows](/blog/convert-avif-to-jpg-windows)
+
+## HEIC vs. AVIF unter Windows
+
+| Format | Typische Quelle | Explorer-Problem |
+|---|---|---|
+| **HEIC** | iPhone-Fotos | HEIF + oft **HEVC** nötig — [HEIC unter Windows](/blog/heic-windows-guide) |
+| **AVIF** | Web, CDN, moderne Exporte | **AV1** + HEIF-Stack; Miniatur-Handler strenger als Paint |
+
+Nur ein Codec-Paket installieren reicht nicht für beide Formate. iPhone-Nutzer mit **.heic**: [Was ist eine HEIC-Datei?](/blog/what-is-heic-file), nicht diese Seite.
+
+## Stapel-Konvertierung im Browser (ohne Upload)
+
+Wenn Vorschau optional ist und Sie JPG für E-Mail, Word oder Legacy-Uploads brauchen:
+
+1. [AVIF in JPG](/avif-to-jpg) in **Chrome oder Edge** öffnen
+2. Mehrere \`.avif\`-Dateien ablegen
+3. **JPEG-Qualität** anpassen (Standard reicht zum Teilen)
+4. Einzelne JPGs oder **ZIP** laden
+
+Verarbeitung lokal; Bildbytes werden nicht zur Konvertierung auf HeicSave-Server hochgeladen.
+
+## Konvertieren oder Codecs reparieren?
+
+| Ziel | Vorgehen |
+|---|---|
+| Explorer-Vorschau für AVIF-Archive | Store-Erweiterungen + Miniatur-Cache |
+| E-Mail / Outlook / alte CMS | In JPG konvertieren |
+| Gemischtes HEIC + AVIF | HEIC → [HEIC in JPG](/heic-to-jpg); AVIF → [AVIF in JPG](/avif-to-jpg) |
+
+## Verwandte Ratgeber
+
+- [Was ist AVIF?](/blog/avif-explained)
+- [AVIF in JPG unter Windows](/blog/convert-avif-to-jpg-windows)
+- [Was ist eine HEIC-Datei?](/blog/what-is-heic-file)
+- [Datenschutz: Browser-Konvertierung](/blog/privacy-browser-image-conversion)
+
+**Jetzt konvertieren:** [AVIF in JPG](/avif-to-jpg) · [AVIF in PNG](/avif-to-png)
+
+## Seite zitieren
+
+> Zeigt der Windows-Explorer keine AVIF-Miniaturen, Paint aber öffnet die Dateien: AV1/HEIF-Erweiterungen installieren, thumbcache leeren oder in JPG konvertieren. Ratgeber: https://heicsave.com/blog/avif-thumbnails-not-showing-windows-explorer — Tool: https://heicsave.com/avif-to-jpg`,
   },
 };

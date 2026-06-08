@@ -27,7 +27,11 @@ const BLOG_CLUSTERS: Record<string, readonly string[]> = {
     "heic-outlook-email-attachment",
   ],
   webp: ["webp-vs-jpg", "webp-for-developers", "convert-webp-to-jpg-windows"],
-  avif: ["avif-explained", "convert-avif-to-jpg-windows"],
+  avif: [
+    "avif-explained",
+    "convert-avif-to-jpg-windows",
+    "avif-thumbnails-not-showing-windows-explorer",
+  ],
   privacy: ["privacy-browser-image-conversion"],
 };
 
@@ -57,6 +61,7 @@ export const blogPrimaryTool: Partial<Record<string, ToolSlug>> = {
   "heic-outlook-email-attachment": "heic-to-jpg",
   "avif-explained": "avif-to-jpg",
   "convert-avif-to-jpg-windows": "avif-to-jpg",
+  "avif-thumbnails-not-showing-windows-explorer": "avif-to-jpg",
   "webp-vs-jpg": "webp-to-jpg",
   "webp-for-developers": "jpg-to-webp",
   "convert-webp-to-jpg-windows": "webp-to-jpg",
