@@ -85,8 +85,7 @@ export default function LocaleLayout({
       <head>
         <meta
           name="impact-site-verification"
-          content={IMPACT_SITE_VERIFICATION}
-          // @ts-expect-error Impact dashboard snippet uses value, not content
+          // @ts-expect-error non-standard attr required by impact.com
           value={IMPACT_SITE_VERIFICATION}
         />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
