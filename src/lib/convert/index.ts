@@ -1,4 +1,5 @@
 import { DEFAULT_JPEG_QUALITY, DEFAULT_WEBP_QUALITY } from "@/lib/constants";
+import { isIos } from "@/lib/platform";
 import { canvasConvert } from "./canvas";
 import { preserveExifOnJpeg } from "./exif";
 import { decodeHeic } from "./heic";
@@ -96,6 +97,13 @@ export function acceptMimeForInput(from: InputFormat): string {
     png: "image/png,.png",
   };
   return map[from];
+}
+
+/** `accept` for `<input type="file">` — iOS Photos needs `image/*` to open the library. */
+export function fileInputAccept(from: InputFormat): string {
+  const specific = acceptMimeForInput(from);
+  if (isIos()) return `image/*,${specific}`;
+  return specific;
 }
 
 export function supportsExifToggle(from: InputFormat, to: OutputFormat): boolean {

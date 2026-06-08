@@ -87,6 +87,7 @@
     "browseSr": "Choisir des fichiers",
     "browseFolder": "Choisir un dossier",
     "browseFolderSr": "Choisir un dossier d'images",
+    "filesRejected": "Aucune image compatible ajoutée. Sur iPhone, choisissez des photos dans Photothèque (pas de vidéos). HEIC, JPG et PNG depuis l’app Photos sont pris en charge.",
     "readingFolder": "Lecture du dossier…",
     "previewHeading": "{count} fichier(s) sélectionné(s)",
     "privacyVerifyTitle": "Vérifier zéro envoi (DevTools)",

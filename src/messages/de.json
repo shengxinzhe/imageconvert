@@ -87,6 +87,7 @@
     "browseSr": "Dateien wählen",
     "browseFolder": "Ordner wählen",
     "browseFolderSr": "Bildordner auswählen",
+    "filesRejected": "Keine passenden Bilder hinzugefügt. Auf dem iPhone Fotos aus der Mediathek wählen (keine Videos). HEIC, JPG und PNG aus der Fotos-App werden unterstützt.",
     "readingFolder": "Ordner wird gelesen…",
     "previewHeading": "{count} Datei(en) ausgewählt",
     "privacyVerifyTitle": "Kein Upload prüfen (DevTools)",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
@@ -26,7 +26,7 @@ import {
 import { convertBatch } from "@/lib/convert/conversion-pool";
 import { getConverterSoftWarnings } from "@/lib/converter-warnings";
 import {
-  acceptMimeForInput,
+  fileInputAccept,
   defaultQualityPercent,
   supportsExifToggle,
   type InputFormat,
@@ -44,6 +44,7 @@ import type { ToolAudience } from "@/lib/design-variants";
 import { cn } from "@/lib/utils";
 import { collectFilesFromDataTransfer } from "@/lib/collect-drop-files";
 import { filterFilesForInput } from "@/lib/converter-file-filter";
+import { isIos } from "@/lib/platform";
 
 interface ConvertedFile {
   id: string;
@@ -98,16 +99,23 @@ export function ImageConverter({
   const [resizePreset, setResizePreset] = useState<ResizePresetId>("original");
   const [preserveExif, setPreserveExif] = useState(true);
   const [dropBusy, setDropBusy] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const folderInputRef = useRef<HTMLInputElement>(null);
+  const iosDevice = isIos();
 
   const ingestFiles = useCallback(
     (incoming: File[]) => {
+      if (!incoming.length) return;
       const matched = filterFilesForInput(incoming, from);
-      if (!matched.length) return;
+      if (!matched.length) {
+        setError({ message: t("converter.filesRejected") });
+        return;
+      }
       setError(null);
       setFailedFiles([]);
       setFiles((prev) => [...prev, ...matched]);
     },
-    [from],
+    [from, t],
   );
 
   const addFiles = useCallback(
@@ -269,7 +277,12 @@ export function ImageConverter({
     setProgress(null);
   };
 
-  const accept = acceptMimeForInput(from);
+  const accept = fileInputAccept(from);
+
+  const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files?.length) addFiles(e.target.files);
+    e.target.value = "";
+  };
   const softWarnings = useMemo(
     () => getConverterSoftWarnings(files, locale),
     [files, locale],
@@ -323,35 +336,53 @@ export function ImageConverter({
         <Upload className="mx-auto h-8 w-8 text-mute" aria-hidden />
         <p className="mt-4 text-sm font-medium text-ink">{t("converter.dropTitle")}</p>
         <p className="mt-1 font-mono text-xs text-mute">{t("converter.dropHint")}</p>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept={accept}
+          multiple
+          className="sr-only"
+          tabIndex={-1}
+          aria-hidden
+          disabled={converting || dropBusy}
+          onChange={onFileInputChange}
+        />
+        {!iosDevice ? (
+          <input
+            ref={folderInputRef}
+            type="file"
+            accept={accept}
+            multiple
+            className="sr-only"
+            tabIndex={-1}
+            aria-hidden
+            disabled={converting || dropBusy}
+            // @ts-expect-error webkitdirectory is supported in Chromium/Safari desktop
+            webkitdirectory=""
+            directory=""
+            onChange={onFileInputChange}
+          />
+        ) : null}
         <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
-          <label className="inline-flex cursor-pointer items-center justify-center rounded-full border border-hairline bg-canvas px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2">
-            <span className="sr-only">{t("converter.browseSr")}</span>
-            <input
-              type="file"
-              accept={accept}
-              multiple
-              className="hidden"
-              disabled={converting || dropBusy}
-              onChange={(e) => e.target.files && addFiles(e.target.files)}
-            />
+          <Button
+            type="button"
+            variant="secondary"
+            disabled={converting || dropBusy}
+            onClick={() => fileInputRef.current?.click()}
+          >
             {t("converter.browse")}
-          </label>
-          <label className="inline-flex cursor-pointer items-center justify-center rounded-full border border-hairline bg-canvas px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-canvas-soft-2">
-            <span className="sr-only">{t("converter.browseFolderSr")}</span>
-            <input
-              type="file"
-              accept={accept}
-              multiple
-              className="hidden"
+          </Button>
+          {!iosDevice ? (
+            <Button
+              type="button"
+              variant="secondary"
               disabled={converting || dropBusy}
-              // @ts-expect-error webkitdirectory is supported in Chromium/Safari
-              webkitdirectory=""
-              directory=""
-              onChange={(e) => e.target.files && addFiles(e.target.files)}
-            />
-            <FolderOpen className="mr-1.5 h-4 w-4" aria-hidden />
-            {t("converter.browseFolder")}
-          </label>
+              onClick={() => folderInputRef.current?.click()}
+            >
+              <FolderOpen className="mr-1.5 h-4 w-4" aria-hidden />
+              {t("converter.browseFolder")}
+            </Button>
+          ) : null}
         </div>
         {dropBusy ? (
           <p className="mt-3 flex items-center justify-center gap-2 text-xs text-mute">

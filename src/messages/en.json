@@ -87,6 +87,7 @@
     "browseSr": "Choose files",
     "browseFolder": "Choose folder",
     "browseFolderSr": "Choose a folder of images",
+    "filesRejected": "No matching images were added. On iPhone, pick photos from your library (not videos). HEIC, JPG, and PNG from the Photos app are supported.",
     "readingFolder": "Reading folder…",
     "previewHeading": "{count} file(s) selected",
     "privacyVerifyTitle": "Verify zero upload (DevTools)",
