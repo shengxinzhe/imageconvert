@@ -11,7 +11,7 @@ import { Header } from "@/components/layout/header";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { OrganizationJsonLd } from "@/components/seo/organization-json-ld";
 import { ADSENSE_CLIENT_ID_DEFAULT } from "@/lib/adsense";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { IMPACT_SITE_VERIFICATION, SITE_NAME, SITE_URL } from "@/lib/constants";
 import { OG_IMAGE } from "@/lib/site-metadata";
 import "../globals.css";
 
@@ -83,6 +83,12 @@ export default function LocaleLayout({
   return (
     <html lang={locale} className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
+        <meta
+          name="impact-site-verification"
+          content={IMPACT_SITE_VERIFICATION}
+          // @ts-expect-error Impact dashboard snippet uses value, not content
+          value={IMPACT_SITE_VERIFICATION}
+        />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full catalog" />
         <link
@@ -92,10 +98,6 @@ export default function LocaleLayout({
           title="AI discovery catalog"
         />
         <meta name="google-adsense-account" content={ADSENSE_CLIENT_ID_DEFAULT} />
-        <meta
-          name="impact-site-verification"
-          content="b4f6319b-3f90-4307-b1ad-476ab8478a38"
-        />
         <script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID_DEFAULT}`}

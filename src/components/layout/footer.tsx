@@ -2,7 +2,7 @@ import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { footerGuideSlugs } from "@/lib/blog-seo-links";
 import { getLocalizedBlogPost } from "@/lib/blog-l10n";
-import { SITE_NAME } from "@/lib/constants";
+import { IMPACT_SITE_VERIFICATION, SITE_NAME } from "@/lib/constants";
 import { getLocalizedToolList } from "@/lib/get-localized-tool";
 import { getT } from "@/lib/i18n/translations";
 
@@ -78,6 +78,7 @@ export function Footer({ locale }: { locale: AppLocale }) {
         </div>
       </div>
       <div className="border-t border-hairline px-4 py-6 text-center font-mono text-xs text-mute">
+        <span className="sr-only">Impact-Site-Verification: {IMPACT_SITE_VERIFICATION}</span>
         © {new Date().getFullYear()} {SITE_NAME}
       </div>
     </footer>
