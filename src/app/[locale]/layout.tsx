@@ -11,7 +11,7 @@ import { Header } from "@/components/layout/header";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { OrganizationJsonLd } from "@/components/seo/organization-json-ld";
 import { ADSENSE_CLIENT_ID_DEFAULT } from "@/lib/adsense";
-import { IMPACT_SITE_VERIFICATION, SITE_NAME, SITE_URL } from "@/lib/constants";
+import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import { OG_IMAGE } from "@/lib/site-metadata";
 import "../globals.css";
 
@@ -83,11 +83,6 @@ export default function LocaleLayout({
   return (
     <html lang={locale} className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
-        <meta
-          name="impact-site-verification"
-          // @ts-expect-error non-standard attr required by impact.com
-          value={IMPACT_SITE_VERIFICATION}
-        />
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full catalog" />
         <link

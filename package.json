@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap && node scripts/ping-google-sitemap.mjs && node scripts/ping-bing-sitemap.mjs",
+    "postbuild": "node scripts/inject-impact-verification.mjs && next-sitemap && node scripts/ping-google-sitemap.mjs && node scripts/ping-bing-sitemap.mjs",
     "indexnow": "node scripts/ping-indexnow.mjs",
     "start": "next start",
     "lint": "next lint",
