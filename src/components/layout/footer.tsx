@@ -78,8 +78,10 @@ export function Footer({ locale }: { locale: AppLocale }) {
         </div>
       </div>
       <div className="border-t border-hairline px-4 py-6 text-center font-mono text-xs text-mute">
-        <span className="sr-only">Impact-Site-Verification: {IMPACT_SITE_VERIFICATION}</span>
-        © {new Date().getFullYear()} {SITE_NAME}
+        <p className="text-[10px] text-mute/70">
+          Impact-Site-Verification: {IMPACT_SITE_VERIFICATION}
+        </p>
+        <p className="mt-1">© {new Date().getFullYear()} {SITE_NAME}</p>
       </div>
     </footer>
   );
