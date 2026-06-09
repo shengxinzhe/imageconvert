@@ -1,5 +1,6 @@
 import { WebsiteJsonLd } from "@/components/seo/website-json-ld";
 import { Link } from "@/i18n/navigation";
+import { statIcons, StatsStrip } from "@/components/site/stats-strip";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { HOME_FAQ_BY_LOCALE } from "@/lib/ai-discovery";
 import { getLocalizedBlogPostsNewestFirst } from "@/lib/blog-l10n";
@@ -8,7 +9,7 @@ import { getLocalizedToolList } from "@/lib/get-localized-tool";
 import { getT } from "@/lib/i18n/translations";
 import { homeMetadata } from "@/lib/site-metadata";
 import { Archive, ArrowRight, Lock, Sparkles } from "lucide-react";
-import { toolShortTitle } from "@/lib/tool-display";
+import { HomeToolCard } from "@/components/site/home-tool-card";
 import { cn } from "@/lib/utils";
 
 type PageProps = { params: { locale: string } };
@@ -29,6 +30,8 @@ export default function HomePage({ params }: PageProps) {
   const heicTools = tools.filter((tool) => getToolAudience(tool.slug) === "heic");
   const devTools = tools.filter((tool) => getToolAudience(tool.slug) === "developer");
   const homeFaqs = HOME_FAQ_BY_LOCALE[locale];
+  const toolCount = tools.length;
+  const languageCount = routing.locales.length;
 
   return (
     <>
@@ -85,6 +88,19 @@ export default function HomePage({ params }: PageProps) {
               {t("home.heroTrust3")}
             </li>
           </ul>
+          <StatsStrip
+            stats={[
+              {
+                icon: statIcons.tools,
+                label: t("home.statTools", { count: toolCount }),
+              },
+              {
+                icon: statIcons.languages,
+                label: t("home.statLanguages", { count: languageCount }),
+              },
+              { icon: statIcons.upload, label: t("home.statUpload") },
+            ]}
+          />
           <aside
             aria-label={t("home.aiSummaryTitle")}
             className="mx-auto mt-10 max-w-2xl rounded-vercel-lg border border-hairline bg-canvas px-5 py-4 text-left text-sm text-body shadow-card"
@@ -109,18 +125,7 @@ export default function HomePage({ params }: PageProps) {
           <p className="mt-2 max-w-xl text-body">{t("home.devSubtitle")}</p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {devTools.map((tool) => (
-              <Link
-                key={tool.slug}
-                href={`/${tool.slug}`}
-                className="group rounded-vercel-lg border border-hairline bg-canvas p-5 shadow-card transition hover:border-[#c4c4ef] hover:shadow-card-hover"
-              >
-                <p className="font-mono text-xs text-[#5e6ad2]">
-                  {tool.from} → {tool.to}
-                </p>
-                <h3 className="mt-2 font-medium text-ink group-hover:text-[#5e6ad2]">
-                  {toolShortTitle(tool)}
-                </h3>
-              </Link>
+              <HomeToolCard key={tool.slug} tool={tool} locale={locale} variant="developer" />
             ))}
           </div>
         </div>
@@ -129,16 +134,10 @@ export default function HomePage({ params }: PageProps) {
       <section className="content-band-soft py-16">
         <div className="mx-auto max-w-6xl px-4 lg:px-6">
           <h2 className="text-xl font-semibold text-ink">{t("home.heicToolsTitle")}</h2>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <p className="mt-2 max-w-2xl text-body">{t("home.heicToolsSubtitle")}</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {heicTools.map((tool) => (
-              <Link
-                key={tool.slug}
-                href={`/${tool.slug}`}
-                className={cn("p-5 transition hover:shadow-card-hover", audienceStyles.heic.card)}
-              >
-                <h3 className="font-medium text-ink">{toolShortTitle(tool)}</h3>
-                <p className="mt-2 line-clamp-2 text-sm text-body">{tool.metaDescription}</p>
-              </Link>
+              <HomeToolCard key={tool.slug} tool={tool} locale={locale} variant="heic" />
             ))}
           </div>
         </div>

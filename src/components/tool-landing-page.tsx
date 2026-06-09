@@ -5,10 +5,10 @@ import { AdSlot } from "@/components/ads/ad-slot";
 import { ToolJsonLd } from "@/components/seo/tool-json-ld";
 import { Link } from "@/i18n/navigation";
 import type { AppLocale } from "@/i18n/routing";
-import { getLocalizedToolBySlug } from "@/lib/get-localized-tool";
 import { audienceStyles, getToolAudience } from "@/lib/design-variants";
 import { hasAdSenseDisplayUnits } from "@/lib/adsense";
 import { RelatedGuides } from "@/components/tool/related-guides";
+import { RelatedToolsGrid } from "@/components/tool/related-tools-grid";
 import type { ToolConfig, ToolSlug } from "@/lib/tools-config";
 import { toolRelatedGuides } from "@/lib/tool-related-guides";
 import { cn } from "@/lib/utils";
@@ -149,18 +149,19 @@ export async function ToolLandingPage({
           ))}
         </div>
 
-        <h2>{t("tool.relatedHeading")}</h2>
-        <ul>
-          {tool.relatedSlugs.map((slug) => {
-            const related = getLocalizedToolBySlug(slug, locale);
-            if (!related) return null;
-            return (
-              <li key={slug}>
-                <Link href={`/${slug}`}>{related.title.split("—")[0].trim()}</Link>
-              </li>
-            );
-          })}
-        </ul>
+      </section>
+
+      <section className="mx-auto max-w-6xl border-t border-hairline px-4 py-12 lg:px-6">
+        <h2 className="text-2xl font-semibold tracking-display-sm text-ink">
+          {t("tool.relatedHeading")}
+        </h2>
+        <p className="mt-2 max-w-2xl text-body">{t("tool.relatedSubtitle")}</p>
+        <RelatedToolsGrid slugs={tool.relatedSlugs} locale={locale} />
+        <p className="mt-8 text-sm text-body">
+          <Link href="/tools" className="font-medium text-ink hover:text-[var(--mintlify-green)]">
+            {t("tool.allToolsLink")}
+          </Link>
+        </p>
       </section>
     </article>
   );

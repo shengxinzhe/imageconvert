@@ -8,27 +8,10 @@ export const frLegal: LegalCatalog = {
         "Contactez HeicSave pour l'aide à la conversion, les demandes RGPD et questions générales. Réponse sous quelques jours ouvrés — vos images restent privées, jamais envoyées.",
     },
     h1: "Contacter HeicSave",
-    body: `Nous exploitons **HeicSave** sur [heicsave.com](https://heicsave.com). La conversion d’images s’effectue dans votre navigateur — nous ne recevons pas vos fichiers photo.
-
-## Général & confidentialité
-
-Questions sur les cookies, le RGPD ou le fonctionnement du site : [Page contact](/contact)
-
-## Droits d’auteur (DMCA)
-
-Notifications et demandes de retrait pour droits d’auteur : [Politique DMCA](/dmca)
-
-Consultez notre [politique DMCA](/dmca) pour les mentions obligatoires.
-
-## Délai de réponse
-
-Nous visons une réponse sous quelques jours ouvrés. Nous ne pouvons pas récupérer des fichiers déjà convertis. Pour un problème technique, indiquez le navigateur, le système et le type de fichier, ainsi que les étapes pour reproduire le bug.
-
-## Avant de nous écrire
-
-- Problème de conversion ? Essayez [HEIC en JPG](/heic-to-jpg) dans Chrome ou Edge sur un ordinateur.
-- Qui exploite le site ? Voir [À propos](/about).
-- Droits RGPD (EEE/Royaume-Uni) ? Voir la [politique de confidentialité](/privacy).`,
+    body: `- **Problème de conversion ?** Essayez [HEIC en JPG](/heic-to-jpg) dans Chrome ou Edge sur un ordinateur. Indiquez navigateur, système et type de fichier si vous nous écrivez.
+- **Qui exploite le site ?** Voir [À propos](/about) pour le fonctionnement et le modèle économique.
+- **Droits RGPD (EEE/Royaume-Uni) ?** Voir la [politique de confidentialité](/privacy) ou écrire à privacy@heicsave.com.
+- **Droits d'auteur ?** Consultez la [politique DMCA](/dmca) pour les mentions obligatoires avant d'écrire.`,
   },
   about: {
     meta: {
@@ -39,12 +22,6 @@ Nous visons une réponse sous quelques jours ouvrés. Nous ne pouvons pas récup
     h1: "À propos de HeicSave",
     lastUpdated: "Dernière mise à jour : 19 mai 2026",
     body: `**HeicSave** est un site gratuit de conversion d’images sur [heicsave.com](https://heicsave.com). Nous aidons les utilisateurs d’iPhone à transformer des photos HEIC en JPG ou PNG, et les développeurs à convertir WebP et AVIF lorsque d’anciennes applications ou clients mail ne les ouvrent pas.
-
-## Ce qui nous distingue
-
-- **Confidentialité dès la conception** — la conversion s’exécute dans votre navigateur via JavaScript et WebAssembly. Vos photos ne sont pas envoyées sur nos serveurs pour traitement.
-- **Sans compte** — pas d’inscription, pas de filigrane, pas de formule payante pour la conversion de base.
-- **Fonctions utiles** — conversion par lots, téléchargement ZIP, curseurs de qualité JPEG/WebP et conservation EXIF pour HEIC→JPG lorsque le navigateur le permet.
 
 ## Public visé
 

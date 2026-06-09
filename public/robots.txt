@@ -101,3 +101,4 @@ Host: https://heicsave.com
 
 # Sitemaps
 Sitemap: https://heicsave.com/sitemap.xml
+Sitemap: https://heicsave.com/sitemap-0.xml

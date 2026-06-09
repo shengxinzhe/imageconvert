@@ -2,13 +2,14 @@ import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import {
   getLocalizedBlogPost,
+  getLocalizedBlogPostsNewestFirst,
   hasBlogTranslation,
 } from "@/lib/blog-l10n";
 import type { BlogPost } from "@/lib/blog-posts";
 import type { ToolSlug } from "@/lib/tools-config";
 
 /** Topic clusters for related-post internal links (indexing / crawl paths). */
-const BLOG_CLUSTERS: Record<string, readonly string[]> = {
+export const BLOG_CLUSTERS = {
   heic: [
     "what-is-heic-file",
     "why-iphone-uses-heic",
@@ -25,6 +26,7 @@ const BLOG_CLUSTERS: Record<string, readonly string[]> = {
     "heic-color-washed-out-after-convert",
     "heicsave-vs-browser-heic-converters",
     "heic-outlook-email-attachment",
+    "heic-premiere-pro-import",
   ],
   webp: ["webp-vs-jpg", "webp-for-developers", "convert-webp-to-jpg-windows"],
   avif: [
@@ -33,7 +35,10 @@ const BLOG_CLUSTERS: Record<string, readonly string[]> = {
     "avif-thumbnails-not-showing-windows-explorer",
   ],
   privacy: ["privacy-browser-image-conversion"],
-};
+} as const satisfies Record<string, readonly string[]>;
+
+export const BLOG_TOPICS = ["heic", "webp", "avif", "privacy"] as const;
+export type BlogTopic = (typeof BLOG_TOPICS)[number];
 
 const SLUG_TO_CLUSTER = new Map<string, string>();
 for (const [cluster, slugs] of Object.entries(BLOG_CLUSTERS)) {
@@ -82,7 +87,7 @@ export function getRelatedBlogPosts(
   locale: AppLocale,
   limit = 3
 ): BlogPost[] {
-  const cluster = SLUG_TO_CLUSTER.get(slug);
+  const cluster = SLUG_TO_CLUSTER.get(slug) as BlogTopic | undefined;
   const candidates = cluster
     ? [...BLOG_CLUSTERS[cluster]]
     : [...BLOG_CLUSTERS.heic, ...BLOG_CLUSTERS.webp, ...BLOG_CLUSTERS.avif];
@@ -101,4 +106,21 @@ export function getRelatedBlogPosts(
     if (related.length >= limit) break;
   }
   return related;
+}
+
+export function getBlogPostsByTopic(topic: BlogTopic, locale: AppLocale): BlogPost[] {
+  const posts: BlogPost[] = [];
+  for (const slug of BLOG_CLUSTERS[topic]) {
+    if (locale !== routing.defaultLocale && !hasBlogTranslation(slug, locale)) {
+      continue;
+    }
+    const post = getLocalizedBlogPost(slug, locale);
+    if (post) posts.push(post);
+  }
+  return posts;
+}
+
+export function getUncategorizedBlogPosts(locale: AppLocale): BlogPost[] {
+  const categorized = new Set<string>(Object.values(BLOG_CLUSTERS).flat());
+  return getLocalizedBlogPostsNewestFirst(locale).filter((post) => !categorized.has(post.slug));
 }

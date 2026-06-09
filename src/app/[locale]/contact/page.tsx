@@ -1,4 +1,4 @@
-import { LegalPage } from "@/components/legal/legal-page";
+import { ContactPageLayout } from "@/components/site/contact-page-layout";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { getLegalPage } from "@/lib/legal-l10n";
 import { legalPageMetadata } from "@/lib/site-metadata";
@@ -18,5 +18,5 @@ export function generateMetadata({ params }: PageProps) {
 export default function ContactPage({ params }: PageProps) {
   const locale = params.locale as AppLocale;
   const content = getLegalPage("contact", locale);
-  return <LegalPage content={content} locale={locale} showContactEmails />;
+  return <ContactPageLayout content={content} locale={locale} />;
 }

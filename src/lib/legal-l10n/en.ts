@@ -8,27 +8,10 @@ export const enLegal: LegalCatalog = {
         "Contact HeicSave for conversion help, GDPR privacy requests, and general questions. We reply within a few business days — your images are never uploaded.",
     },
     h1: "Contact HeicSave",
-    body: `We operate **HeicSave** at [heicsave.com](https://heicsave.com). Image conversion runs in your browser—we do not receive your photo files.
-
-## General & privacy
-
-Questions about cookies, GDPR, or how the site works — see the addresses at the bottom of this page.
-
-## Copyright (DMCA)
-
-Copyright notices and takedown requests — see our [DMCA policy](/dmca) and the DMCA address below.
-
-See our [DMCA policy](/dmca) for required notice details.
-
-## Response time
-
-We aim to reply within a few business days. We cannot recover converted files or debug device-specific issues without steps to reproduce (browser, OS, file type).
-
-## Before you write
-
-- Conversion problems? Try [HEIC to JPG](/heic-to-jpg) in Chrome or Edge on a desktop.
-- Who runs the site? See [About](/about).
-- Privacy rights (EEA/UK)? See the [Privacy Policy](/privacy).`,
+    body: `- **Conversion problems?** Try [HEIC to JPG](/heic-to-jpg) in Chrome or Edge on a desktop. Include your browser, OS, and file type if you email us.
+- **Who runs the site?** See [About](/about) for how HeicSave works and how we fund the site.
+- **Privacy rights (EEA/UK)?** See the [Privacy Policy](/privacy) or email privacy@heicsave.com.
+- **Copyright notices?** See our [DMCA policy](/dmca) for required notice details before writing.`,
   },
   about: {
     meta: {
@@ -39,12 +22,6 @@ We aim to reply within a few business days. We cannot recover converted files or
     h1: "About HeicSave",
     lastUpdated: "Last updated: May 19, 2026",
     body: `**HeicSave** is a free online image conversion site at [heicsave.com](https://heicsave.com). We help iPhone users turn HEIC photos into JPG or PNG, and help developers convert WebP and AVIF when older apps or email clients cannot open modern formats.
-
-## How we are different
-
-- **Private by design** — conversion runs in your browser with JavaScript and WebAssembly. Your photos are not uploaded to our servers for processing.
-- **No account required** — no signup, no watermark, no paid tier for basic conversion.
-- **Practical features** — batch convert, ZIP download, JPEG/WebP quality sliders, and EXIF preservation on HEIC→JPG when your browser allows it.
 
 ## Who we serve
 

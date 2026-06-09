@@ -29,10 +29,58 @@
     "heroTrust1": "Les fichiers restent sur votre appareil",
     "heroTrust2": "Lots + téléchargement ZIP",
     "heroTrust3": "Sans compte ni filigrane",
+    "statTools": "{count} convertisseurs",
+    "statLanguages": "{count} langues",
+    "statUpload": "Aucun envoi serveur",
     "devBadge": "WebP · AVIF · optimiser",
     "devTitle": "Convertisseurs développeur",
     "devSubtitle": "WebP et AVIF pour les sites modernes — conversion locale avant déploiement.",
     "heicToolsTitle": "Outils photo iPhone",
+    "heicToolsSubtitle": "Choisissez un usage — e-mail, Windows ou export par lots — et convertissez HEIC localement.",
+    "cards": {
+      "heicToJpg": {
+        "scenario": "Transformez les HEIC iPhone en JPG pour e-mail, formulaires et PC Windows.",
+        "use1": "Pièces jointes e-mail",
+        "use2": "Photos Windows",
+        "use3": "Lot ZIP"
+      },
+      "heicToPng": {
+        "scenario": "Qualité maximale quand vous avez besoin de PNG plutôt que de JPG compressé.",
+        "use1": "Transparence",
+        "use2": "Exports design",
+        "use3": "Lot ZIP"
+      },
+      "heicToWebp": {
+        "scenario": "Fichiers plus légers depuis HEIC sans envoi sur un serveur.",
+        "use1": "Uploads web",
+        "use2": "Fichiers plus petits",
+        "use3": "Lot ZIP"
+      },
+      "webpToPng": {
+        "scenario": "Ouvrir des WebP dans Photoshop, GIMP et anciennes apps bureau.",
+        "tags": "Canvas · libwebp WASM"
+      },
+      "webpToJpg": {
+        "scenario": "Envoyer des WebP à des clients et boîtes mail qui n'acceptent que le JPG.",
+        "tags": "Canvas · Curseur qualité"
+      },
+      "avifToJpg": {
+        "scenario": "Publier des AVIF téléchargés sur CMS, réseaux sociaux et workflows legacy.",
+        "tags": "WASM · Canvas"
+      },
+      "avifToPng": {
+        "scenario": "Éditer des captures AVIF en PNG avec alpha si nécessaire.",
+        "tags": "WASM · Canvas"
+      },
+      "jpgToWebp": {
+        "scenario": "Réduire images hero et galeries avant déploiement.",
+        "tags": "Canvas · Curseur qualité"
+      },
+      "pngToWebp": {
+        "scenario": "Remplacer de lourdes icônes PNG et assets UI sur sites en production.",
+        "tags": "Canvas · WebP avec perte"
+      }
+    },
     "blogLabel": "Guides",
     "blogTitle": "Blog",
     "blogSubtitle": "Guides HEIC, WebP et AVIF — certains en français.",
@@ -43,6 +91,36 @@
     "aiFact3": "Chrome ou Edge (bureau) recommandés pour HEIC et AVIF ; idéal pour photos iPhone sur Windows.",
     "aiFact4": "Guides : HEIC Windows, Premiere/Outlook, AVIF→JPG—/blog et /llms-full.txt."
   },
+  "about": {
+    "badge": "À propos du site",
+    "heroSubtitle": "HeicSave est une boîte à outils d'images gratuite dans le navigateur pour photos iPhone et formats web modernes — conçue pour la confidentialité, la vitesse et le partage au quotidien.",
+    "principlesTitle": "Ce qui nous distingue",
+    "principle1Title": "Confidentialité dès la conception",
+    "principle1Body": "La conversion s'exécute dans votre navigateur via JavaScript et WebAssembly. Vos photos ne sont pas envoyées sur nos serveurs pour traitement.",
+    "principle2Title": "Sans compte",
+    "principle2Body": "Pas d'inscription, pas de filigrane et pas de formule payante pour la conversion de base. Ouvrez un outil et convertissez immédiatement.",
+    "principle3Title": "Fonctions utiles",
+    "principle3Body": "Conversion par lots, téléchargement ZIP, curseurs de qualité JPEG/WebP et conservation EXIF pour HEIC→JPG lorsque le navigateur le permet.",
+    "toolsTitle": "Nos convertisseurs",
+    "toolsSubtitle": "{count} outils gratuits pour HEIC, WebP, AVIF et l'optimisation — tout s'exécute localement dans votre onglet.",
+    "toolsCta": "Commencer par HEIC en JPG",
+    "detailsTitle": "En savoir plus sur HeicSave"
+  },
+  "contact": {
+    "badge": "Nous contacter",
+    "heroSubtitle": "Questions sur la conversion, la confidentialité ou le droit d'auteur ? Nous lisons chaque message et répondons sous quelques jours ouvrés.",
+    "cardPrivacyTitle": "Général & confidentialité",
+    "cardPrivacyBody": "Questions sur les cookies, demandes RGPD et fonctionnement de la conversion locale.",
+    "cardDmcaTitle": "Droits d'auteur (DMCA)",
+    "cardDmcaBody": "Notifications et demandes de retrait pour le contenu du site ou les guides.",
+    "cardResponseTitle": "Délai de réponse",
+    "cardResponseBody": "Réponse visée sous quelques jours ouvrés. Pour un problème technique, indiquez navigateur, système, type de fichier et étapes de reproduction.",
+    "emailPrivacyLabel": "Confidentialité & général",
+    "emailDmcaLabel": "Avis DMCA",
+    "privacyLink": "Lire la politique de confidentialité",
+    "dmcaLink": "Lire la politique DMCA",
+    "helpTitle": "Avant de nous écrire"
+  },
   "tool": {
     "filesStay": "Les fichiers ne quittent pas votre appareil",
     "noSignup": "Sans compte · Gratuit dans le navigateur",
@@ -50,6 +128,8 @@
     "privacyHeading": "Confidentialité : les fichiers restent dans le navigateur",
     "faqHeading": "Questions fréquentes",
     "relatedHeading": "Outils associés",
+    "relatedSubtitle": "Plus de convertisseurs gratuits dans le navigateur — sans envoi.",
+    "allToolsLink": "Voir tous les convertisseurs →",
     "relatedGuidesHeading": "Guides associés"
   },
   "cookie": {
@@ -61,6 +141,10 @@
   },
   "footer": {
     "tagline": "Convertisseurs d'images gratuits en ligne. Les fichiers restent dans votre navigateur.",
+    "story1": "Convertisseurs gratuits dans le navigateur pour HEIC iPhone et formats web modernes.",
+    "story2": "Vos photos ne quittent pas votre appareil — sans envoi, sans compte, sans filigrane.",
+    "aboutCta": "Découvrir HeicSave",
+    "allTools": "Tous les convertisseurs",
     "tools": "Outils",
     "legal": "Mentions légales",
     "privacy": "Confidentialité",
@@ -71,7 +155,26 @@
     "guides": "Guides populaires",
     "contact": "Contact"
   },
+  "toolsIndex": {
+    "badge": "Répertoire d'outils",
+    "title": "Tous les convertisseurs d'images",
+    "subtitle": "Neuf outils gratuits dans le navigateur pour HEIC iPhone, WebP, AVIF et optimisation web.",
+    "heicTitle": "iPhone & HEIC",
+    "heicSubtitle": "Convertissez les photos Apple pour e-mail, Windows et partage — fichiers sur l'appareil.",
+    "devTitle": "WebP, AVIF & optimiser",
+    "devSubtitle": "Convertisseurs de formats modernes pour développeurs et sites — localement avant déploiement.",
+    "aboutBlurb": "Chaque outil s'exécute dans votre onglet via JavaScript et WebAssembly. Sans compte, sans envoi serveur.",
+    "aboutCta": "À propos de HeicSave"
+  },
   "blog": {
+    "topicsTitle": "Guides par thème",
+    "topicsNavLabel": "Aller au thème",
+    "topicHeic": "HEIC & iPhone",
+    "topicWebp": "WebP",
+    "topicAvif": "AVIF",
+    "topicPrivacy": "Confidentialité",
+    "topicMore": "Autres guides",
+    "allGuidesTitle": "Tous les guides",
     "back": "← Blog",
     "englishNotice": "Cet article est disponible en anglais.",
     "minRead": "min de lecture",

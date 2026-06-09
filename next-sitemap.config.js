@@ -145,7 +145,7 @@ module.exports = {
     };
   },
   additionalPaths: async () => {
-    const staticPages = ["/about", "/contact", "/privacy", "/terms", "/dmca", "/blog"];
+    const staticPages = ["/about", "/contact", "/privacy", "/terms", "/dmca", "/blog", "/tools"];
     const now = new Date().toISOString();
     const entries = [];
 

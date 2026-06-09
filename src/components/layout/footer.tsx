@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/navigation";
+import { ArrowRight } from "lucide-react";
 import type { AppLocale } from "@/i18n/routing";
 import { footerGuideSlugs } from "@/lib/blog-seo-links";
 import { getLocalizedBlogPost } from "@/lib/blog-l10n";
@@ -15,11 +16,24 @@ export function Footer({ locale }: { locale: AppLocale }) {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 lg:grid-cols-4 lg:px-6">
         <div>
           <p className="text-sm font-semibold text-ink">{SITE_NAME}</p>
-          <p className="mt-2 text-sm text-body">{t("footer.tagline")}</p>
+          <p className="mt-2 text-sm text-body">{t("footer.story1")}</p>
+          <p className="mt-2 text-sm text-body">{t("footer.story2")}</p>
+          <Link
+            href="/about"
+            className="mt-4 inline-flex items-center text-sm font-medium text-ink hover:text-[var(--mintlify-green)]"
+          >
+            {t("footer.aboutCta")}
+            <ArrowRight className="ml-1 h-4 w-4" />
+          </Link>
         </div>
         <div>
           <p className="mb-3 font-mono text-xs uppercase tracking-wider text-mute">{t("footer.tools")}</p>
           <ul className="grid gap-2 text-sm text-body">
+            <li>
+              <Link href="/tools" className="font-medium text-ink hover:text-[var(--mintlify-green)]">
+                {t("footer.allTools")}
+              </Link>
+            </li>
             {toolList.map((tool) => (
               <li key={tool.slug}>
                 <Link href={`/${tool.slug}`} className="hover:text-ink">

@@ -1,4 +1,4 @@
-import { LegalPage } from "@/components/legal/legal-page";
+import { AboutPageLayout } from "@/components/site/about-page-layout";
 import { AboutJsonLd } from "@/components/seo/about-json-ld";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { getLegalPage } from "@/lib/legal-l10n";
@@ -22,7 +22,7 @@ export default function AboutPage({ params }: PageProps) {
   return (
     <>
       <AboutJsonLd locale={locale} />
-      <LegalPage content={content} locale={locale} />
+      <AboutPageLayout content={content} locale={locale} />
     </>
   );
 }

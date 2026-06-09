@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { BlogIndexJsonLd } from "@/components/seo/blog-index-json-ld";
 import { Link } from "@/i18n/navigation";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { BlogTopicSections } from "@/components/blog/blog-topic-sections";
 import { getLocalizedBlogPostsNewestFirst } from "@/lib/blog-l10n";
 import { SITE_NAME } from "@/lib/constants";
 import { getT } from "@/lib/i18n/translations";
@@ -75,7 +76,12 @@ export default function BlogIndexPage({ params }: PageProps) {
       <p className="mt-3 text-body">
         {t("home.blogSubtitle")} · {SITE_NAME}
       </p>
-      <ul className="mt-12 divide-y divide-hairline border-y border-hairline">
+      <BlogTopicSections locale={locale} />
+
+      <h2 className="mt-16 text-2xl font-semibold tracking-display-sm text-ink">
+        {t("blog.allGuidesTitle")}
+      </h2>
+      <ul className="mt-6 divide-y divide-hairline border-y border-hairline">
         {getLocalizedBlogPostsNewestFirst(locale).map((post) => (
           <li key={post.slug} className="py-8 first:pt-8">
             <Link href={`/blog/${post.slug}`} className="group block">
