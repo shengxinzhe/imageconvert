@@ -2,10 +2,6 @@ export const SITE_NAME = "HeicSave";
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://heicsave.com";
 
-/** impact.com media property verification (meta + optional body text). */
-export const IMPACT_SITE_VERIFICATION = "e0cf3e41-ceb9-4a55-b3f3-765b2cb45c55";
-export const IMPACT_SITE_VERIFICATION_TEXT = `Impact-Site-Verification: ${IMPACT_SITE_VERIFICATION}`;
-
 export const DEFAULT_JPEG_QUALITY = 0.9;
 export const DEFAULT_WEBP_QUALITY = 0.85;
 

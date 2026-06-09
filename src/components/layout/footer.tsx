@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import type { AppLocale } from "@/i18n/routing";
 import { footerGuideSlugs } from "@/lib/blog-seo-links";
 import { getLocalizedBlogPost } from "@/lib/blog-l10n";
-import { IMPACT_SITE_VERIFICATION_TEXT, SITE_NAME } from "@/lib/constants";
+import { SITE_NAME } from "@/lib/constants";
 import { getLocalizedToolList } from "@/lib/get-localized-tool";
 import { getT } from "@/lib/i18n/translations";
 
@@ -92,8 +92,7 @@ export function Footer({ locale }: { locale: AppLocale }) {
         </div>
       </div>
       <div className="border-t border-hairline px-4 py-6 text-center font-mono text-xs text-mute">
-        <p className="text-[10px] text-mute/70">{IMPACT_SITE_VERIFICATION_TEXT}</p>
-        <p className="mt-1">© {new Date().getFullYear()} {SITE_NAME}</p>
+        <p>© {new Date().getFullYear()} {SITE_NAME}</p>
       </div>
     </footer>
   );
