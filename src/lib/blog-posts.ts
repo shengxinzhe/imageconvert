@@ -1463,6 +1463,185 @@ Processing runs locally; image bytes are not uploaded to HeicSave servers for co
 
 > If Windows Explorer shows no AVIF thumbnails but Paint opens the files, install AV1/HEIF extensions, rebuild thumbcache, or convert to JPG. Guide: https://heicsave.com/blog/avif-thumbnails-not-showing-windows-explorer — tool: https://heicsave.com/avif-to-jpg`,
   },
+  {
+    slug: "heic-windows-11-uk",
+    title: "How to Open iPhone Photos on Windows 11 in the UK (2026 FAQ)",
+    description:
+      "UK guide: open iPhone HEIC photos on Windows 11 without codecs. Convert to JPG in your browser—private, no upload to servers.",
+    publishedAt: "2026-06-10",
+    readMinutes: 5,
+    content: `**Short answer:** Windows 11 in the UK often cannot preview iPhone **HEIC** photos until you install Microsoft Store codecs—or you convert to **JPG locally in your browser** with [HEIC to JPG](/heic-to-jpg). **Nothing uploads to our servers.**
+
+## Why UK Windows 11 users hit this wall
+
+iPhones sold in the UK save photos as **HEIC** by default. Windows 11 Photos may show a generic icon, Outlook may reject attachments, and HMRC or employer portals often accept **JPG only**.
+
+Installing **HEIF Image Extensions** from the Microsoft Store sometimes fixes preview—but many work laptops block Store installs.
+
+## FAQ — UK Windows 11 + iPhone HEIC
+
+### How do I open iPhone photos on Windows 11 without installing anything?
+
+1. Open [HEIC to JPG](/heic-to-jpg) in **Chrome or Edge**.
+2. Drag your .heic files into the drop zone.
+3. Click **Convert** — processing runs **in your browser** on your PC.
+4. Download JPGs that open in Photos, Word, and every UK upload form.
+
+**100% private:** your photos are not sent to HeicSave for conversion.
+
+### Does this work for NHS forms, UC uploads, or job applications?
+
+Yes. Output is standard **.jpg**, which UK government and employer portals expect. Convert before upload; keep HEIC originals on your phone if you prefer.
+
+### Is cloud upload safer than a browser converter?
+
+For personal photos, **no**. Cloud converters copy your files to a stranger's server. HeicSave decodes HEIC with WebAssembly **on your device**—better aligned with UK GDPR expectations.
+
+### Batch holiday photos from Cornwall or the Lakes?
+
+Add many files, convert once, download a **ZIP**. Desktop Chrome or Edge on Windows 11 is fastest.
+
+## Related UK guides
+
+- [Transfer iPhone photos to a Windows PC](/blog/transfer-iphone-photos-to-windows)
+- [HEIC on Windows (full guide)](/blog/heic-windows-guide)
+- [Privacy: browser-local conversion](/blog/privacy-browser-image-conversion)
+
+**Convert now:** [HEIC to JPG](/heic-to-jpg) — free, no account, no upload.`,
+  },
+  {
+    slug: "heic-windows-10-not-showing",
+    title: "Why Windows 10 Won't Show My HEIC Photos (2026 FAQ)",
+    description:
+      "Windows 10 blank HEIC thumbnails? Fix codecs—or convert iPhone HEIC to JPG in your browser without uploading photos to any server.",
+    publishedAt: "2026-06-10",
+    readMinutes: 6,
+    content: `**Short answer:** Windows 10 often cannot display **HEIC** until **HEIF codecs** are installed. If Store installs are blocked, convert to **JPG in your browser** at [HEIC to JPG](/heic-to-jpg). Files stay on your PC—**no server upload**.
+
+## Why Windows 10 shows a blank icon for HEIC
+
+iPhone photos use **HEIC** compression. Windows 10 does not ship full HEIC decode for Explorer thumbnails and older apps. You may see:
+
+- Grey tile instead of preview
+- "Unsupported" in Photos
+- Email clients refusing .heic attachments
+
+## FAQ — Windows 10 HEIC not showing
+
+### Why won't Windows 10 display my HEIC images?
+
+Missing **HEIF Image Extensions** (Microsoft Store). Corporate PCs often block them. Browser conversion sidesteps admin rights.
+
+### How do I view iPhone photos on Windows 10 without codecs?
+
+1. Open [HEIC to JPG](/heic-to-jpg) in Chrome or Edge.
+2. Select or drop .heic files.
+3. Convert locally — **JavaScript + WebAssembly in your tab**.
+4. Open JPGs in Photos, Paint, or IrfanView.
+
+### Are online converters safe for family photos?
+
+Many upload to US servers. HeicSave never receives your image bytes—conversion is **client-side only**. See [privacy guide](/blog/privacy-browser-image-conversion).
+
+### HEIC vs JPG on Windows 10 — which for sharing?
+
+Keep HEIC on iPhone for storage. Use JPG when sending to Windows users, printers, or web forms.
+
+## Related
+
+- [HEIC Windows guide](/blog/heic-windows-guide)
+- [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows)
+- [HeicSave vs cloud converters](/blog/heicsave-vs-browser-heic-converters)
+
+**Tool:** [HEIC to JPG](/heic-to-jpg)`,
+  },
+  {
+    slug: "iphone-photos-pc-without-heic",
+    title: "How to Transfer iPhone Photos to a PC Without HEIC (2026 FAQ)",
+    description:
+      "Move iPhone photos to a Windows or Mac PC as JPG—not HEIC. Browser-local conversion, private, no upload.",
+    publishedAt: "2026-06-10",
+    readMinutes: 6,
+    content: `**Short answer:** Copy photos via USB or iCloud, then convert **HEIC → JPG in your browser** at [HEIC to JPG](/heic-to-jpg). Your files never upload to our servers.
+
+## Why "without HEIC" matters
+
+HEIC is efficient on iPhone but painful on many PCs: wrong thumbnails, rejected email, broken upload forms. **JPG** is what recipients and software expect worldwide.
+
+## FAQ — iPhone photos to PC as JPG
+
+### How do I transfer iPhone photos to PC without keeping HEIC?
+
+**Option A — shoot JPG going forward:** Settings → Camera → Formats → **Most Compatible**.
+
+**Option B — convert existing HEIC:** USB copy to PC, then browser convert to JPG (batch + ZIP supported).
+
+### Can I convert on the phone before transfer?
+
+Safari on iPhone can open [HEIC to JPG](/heic-to-jpg) and convert before AirDrop or email—still **no upload**.
+
+### USB copied HEIC—what next?
+
+1. Open Chrome/Edge on the PC.
+2. Drop the folder of .heic files.
+3. Download JPG or ZIP.
+4. Move JPGs anywhere—OneDrive, USB stick, email.
+
+### Privacy for EU users (France, Germany, UK)
+
+Browser-local conversion means **no personal photos on a third-party server**—important under GDPR. We show cookie consent for ads only; images are not part of that.
+
+## Related
+
+- [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows)
+- [HEIC vs JPG](/blog/heic-vs-jpg)
+- [Privacy: browser-local](/blog/privacy-browser-image-conversion)
+
+**Convert:** [HEIC to JPG](/heic-to-jpg)`,
+  },
+  {
+    slug: "heic-iphone-photos-windows-us",
+    title: "How US Users Convert iPhone HEIC on Windows (No Upload, 2026)",
+    description:
+      "US FAQ: convert iPhone HEIC to JPG on Windows 10/11 in the browser. Private, free, batch ZIP—photos never uploaded.",
+    publishedAt: "2026-06-10",
+    readMinutes: 5,
+    content: `**Short answer:** US iPhone users hitting Windows at work or school should convert **HEIC to JPG in the browser** at [HEIC to JPG](/heic-to-jpg). Processing stays on **your PC**—we do not receive your photos.
+
+## Why this is common in the US
+
+iPhone market share is high; Windows dominates office PCs. Insurance claims, school portals, and Craigslist/Facebook Marketplace uploads often want **JPG**, not HEIC.
+
+## FAQ — US iPhone + Windows
+
+### How do Americans convert iPhone photos for Windows PCs?
+
+Use a **browser-local** converter—no iTunes codec hunt, no cloud upload:
+
+1. Visit [HEIC to JPG](/heic-to-jpg) in Chrome or Edge.
+2. Drop vacation, receipt, or ID photos (.heic).
+3. Download JPG or ZIP.
+
+### Is uploading to a "free converter" safe?
+
+Treat personal photos like ID scans: prefer tools that decode **in your browser**. Cloud uploaders copy files to unknown servers.
+
+### Batch convert 50+ photos from a trip?
+
+No fixed cap—convert in chunks if the tab slows. ZIP download keeps filenames tidy.
+
+### Mac at home, Windows at work?
+
+Convert on either machine before emailing yourself—JPG works everywhere.
+
+## Related
+
+- [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows)
+- [Best HEIC converters 2026](/blog/best-heic-converters-2026)
+- [Privacy guide](/blog/privacy-browser-image-conversion)
+
+**Start here:** [HEIC to JPG](/heic-to-jpg)`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

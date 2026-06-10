@@ -6,6 +6,10 @@ export const toolRelatedGuides: Partial<
 > = {
   "heic-to-jpg": {
     guides: [
+      "heic-windows-11-uk",
+      "heic-windows-10-not-showing",
+      "iphone-photos-pc-without-heic",
+      "heic-iphone-photos-windows-us",
       "heic-premiere-pro-import",
       "what-is-heic-file",
       "transfer-iphone-photos-to-windows",

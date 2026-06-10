@@ -54,6 +54,22 @@ export const AI_TOOL_CATALOG = [
 
 /** Editorial guides surfaced in llms.txt, schema, and AI summaries. */
 export const AI_GUIDE_CATALOG = [
+  {
+    slug: "heic-windows-11-uk",
+    title: "How to open iPhone photos on Windows 11 in the UK (FAQ)",
+  },
+  {
+    slug: "heic-windows-10-not-showing",
+    title: "Why Windows 10 won't show HEIC photos (FAQ)",
+  },
+  {
+    slug: "iphone-photos-pc-without-heic",
+    title: "Transfer iPhone photos to PC without HEIC (FAQ)",
+  },
+  {
+    slug: "heic-iphone-photos-windows-us",
+    title: "How US users convert iPhone HEIC on Windows (no upload)",
+  },
   { slug: "what-is-heic-file", title: "What is a HEIC file? (iPhone photo format explained)" },
   { slug: "heic-vs-jpg", title: "HEIC vs JPG — quality, size, and when to convert" },
   { slug: "heic-windows-guide", title: "Open and convert HEIC on Windows" },

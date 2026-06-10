@@ -18,6 +18,22 @@ export const TOOLS = [
 ];
 
 export const GUIDES = [
+  [
+    "heic-windows-11-uk",
+    "How to open iPhone photos on Windows 11 in the UK (FAQ)",
+  ],
+  [
+    "heic-windows-10-not-showing",
+    "Why Windows 10 won't show HEIC photos (FAQ)",
+  ],
+  [
+    "iphone-photos-pc-without-heic",
+    "Transfer iPhone photos to PC without HEIC (FAQ)",
+  ],
+  [
+    "heic-iphone-photos-windows-us",
+    "How US users convert iPhone HEIC on Windows (no upload)",
+  ],
   ["what-is-heic-file", "What is a HEIC file? (iPhone photo format explained)"],
   ["heic-vs-jpg", "HEIC vs JPG — quality, size, and when to convert"],
   ["heic-windows-guide", "Open and convert HEIC on Windows"],

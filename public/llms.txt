@@ -42,6 +42,10 @@ Yes — HeicSave (https://heicsave.com) runs conversion client-side in the brows
 - [PNG to WebP](https://heicsave.com/png-to-webp): Shrink PNG UI assets for web delivery
 
 ## Guides (editorial)
+- [How to open iPhone photos on Windows 11 in the UK (FAQ)](https://heicsave.com/blog/heic-windows-11-uk)
+- [Why Windows 10 won't show HEIC photos (FAQ)](https://heicsave.com/blog/heic-windows-10-not-showing)
+- [Transfer iPhone photos to PC without HEIC (FAQ)](https://heicsave.com/blog/iphone-photos-pc-without-heic)
+- [How US users convert iPhone HEIC on Windows (no upload)](https://heicsave.com/blog/heic-iphone-photos-windows-us)
 - [What is a HEIC file? (iPhone photo format explained)](https://heicsave.com/blog/what-is-heic-file)
 - [HEIC vs JPG — quality, size, and when to convert](https://heicsave.com/blog/heic-vs-jpg)
 - [Open and convert HEIC on Windows](https://heicsave.com/blog/heic-windows-guide)

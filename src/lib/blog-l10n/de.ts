@@ -1340,4 +1340,47 @@ Verarbeitung lokal; Bildbytes werden nicht zur Konvertierung auf HeicSave-Server
 
 > Zeigt der Windows-Explorer keine AVIF-Miniaturen, Paint aber öffnet die Dateien: AV1/HEIF-Erweiterungen installieren, thumbcache leeren oder in JPG konvertieren. Ratgeber: https://heicsave.com/blog/avif-thumbnails-not-showing-windows-explorer — Tool: https://heicsave.com/avif-to-jpg`,
   },
+  "heic-windows-10-not-showing": {
+    title: "Warum zeigt Windows 10 meine HEIC-Bilder nicht an? (FAQ 2026)",
+    description:
+      "Windows 10 zeigt leere HEIC-Vorschaubilder? Codecs installieren — oder iPhone-HEIC im Browser in JPG umwandeln, ohne Upload auf Server.",
+    content: `**Kurzantwort:** Windows 10 kann **HEIC** oft erst nach **HEIF-Codecs** aus dem Microsoft Store anzeigen. Wenn der Store blockiert ist: **HEIC → JPG im Browser** mit [HEIC in JPG](/heic-to-jpg). Dateien bleiben auf Ihrem PC — **kein Server-Upload**.
+
+## Warum Windows 10 HEIC nicht zeigt
+
+iPhone-Fotos nutzen **HEIC**. Windows 10 liefert kein vollständiges HEIC-Decode für Explorer-Vorschau und ältere Programme. Typisch:
+
+- Graues Symbol statt Vorschau
+- „Nicht unterstützt“ in Fotos
+- E-Mail-Clients lehnen .heic ab
+
+## FAQ — Windows 10 + HEIC
+
+### Warum kann Windows 10 meine HEIC-Bilder nicht anzeigen?
+
+Fehlende **HEIF Image Extensions** (Microsoft Store). Firmen-PCs blockieren das oft. Browser-Konvertierung braucht keine Admin-Rechte.
+
+### Wie öffne ich iPhone-Fotos auf Windows 10 ohne Codecs?
+
+1. [HEIC in JPG](/heic-to-jpg) in Chrome oder Edge öffnen.
+2. .heic-Dateien ablegen.
+3. Lokal konvertieren — **JavaScript + WebAssembly im Tab**.
+4. JPGs in Fotos, Paint oder IrfanView öffnen.
+
+### Sind Online-Konverter für Familienfotos sicher?
+
+Viele laden auf US-Server hoch. HeicSave erhält Ihre Bildbytes nicht — Konvertierung **nur clientseitig**. Siehe [Datenschutz-Leitfaden](/blog/privacy-browser-image-conversion).
+
+### HEIC oder JPG auf Windows 10 zum Teilen?
+
+HEIC auf dem iPhone behalten. JPG nutzen für Windows-Nutzer, Druckereien und Web-Formulare.
+
+## Verwandte Guides
+
+- [HEIC unter Windows](/blog/heic-windows-guide)
+- [iPhone-Fotos auf Windows übertragen](/blog/transfer-iphone-photos-to-windows)
+- [HeicSave vs. Cloud-Konverter](/blog/heicsave-vs-browser-heic-converters)
+
+**Tool:** [HEIC in JPG](/heic-to-jpg)`,
+  },
 };

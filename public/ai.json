@@ -70,6 +70,26 @@
   ],
   "guides": [
     {
+      "slug": "heic-windows-11-uk",
+      "title": "How to open iPhone photos on Windows 11 in the UK (FAQ)",
+      "url": "https://heicsave.com/blog/heic-windows-11-uk"
+    },
+    {
+      "slug": "heic-windows-10-not-showing",
+      "title": "Why Windows 10 won't show HEIC photos (FAQ)",
+      "url": "https://heicsave.com/blog/heic-windows-10-not-showing"
+    },
+    {
+      "slug": "iphone-photos-pc-without-heic",
+      "title": "Transfer iPhone photos to PC without HEIC (FAQ)",
+      "url": "https://heicsave.com/blog/iphone-photos-pc-without-heic"
+    },
+    {
+      "slug": "heic-iphone-photos-windows-us",
+      "title": "How US users convert iPhone HEIC on Windows (no upload)",
+      "url": "https://heicsave.com/blog/heic-iphone-photos-windows-us"
+    },
+    {
       "slug": "what-is-heic-file",
       "title": "What is a HEIC file? (iPhone photo format explained)",
       "url": "https://heicsave.com/blog/what-is-heic-file"

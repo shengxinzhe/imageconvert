@@ -31,6 +31,10 @@ function localePath(path, locale) {
 const TOOL_PATHS = new Set(TOOL_SLUGS.map((slug) => localePath(`/${slug}`, DEFAULT_LOCALE)));
 
 const BLOG_SLUGS = [
+  "heic-windows-11-uk",
+  "heic-windows-10-not-showing",
+  "iphone-photos-pc-without-heic",
+  "heic-iphone-photos-windows-us",
   "what-is-heic-file",
   "why-iphone-uses-heic",
   "heic-vs-jpg",
@@ -55,16 +59,32 @@ const BLOG_SLUGS = [
   "heic-premiere-pro-import",
 ];
 
-/** de/fr blog slugs with real translations — sync with src/lib/blog-l10n/de.ts keys */
-const BLOG_SLUGS_L10N = new Set(BLOG_SLUGS);
+/** de/fr blog slugs with real translations — sync with src/lib/blog-l10n/de.ts / fr.ts keys */
+const BLOG_SLUGS_DE_L10N = new Set(
+  BLOG_SLUGS.filter(
+    (s) =>
+      s !== "heic-windows-11-uk" &&
+      s !== "heic-iphone-photos-windows-us" &&
+      s !== "iphone-photos-pc-without-heic"
+  )
+);
+const BLOG_SLUGS_FR_L10N = new Set(
+  BLOG_SLUGS.filter(
+    (s) =>
+      s !== "heic-windows-11-uk" &&
+      s !== "heic-iphone-photos-windows-us" &&
+      s !== "heic-windows-10-not-showing"
+  )
+);
 
 function isUntranslatedLocaleBlogPath(path) {
-  for (const locale of ["de", "fr"]) {
-    const prefix = `/${locale}/blog/`;
-    if (path.startsWith(prefix)) {
-      const slug = path.slice(prefix.length).replace(/\/$/, "");
-      if (!BLOG_SLUGS_L10N.has(slug)) return true;
-    }
+  if (path.startsWith("/de/blog/")) {
+    const slug = path.slice("/de/blog/".length).replace(/\/$/, "");
+    return !BLOG_SLUGS_DE_L10N.has(slug);
+  }
+  if (path.startsWith("/fr/blog/")) {
+    const slug = path.slice("/fr/blog/".length).replace(/\/$/, "");
+    return !BLOG_SLUGS_FR_L10N.has(slug);
   }
   return false;
 }
@@ -187,7 +207,9 @@ module.exports = {
           });
         }
       } else {
-        for (const slug of BLOG_SLUGS_L10N) {
+        const l10nSlugs =
+          locale === "de" ? BLOG_SLUGS_DE_L10N : BLOG_SLUGS_FR_L10N;
+        for (const slug of l10nSlugs) {
           entries.push({
             loc: localePath(`/blog/${slug}`, locale),
             changefreq: "monthly",

@@ -11,6 +11,10 @@ import type { ToolSlug } from "@/lib/tools-config";
 /** Topic clusters for related-post internal links (indexing / crawl paths). */
 export const BLOG_CLUSTERS = {
   heic: [
+    "heic-windows-11-uk",
+    "heic-windows-10-not-showing",
+    "iphone-photos-pc-without-heic",
+    "heic-iphone-photos-windows-us",
     "what-is-heic-file",
     "why-iphone-uses-heic",
     "heic-vs-jpg",
@@ -49,6 +53,10 @@ for (const [cluster, slugs] of Object.entries(BLOG_CLUSTERS)) {
 
 /** Primary converter CTA per article (HTML footer + crawl path to money pages). */
 export const blogPrimaryTool: Partial<Record<string, ToolSlug>> = {
+  "heic-windows-11-uk": "heic-to-jpg",
+  "heic-windows-10-not-showing": "heic-to-jpg",
+  "iphone-photos-pc-without-heic": "heic-to-jpg",
+  "heic-iphone-photos-windows-us": "heic-to-jpg",
   "what-is-heic-file": "heic-to-jpg",
   "why-iphone-uses-heic": "heic-to-jpg",
   "heic-vs-jpg": "heic-to-jpg",

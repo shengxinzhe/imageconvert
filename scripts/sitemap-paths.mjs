@@ -20,6 +20,10 @@ export const TOOL_SLUGS = [
 ];
 
 export const BLOG_SLUGS = [
+  "heic-windows-11-uk",
+  "heic-windows-10-not-showing",
+  "iphone-photos-pc-without-heic",
+  "heic-iphone-photos-windows-us",
   "what-is-heic-file",
   "why-iphone-uses-heic",
   "heic-vs-jpg",
@@ -44,8 +48,19 @@ export const BLOG_SLUGS = [
   "heic-premiere-pro-import",
 ];
 
-/** All de/fr blog slugs with real translations (sync with blog-l10n/de.ts keys). */
-export const BLOG_SLUGS_L10N = BLOG_SLUGS;
+/** de/fr blog slugs with real translations (sync with blog-l10n/de.ts / fr.ts keys). */
+export const BLOG_SLUGS_DE_L10N = BLOG_SLUGS.filter(
+  (s) =>
+    s !== "heic-windows-11-uk" &&
+    s !== "heic-iphone-photos-windows-us" &&
+    s !== "iphone-photos-pc-without-heic"
+);
+export const BLOG_SLUGS_FR_L10N = BLOG_SLUGS.filter(
+  (s) =>
+    s !== "heic-windows-11-uk" &&
+    s !== "heic-iphone-photos-windows-us" &&
+    s !== "heic-windows-10-not-showing"
+);
 
 export function localePath(path, locale) {
   const normalized = path.startsWith("/") ? path : `/${path}`;
@@ -70,7 +85,9 @@ export function getIndexNowPaths() {
         paths.add(localePath(`/blog/${slug}`, DEFAULT_LOCALE));
       }
     } else {
-      for (const slug of BLOG_SLUGS_L10N) {
+      const l10nSlugs =
+        locale === "de" ? BLOG_SLUGS_DE_L10N : BLOG_SLUGS_FR_L10N;
+      for (const slug of l10nSlugs) {
         paths.add(localePath(`/blog/${slug}`, locale));
       }
     }

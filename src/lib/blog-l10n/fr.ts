@@ -1340,4 +1340,45 @@ Traitement local ; les octets image ne sont pas envoyés sur les serveurs HeicSa
 
 > Si l’Explorateur Windows n’affiche pas de miniatures AVIF mais que Paint ouvre les fichiers : installer les extensions AV1/HEIF, vider thumbcache ou convertir en JPG. Guide : https://heicsave.com/blog/avif-thumbnails-not-showing-windows-explorer — outil : https://heicsave.com/avif-to-jpg`,
   },
+  "iphone-photos-pc-without-heic": {
+    title: "Transférer des photos iPhone sur un PC sans HEIC (FAQ 2026)",
+    description:
+      "Copier des photos iPhone sur PC en JPG, pas en HEIC. Conversion locale dans le navigateur, privée, sans envoi sur serveur.",
+    content: `**Réponse courte :** Copiez via USB ou iCloud, puis convertissez **HEIC → JPG dans le navigateur** sur [HEIC en JPG](/heic-to-jpg). Vos fichiers ne sont **jamais envoyés** sur nos serveurs.
+
+## Pourquoi « sans HEIC »
+
+Le HEIC est efficace sur iPhone mais pénible sur beaucoup de PC : miniatures incorrectes, e-mails refusés, formulaires qui échouent. Le **JPG** est ce que les logiciels et destinataires attendent.
+
+## FAQ — photos iPhone vers PC en JPG
+
+### Comment transférer des photos iPhone sur PC sans garder le HEIC ?
+
+**Option A — JPG à l’avenir :** Réglages → Appareil photo → Formats → **Plus compatible**.
+
+**Option B — convertir l’existant :** Copie USB sur le PC, puis conversion navigateur en JPG (lot + ZIP).
+
+### Puis-je convertir sur le téléphone avant le transfert ?
+
+Safari sur iPhone peut ouvrir [HEIC en JPG](/heic-to-jpg) et convertir avant AirDrop ou e-mail — toujours **sans upload**.
+
+### HEIC copiés en USB — et ensuite ?
+
+1. Ouvrir Chrome/Edge sur le PC.
+2. Déposer le dossier .heic.
+3. Télécharger JPG ou ZIP.
+4. Placer les JPG où vous voulez — OneDrive, clé USB, e-mail.
+
+### Confidentialité (France, UE, RGPD)
+
+La conversion **dans le navigateur** évite d’envoyer des photos personnelles sur un serveur tiers. Les cookies concernent la publicité uniquement ; les images ne font pas partie de cela.
+
+## Guides associés
+
+- [Transférer des photos iPhone vers Windows](/blog/transfer-iphone-photos-to-windows)
+- [HEIC vs JPG](/blog/heic-vs-jpg)
+- [Confidentialité : conversion locale](/blog/privacy-browser-image-conversion)
+
+**Convertir :** [HEIC en JPG](/heic-to-jpg)`,
+  },
 };
