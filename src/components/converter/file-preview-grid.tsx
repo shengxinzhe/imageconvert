@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ImageIcon, Loader2, Plus, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
@@ -58,6 +58,10 @@ async function bitmapToDataUrl(bitmap: ImageBitmap): Promise<string | null> {
   return canvas.toDataURL("image/jpeg", 0.85);
 }
 
+function fileKey(file: File): string {
+  return `${file.name}:${file.size}:${file.lastModified}`;
+}
+
 async function tryPreviewUrl(file: File): Promise<string | null> {
   if (isHeicFile(file)) {
     try {
@@ -83,27 +87,43 @@ export function FilePreviewGrid({ files, onRemove, onAddMore, disabled }: FilePr
     : routing.defaultLocale) as AppLocale;
   const t = getT(locale);
   const [previews, setPreviews] = useState<PreviewEntry[]>([]);
+  const previewCache = useRef(new Map<string, string | null>());
+  const filesRef = useRef(files);
+  filesRef.current = files;
+
+  const syncPreviewsFromCache = (currentFiles: File[]) =>
+    currentFiles.map((file) => {
+      const key = fileKey(file);
+      const cached = previewCache.current.get(key);
+      return {
+        key,
+        url: cached ?? null,
+        loading: cached === undefined,
+      };
+    });
 
   useEffect(() => {
     let cancelled = false;
 
-    setPreviews(
-      files.map((file, index) => ({
-        key: `${file.name}-${file.size}-${index}`,
-        url: null,
-        loading: true,
-      })),
-    );
+    const activeKeys = new Set(files.map(fileKey));
+    Array.from(previewCache.current.keys()).forEach((key) => {
+      if (!activeKeys.has(key)) previewCache.current.delete(key);
+    });
+
+    setPreviews(syncPreviewsFromCache(files));
+
+    const pending = files.filter((file) => !previewCache.current.has(fileKey(file)));
+    if (!pending.length) return;
 
     (async () => {
-      const next = await Promise.all(
-        files.map(async (file, index) => ({
-          key: `${file.name}-${file.size}-${index}`,
-          url: await tryPreviewUrl(file),
-          loading: false,
-        })),
-      );
-      if (!cancelled) setPreviews(next);
+      for (const file of pending) {
+        if (cancelled) return;
+        const key = fileKey(file);
+        const url = await tryPreviewUrl(file);
+        previewCache.current.set(key, url);
+        if (cancelled) return;
+        setPreviews(syncPreviewsFromCache(filesRef.current));
+      }
     })();
 
     return () => {
@@ -134,10 +154,11 @@ export function FilePreviewGrid({ files, onRemove, onAddMore, disabled }: FilePr
       </div>
       <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
         {files.map((file, index) => {
-          const preview = previews[index];
+          const key = fileKey(file);
+          const preview = previews.find((entry) => entry.key === key);
           return (
             <li
-              key={`${file.name}-${file.size}-${index}`}
+              key={key}
               className="relative overflow-hidden rounded-vercel border border-hairline bg-canvas-soft"
             >
               <div className="aspect-square flex items-center justify-center bg-canvas">
