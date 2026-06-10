@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic";
+import { ImageConverter } from "@/components/converter/image-converter";
 import { getT } from "@/lib/i18n/translations";
 import { Lock, Zap } from "lucide-react";
 import { AdSlot } from "@/components/ads/ad-slot";
@@ -13,19 +13,6 @@ import type { ToolConfig, ToolSlug } from "@/lib/tools-config";
 import { toolRelatedGuides } from "@/lib/tool-related-guides";
 import { cn } from "@/lib/utils";
 
-const ImageConverter = dynamic(
-  () =>
-    import("@/components/converter/image-converter").then((m) => ({
-      default: m.ImageConverter,
-    })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-48 animate-pulse rounded-vercel-lg bg-canvas-soft-2" />
-    ),
-  }
-);
-
 export async function ToolLandingPage({
   tool,
   locale,
@@ -37,67 +24,49 @@ export async function ToolLandingPage({
   const audience = getToolAudience(tool.slug);
   const style = audienceStyles[audience];
   const guideConfig = toolRelatedGuides[tool.slug as ToolSlug];
+  const isHeic = audience === "heic";
 
   return (
     <article>
       <ToolJsonLd tool={tool} locale={locale} />
       <section className={cn("border-b border-hairline", style.hero)}>
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:px-6">
-          <span
-            className={cn(
-              "inline-flex rounded-full border px-3 py-1 text-xs font-medium",
-              style.badge
-            )}
-          >
-            {style.label}
-          </span>
-          <h1 className="mt-4 max-w-3xl text-3xl font-semibold tracking-display-sm text-ink md:text-[2.5rem] md:leading-tight">
-            {tool.h1}
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-body">{tool.heroSubtitle}</p>
+        <div className="mx-auto max-w-6xl px-4 py-8 lg:px-6 lg:py-10">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-start">
+            <div className="min-w-0">
+              <h1 className="text-balance text-2xl font-semibold tracking-display-sm text-ink md:text-[2rem] md:leading-tight">
+                {tool.h1}
+              </h1>
+              <p className="mt-2 text-sm text-body md:text-base">
+                {isHeic ? t("tool.privacyTagline") : tool.heroSubtitle}
+              </p>
 
-          <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_260px]">
-            <div className={cn("p-6", style.card)}>
-              <ImageConverter
-                from={tool.from}
-                to={tool.to}
-                toolSlug={tool.slug}
-                audience={audience}
-                postConvertGuideSlug={guideConfig?.postConvertGuide}
-              />
-              <ul className="mt-6 flex flex-col gap-3 border-t border-hairline pt-6 text-sm text-body lg:hidden">
-                <li className="flex gap-3">
-                  <Lock className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
+              <div className="mt-5">
+                <ImageConverter
+                  from={tool.from}
+                  to={tool.to}
+                  toolSlug={tool.slug}
+                  audience={audience}
+                  postConvertGuideSlug={guideConfig?.postConvertGuide}
+                />
+              </div>
+
+              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-body md:text-sm">
+                <li className="flex items-center gap-2">
+                  <Lock className={cn("h-4 w-4 shrink-0", style.accentIcon)} aria-hidden />
                   {t("tool.filesStay")}
                 </li>
-                <li className="flex gap-3">
-                  <Zap className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
+                <li className="flex items-center gap-2">
+                  <Zap className={cn("h-4 w-4 shrink-0", style.accentIcon)} aria-hidden />
                   {t("tool.noSignup")}
                 </li>
               </ul>
             </div>
             <aside className="hidden lg:block">
               <AdSlot position="sidebar" />
-              <ul className="mt-6 space-y-4 text-sm text-body">
-                <li className="flex gap-3">
-                  <Lock className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
-                  {t("tool.filesStay")}
-                </li>
-                <li className="flex gap-3">
-                  <Zap className={cn("h-5 w-5 shrink-0", style.accentIcon)} aria-hidden />
-                  {t("tool.noSignup")}
-                </li>
-              </ul>
             </aside>
           </div>
         </div>
       </section>
-
-      {hasAdSenseDisplayUnits() ? (
-        <div className="content-band">
-          <AdSlot position="in-content" />
-        </div>
-      ) : null}
 
       <section className={cn("mx-auto max-w-3xl px-4 py-12 lg:px-6", style.prose)}>
         <h2>{tool.whyConvert.title}</h2>
@@ -148,8 +117,13 @@ export async function ToolLandingPage({
             </details>
           ))}
         </div>
-
       </section>
+
+      {hasAdSenseDisplayUnits() ? (
+        <div className="content-band border-t border-hairline">
+          <AdSlot position="in-content" />
+        </div>
+      ) : null}
 
       <section className="mx-auto max-w-6xl border-t border-hairline px-4 py-12 lg:px-6">
         <h2 className="text-2xl font-semibold tracking-display-sm text-ink">

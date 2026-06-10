@@ -10,14 +10,11 @@ import {
   trackToolConvertSuccess,
   trackToolDownloadZip,
 } from "@/lib/analytics-events";
-import { BrowserCompatHint } from "@/components/converter/browser-compat-hint";
-import { ExifControl } from "@/components/converter/exif-control";
+import { ConverterOptionsPanel } from "@/components/converter/converter-options-panel";
+import { ConverterPrivacyBanner } from "@/components/converter/converter-privacy-banner";
+import { ConverterStickyDownloadBar } from "@/components/converter/converter-sticky-download-bar";
 import { FilePreviewGrid } from "@/components/converter/file-preview-grid";
-import { PrivacyVerifyHint } from "@/components/converter/privacy-verify-hint";
-import {
-  maxWidthForPreset,
-  ResizeControl,
-} from "@/components/converter/resize-control";
+import { maxWidthForPreset } from "@/components/converter/resize-control";
 import {
   ConversionError,
   formatConversionError,
@@ -36,10 +33,9 @@ import { buildZipBlob, downloadBlob } from "@/lib/download-zip";
 import { Link } from "@/i18n/navigation";
 import { getLocalizedBlogPost } from "@/lib/blog-l10n";
 import { getT } from "@/lib/i18n/translations";
-import { QualityControl } from "@/components/converter/quality-control";
 import { Button } from "@/components/ui/button";
 import type { ResizePresetId } from "@/lib/constants";
-import { Archive, Download, FolderOpen, Loader2, Upload, X } from "lucide-react";
+import { Download, FolderOpen, Loader2, Upload, X } from "lucide-react";
 import type { ToolAudience } from "@/lib/design-variants";
 import { cn } from "@/lib/utils";
 import { collectFilesFromDataTransfer } from "@/lib/collect-drop-files";
@@ -294,28 +290,16 @@ export function ImageConverter({
     ? getLocalizedBlogPost(postConvertGuideSlug, locale)
     : undefined;
 
+  const progressPercent =
+    progress && progress.total > 0
+      ? Math.round((progress.current / progress.total) * 100)
+      : 0;
+
+  const openFilePicker = () => fileInputRef.current?.click();
+
   return (
     <div className="space-y-4">
-      <BrowserCompatHint from={from} />
-      <QualityControl
-        to={to}
-        value={qualityPercent}
-        onChange={setQualityPercent}
-        disabled={converting}
-      />
-      <ResizeControl
-        value={resizePreset}
-        onChange={setResizePreset}
-        disabled={converting}
-      />
-      {showExif ? (
-        <ExifControl
-          checked={preserveExif}
-          onChange={setPreserveExif}
-          disabled={converting}
-        />
-      ) : null}
-      <PrivacyVerifyHint />
+      <ConverterPrivacyBanner compact isDev={isDev} />
 
       <div
         onDragOver={(e) => {
@@ -325,7 +309,7 @@ export function ImageConverter({
         onDragLeave={() => setDragOver(false)}
         onDrop={onDrop}
         className={cn(
-          "relative rounded-vercel border-2 border-dashed p-10 text-center transition-colors",
+          "relative rounded-vercel-lg border-2 border-dashed px-4 py-8 text-center transition-colors sm:py-10",
           dragOver
             ? isDev
               ? "border-[#5e6ad2] bg-[#f5f5ff]"
@@ -333,9 +317,14 @@ export function ImageConverter({
             : "border-hairline bg-canvas-soft",
         )}
       >
-        <Upload className="mx-auto h-8 w-8 text-mute" aria-hidden />
-        <p className="mt-4 text-sm font-medium text-ink">{t("converter.dropTitle")}</p>
-        <p className="mt-1 font-mono text-xs text-mute">{t("converter.dropHint")}</p>
+        <Upload
+          className={cn("mx-auto text-mute", isDev ? "h-10 w-10" : "h-12 w-12")}
+          aria-hidden
+        />
+        <p className="mt-4 text-base font-medium text-ink sm:text-lg">
+          {t("converter.dropTitle")}
+        </p>
+        <p className="mt-1 text-xs text-body sm:text-sm">{t("converter.dropHint")}</p>
         <input
           ref={fileInputRef}
           type="file"
@@ -363,19 +352,22 @@ export function ImageConverter({
             onChange={onFileInputChange}
           />
         ) : null}
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-2">
+        <div className="mx-auto mt-6 flex max-w-md flex-col gap-2">
           <Button
             type="button"
-            variant="secondary"
+            variant={isDev ? "developer" : "primary"}
+            size="lg"
+            className="w-full"
             disabled={converting || dropBusy}
-            onClick={() => fileInputRef.current?.click()}
+            onClick={openFilePicker}
           >
-            {t("converter.browse")}
+            {t("converter.selectImages")}
           </Button>
           {!iosDevice ? (
             <Button
               type="button"
               variant="secondary"
+              className="w-full sm:w-auto sm:self-center"
               disabled={converting || dropBusy}
               onClick={() => folderInputRef.current?.click()}
             >
@@ -393,8 +385,49 @@ export function ImageConverter({
       </div>
 
       {files.length > 0 && (
-        <FilePreviewGrid files={files} onRemove={removeFile} disabled={converting} />
+        <FilePreviewGrid
+          files={files}
+          onRemove={removeFile}
+          onAddMore={openFilePicker}
+          disabled={converting || dropBusy}
+        />
       )}
+
+      {converting && progress ? (
+        <div className="space-y-2" role="status" aria-live="polite">
+          <div className="flex items-center justify-between text-xs text-body">
+            <span>{t("converter.progressLabel")}</span>
+            <span className="font-mono text-ink">
+              {t("converter.convertingProgress", {
+                current: progress.current,
+                total: progress.total,
+              })}
+            </span>
+          </div>
+          <div
+            className="h-2 overflow-hidden rounded-full bg-canvas-soft"
+            aria-hidden
+          >
+            <div
+              className={cn(
+                "h-full rounded-full transition-all duration-300",
+                isDev ? "bg-[#5e6ad2]" : "bg-ink"
+              )}
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
+        </div>
+      ) : null}
+
+      {results.length > 0 ? (
+        <ConverterStickyDownloadBar
+          resultCount={results.length}
+          onDownloadZip={downloadZip}
+          onDownloadFirst={() => results[0] && download(results[0])}
+          zipping={zipping}
+          isDev={isDev}
+        />
+      ) : null}
 
       {softWarnings.length > 0 && (
         <div
@@ -429,7 +462,8 @@ export function ImageConverter({
           onClick={convertAll}
           disabled={!files.length || converting}
           variant={isDev ? "developer" : "primary"}
-          className="min-w-[140px]"
+          size="lg"
+          className="min-w-[160px] flex-1 sm:flex-none"
         >
           {converting ? (
             <>
@@ -455,17 +489,14 @@ export function ImageConverter({
 
       {results.length > 0 && (
         <div className="space-y-3">
-          <div
-            className="rounded-vercel border border-emerald-200 bg-emerald-50 px-3 py-2.5 text-sm text-emerald-950"
-            role="status"
-          >
-            {results.length === 1
-              ? t("converter.successOne")
-              : t("converter.successMany", { count: results.length })}
-            {failedFiles.length > 0
-              ? ` ${t("converter.partialSuccess", { failed: failedFiles.length })}`
-              : null}
-          </div>
+          {failedFiles.length > 0 ? (
+            <p
+              className="rounded-vercel border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-950"
+              role="status"
+            >
+              {t("converter.partialSuccess", { failed: failedFiles.length })}
+            </p>
+          ) : null}
           {postConvertGuide ? (
             <p className="text-sm text-body">
               {t("converter.successGuidePrefix")}{" "}
@@ -477,26 +508,7 @@ export function ImageConverter({
               </Link>
             </p>
           ) : null}
-          {results.length > 1 && (
-            <Button
-              variant="secondary"
-              onClick={downloadZip}
-              disabled={zipping || converting}
-              className="w-full sm:w-auto"
-            >
-              {zipping ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  {t("converter.buildingZip")}
-                </>
-              ) : (
-                <>
-                  <Archive className="mr-2 h-4 w-4" />
-                  {t("converter.downloadZip", { count: results.length })}
-                </>
-              )}
-            </Button>
-          )}
+          <p className="text-sm font-medium text-ink">{t("converter.resultsHeading")}</p>
           <ul className="space-y-2">
             {results.map((r) => (
               <li
@@ -522,7 +534,7 @@ export function ImageConverter({
         </div>
       )}
 
-      {failedFiles.length > 0 && (
+      {failedFiles.length > 0 ? (
         <div className="space-y-2">
           <p className="text-sm font-medium text-[var(--error)]">
             {t("converter.failedHeading", { count: failedFiles.length })}
@@ -536,7 +548,20 @@ export function ImageConverter({
             ))}
           </ul>
         </div>
-      )}
+      ) : null}
+
+      <ConverterOptionsPanel
+        from={from}
+        to={to}
+        showExif={showExif}
+        qualityPercent={qualityPercent}
+        onQualityChange={setQualityPercent}
+        resizePreset={resizePreset}
+        onResizeChange={setResizePreset}
+        preserveExif={preserveExif}
+        onPreserveExifChange={setPreserveExif}
+        disabled={converting}
+      />
     </div>
   );
 }

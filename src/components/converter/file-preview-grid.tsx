@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ImageIcon, X } from "lucide-react";
+import { ImageIcon, Plus, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
@@ -10,6 +11,7 @@ import { getT } from "@/lib/i18n/translations";
 interface FilePreviewGridProps {
   files: File[];
   onRemove: (index: number) => void;
+  onAddMore?: () => void;
   disabled?: boolean;
 }
 
@@ -40,7 +42,7 @@ async function tryPreviewUrl(file: File): Promise<string | null> {
   }
 }
 
-export function FilePreviewGrid({ files, onRemove, disabled }: FilePreviewGridProps) {
+export function FilePreviewGrid({ files, onRemove, onAddMore, disabled }: FilePreviewGridProps) {
   const params = useParams();
   const locale = (routing.locales.includes(params.locale as AppLocale)
     ? params.locale
@@ -70,9 +72,23 @@ export function FilePreviewGrid({ files, onRemove, disabled }: FilePreviewGridPr
 
   return (
     <div className="space-y-2">
-      <p className="text-sm font-medium text-ink">
-        {t("converter.previewHeading", { count: files.length })}
-      </p>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-sm font-medium text-ink">
+          {t("converter.previewHeading", { count: files.length })}
+        </p>
+        {onAddMore ? (
+          <Button
+            type="button"
+            variant="secondary"
+            size="sm"
+            disabled={disabled}
+            onClick={onAddMore}
+          >
+            <Plus className="mr-1.5 h-4 w-4" aria-hidden />
+            {t("converter.addMore")}
+          </Button>
+        ) : null}
+      </div>
       <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
         {files.map((file, index) => {
           const preview = previews[index];
