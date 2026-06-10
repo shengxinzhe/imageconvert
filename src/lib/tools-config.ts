@@ -60,6 +60,8 @@ export const tools: Record<ToolSlug, ToolConfig> = {
       "heic to jpg free",
       "heic to jpeg",
       "batch heic to jpg",
+      "open iphone photos on windows 11",
+      "iphone photos to pc jpg",
     ],
     heroSubtitle: "Convert iPhone HEIC photos to JPG instantly in your browser",
     whyConvert: {
@@ -128,6 +130,11 @@ export const tools: Record<ToolSlug, ToolConfig> = {
         question: "HEIC vs JPG — which should I use?",
         answer:
           "Keep HEIC on iPhone for storage. Use JPG when sharing with others, uploading to websites, or using non-Apple software.",
+      },
+      {
+        question: "How to open iPhone photos on Windows 11 in the UK?",
+        answer:
+          "Windows 11 often needs HEIF codecs from the Microsoft Store before Photos opens .heic files. Skip that install: open HeicSave in Chrome or Edge, drop your iPhone HEIC photos, convert to JPG in your browser, and download files that open in Photos, Outlook, and every UK workplace app—nothing is uploaded to our servers.",
       },
     ],
     relatedSlugs: related("heic-to-jpg"),

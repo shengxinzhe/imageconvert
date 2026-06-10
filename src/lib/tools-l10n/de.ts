@@ -15,6 +15,8 @@ const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
       "heic zu jpg konverter",
       "heic jpg kostenlos",
       "heic stapel konvertieren",
+      "heic datei öffnen windows",
+      "iphone fotos auf pc übertragen jpg",
     ],
     heroSubtitle: "iPhone-HEIC-Fotos sofort im Browser in JPG konvertieren",
     whyConvert: {
@@ -55,6 +57,11 @@ const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
         question: "HEIC vs. JPG — was wählen?",
         answer:
           "HEIC auf dem iPhone behalten. Für Teilen außerhalb von Apple: JPG.",
+      },
+      {
+        question: "Warum kann Windows 10 meine HEIC-Bilder nicht anzeigen?",
+        answer:
+          "Windows 10 zeigt HEIC oft nur mit HEIF-Codecs aus dem Microsoft Store. Ohne Admin-Rechte oder auf Firmen-PCs fehlen die oft. Öffnen Sie diese Seite in Chrome oder Edge, ziehen Sie die .heic-Dateien hinein und laden Sie JPGs herunter — die Konvertierung läuft lokal im Browser, ohne Upload auf unsere Server.",
       },
     ],
   },

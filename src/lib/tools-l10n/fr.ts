@@ -15,6 +15,8 @@ const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
       "heic jpg gratuit",
       "heic sans envoi",
       "convertir heic lot",
+      "fichier heic gratuit",
+      "ouvrir photo iphone sur pc",
     ],
     heroSubtitle: "Convertissez les photos HEIC de l'iPhone en JPG instantanément dans le navigateur",
     whyConvert: {
@@ -55,6 +57,11 @@ const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
         question: "HEIC ou JPG ?",
         answer:
           "Gardez HEIC sur iPhone. Passez en JPG pour partager hors écosystème Apple.",
+      },
+      {
+        question: "Comment transférer des photos iPhone sur un PC sans HEIC ?",
+        answer:
+          "Branchez l’iPhone ou utilisez iCloud, puis convertissez les .heic en JPG ici dans Chrome ou Edge. Les fichiers restent sur votre appareil pendant la conversion — aucun envoi vers nos serveurs. Téléchargez les JPG et copiez-les sur le PC : Photos, Outlook et les formulaires en ligne les acceptent.",
       },
     ],
   },

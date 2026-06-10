@@ -186,6 +186,7 @@
   },
   "converter": {
     "selectImages": "Bilder auswählen",
+    "uploadTrustLine": "100% Sicher. Konvertierung im Browser — Ihre Fotos werden niemals auf unsere Server hochgeladen.",
     "privacyBannerTitle": "Private Konvertierung — kein Upload",
     "privacyBannerBody": "Anders als Cloud-Konverter bleiben Dateien auf Ihrem Gerät. HeicSave hat keinen Server-Endpunkt für Ihre Bilder.",
     "privacyBannerTitleDev": "Browser-lokal — kein Upload",

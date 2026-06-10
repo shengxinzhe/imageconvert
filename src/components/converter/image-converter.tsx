@@ -379,6 +379,9 @@ export function ImageConverter({
               {t("converter.browseFolder")}
             </Button>
           ) : null}
+          <p className="mt-1 text-center text-xs leading-snug text-body sm:text-sm">
+            {t("converter.uploadTrustLine")}
+          </p>
         </div>
         {dropBusy ? (
           <p className="mt-3 flex items-center justify-center gap-2 text-xs text-mute">
