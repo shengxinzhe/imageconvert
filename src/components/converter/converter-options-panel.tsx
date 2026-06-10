@@ -48,7 +48,7 @@ export function ConverterOptionsPanel({
   return (
     <details
       className="group rounded-vercel border border-hairline bg-canvas-soft"
-      open={defaultOpen}
+      {...(defaultOpen ? { open: true } : {})}
     >
       <summary
         className={cn(

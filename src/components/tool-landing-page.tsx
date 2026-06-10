@@ -1,4 +1,12 @@
-import { ImageConverter } from "@/components/converter/image-converter";
+import dynamic from "next/dynamic";
+
+const ImageConverter = dynamic(
+  () =>
+    import("@/components/converter/image-converter").then((m) => ({
+      default: m.ImageConverter,
+    })),
+  { ssr: false },
+);
 import { getT } from "@/lib/i18n/translations";
 import { Lock, Zap } from "lucide-react";
 import { AdSlot } from "@/components/ads/ad-slot";

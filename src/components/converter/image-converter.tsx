@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
@@ -97,7 +97,11 @@ export function ImageConverter({
   const [dropBusy, setDropBusy] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const folderInputRef = useRef<HTMLInputElement>(null);
-  const iosDevice = isIos();
+  const [iosDevice, setIosDevice] = useState(false);
+
+  useEffect(() => {
+    setIosDevice(isIos());
+  }, []);
 
   const ingestFiles = useCallback(
     (incoming: File[]) => {
