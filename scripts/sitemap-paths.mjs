@@ -51,15 +51,11 @@ export const BLOG_SLUGS = [
 /** de/fr blog slugs with real translations (sync with blog-l10n/de.ts / fr.ts keys). */
 export const BLOG_SLUGS_DE_L10N = BLOG_SLUGS.filter(
   (s) =>
-    s !== "heic-windows-11-uk" &&
-    s !== "heic-iphone-photos-windows-us" &&
-    s !== "iphone-photos-pc-without-heic"
+    s !== "heic-windows-11-uk" && s !== "heic-iphone-photos-windows-us"
 );
 export const BLOG_SLUGS_FR_L10N = BLOG_SLUGS.filter(
   (s) =>
-    s !== "heic-windows-11-uk" &&
-    s !== "heic-iphone-photos-windows-us" &&
-    s !== "heic-windows-10-not-showing"
+    s !== "heic-windows-11-uk" && s !== "heic-iphone-photos-windows-us"
 );
 
 export function localePath(path, locale) {

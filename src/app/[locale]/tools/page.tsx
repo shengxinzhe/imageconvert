@@ -1,7 +1,7 @@
 import { ToolsIndexLayout } from "@/components/site/tools-index-layout";
 import { routing, type AppLocale } from "@/i18n/routing";
 import { SITE_NAME } from "@/lib/constants";
-import { OG_IMAGE } from "@/lib/site-metadata";
+import { getOgImage, OG_IMAGE } from "@/lib/site-metadata";
 import { absoluteUrl, getOgLocale, hreflangLanguages } from "@/lib/locale-path";
 import type { Metadata } from "next";
 
@@ -48,7 +48,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
       siteName: SITE_NAME,
       title,
       description,
-      images: [OG_IMAGE],
+      images: [getOgImage(locale)],
     },
     twitter: {
       card: "summary_large_image",

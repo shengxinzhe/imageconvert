@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { routing } from "@/i18n/routing";
+import {
+  LOCALE_COOKIE,
+  resolvePreferredLocale,
+} from "@/lib/locale-preference";
 import { resolvePathRedirect } from "@/lib/url-redirects";
 
 const LOCALE_HEADER = "x-app-locale";
@@ -63,6 +67,15 @@ export function middleware(request: NextRequest) {
         ? "/"
         : pathname.slice(`/${defaultLocale}`.length);
     return NextResponse.redirect(new URL(stripped, request.url), 301);
+  }
+
+  const preferred = resolvePreferredLocale(
+    request.cookies.get(LOCALE_COOKIE)?.value,
+    request.headers.get("accept-language"),
+  );
+  if (preferred !== defaultLocale) {
+    const dest = toPublicPath(preferred, path);
+    return NextResponse.redirect(new URL(dest, request.url), 302);
   }
 
   const url = request.nextUrl.clone();

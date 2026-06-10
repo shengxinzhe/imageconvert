@@ -1340,6 +1340,49 @@ Traitement local ; les octets image ne sont pas envoyés sur les serveurs HeicSa
 
 > Si l’Explorateur Windows n’affiche pas de miniatures AVIF mais que Paint ouvre les fichiers : installer les extensions AV1/HEIF, vider thumbcache ou convertir en JPG. Guide : https://heicsave.com/blog/avif-thumbnails-not-showing-windows-explorer — outil : https://heicsave.com/avif-to-jpg`,
   },
+  "heic-windows-10-not-showing": {
+    title: "Pourquoi Windows 10 n'affiche pas mes photos HEIC ? (FAQ 2026)",
+    description:
+      "Miniatures HEIC vides sous Windows 10 ? Installez les codecs — ou convertissez les HEIC iPhone en JPG dans le navigateur, sans envoi sur serveur.",
+    content: `**Réponse courte :** Windows 10 affiche souvent mal le **HEIC** tant que les **extensions HEIF** ne sont pas installées. Si le Microsoft Store est bloqué, convertissez en **JPG dans le navigateur** sur [HEIC en JPG](/heic-to-jpg). Les fichiers restent sur votre PC — **aucun envoi**.
+
+## Pourquoi Windows 10 montre une icône grise
+
+Les photos iPhone utilisent le **HEIC**. Windows 10 ne décode pas toujours les miniatures dans l'Explorateur ni dans les anciennes applications. Vous pouvez voir :
+
+- Une vignette grise au lieu de l'aperçu
+- « Non pris en charge » dans Photos
+- Des clients mail qui refusent les pièces jointes .heic
+
+## FAQ — HEIC invisible sous Windows 10
+
+### Pourquoi Windows 10 n'affiche-t-il pas mes images HEIC ?
+
+Il manque souvent les **extensions HEIF Image** (Microsoft Store). Sur un PC d'entreprise, l'installation est parfois bloquée. La conversion dans le navigateur évite les droits administrateur.
+
+### Comment voir des photos iPhone sur Windows 10 sans codecs ?
+
+1. Ouvrir [HEIC en JPG](/heic-to-jpg) dans Chrome ou Edge.
+2. Sélectionner ou déposer des fichiers .heic.
+3. Convertir localement — **JavaScript + WebAssembly dans l'onglet**.
+4. Ouvrir les JPG dans Photos, Paint ou IrfanView.
+
+### Les convertisseurs en ligne sont-ils sûrs pour des photos de famille ?
+
+Beaucoup envoient les fichiers vers des serveurs à l'étranger. HeicSave ne reçoit pas vos images — conversion **uniquement côté client**. Voir le [guide confidentialité](/blog/privacy-browser-image-conversion).
+
+### HEIC ou JPG sur Windows 10 pour partager ?
+
+Gardez le HEIC sur l'iPhone pour l'espace disque. Passez en JPG pour les destinataires Windows, les imprimeurs et les formulaires web.
+
+## Guides associés
+
+- [HEIC sous Windows](/blog/heic-windows-guide)
+- [Transférer des photos iPhone vers Windows](/blog/transfer-iphone-photos-to-windows)
+- [HeicSave vs convertisseurs cloud](/blog/heicsave-vs-browser-heic-converters)
+
+**Outil :** [HEIC en JPG](/heic-to-jpg)`,
+  },
   "iphone-photos-pc-without-heic": {
     title: "Transférer des photos iPhone sur un PC sans HEIC (FAQ 2026)",
     description:

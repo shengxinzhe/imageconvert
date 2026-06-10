@@ -4,18 +4,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { SITE_NAME } from "@/lib/constants";
 import { absoluteUrl } from "@/lib/locale-path";
-
-const IN_LANGUAGE: Record<AppLocale, string> = {
-  en: "en-US",
-  de: "de-DE",
-  fr: "fr-FR",
-};
-
-const BLOG_LABEL: Record<AppLocale, string> = {
-  en: "Blog",
-  de: "Blog",
-  fr: "Blog",
-};
+import { getSchemaCopy, SCHEMA_LANG } from "@/lib/schema-l10n";
 
 export function ArticleJsonLd({
   post,
@@ -30,6 +19,7 @@ export function ArticleJsonLd({
     locale !== routing.defaultLocale && !hasBlogTranslation(slug, locale)
       ? routing.defaultLocale
       : locale;
+  const schema = getSchemaCopy(schemaLocale);
   const url = absoluteUrl(`/blog/${post.slug}`, schemaLocale);
   const homeUrl = absoluteUrl("/", schemaLocale);
   const blogUrl = absoluteUrl("/blog", schemaLocale);
@@ -64,7 +54,7 @@ export function ArticleJsonLd({
         isPartOf: {
           "@type": "Blog",
           "@id": `${blogUrl}#blog`,
-          name: `${SITE_NAME} Blog`,
+          name: schema.blogIndexName(SITE_NAME),
           url: blogUrl,
         },
         mainEntityOfPage: {
@@ -72,7 +62,7 @@ export function ArticleJsonLd({
           "@id": url,
         },
         image: `${siteRoot}/og.png`,
-        inLanguage: IN_LANGUAGE[schemaLocale],
+        inLanguage: SCHEMA_LANG[schemaLocale],
         speakable: {
           "@type": "SpeakableSpecification",
           cssSelector: ["article h1", "article p"],
@@ -85,13 +75,13 @@ export function ArticleJsonLd({
           {
             "@type": "ListItem",
             position: 1,
-            name: "Home",
+            name: schema.homeBreadcrumb,
             item: homeUrl,
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: BLOG_LABEL[schemaLocale],
+            name: schema.blogBreadcrumb,
             item: blogUrl,
           },
           {

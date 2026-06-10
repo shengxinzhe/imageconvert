@@ -6,7 +6,7 @@ import { BlogTopicSections } from "@/components/blog/blog-topic-sections";
 import { getLocalizedBlogPostsNewestFirst } from "@/lib/blog-l10n";
 import { SITE_NAME } from "@/lib/constants";
 import { getT } from "@/lib/i18n/translations";
-import { OG_IMAGE } from "@/lib/site-metadata";
+import { getOgImage, OG_IMAGE } from "@/lib/site-metadata";
 import { absoluteUrl, getOgLocale, hreflangLanguages } from "@/lib/locale-path";
 
 type PageProps = { params: { locale: string } };
@@ -52,7 +52,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
       siteName: SITE_NAME,
       title,
       description,
-      images: [OG_IMAGE],
+      images: [getOgImage(locale)],
     },
     twitter: {
       card: "summary_large_image",

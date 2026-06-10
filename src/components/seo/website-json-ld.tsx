@@ -7,6 +7,7 @@ import {
   SITE_AI_SUMMARY,
 } from "@/lib/ai-discovery";
 import { absoluteUrl } from "@/lib/locale-path";
+import { getSchemaCopy, SCHEMA_LANG } from "@/lib/schema-l10n";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 const SITE_DESCRIPTION: Record<AppLocale, string> = {
@@ -15,14 +16,9 @@ const SITE_DESCRIPTION: Record<AppLocale, string> = {
   fr: "Convertisseurs d'images en ligne gratuits pour HEIC, WebP et AVIF. Les fichiers restent dans votre navigateur.",
 };
 
-const SCHEMA_LANG: Record<AppLocale, string> = {
-  en: "en-US",
-  de: "de-DE",
-  fr: "fr-FR",
-};
-
 export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
   const homeUrl = absoluteUrl("/", locale);
+  const schema = getSchemaCopy(locale);
 
   const graph = {
     "@context": "https://schema.org",
@@ -46,17 +42,12 @@ export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
           url: `${SITE_URL}/apple-touch-icon.png`,
         },
         description: SITE_DESCRIPTION[locale],
-        knowsAbout: [
-          "HEIC image conversion",
-          "AVIF image conversion",
-          "WebP image conversion",
-          "Browser-local privacy-preserving tools",
-        ],
+        knowsAbout: schema.knowsAbout,
       },
       {
         "@type": "ItemList",
         "@id": `${homeUrl}#tools`,
-        name: "Free image converters",
+        name: schema.toolsListName,
         description: SITE_AI_SUMMARY.tagline,
         numberOfItems: AI_TOOL_CATALOG.length,
         itemListElement: AI_TOOL_CATALOG.map((tool, index) => ({
@@ -70,7 +61,7 @@ export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
       {
         "@type": "ItemList",
         "@id": `${homeUrl}#guides`,
-        name: "Image format guides",
+        name: schema.guidesListName,
         numberOfItems: AI_GUIDE_CATALOG.length,
         itemListElement: AI_GUIDE_CATALOG.map((guide, index) => ({
           "@type": "ListItem",
@@ -82,7 +73,7 @@ export function WebsiteJsonLd({ locale }: { locale: AppLocale }) {
       {
         "@type": "DefinedTermSet",
         "@id": `${homeUrl}#terms`,
-        name: "Image formats HeicSave converts",
+        name: schema.definedTermsSetName,
         hasDefinedTerm: AI_DEFINED_TERMS.map((term) => ({
           "@type": "DefinedTerm",
           name: term.name,

@@ -14,7 +14,7 @@ import { routing, type AppLocale } from "@/i18n/routing";
 import { OrganizationJsonLd } from "@/components/seo/organization-json-ld";
 import { ADSENSE_CLIENT_ID_DEFAULT } from "@/lib/adsense";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
-import { OG_IMAGE } from "@/lib/site-metadata";
+import { getOgImage } from "@/lib/site-metadata";
 import "../globals.css";
 
 export const viewport: Viewport = {
@@ -23,37 +23,68 @@ export const viewport: Viewport = {
   themeColor: "#0d9373",
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: `${SITE_NAME} — Free HEIC, WebP & AVIF Converters`,
-    template: `%s | ${SITE_NAME}`,
+const LAYOUT_COPY: Record<
+  AppLocale,
+  { title: string; description: string }
+> = {
+  en: {
+    title: `${SITE_NAME} — Free HEIC, WebP & AVIF Converters`,
+    description:
+      "Free online image converters for HEIC, WebP, and AVIF. Convert in your browser—private, fast, no upload. Built for iPhone users and developers.",
   },
-  description:
-    "Free online image converters for HEIC, WebP, and AVIF. Convert in your browser—private, fast, no upload. Built for iPhone users and developers.",
-  robots: { index: true, follow: true },
-  icons: {
-    icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/icon.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    shortcut: ["/favicon.ico"],
+  de: {
+    title: `${SITE_NAME} — HEIC, WebP & AVIF kostenlos konvertieren`,
+    description:
+      "Kostenlose Bildkonverter für HEIC, WebP und AVIF im Browser. Privat, schnell, ohne Upload — für iPhone-Nutzer und Entwickler.",
   },
-  openGraph: {
-    images: [OG_IMAGE],
-  },
-  ...(process.env.BING_MSVALIDATE
-    ? {
-        verification: {
-          other: { "msvalidate.01": process.env.BING_MSVALIDATE },
-        },
-      }
-    : {}),
-  other: {
-    "google-adsense-account": ADSENSE_CLIENT_ID_DEFAULT,
+  fr: {
+    title: `${SITE_NAME} — Convertisseurs HEIC, WebP et AVIF gratuits`,
+    description:
+      "Convertisseurs d'images gratuits pour HEIC, WebP et AVIF dans le navigateur. Privé, rapide, sans envoi — pour iPhone et développeurs.",
   },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const locale = (routing.locales.includes(params.locale as AppLocale)
+    ? params.locale
+    : routing.defaultLocale) as AppLocale;
+  const { title, description } = LAYOUT_COPY[locale];
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: title,
+      template: `%s | ${SITE_NAME}`,
+    },
+    description,
+    robots: { index: true, follow: true },
+    icons: {
+      icon: [
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+      shortcut: ["/favicon.ico"],
+    },
+    openGraph: {
+      images: [getOgImage(locale)],
+    },
+    ...(process.env.BING_MSVALIDATE
+      ? {
+          verification: {
+            other: { "msvalidate.01": process.env.BING_MSVALIDATE },
+          },
+        }
+      : {}),
+    other: {
+      "google-adsense-account": ADSENSE_CLIENT_ID_DEFAULT,
+    },
+  };
+}
 
 const adsenseConsentInline = `
 window.dataLayer=window.dataLayer||[];
@@ -109,7 +140,7 @@ export default function LocaleLayout({
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID_DEFAULT}`}
         />
         <ChunkLoadRecovery />
-        <OrganizationJsonLd />
+        <OrganizationJsonLd locale={locale as AppLocale} />
         <Header locale={locale as AppLocale} />
         <main>{children}</main>
         <Footer locale={locale as AppLocale} />

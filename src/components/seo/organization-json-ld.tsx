@@ -1,8 +1,18 @@
+import type { AppLocale } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 import { SITE_AI_SUMMARY } from "@/lib/ai-discovery";
+import { getSchemaCopy } from "@/lib/schema-l10n";
+import { absoluteUrl } from "@/lib/locale-path";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
 /** Site-wide Organization schema for pages without dedicated JSON-LD. */
-export function OrganizationJsonLd() {
+export function OrganizationJsonLd({
+  locale = routing.defaultLocale,
+}: {
+  locale?: AppLocale;
+}) {
+  const schema = getSchemaCopy(locale);
+
   const data = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -16,18 +26,13 @@ export function OrganizationJsonLd() {
       width: 180,
       height: 180,
     },
-    knowsAbout: [
-      "HEIC image conversion",
-      "AVIF image conversion",
-      "WebP image conversion",
-      "Browser-local privacy-preserving image tools",
-    ],
+    knowsAbout: schema.knowsAbout,
     contactPoint: [
       {
         "@type": "ContactPoint",
         contactType: "customer support",
-        url: `${SITE_URL}/contact`,
-        availableLanguage: ["English", "German", "French"],
+        url: absoluteUrl("/contact", locale),
+        availableLanguage: schema.contactLanguages,
       },
     ],
     subjectOf: [

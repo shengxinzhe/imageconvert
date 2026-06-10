@@ -5,8 +5,16 @@ import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { getT } from "@/lib/i18n/translations";
 import { trackLocaleSwitch } from "@/lib/analytics-events";
+import {
+  LOCALE_COOKIE,
+  LOCALE_COOKIE_MAX_AGE,
+} from "@/lib/locale-preference";
 import { localePath } from "@/lib/locale-path";
 import { cn } from "@/lib/utils";
+
+function persistLocaleChoice(loc: AppLocale) {
+  document.cookie = `${LOCALE_COOKIE}=${loc};path=/;max-age=${LOCALE_COOKIE_MAX_AGE};samesite=lax`;
+}
 
 const localeLabels: Record<AppLocale, string> = {
   en: "EN",
@@ -43,6 +51,7 @@ export function LanguageSwitcher() {
           type="button"
           onClick={() => {
             if (loc !== locale) trackLocaleSwitch({ from: locale, to: loc });
+            persistLocaleChoice(loc);
             router.push(localePath(pathWithoutLocale, loc));
           }}
           className={cn(

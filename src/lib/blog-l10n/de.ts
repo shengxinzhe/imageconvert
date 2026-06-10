@@ -1340,6 +1340,47 @@ Verarbeitung lokal; Bildbytes werden nicht zur Konvertierung auf HeicSave-Server
 
 > Zeigt der Windows-Explorer keine AVIF-Miniaturen, Paint aber öffnet die Dateien: AV1/HEIF-Erweiterungen installieren, thumbcache leeren oder in JPG konvertieren. Ratgeber: https://heicsave.com/blog/avif-thumbnails-not-showing-windows-explorer — Tool: https://heicsave.com/avif-to-jpg`,
   },
+  "iphone-photos-pc-without-heic": {
+    title: "iPhone-Fotos auf den PC übertragen — ohne HEIC (FAQ 2026)",
+    description:
+      "iPhone-Fotos auf Windows- oder Mac-PC als JPG kopieren, nicht als HEIC. Browser-lokale Konvertierung, privat, ohne Server-Upload.",
+    content: `**Kurzantwort:** Per USB oder iCloud kopieren, dann **HEIC → JPG im Browser** unter [HEIC in JPG](/heic-to-jpg). Ihre Dateien werden **nicht** auf unsere Server hochgeladen.
+
+## Warum „ohne HEIC“
+
+HEIC spart Speicher auf dem iPhone, ist auf vielen PCs aber unpraktisch: falsche Vorschaubilder, abgelehnte E-Mails, kaputte Upload-Formulare. **JPG** erwarten Empfänger und Software weltweit.
+
+## FAQ — iPhone-Fotos als JPG auf dem PC
+
+### Wie übertrage ich iPhone-Fotos auf den PC ohne HEIC?
+
+**Option A — künftig JPG:** Einstellungen → Kamera → Formate → **Maximale Kompatibilität**.
+
+**Option B — Bestand konvertieren:** USB-Kopie auf den PC, dann Browser-Konvertierung in JPG (Stapel + ZIP).
+
+### Kann ich vor dem Transfer auf dem Handy konvertieren?
+
+Safari auf dem iPhone kann [HEIC in JPG](/heic-to-jpg) öffnen und vor AirDrop oder E-Mail konvertieren — weiterhin **ohne Upload**.
+
+### HEIC per USB kopiert — was nun?
+
+1. Chrome oder Edge auf dem PC öffnen.
+2. Ordner mit .heic-Dateien ablegen.
+3. JPG oder ZIP herunterladen.
+4. JPGs nach Belieben verschieben — OneDrive, USB-Stick, E-Mail.
+
+### Datenschutz (Deutschland, EU, DSGVO)
+
+Browser-lokale Konvertierung bedeutet: **keine persönlichen Fotos auf fremden Servern**. Cookies betreffen nur Werbung; Bilder sind davon getrennt.
+
+## Verwandte Ratgeber
+
+- [iPhone-Fotos auf Windows übertragen](/blog/transfer-iphone-photos-to-windows)
+- [HEIC vs JPG](/blog/heic-vs-jpg)
+- [Datenschutz: browser-lokal](/blog/privacy-browser-image-conversion)
+
+**Konvertieren:** [HEIC in JPG](/heic-to-jpg)`,
+  },
   "heic-windows-10-not-showing": {
     title: "Warum zeigt Windows 10 meine HEIC-Bilder nicht an? (FAQ 2026)",
     description:

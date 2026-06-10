@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { AppLocale } from "@/i18n/routing";
 import { SITE_NAME } from "@/lib/constants";
 import { absoluteUrl, getOgLocale, hreflangLanguages } from "@/lib/locale-path";
-import { OG_IMAGE } from "@/lib/site-metadata";
+import { getOgImage } from "@/lib/site-metadata";
 import type { ToolConfig } from "@/lib/tools-config";
 
 export function toolMetadata(tool: ToolConfig, locale: AppLocale): Metadata {
@@ -24,7 +24,7 @@ export function toolMetadata(tool: ToolConfig, locale: AppLocale): Metadata {
       siteName: SITE_NAME,
       type: "website",
       locale: getOgLocale(locale),
-      images: [OG_IMAGE],
+      images: [getOgImage(locale)],
     },
     twitter: {
       card: "summary_large_image",

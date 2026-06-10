@@ -7,13 +7,26 @@ import {
   hasBlogTranslation,
   hreflangBlogLanguages,
 } from "@/lib/blog-l10n";
+import { getSchemaCopy } from "@/lib/schema-l10n";
 
-export const OG_IMAGE = {
+const OG_IMAGE_BASE = {
   url: "/og.png",
   width: 1200,
   height: 630,
+} as const;
+
+/** @deprecated Use getOgImage(locale) for locale-aware alt text. */
+export const OG_IMAGE = {
+  ...OG_IMAGE_BASE,
   alt: `${SITE_NAME} — Free HEIC, WebP & AVIF converters`,
 } as const;
+
+export function getOgImage(locale: AppLocale) {
+  return {
+    ...OG_IMAGE_BASE,
+    alt: getSchemaCopy(locale).ogImageAlt(SITE_NAME),
+  };
+}
 
 const HOME_COPY: Record<
   AppLocale,
@@ -54,13 +67,13 @@ export function homeMetadata(locale: AppLocale): Metadata {
       siteName: SITE_NAME,
       title,
       description,
-      images: [OG_IMAGE],
+      images: [getOgImage(locale)],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [OG_IMAGE.url],
+      images: [OG_IMAGE_BASE.url],
     },
     robots: { index: true, follow: true },
   };
@@ -87,13 +100,13 @@ export function legalPageMetadata(
       siteName: SITE_NAME,
       title: meta.title,
       description: meta.description,
-      images: [OG_IMAGE],
+      images: [getOgImage(locale)],
     },
     twitter: {
       card: "summary_large_image",
       title: meta.title,
       description: meta.description,
-      images: [OG_IMAGE.url],
+      images: [OG_IMAGE_BASE.url],
     },
     robots: { index: true, follow: true },
   };
@@ -139,13 +152,13 @@ export function blogPostMetadata(
       description: post.description,
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
-      images: [OG_IMAGE],
+      images: [getOgImage(locale)],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
-      images: [OG_IMAGE.url],
+      images: [OG_IMAGE_BASE.url],
     },
     robots: { index: true, follow: true },
   };

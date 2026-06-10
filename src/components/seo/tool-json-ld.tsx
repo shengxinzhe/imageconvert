@@ -1,13 +1,12 @@
 import { routing, type AppLocale } from "@/i18n/routing";
 import type { ToolConfig } from "@/lib/tools-config";
 import { absoluteUrl } from "@/lib/locale-path";
+import {
+  getSchemaCopy,
+  SCHEMA_LANG,
+  SCHEMA_PRICE_CURRENCY,
+} from "@/lib/schema-l10n";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
-
-const SCHEMA_LANG: Record<AppLocale, string> = {
-  en: "en-US",
-  de: "de-DE",
-  fr: "fr-FR",
-};
 
 function schemaAppName(tool: ToolConfig): string {
   const dash = tool.title.indexOf(" — ");
@@ -17,6 +16,9 @@ function schemaAppName(tool: ToolConfig): string {
 export function ToolJsonLd({ tool, locale }: { tool: ToolConfig; locale: AppLocale }) {
   const pageUrl = absoluteUrl(`/${tool.slug}`, locale);
   const appName = schemaAppName(tool);
+  const copy = getSchemaCopy(locale);
+  const fromLabel = tool.from.toUpperCase();
+  const toLabel = tool.to.toUpperCase();
 
   const webApplication = {
     "@type": "WebApplication",
@@ -27,25 +29,19 @@ export function ToolJsonLd({ tool, locale }: { tool: ToolConfig; locale: AppLoca
     inLanguage: SCHEMA_LANG[locale],
     applicationCategory: "MultimediaApplication",
     operatingSystem: "Any",
-    browserRequirements: "Requires JavaScript. Works in Chrome, Edge, Safari, and Firefox.",
+    browserRequirements: copy.browserRequirements,
     isAccessibleForFree: true,
     offers: {
       "@type": "Offer",
       price: "0",
-      priceCurrency: "USD",
+      priceCurrency: SCHEMA_PRICE_CURRENCY[locale],
       availability: "https://schema.org/InStock",
     },
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: ["article h1", "article h1 + p", "article details p"],
     },
-    featureList: [
-      "Client-side conversion (no upload)",
-      "Batch conversion with ZIP download",
-      "Adjustable JPEG/WebP quality",
-      "Free to use",
-      "No account required",
-    ],
+    featureList: copy.featureList,
     provider: {
       "@type": "Organization",
       name: SITE_NAME,
@@ -56,12 +52,12 @@ export function ToolJsonLd({ tool, locale }: { tool: ToolConfig; locale: AppLoca
   const howTo = {
     "@type": "HowTo",
     "@id": `${pageUrl}#howto`,
-    name: `How to convert ${tool.from.toUpperCase()} to ${tool.to.toUpperCase()}`,
+    name: copy.howToName(fromLabel, toLabel),
     description: tool.heroSubtitle,
     step: tool.howToSteps.map((text, index) => ({
       "@type": "HowToStep",
       position: index + 1,
-      name: `Step ${index + 1}`,
+      name: copy.stepName(index + 1),
       text,
     })),
   };
@@ -89,7 +85,7 @@ export function ToolJsonLd({ tool, locale }: { tool: ToolConfig; locale: AppLoca
       {
         "@type": "ListItem",
         position: 1,
-        name: "Home",
+        name: copy.homeBreadcrumb,
         item: homeUrl,
       },
       {
