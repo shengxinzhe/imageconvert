@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { Ga4Analytics } from "@/components/analytics/ga4-analytics";
 import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
+import { ChunkLoadRecovery } from "@/components/chunk-load-recovery";
 import { CookieBanner } from "@/components/cookie-banner";
 import { ConsentRestore } from "@/components/consent-restore";
 import { Footer } from "@/components/layout/footer";
@@ -92,14 +94,21 @@ export default function LocaleLayout({
           title="AI discovery catalog"
         />
         <meta name="google-adsense-account" content={ADSENSE_CLIENT_ID_DEFAULT} />
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID_DEFAULT}`}
-          crossOrigin="anonymous"
-        />
-        <script dangerouslySetInnerHTML={{ __html: adsenseConsentInline }} />
       </head>
       <body className="min-h-screen bg-canvas font-sans text-ink antialiased">
+        <Script
+          id="adsense-consent-defaults"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: adsenseConsentInline }}
+        />
+        <Script
+          id="adsense-loader"
+          strategy="afterInteractive"
+          async
+          crossOrigin="anonymous"
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID_DEFAULT}`}
+        />
+        <ChunkLoadRecovery />
         <OrganizationJsonLd />
         <Header locale={locale as AppLocale} />
         <main>{children}</main>
