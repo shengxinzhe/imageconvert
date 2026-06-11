@@ -35,7 +35,7 @@ import { getLocalizedBlogPost } from "@/lib/blog-l10n";
 import { getT } from "@/lib/i18n/translations";
 import { Button } from "@/components/ui/button";
 import type { ResizePresetId } from "@/lib/constants";
-import { Download, FolderOpen, Loader2, Upload, X } from "lucide-react";
+import { Download, FolderOpen, Loader2, ShieldCheck, Upload, X } from "lucide-react";
 import type { ToolAudience } from "@/lib/design-variants";
 import { cn } from "@/lib/utils";
 import { collectFilesFromDataTransfer } from "@/lib/collect-drop-files";
@@ -329,6 +329,13 @@ export function ImageConverter({
           {t("converter.dropTitle")}
         </p>
         <p className="mt-1 text-xs text-body sm:text-sm">{t("converter.dropHint")}</p>
+        <p className="mx-auto mt-3 flex max-w-lg items-center justify-center gap-1.5 text-xs font-medium leading-snug text-ink sm:text-sm">
+          <ShieldCheck
+            className="h-4 w-4 shrink-0 text-[var(--mintlify-green)]"
+            aria-hidden
+          />
+          <span>{t("converter.uploadTrustLine")}</span>
+        </p>
         <input
           ref={fileInputRef}
           type="file"
@@ -379,9 +386,6 @@ export function ImageConverter({
               {t("converter.browseFolder")}
             </Button>
           ) : null}
-          <p className="mt-1 text-center text-xs leading-snug text-body sm:text-sm">
-            {t("converter.uploadTrustLine")}
-          </p>
         </div>
         {dropBusy ? (
           <p className="mt-3 flex items-center justify-center gap-2 text-xs text-mute">

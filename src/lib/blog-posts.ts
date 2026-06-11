@@ -16,9 +16,9 @@ export const blogPosts: BlogPost[] = [
     description:
       "Learn what a HEIC file is, why iPhones use it, and how to open or convert HEIC on Windows and Mac — free browser-local tools that keep your images private.",
     publishedAt: "2026-01-15",
-    updatedAt: "2026-06-02",
+    updatedAt: "2026-06-10",
     readMinutes: 12,
-    content: `*Last updated: June 2, 2026*
+    content: `*Last updated: June 10, 2026*
 
 HEIC (High Efficiency Image Container) is Apple's default photo format on modern iPhones. It uses advanced compression to store photos at roughly half the size of JPEG with similar visual quality.
 
@@ -63,6 +63,12 @@ Nothing is uploaded to our servers. For transparency or editing workflows, use [
 
 Work mail, Gmail, and Outlook often block **.heic** even when the photo looks fine on your iPhone. The fix is almost always the same: convert to JPG before you attach, or change iPhone transfer settings so the PC gets JPEGs over USB. Step-by-step for Outlook and webmail: [HEIC email attachment rejected](/blog/heic-outlook-email-attachment).
 
+## Slack, Discord, and US/UK workplace uploads
+
+In **Slack** and **Discord**, dragging an iPhone **.heic** into a channel often becomes a file download instead of an inline image preview—teammates cannot see the photo without opening the attachment. Convert to JPG first, the same fix as email.
+
+**US and UK portals** (university applications, bank ID verification, HR onboarding, visa uploads) frequently reject **.heic** and only accept **JPG or PDF**. If a government or school site says your iPhone ID photo is an unsupported format, batch-convert with [HEIC to JPG](/heic-to-jpg) before you upload—nothing is sent to our servers during conversion.
+
 ## iOS 18 and iPhone transfer in 2026
 
 **iOS 18** did not replace HEIC as the default camera format. You still get HEIC on USB unless you pick **Most Compatible** (Settings → Camera → Formats) or set Photos → Transfer to Mac or PC to push JPEGs when iOS thinks the PC cannot decode HEIC — which is inconsistent on Windows 11 after driver updates.
@@ -84,6 +90,8 @@ For editors and print, assume you will convert after transfer. For email, conver
 | Situation | What to do |
 |---|---|
 | Email attachment rejected | [Convert to JPG first](/blog/heic-outlook-email-attachment) |
+| Slack/Discord shows download, not preview | Convert HEIC to JPG before posting |
+| US/UK form rejects iPhone ID photo | Portal wants JPG/PDF—not HEIC; convert locally first |
 | Premiere / Photoshop import crash | [HEIC → JPG before timeline](/blog/heic-premiere-pro-import) |
 | Google Drive folder full of HEIC | Download ZIP → batch convert → re-upload JPGs ([guide](/blog/heic-google-drive-batch-convert)) |
 | iPhone → Windows USB copy still HEIC | Normal; convert after transfer ([transfer guide](/blog/transfer-iphone-photos-to-windows)) |

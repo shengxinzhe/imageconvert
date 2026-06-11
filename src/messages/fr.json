@@ -186,7 +186,7 @@
   },
   "converter": {
     "selectImages": "Choisir des photos",
-    "uploadTrustLine": "Vos photos restent sur cet appareil. La conversion s'effectue dans le navigateur — rien n'est envoyé vers nos serveurs.",
+    "uploadTrustLine": "100 % privé : conversion dans le navigateur. Aucun envoi vers nos serveurs (conforme RGPD).",
     "privacyBannerTitle": "Conversion privée — aucun envoi",
     "privacyBannerBody": "Contrairement aux convertisseurs en ligne, vos fichiers restent sur cet appareil. HeicSave ne reçoit jamais vos images.",
     "privacyBannerTitleDev": "Conversion locale — aucun envoi",

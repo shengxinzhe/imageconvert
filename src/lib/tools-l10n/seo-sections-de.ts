@@ -161,6 +161,12 @@ export const deToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
         "Kein Login, kein Wasserzeichen, kein künstliches Stapel-Limit. Verarbeitung im Tab — keine Server-Speicherung.",
       ],
     },
+    {
+      heading: "Für Entwickler und Designer — ohne Cloud-Warteschlange",
+      paragraphs: [
+        "Keine Lust auf Upload-Limits und Warteschlangen bei Online-Konvertern? Megabytes WebP im aktiven Browser-Tab in JPG — ohne Server-Upload. Für WordPress-Exports, Figma-Handoffs und CI-Assets.",
+      ],
+    },
   ],
   "avif-to-jpg": [
     {
@@ -211,6 +217,12 @@ export const deToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
       heading: "AVIF in JPG ohne Upload (Datenschutz)",
       paragraphs: [
         "Viele Online-Konverter senden Dateien an Server. HeicSave dekodiert im Tab. Auch [WebP in JPG](/webp-to-jpg) oder [AVIF in PNG](/avif-to-png) verfügbar.",
+      ],
+    },
+    {
+      heading: "Für Entwickler und Designer — ohne Cloud-Warteschlange",
+      paragraphs: [
+        "Warteschlangen bei Cloud-Konvertern nerven? Megabytes AVIF/WebP sofort im Tab in JPG — lokal mit JavaScript und Canvas, kein Upload an HeicSave. Für Frontend-Devs, UI-Designer und WordPress-Betreiber.",
       ],
     },
     {

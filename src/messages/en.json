@@ -186,7 +186,7 @@
   },
   "converter": {
     "selectImages": "Select images",
-    "uploadTrustLine": "100% Private. Photos are processed in your browser and never uploaded to our servers.",
+    "uploadTrustLine": "100% Private: browser-side conversion. Files never uploaded to our servers (GDPR-friendly).",
     "privacyBannerTitle": "Private conversion — zero upload",
     "privacyBannerBody": "Unlike cloud converters, your files stay on this device. HeicSave has no server endpoint for your images.",
     "privacyBannerTitleDev": "Browser-local conversion — zero upload",

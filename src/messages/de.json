@@ -186,7 +186,7 @@
   },
   "converter": {
     "selectImages": "Fotos auswählen",
-    "uploadTrustLine": "Ihre Fotos bleiben auf diesem Gerät. Die Umwandlung läuft im Browser — ohne Upload auf unsere Server.",
+    "uploadTrustLine": "100 % privat: Konvertierung im Browser. Kein Upload auf unsere Server (DSGVO-freundlich).",
     "privacyBannerTitle": "Private Konvertierung — kein Upload",
     "privacyBannerBody": "Anders als Online-Konverter bleiben Ihre Dateien auf diesem Gerät. HeicSave erhält Ihre Bilder nie.",
     "privacyBannerTitleDev": "Browser-lokal — kein Upload",

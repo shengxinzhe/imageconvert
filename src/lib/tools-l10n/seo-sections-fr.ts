@@ -160,6 +160,12 @@ export const frToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
         "Pas d’inscription, pas de filigrane, pas de plafond artificiel de lot. Traitement dans l’onglet.",
       ],
     },
+    {
+      heading: "Pour développeurs et designers — sans file d’attente cloud",
+      paragraphs: [
+        "Marre des limites d’upload et des files d’attente des convertisseurs en ligne ? Des mégaoctets de WebP en JPG dans l’onglet actif — sans envoi serveur. Idéal pour exports WordPress, livrables Figma et assets CI.",
+      ],
+    },
   ],
   "avif-to-jpg": [
     {
@@ -210,6 +216,12 @@ export const frToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
       heading: "AVIF en JPG sans envoi (vie privée)",
       paragraphs: [
         "Beaucoup de convertisseurs en ligne uploadent vos fichiers. HeicSave décode dans l’onglet. Voir aussi [WebP en JPG](/webp-to-jpg) et [AVIF en PNG](/avif-to-png).",
+      ],
+    },
+    {
+      heading: "Pour développeurs et designers — sans file d’attente cloud",
+      paragraphs: [
+        "Files d’attente cloud pour convertir des assets ? Convertissez des mégaoctets d’AVIF/WebP en JPG instantanément dans l’onglet — décodage local, aucun upload vers HeicSave. Pensé pour devs front, designers UI et sites WordPress.",
       ],
     },
     {
