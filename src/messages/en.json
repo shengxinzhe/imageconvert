@@ -239,7 +239,8 @@
     "successOne": "1 file converted — ready to download below.",
     "successMany": "{count} files converted — ready to download below.",
     "successGuidePrefix": "Next:",
-    "errorGuidePrefix": "Help:"
+    "errorGuidePrefix": "Help:",
+    "bookmarkHint": "💡 Press Ctrl+D (Cmd+D on Mac) to bookmark HeicSave — instant, offline-capable conversions next time."
   },
   "errors": {
     "thisFile": "This file",

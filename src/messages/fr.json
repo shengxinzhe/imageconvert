@@ -239,7 +239,8 @@
     "successOne": "1 fichier converti — téléchargez ci-dessous.",
     "successMany": "{count} fichiers convertis — téléchargez ci-dessous.",
     "successGuidePrefix": "Suite :",
-    "errorGuidePrefix": "Aide :"
+    "errorGuidePrefix": "Aide :",
+    "bookmarkHint": "💡 Ctrl+D (Cmd+D sur Mac) — ajoutez HeicSave aux favoris pour des conversions instantanées, même hors ligne."
   },
   "errors": {
     "thisFile": "Ce fichier",

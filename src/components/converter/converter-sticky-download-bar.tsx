@@ -33,48 +33,51 @@ export function ConverterStickyDownloadBar({
     <div
       className={cn(
         "sticky top-16 z-30 -mx-1 rounded-vercel border border-emerald-200 bg-emerald-50/95 px-4 py-3 shadow-card backdrop-blur-sm",
-        "flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+        "flex flex-col gap-2"
       )}
       role="status"
     >
-      <p className="text-sm font-medium text-emerald-950">
-        {resultCount === 1
-          ? t("converter.successOne")
-          : t("converter.successMany", { count: resultCount })}
-      </p>
-      <div className="flex flex-wrap gap-2">
-        {resultCount > 1 ? (
-          <Button
-            type="button"
-            variant={isDev ? "developer" : "primary"}
-            size="sm"
-            onClick={onDownloadZip}
-            disabled={zipping}
-          >
-            {zipping ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                {t("converter.buildingZip")}
-              </>
-            ) : (
-              <>
-                <Archive className="mr-2 h-4 w-4" />
-                {t("converter.downloadZip", { count: resultCount })}
-              </>
-            )}
-          </Button>
-        ) : (
-          <Button
-            type="button"
-            variant={isDev ? "developer" : "primary"}
-            size="sm"
-            onClick={onDownloadFirst}
-          >
-            <Download className="mr-2 h-4 w-4" />
-            {t("converter.download")}
-          </Button>
-        )}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm font-medium text-emerald-950">
+          {resultCount === 1
+            ? t("converter.successOne")
+            : t("converter.successMany", { count: resultCount })}
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {resultCount > 1 ? (
+            <Button
+              type="button"
+              variant={isDev ? "developer" : "primary"}
+              size="sm"
+              onClick={onDownloadZip}
+              disabled={zipping}
+            >
+              {zipping ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  {t("converter.buildingZip")}
+                </>
+              ) : (
+                <>
+                  <Archive className="mr-2 h-4 w-4" />
+                  {t("converter.downloadZip", { count: resultCount })}
+                </>
+              )}
+            </Button>
+          ) : (
+            <Button
+              type="button"
+              variant={isDev ? "developer" : "primary"}
+              size="sm"
+              onClick={onDownloadFirst}
+            >
+              <Download className="mr-2 h-4 w-4" />
+              {t("converter.download")}
+            </Button>
+          )}
+        </div>
       </div>
+      <p className="text-xs leading-snug text-emerald-800/90">{t("converter.bookmarkHint")}</p>
     </div>
   );
 }

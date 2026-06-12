@@ -239,7 +239,8 @@
     "successOne": "1 Datei konvertiert — unten herunterladen.",
     "successMany": "{count} Dateien konvertiert — unten herunterladen.",
     "successGuidePrefix": "Weiter:",
-    "errorGuidePrefix": "Hilfe:"
+    "errorGuidePrefix": "Hilfe:",
+    "bookmarkHint": "💡 Strg+D (Cmd+D am Mac) — HeicSave als Lesezeichen speichern. Beim nächsten Mal sofort konvertieren, auch offline."
   },
   "errors": {
     "thisFile": "Diese Datei",
