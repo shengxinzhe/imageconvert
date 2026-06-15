@@ -164,7 +164,7 @@ For Windows-specific steps after USB copy, see [Transfer iPhone photos to Window
     slug: "heic-vs-jpg",
     title: "HEIC vs JPG: Quality, Size, and When to Use Each",
     description:
-      "Compare HEIC and JPG for quality, file size, and compatibility in 2026.",
+      "Compare HEIC and JPG for photo quality, file size, and compatibility in 2026—when to keep HEIC on iPhone and when to convert for Windows, email, and print.",
     publishedAt: "2026-01-22",
     updatedAt: "2026-05-25",
     readMinutes: 9,
@@ -368,7 +368,7 @@ For quick, private conversion without installs, use browser-local tools first. I
     slug: "avif-explained",
     title: "AVIF Explained: The Next-Gen Image Format for the Web",
     description:
-      "AVIF basics, browser support, and when to convert to JPG or PNG.",
+      "Learn what AVIF is, which browsers support it, and when to convert AVIF to JPG or PNG for email, design tools, and older Windows apps that cannot open .avif files.",
     publishedAt: "2026-02-15",
     readMinutes: 8,
     content: `AVIF is based on AV1 video compression and delivers excellent quality at small file sizes.
@@ -561,7 +561,7 @@ Serve WebP with <picture> and JPG fallback. Keep masters in JPG or RAW.`,
     slug: "webp-for-developers",
     title: "WebP for Developers: Encode, Decode, and Convert",
     description:
-      "WebP for frontend devs: encode, decode, and convert PNG/JPG both ways.",
+      "WebP for frontend developers: encode, decode, and convert PNG/JPG both ways—browser-local workflows, Lighthouse tips, and JPG/PNG fallbacks for legacy clients.",
     publishedAt: "2026-02-25",
     readMinutes: 6,
     content: `Developers adopt WebP for Lighthouse scores and bandwidth savings.
@@ -628,7 +628,7 @@ HeicSave has **no server-side conversion endpoint**. The converter also shows a 
     slug: "transfer-iphone-photos-to-windows",
     title: "How to Transfer iPhone Photos to a Windows PC (2026 Guide)",
     description:
-      "Copy iPhone photos to Windows: USB, iCloud, and local HEIC-to-JPG conversion.",
+      "Copy iPhone photos to a Windows PC via USB or iCloud, fix HEIC compatibility issues, and convert to JPG locally in your browser—no upload or codec install required.",
     publishedAt: "2026-05-19",
     readMinutes: 9,
     content: `Copying iPhone photos to a Windows PC sounds easy until HEIC gets in the way. These steps still work in 2026.

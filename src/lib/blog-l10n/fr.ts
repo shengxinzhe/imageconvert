@@ -140,7 +140,7 @@ Notre [convertisseur HEIC en JPG](/heic-to-jpg) gratuit : privé, dans le naviga
   "heic-vs-jpg": {
     title: "HEIC vs JPG : qualité, taille et quand utiliser quoi",
     description:
-      "Comparer HEIC et JPG en 2026 : qualité, taille de fichier et compatibilité.",
+      "Comparer HEIC et JPG en 2026 : qualité, taille et compatibilité—quand garder le HEIC sur iPhone et quand convertir en JPG pour Windows, e-mail et impression.",
     content: `*Dernière mise à jour : 25 mai 2026*
 
 Les deux formats stockent des photos, mais visent des objectifs différents. Le mauvais choix fait perdre du temps quand un portail refuse l’upload ou qu’un PC Windows affiche des miniatures vides.
@@ -329,7 +329,7 @@ Pour une conversion rapide et privée sans installation : outils locaux dans le 
   "avif-explained": {
     title: "AVIF expliqué : le format image next-gen pour le web",
     description:
-      "Bases AVIF, support navigateur et quand convertir en JPG ou PNG.",
+      "Bases AVIF, support navigateur et quand convertir en JPG ou PNG pour l’e-mail, les outils de design et les apps Windows qui n’ouvrent pas les fichiers .avif.",
     content: `L’AVIF repose sur la compression vidéo AV1 et offre une excellente qualité à petite taille.
 
 ## Qui utilise l’AVIF ?
@@ -383,7 +383,7 @@ Servir le WebP avec <picture> et repli JPG. Garder les masters en JPG ou RAW.`,
   "webp-for-developers": {
     title: "WebP pour les développeurs : encoder, décoder, convertir",
     description:
-      "WebP pour le front-end : encoder et convertir PNG/JPG dans les deux sens.",
+      "WebP pour le front-end : encoder et convertir PNG/JPG dans les deux sens—en local dans le navigateur, astuces Lighthouse et replis JPG/PNG pour clients anciens.",
     content: `Les développeurs adoptent le WebP pour les scores Lighthouse et la bande passante.
 
 ## Encoder localement

@@ -123,7 +123,7 @@ Nous pouvons mettre à jour ces conditions. La poursuite de l’utilisation vaut
     meta: {
       title: "Politique DMCA — HeicSave droits d’auteur",
       description:
-        "Politique DMCA HeicSave (heicsave.com) : envoyer une notification de contrefaçon, informations requises et contact de l’agent désigné pour les demandes de retrait.",
+        "Politique DMCA HeicSave (heicsave.com) : soumettre un avis de retrait, informations légales requises, contact de l’agent désigné et notre processus de traitement des signalements.",
     },
     h1: "Politique DMCA",
     body: `**HeicSave** respecte les droits de propriété intellectuelle. Nous traitons les notifications DMCA valides.

@@ -140,7 +140,7 @@ Windows-Schritte nach USB-Kopie: [iPhone-Fotos auf Windows übertragen](/blog/tr
   "heic-vs-jpg": {
     title: "HEIC vs. JPG: Qualität, Größe und wann welches Format",
     description:
-      "HEIC und JPG 2026 vergleichen: Qualität, Dateigröße und Kompatibilität.",
+      "HEIC und JPG 2026 vergleichen: Qualität, Dateigröße und Kompatibilität—wann HEIC auf dem iPhone behalten und wann für Windows, E-Mail und Druck in JPG konvertieren.",
     content: `*Zuletzt aktualisiert: 25. Mai 2026*
 
 Beide Formate speichern Fotos, zielen aber auf verschiedene Ziele. Das falsche Format kostet Zeit, wenn ein Portal den Upload ablehnt oder Windows leere Vorschaubilder zeigt.
@@ -329,7 +329,7 @@ Für schnelle private Konvertierung ohne Installation: browser-lokal zuerst. Des
   "avif-explained": {
     title: "AVIF erklärt: Das Bildformat der nächsten Web-Generation",
     description:
-      "AVIF-Grundlagen, Browser-Unterstützung und wann Sie in JPG oder PNG konvertieren.",
+      "AVIF-Grundlagen, Browser-Unterstützung und wann Sie in JPG oder PNG konvertieren—für E-Mail, Design-Tools und ältere Windows-Apps, die .avif nicht öffnen.",
     content: `AVIF basiert auf AV1-Videokompression und liefert starke Qualität bei kleinen Dateien.
 
 ## Wer nutzt AVIF?
@@ -383,7 +383,7 @@ WebP mit <picture> und JPG-Fallback ausliefern. Master in JPG oder RAW behalten.
   "webp-for-developers": {
     title: "WebP für Entwickler: Enkodieren, Dekodieren, Konvertieren",
     description:
-      "WebP für Frontend-Devs: PNG/JPG in beide Richtungen enkodieren und dekodieren.",
+      "WebP für Frontend-Devs: PNG/JPG in beide Richtungen enkodieren und dekodieren—browser-lokal, Lighthouse-Tipps und JPG/PNG-Fallbacks für ältere Clients.",
     content: `Entwickler setzen WebP für Lighthouse-Scores und Bandbreite ein.
 
 ## Lokal enkodieren

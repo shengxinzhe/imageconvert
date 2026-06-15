@@ -123,7 +123,7 @@ We may update these terms. Continued use constitutes acceptance.`,
     meta: {
       title: "DMCA Policy — HeicSave Copyright & Takedown",
       description:
-        "DMCA policy for HeicSave (heicsave.com): how to send copyright notices, required notice details, and designated agent contact for takedown requests.",
+        "DMCA policy for HeicSave (heicsave.com): how to submit copyright takedown notices, required legal notice details, designated agent contact, and our response process.",
     },
     h1: "DMCA Policy",
     body: `**HeicSave** respects intellectual property rights. We respond to valid DMCA notices.

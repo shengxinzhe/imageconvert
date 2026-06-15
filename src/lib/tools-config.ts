@@ -558,7 +558,7 @@ export const tools: Record<ToolSlug, ToolConfig> = {
     title: "AVIF to PNG Converter — Free & Online",
     h1: "AVIF to PNG Converter — Free & Online",
     metaDescription:
-      "Convert AVIF to PNG online free. Private browser conversion for designers and developers.",
+      "Convert AVIF to PNG online free in your browser. Private batch conversion for designers—no upload, no account—PNG opens in Figma, Photoshop, and legacy apps.",
     keywords: ["avif to png", "convert avif to png online"],
     heroSubtitle: "Export AVIF assets as PNG for design and legacy workflows",
     whyConvert: {

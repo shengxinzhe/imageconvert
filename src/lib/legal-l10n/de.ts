@@ -123,7 +123,7 @@ Wir können diese Bedingungen aktualisieren. Die weitere Nutzung gilt als Zustim
     meta: {
       title: "DMCA-Richtlinie — HeicSave Urheberrecht & Takedown",
       description:
-        "DMCA-Richtlinie für HeicSave (heicsave.com): Mitteilungen zu Urheberrechtsverletzungen, Pflichtangaben und Kontakt des Beauftragten für Takedown-Anfragen.",
+        "DMCA-Richtlinie für HeicSave (heicsave.com): Takedown-Mitteilungen einreichen, Pflichtangaben, Kontakt des Beauftragten und unser Bearbeitungsprozess bei Urheberrechtsverletzungen.",
     },
     h1: "DMCA-Richtlinie",
     body: `**HeicSave** respektiert geistige Eigentumsrechte. Wir bearbeiten gültige DMCA-Mitteilungen.

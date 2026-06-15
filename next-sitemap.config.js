@@ -94,7 +94,9 @@ module.exports = {
   // Next.js static routes use /en/... internally; middleware 301s them to unprefixed URLs.
   exclude: [...EXCLUDED_PATHS, "/en", "/en/*"],
   robotsTxtOptions: {
-    additionalSitemaps: [`${SITE_URL}/sitemap-0.xml`],
+    // Expose child sitemap in robots.txt for Bing; do NOT use additionalSitemaps
+    // (next-sitemap merges it into sitemap.xml index → duplicate sitemap-0 entry).
+    includeNonIndexSitemaps: true,
     policies: [
       {
         userAgent: "*",
