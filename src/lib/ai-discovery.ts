@@ -77,6 +77,7 @@ export const AI_GUIDE_CATALOG = [
   { slug: "heic-android-open-convert", title: "Open iPhone HEIC photos on Android" },
   { slug: "heic-outlook-email-attachment", title: "HEIC email attachment rejected (Outlook & Gmail)" },
   { slug: "heic-premiere-pro-import", title: "Import HEIC into Premiere Pro without crashing" },
+  { slug: "heic-wont-open-in-photoshop", title: "HEIC won't open in Photoshop — convert first (2026)" },
   { slug: "convert-avif-to-jpg-windows", title: "How to convert AVIF to JPG on Windows (step-by-step)" },
   { slug: "convert-webp-to-jpg-windows", title: "How to convert WebP to JPG on Windows (step-by-step)" },
   { slug: "heic-google-drive-batch-convert", title: "Batch convert HEIC to JPG from Google Drive" },

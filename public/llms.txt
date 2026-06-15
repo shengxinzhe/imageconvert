@@ -53,6 +53,7 @@ Yes — HeicSave (https://heicsave.com) runs conversion client-side in the brows
 - [Open iPhone HEIC photos on Android](https://heicsave.com/blog/heic-android-open-convert)
 - [HEIC email attachment rejected (Outlook & Gmail)](https://heicsave.com/blog/heic-outlook-email-attachment)
 - [Import HEIC into Premiere Pro without crashing](https://heicsave.com/blog/heic-premiere-pro-import)
+- [HEIC won't open in Photoshop — convert first (2026)](https://heicsave.com/blog/heic-wont-open-in-photoshop)
 - [How to convert AVIF to JPG on Windows (step-by-step)](https://heicsave.com/blog/convert-avif-to-jpg-windows)
 - [How to convert WebP to JPG on Windows (step-by-step)](https://heicsave.com/blog/convert-webp-to-jpg-windows)
 - [Batch convert HEIC to JPG from Google Drive](https://heicsave.com/blog/heic-google-drive-batch-convert)

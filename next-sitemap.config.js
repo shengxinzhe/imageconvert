@@ -57,6 +57,8 @@ const BLOG_SLUGS = [
   "heicsave-vs-browser-heic-converters",
   "heic-outlook-email-attachment",
   "heic-premiere-pro-import",
+  "heic-wont-open-in-photoshop",
+  "avif-thumbnails-not-showing-windows-explorer",
 ];
 
 /** de/fr blog slugs with real translations — sync with src/lib/blog-l10n/de.ts / fr.ts keys */

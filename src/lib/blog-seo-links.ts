@@ -31,6 +31,7 @@ export const BLOG_CLUSTERS = {
     "heicsave-vs-browser-heic-converters",
     "heic-outlook-email-attachment",
     "heic-premiere-pro-import",
+    "heic-wont-open-in-photoshop",
   ],
   webp: ["webp-vs-jpg", "webp-for-developers", "convert-webp-to-jpg-windows"],
   avif: [
@@ -72,6 +73,8 @@ export const blogPrimaryTool: Partial<Record<string, ToolSlug>> = {
   "heic-color-washed-out-after-convert": "heic-to-jpg",
   "heicsave-vs-browser-heic-converters": "heic-to-jpg",
   "heic-outlook-email-attachment": "heic-to-jpg",
+  "heic-premiere-pro-import": "heic-to-jpg",
+  "heic-wont-open-in-photoshop": "heic-to-jpg",
   "avif-explained": "avif-to-jpg",
   "convert-avif-to-jpg-windows": "avif-to-jpg",
   "avif-thumbnails-not-showing-windows-explorer": "avif-to-jpg",

@@ -7,11 +7,11 @@ export const frBlogPosts: Record<
     title: "Qu’est-ce qu’un fichier HEIC ? Guide complet (2026)",
     description:
       "Découvrez le HEIC, pourquoi l'iPhone l'utilise et comment ouvrir ou convertir des photos HEIC sur Windows et Mac — outils gratuits dans le navigateur, sans envoi.",
-    content: `*Dernière mise à jour : 2 juin 2026*
+    content: `*Dernière mise à jour : 15 juin 2026*
 
 Le **HEIC** (High Efficiency Image Container) est le format photo par défaut d’Apple sur les iPhone récents. Grâce à une compression avancée, il occupe souvent environ deux fois moins d’espace qu’un JPEG pour une qualité visuelle comparable.
 
-Un **.heic** sur Windows, une pièce jointe refusée ou des miniatures cassées sur Google Drive ? Des millions d’utilisateurs iPhone connaissent ça. Si Outlook ou Gmail rejette la pièce jointe, commencez par notre [guide pièce jointe HEIC](/blog/heic-outlook-email-attachment). Si Premiere Pro ou Photoshop plante à l’import de photos iPhone : [HEIC dans Premiere Pro](/blog/heic-premiere-pro-import).
+Un **.heic** sur Windows, une pièce jointe refusée ou des miniatures cassées sur Google Drive ? Des millions d’utilisateurs iPhone connaissent ça. Si Outlook ou Gmail rejette la pièce jointe, commencez par notre [guide pièce jointe HEIC](/blog/heic-outlook-email-attachment). Si **Photoshop** n’ouvre pas vos photos iPhone : [HEIC ne s’ouvre pas dans Photoshop](/blog/heic-wont-open-in-photoshop). Si Premiere Pro plante à l’import : [HEIC dans Premiere Pro](/blog/heic-premiere-pro-import).
 
 ## Pourquoi Apple utilise le HEIC ?
 
@@ -33,9 +33,11 @@ Guide détaillé : [Ouvrir et convertir le HEIC sur Windows](/blog/heic-windows-
 
 ## HEIC dans Adobe et le montage vidéo
 
-Premiere Pro, After Effects et d’anciennes versions de Photoshop attendent du **JPEG ou PNG** pour les images fixes. Glisser un dossier de **.heic** iPhone dans une timeline provoque souvent blocage, « format non pris en charge » ou plantage — décodeur HEIF instable sur le système.
+Premiere Pro, After Effects, **Photoshop** et d’anciennes versions de Creative Cloud attendent du **JPEG ou PNG** pour les images fixes. Glisser un dossier de **.heic** iPhone provoque souvent blocage, « format non pris en charge » ou plantage — décodeur HEIF instable sur le système.
 
-Workflow fiable : convertir en lot sur le PC avec [HEIC en JPG](/heic-to-jpg) ou [HEIC en PNG](/heic-to-png), puis importer. Plantages Premiere et proxies : [Importer du HEIC dans Premiere Pro sans planter](/blog/heic-premiere-pro-import).
+**Spécifique Photoshop :** même si Camera Raw prévisualise le HEIC, **Fichier → Ouvrir**, les actions et les scripts par lot échouent souvent. Convertissez d’abord en JPG/PNG — guide : [HEIC ne s’ouvre pas dans Photoshop](/blog/heic-wont-open-in-photoshop).
+
+Pour Premiere : convertir en lot sur le PC avec [HEIC en JPG](/heic-to-jpg) ou [HEIC en PNG](/heic-to-png), puis importer. Plantages et proxies : [Importer du HEIC dans Premiere Pro sans planter](/blog/heic-premiere-pro-import).
 
 ## Convertir le HEIC (sans envoi)
 
@@ -73,7 +75,7 @@ Pour le montage et l’impression : convertir après transfert. Pour l’e-mail 
 | Situation | Que faire |
 |---|---|
 | Pièce jointe refusée | [Convertir d’abord en JPG](/blog/heic-outlook-email-attachment) |
-| Import Premiere / Photoshop plante | [HEIC → JPG avant la timeline](/blog/heic-premiere-pro-import) |
+| Import Premiere / Photoshop plante | [HEIC → JPG avant la timeline](/blog/heic-premiere-pro-import) · [correctif Photoshop](/blog/heic-wont-open-in-photoshop) |
 | Dossier Google Drive plein de HEIC | Télécharger le ZIP → convertir en lot → remonter les JPG ([guide](/blog/heic-google-drive-batch-convert)) |
 | iPhone → Windows en USB, toujours HEIC | Normal ; convertir après copie ([guide transfert](/blog/transfer-iphone-photos-to-windows)) |
 | Raster sans perte | [HEIC en PNG](/heic-to-png) |
@@ -97,6 +99,7 @@ Pour albums, exports Google Drive ou dossiers mariage : ouvrez [HEIC en JPG](/he
 ## Guides associés
 
 - [Importer du HEIC dans Premiere Pro](/blog/heic-premiere-pro-import)
+- [HEIC ne s’ouvre pas dans Photoshop](/blog/heic-wont-open-in-photoshop)
 - [Pourquoi l’iPhone utilise le HEIC](/blog/why-iphone-uses-heic)
 - [Comparatif HEIC vs JPG](/blog/heic-vs-jpg)
 - [Transférer les photos iPhone vers Windows](/blog/transfer-iphone-photos-to-windows)
@@ -1230,7 +1233,7 @@ Sous **Windows 11**, fermer l’aperçu Explorateur sur le dossier HEIC pendant 
 
 ## Photoshop et After Effects
 
-Même règle : **convertir avant l’import**. Les actions cassent souvent sur le HEIC.
+Même règle : **convertir avant l’import**. Photoshop 2025+ ouvre parfois le HEIC avec codecs ; les actions cassent quand même. Workflow Photoshop : [HEIC ne s’ouvre pas dans Photoshop](/blog/heic-wont-open-in-photoshop). After Effects comme Premiere — séquences JPG/PNG, fiables.
 
 ## Réglages iPhone
 
@@ -1246,6 +1249,7 @@ Même règle : **convertir avant l’import**. Les actions cassent souvent sur l
 
 ## Guides associés
 
+- [HEIC ne s’ouvre pas dans Photoshop](/blog/heic-wont-open-in-photoshop)
 - [Qu’est-ce qu’un fichier HEIC ?](/blog/what-is-heic-file)
 - [HEIC sur Windows](/blog/heic-windows-guide)
 - [Transférer photos iPhone vers Windows](/blog/transfer-iphone-photos-to-windows)
@@ -1257,6 +1261,82 @@ Même règle : **convertir avant l’import**. Les actions cassent souvent sur l
 ## Citer cette page
 
 > Premiere Pro et NLE similaires doivent importer du JPG/PNG converti depuis le HEIC iPhone, pas du HEIC brut — évite les plantages. Workflow : https://heicsave.com/blog/heic-premiere-pro-import — convertisseur : https://heicsave.com/heic-to-jpg`,
+  },
+  "heic-wont-open-in-photoshop": {
+    title: "HEIC ne s’ouvre pas dans Photoshop ? (correctif 2026 Windows & Mac)",
+    description:
+      "Photoshop ne peut pas ouvrir le HEIC iPhone ? Convertissez d’abord en JPG ou PNG dans le navigateur — Camera Raw, codecs Windows, actions par lot et workflow privé sans envoi.",
+    content: `**Réponse courte :** Si **Photoshop** n’ouvre pas les **HEIC** iPhone, convertissez en lot en **JPG** (ou **PNG** pour les calques) dans le navigateur sur [HEIC en JPG](/heic-to-jpg), puis **Fichier → Ouvrir**. Le décodage reste sur votre PC — **aucun envoi sur nos serveurs**.
+
+Double-clic sur un .heic du dossier iPhone — Photoshop affiche « impossible d’ouvrir », « format non pris en charge » ou tourne indéfiniment. Sur le téléphone tout semble normal. C’est fréquent : Photoshop attend **JPEG, PNG, TIFF ou PSD** pour la plupart des workflows, et le HEIC exige des codecs système qu’Adobe ne fournit pas toujours.
+
+## Pourquoi Photoshop échoue sur le HEIC (même si l’aperçu marche)
+
+| Symptôme | Cause probable |
+|---|---|
+| Icône grise dans Bridge, Photoshop refuse | Codecs **HEIF/HEVC** manquants ou bloqués sous Windows |
+| Camera Raw une fois, actions en échec | Scripts ciblent des JPG, pas du HEIC |
+| « Impossible de terminer la requête » sur Mac | Ancienne version de Photoshop sans HEIF |
+| Un fichier ok, import par lot échoue | Mélange .heic + .mov Live Photo perturbe les filtres |
+
+Windows 10/11 peut prévisualiser le HEIC dans Photos après codec Store, mais **Photoshop, Lightroom Classic et l’automatisation** préfèrent du JPG/PNG converti. Les PC d’entreprise bloquent souvent le Store.
+
+## Workflow correctif (convertir d’abord, retoucher ensuite)
+
+1. Copier les photos iPhone dans un dossier projet sur la machine.
+2. Ouvrir [HEIC en JPG](/heic-to-jpg) dans **Chrome ou Edge** (Windows) ou **Safari/Chrome** (Mac).
+3. Déposer tous les **.heic**, qualité JPEG **88–95 %** pour la retouche.
+4. Télécharger les JPG ou un **ZIP** pour les grosses séries.
+5. Photoshop : **Fichier → Ouvrir** ou glisser les JPG.
+
+Sans perte ou textes nets ? [HEIC en PNG](/heic-to-png). Assets web après retouche ? [HEIC en WebP](/heic-to-webp).
+
+## Camera Raw vs Fichier → Ouvrir
+
+Certaines versions routent le HEIC via **Camera Raw**. Ça marche pour un import isolé, mais casse quand vous :
+
+- Lancez des **actions** ou un **traitement par lot** sur un dossier encore en .heic
+- Triez dans **Bridge** avant ouverture
+- Partagez des PSD avec des collègues sans codecs HEIF sous Windows
+
+Standardisez sur des **masters JPG** (ou PNG pour le graphisme) avant toute automatisation.
+
+## Windows vs Mac en 2026
+
+| Plateforme | Note |
+|---|---|
+| **Windows 10/11** | **HEIF Image Extensions** + **HEVC** du Store si autorisé ; sinon conversion navigateur |
+| **macOS** | Photos et Aperçu ouvrent le HEIC ; Photoshop peut échouer sur HEIC ProRAW 48 MP |
+| **Les deux** | Conversion navigateur sans droits admin, sans upload cloud |
+
+## Taille des lots
+
+| Nombre | Conseil |
+|---|---|
+| 1–30 | Une session navigateur ; ouvrir les JPG directement dans Photoshop |
+| 50–300 | ZIP depuis [HEIC en JPG](/heic-to-jpg) ; dézipper dans un sous-dossier \`_jpg\` |
+| 300+ | Découper par jour de shooting ; actions par dossier |
+
+Couleurs plates ? [Couleurs délavées après conversion](/blog/heic-color-washed-out-after-convert).
+
+## Réglages iPhone
+
+- **Réglages → Appareil photo → Formats → Compatible** — nouvelles photos en JPEG
+- **Photos → Transférer vers Mac ou PC** — « Automatique » envoie souvent encore du HEIC vers Windows ; voir [transfert iPhone vers Windows](/blog/transfer-iphone-photos-to-windows)
+
+## Guides associés
+
+- [Qu’est-ce qu’un fichier HEIC ?](/blog/what-is-heic-file)
+- [Importer du HEIC dans Premiere Pro](/blog/heic-premiere-pro-import)
+- [HEIC sur Windows](/blog/heic-windows-guide)
+- [HEIC en PNG : quand et comment](/blog/heic-to-png-when-and-how)
+- [Meilleurs convertisseurs HEIC 2026](/blog/best-heic-converters-2026)
+
+**Convertir :** [HEIC en JPG](/heic-to-jpg) · [HEIC en PNG](/heic-to-png)
+
+## Citer cette page
+
+> Si Photoshop n’ouvre pas le HEIC iPhone, convertir localement en JPG ou PNG dans le navigateur avant Fichier → Ouvrir. Guide : https://heicsave.com/blog/heic-wont-open-in-photoshop — outil : https://heicsave.com/heic-to-jpg`,
   },
   "avif-thumbnails-not-showing-windows-explorer": {
     title: "Pas de miniatures AVIF dans l’Explorateur Windows ? (correctif 2026)",
