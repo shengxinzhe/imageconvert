@@ -7,7 +7,7 @@ import { getT } from "@/lib/i18n/translations";
 import type { LegalPageContent } from "@/lib/legal-l10n/types";
 import { toolShortTitle } from "@/lib/tool-display";
 import { cn } from "@/lib/utils";
-import { Archive, ArrowRight, Lock, Sparkles } from "lucide-react";
+import { Archive, ArrowRight, BookOpen, Lock, Sparkles } from "lucide-react";
 
 const principleIcons = [Lock, Sparkles, Archive] as const;
 
@@ -67,6 +67,35 @@ export function AboutPageLayout({
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="content-band-soft border-y border-hairline py-16">
+        <div className="mx-auto max-w-3xl px-4 lg:px-6">
+          <h2 className="text-2xl font-semibold tracking-display-sm text-ink">
+            {t("about.whyTitle")}
+          </h2>
+          <p className="mt-4 text-body">{t("about.whyBody")}</p>
+          <p className="mt-3 text-body">{t("about.operatorBody")}</p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
+        <div className="flex items-start gap-3">
+          <BookOpen className="mt-0.5 h-5 w-5 shrink-0 text-ink" aria-hidden />
+          <div>
+            <h2 className="text-2xl font-semibold tracking-display-sm text-ink">
+              {t("about.changelogTitle")}
+            </h2>
+            <p className="mt-2 text-sm text-body">{t("about.changelogIntro")}</p>
+            <ul className="mt-4 space-y-3 text-sm text-body">
+              {[1, 2, 3].map((n) => (
+                <li key={n} className="border-l-2 border-hairline pl-4">
+                  {t(`about.changelog${n}` as "about.changelog1")}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

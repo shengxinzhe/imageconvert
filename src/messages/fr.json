@@ -104,7 +104,15 @@
     "toolsTitle": "Nos convertisseurs",
     "toolsSubtitle": "{count} outils gratuits pour HEIC, WebP, AVIF et l'optimisation — tout s'exécute localement dans votre onglet.",
     "toolsCta": "Commencer par HEIC en JPG",
-    "detailsTitle": "En savoir plus sur HeicSave"
+    "detailsTitle": "En savoir plus sur HeicSave",
+    "whyTitle": "Pourquoi nous avons créé HeicSave",
+    "whyBody": "La plupart des « convertisseurs gratuits » envoient vos photos sur un serveur inconnu. Nous voulions l’inverse : des outils HEIC, WebP et AVIF qui décodent sur votre appareil via WebAssembly et Canvas — privé, rapide, sans compte.",
+    "operatorBody": "HeicSave est publié par une équipe indépendante sur heicsave.com. Aucun lien avec Apple, Google, Microsoft ou Adobe. De vraies personnes lisent privacy@heicsave.com et mettent les guides à jour quand les logiciels changent.",
+    "changelogTitle": "Mises à jour du site",
+    "changelogIntro": "Nous améliorons outils et guides régulièrement. Jalons récents :",
+    "changelog1": "Juin 2026 — Guide workflow par lot HEIC, tableaux comparatifs sur HEIC en JPG, FAQ UK/DE/FR/US, standards éditoriaux.",
+    "changelog2": "Juin 2026 — Interface convertisseur axée confidentialité, miniatures HEIC dans le navigateur, ligne « 100 % privé » sur l’upload.",
+    "changelog3": "Mai 2026 — Guides Premiere, Photoshop et Outlook ; traduction complète DE/FR."
   },
   "contact": {
     "badge": "Nous contacter",
@@ -113,6 +121,9 @@
     "cardPrivacyBody": "Questions sur les cookies, demandes RGPD et fonctionnement de la conversion locale.",
     "cardDmcaTitle": "Droits d'auteur (DMCA)",
     "cardDmcaBody": "Notifications et demandes de retrait pour le contenu du site ou les guides.",
+    "cardAboutTitle": "À propos & éditorial",
+    "cardAboutBody": "Qui gère HeicSave, comment nous testons, journal des mises à jour et financement.",
+    "aboutLink": "Lire À propos de HeicSave →",
     "cardResponseTitle": "Délai de réponse",
     "cardResponseBody": "Réponse visée sous quelques jours ouvrés. Pour un problème technique, indiquez navigateur, système, type de fichier et étapes de reproduction.",
     "emailPrivacyLabel": "Confidentialité & général",

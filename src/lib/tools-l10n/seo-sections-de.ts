@@ -73,6 +73,88 @@ export const deToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
         "Falsche Downloads: Seite hart neu laden (Strg+F5), echte .heic/.heif wählen — nicht Live-Photo-.mov-Dateien.",
       ],
     },
+    {
+      heading: "HeicSave im Vergleich zu anderen HEIC→JPG-Methoden",
+      paragraphs: [
+        "Nicht jede Methode passt zu jedem Szenario. Cloud-Konverter bedeuten Upload-Wartezeit und Datenschutzfragen. Windows-Store-Codecs helfen bei der Vorschau — konvertieren aber keinen Hochzeitsordner für Outlook. Die Tabelle fasst unsere Erfahrung unter Windows 11 und macOS Sonoma (2026) zusammen.",
+        "HeicSave dekodiert im Browser-Tab. Das zählt bei Versicherungsunterlagen, HR-Portalen und Familienalben, die nicht auf fremde Server sollen.",
+      ],
+      table: {
+        caption:
+          "Praxisvergleich für typische iPhone-Stapel (50–200 Dateien). Abhängig von RAM und Browser.",
+        headers: ["Methode", "Dateien verlassen Gerät?", "Stapel + ZIP", "EXIF", "Ideal für"],
+        rows: [
+          [
+            "HeicSave (diese Seite)",
+            "Nein — lokal per WebAssembly",
+            "Ja, kein festes Limit",
+            "Oft (Datum, Kamera, Ausrichtung)",
+            "Datenschutz, Windows ohne Codecs, große Ordner",
+          ],
+          [
+            "Cloud-Upload-Konverter",
+            "Ja — Upload auf fremde Server",
+            "Unterschiedlich; Limits üblich",
+            "Oft entfernt",
+            "Einzeldateien ohne Datenschutzbedenken",
+          ],
+          [
+            "Windows Fotos + HEIF-Erweiterung",
+            "Bleibt lokal",
+            "Manuell einzeln exportieren",
+            "Teilweise",
+            "Nur wenige Dateien ansehen",
+          ],
+          [
+            "Mac Vorschau / Fotos-Export",
+            "Bleibt lokal",
+            "Mühsam ab 100+ Dateien",
+            "Meist ja",
+            "Kleine Mengen am Mac",
+          ],
+          [
+            "iPhone Einstellungen → Kompatibel",
+            "N/A — nur neue Fotos",
+            "N/A",
+            "N/A",
+            "Zukünftiges HEIC vermeiden, alte Ordner nicht",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "JPG, PNG oder WebP nach HEIC wählen",
+      paragraphs: [
+        "HEIC ist Speicherformat auf dem iPhone. Außerhalb von Apple wählen Sie das Zielformat nach Verwendung — nicht umgekehrt. Orientierung vor dem Konvertieren eines ganzen Urlaubsordners.",
+      ],
+      table: {
+        headers: ["Ziel", "Konvertieren zu", "Warum"],
+        rows: [
+          ["E-Mail, WhatsApp, Arbeitgeber, Druck", "JPG", "Universal; klein genug für Fotos"],
+          ["Photoshop, Figma, Folien mit Text", "PNG", "Verlustfrei-freundlich; HEIC in PNG hier"],
+          ["WordPress / Shopify", "WebP", "Kleiner als JPG; HEIC in WebP"],
+          ["Premiere / DaVinci Standbilder", "JPG-Serie", "Stabiler Import"],
+          ["Archiv nach Bearbeitung", "HEIC behalten + PNG export", "Nicht die einzige Kopie als minderwertiges JPG"],
+        ],
+      },
+    },
+    {
+      heading: "Technische Grenzen und Browser (2026)",
+      paragraphs: [
+        "Kein künstliches Fünf-Dateien-Limit. Praktische Grenze: RAM und HEIC-Unterstützung. Auf 8 GB Windows: 40–60 Vollauflösungsfotos pro Stapel; auf 16 GB Desktop-Chrome oft 150–200, bevor der Tab schwer wird.",
+        "Tab langsam? ZIP laden, Seite neu laden, nächsten Stapel. Keine Live-Photo-.mov — nur .heic-Standbilder.",
+      ],
+      table: {
+        headers: ["Umgebung", "HEIC-Dekodierung", "Stapel-Tipp"],
+        rows: [
+          ["Chrome / Edge Windows 11", "Ja", "Ideal für 100+ Dateien als ZIP"],
+          ["Firefox Windows", "In neueren Versionen", "Kleinere Stapel bei wenig RAM"],
+          ["Safari Mac", "Ja", "Gut für AirDrop-Ordner"],
+          ["Safari iPhone / iPad", "Ja", "Kleinere Stapel; WLAN + Netzteil"],
+          ["Chromebook", "Meist ja", "Kleinere Stapel; siehe Chromebook-Ratgeber"],
+        ],
+      },
+    },
   ],
   "heic-to-png": [
     {

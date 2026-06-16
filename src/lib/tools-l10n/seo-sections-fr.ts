@@ -72,6 +72,88 @@ export const frToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
         "Échec de conversion : Chrome/Edge sur bureau, moins d’onglets, lots plus petits. Rechargez la page (Ctrl+F5), vérifiez .heic/.heif — pas les .mov des Live Photos.",
       ],
     },
+    {
+      heading: "HeicSave comparé aux autres méthodes HEIC → JPG",
+      paragraphs: [
+        "Toutes les méthodes ne conviennent pas à tout. Les convertisseurs cloud impliquent upload et questions de confidentialité. Les codecs du Microsoft Store aident à prévisualiser — pas à convertir un dossier mariage pour Outlook. Tableau basé sur nos tests Windows 11 et macOS Sonoma (2026).",
+        "HeicSave décode dans l’onglet du navigateur. Important pour assurances, portails RH et albums familiaux que vous ne voulez pas sur un serveur tiers.",
+      ],
+      table: {
+        caption:
+          "Comparaison pour lots iPhone typiques (50–200 fichiers). Varie selon RAM et navigateur.",
+        headers: ["Méthode", "Fichiers quittent l’appareil ?", "Lot + ZIP", "EXIF", "Idéal pour"],
+        rows: [
+          [
+            "HeicSave (cette page)",
+            "Non — WebAssembly local",
+            "Oui, pas de plafond fixe",
+            "Souvent (date, appareil, orientation)",
+            "Confidentialité, Windows sans codecs, gros dossiers",
+          ],
+          [
+            "Convertisseurs cloud",
+            "Oui — envoi sur leurs serveurs",
+            "Variable ; quotas fréquents",
+            "Souvent supprimés",
+            "Conversions ponctuelles sans enjeu privacy",
+          ],
+          [
+            "Photos Windows + extension HEIF",
+            "Reste local",
+            "Export manuel un par un",
+            "Partiel",
+            "Quelques fichiers en aperçu",
+          ],
+          [
+            "Aperçu / Photos Mac",
+            "Reste local",
+            "Fastidieux au-delà de 100 fichiers",
+            "En général oui",
+            "Petits lots sur Mac",
+          ],
+          [
+            "Réglages iPhone → Compatible",
+            "N/A — nouvelles photos seulement",
+            "N/A",
+            "N/A",
+            "Éviter le HEIC futur, pas les anciens dossiers",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "Choisir JPG, PNG ou WebP après HEIC",
+      paragraphs: [
+        "Le HEIC sert au stockage sur iPhone. Hors écosystème Apple, choisissez le format de destination avant de convertir tout un dossier vacances.",
+      ],
+      table: {
+        headers: ["Objectif", "Convertir en", "Pourquoi"],
+        rows: [
+          ["E-mail, WhatsApp, employeur, imprimeur", "JPG", "Universel ; taille raisonnable"],
+          ["Photoshop, Figma, slides avec texte", "PNG", "Sans perte ; HEIC en PNG sur ce site"],
+          ["WordPress / Shopify", "WebP", "Plus léger ; HEIC en WebP"],
+          ["Premiere / DaVinci images fixes", "Série JPG", "Import stable"],
+          ["Archive après retouche", "Garder HEIC + exporter PNG", "Ne pas compresser la seule copie en JPG basse qualité"],
+        ],
+      },
+    },
+    {
+      heading: "Limites techniques et navigateurs (2026)",
+      paragraphs: [
+        "Pas de limite artificielle de cinq fichiers. Limites pratiques : RAM et décodage HEIC. Sur portable Windows 8 Go : 40–60 photos pleine résolution par lot ; sur Chrome bureau 16 Go : souvent 150–200 avant ralentissement.",
+        "Onglet lent ? Téléchargez le ZIP, rechargez, continuez. Excluez les .mov Live Photo — convertissez les .heic uniquement.",
+      ],
+      table: {
+        headers: ["Environnement", "Décode HEIC", "Conseil lot"],
+        rows: [
+          ["Chrome / Edge Windows 11", "Oui", "Idéal pour ZIP 100+ fichiers"],
+          ["Firefox Windows", "Versions récentes", "Lots plus petits si peu de RAM"],
+          ["Safari Mac", "Oui", "Dossiers AirDrop"],
+          ["Safari iPhone / iPad", "Oui", "Petits lots ; Wi‑Fi + chargeur"],
+          ["Chromebook", "En général oui", "Lots modestes ; voir guide Chromebook"],
+        ],
+      },
+    },
   ],
   "heic-to-png": [
     {

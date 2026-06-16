@@ -1,5 +1,6 @@
 import type { InputFormat, OutputFormat } from "@/lib/convert";
 import { extraToolSeoSections } from "@/lib/tool-seo-sections";
+import type { ToolSeoSection } from "@/lib/tool-seo-types";
 
 export interface FaqItem {
   question: string;
@@ -21,7 +22,7 @@ export interface ToolConfig {
   privacyNote: string;
   faqs: FaqItem[];
   relatedSlugs: string[];
-  seoSections: { heading: string; content?: string; paragraphs?: string[] }[];
+  seoSections: ToolSeoSection[];
 }
 
 const allSlugs = [

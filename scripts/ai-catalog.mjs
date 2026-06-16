@@ -42,6 +42,7 @@ export const GUIDES = [
   ["heic-outlook-email-attachment", "HEIC email attachment rejected (Outlook & Gmail)"],
   ["heic-premiere-pro-import", "Import HEIC into Premiere Pro without crashing"],
   ["heic-wont-open-in-photoshop", "HEIC won't open in Photoshop — convert first (2026)"],
+  ["batch-heic-to-jpg-workflow", "Batch convert iPhone HEIC to JPG — real workflow (2026)"],
   ["convert-avif-to-jpg-windows", "How to convert AVIF to JPG on Windows (step-by-step)"],
   ["convert-webp-to-jpg-windows", "How to convert WebP to JPG on Windows (step-by-step)"],
   ["heic-google-drive-batch-convert", "Batch convert HEIC to JPG from Google Drive"],

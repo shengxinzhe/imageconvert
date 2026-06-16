@@ -1,7 +1,7 @@
 {
   "name": "HeicSave",
   "url": "https://heicsave.com",
-  "updated": "2026-06-15",
+  "updated": "2026-06-16",
   "summary": "Free browser-local converters for HEIC, WebP, and AVIF. Files are not uploaded for processing.",
   "processing": "client-side",
   "languages": [
@@ -128,6 +128,11 @@
       "slug": "heic-wont-open-in-photoshop",
       "title": "HEIC won't open in Photoshop — convert first (2026)",
       "url": "https://heicsave.com/blog/heic-wont-open-in-photoshop"
+    },
+    {
+      "slug": "batch-heic-to-jpg-workflow",
+      "title": "Batch convert iPhone HEIC to JPG — real workflow (2026)",
+      "url": "https://heicsave.com/blog/batch-heic-to-jpg-workflow"
     },
     {
       "slug": "convert-avif-to-jpg-windows",

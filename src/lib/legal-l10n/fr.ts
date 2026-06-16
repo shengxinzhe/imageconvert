@@ -9,9 +9,9 @@ export const frLegal: LegalCatalog = {
     },
     h1: "Contacter HeicSave",
     body: `- **Problème de conversion ?** Essayez [HEIC en JPG](/heic-to-jpg) dans Chrome ou Edge sur un ordinateur. Indiquez navigateur, système et type de fichier si vous nous écrivez.
-- **Qui exploite le site ?** Voir [À propos](/about) pour le fonctionnement et le modèle économique.
-- **Droits RGPD (EEE/Royaume-Uni) ?** Voir la [politique de confidentialité](/privacy) ou écrire à privacy@heicsave.com.
-- **Droits d'auteur ?** Consultez la [politique DMCA](/dmca) pour les mentions obligatoires avant d'écrire.`,
+- **Qui exploite le site ?** Voir [À propos](/about) pour l’opérateur, le changelog et les standards éditoriaux.
+- **Droits RGPD (EEE/Royaume-Uni) ?** Écrire à privacy@heicsave.com ou lire la [politique de confidentialité](/privacy).
+- **Droits d'auteur ?** Écrire à dmca@heicsave.com après lecture de la [politique DMCA](/dmca).`,
   },
   about: {
     meta: {
@@ -20,7 +20,7 @@ export const frLegal: LegalCatalog = {
         "Découvrez HeicSave : convertisseurs HEIC, WebP et AVIF gratuits dans le navigateur. Sans envoi, sans compte — vos photos restent privées sur votre appareil.",
     },
     h1: "À propos de HeicSave",
-    lastUpdated: "Dernière mise à jour : 19 mai 2026",
+    lastUpdated: "Dernière mise à jour : 2 juin 2026",
     body: `**HeicSave** est un site gratuit de conversion d’images sur [heicsave.com](https://heicsave.com). Nous aidons les utilisateurs d’iPhone à transformer des photos HEIC en JPG ou PNG, et les développeurs à convertir WebP et AVIF lorsque d’anciennes applications ou clients mail ne les ouvrent pas.
 
 ## Public visé
@@ -31,13 +31,28 @@ Nous ciblons surtout les personnes aux États-Unis et en Europe qui reçoivent d
 
 HeicSave est financé par la publicité (Google AdSense) et peut utiliser des statistiques respectueuses de la vie privée avec votre consentement. Nous ne vendons pas vos images — publicité et analytics sont séparés de la conversion, qui reste sur votre appareil.
 
+## Qui exploite HeicSave
+
+HeicSave est publié par une **équipe indépendante** sur [heicsave.com](https://heicsave.com). Aucun lien avec Apple, Google, Microsoft ou Adobe. De vraies personnes lisent les e-mails [Contact](/contact) et mettent les guides à jour.
+
+## Pourquoi nous l’avons créé
+
+Les convertisseurs cloud envoient vos photos sur des serveurs que vous ne contrôlez pas. Nos outils décodent **localement dans le navigateur** — vos images ne quittent pas votre appareil. Aligné avec le RGPD en Europe.
+
 ## Contenus éditoriaux
 
-Notre [blog](/blog) propose des guides originaux sur HEIC, WebP, AVIF et la conversion locale. Les pages outils incluent des instructions pas à pas et une FAQ pour résoudre des problèmes concrets, souvent sans installer de codecs sous Windows.
+Notre [blog](/blog) propose des guides originaux sur HEIC, WebP, AVIF et la conversion locale. Les pages outils incluent des tableaux comparatifs, des FAQ et des workflows testés sur Windows 11, macOS, Chrome et Edge — pas du contenu générique.
+
+## Standards éditoriaux
+
+- **Tests réels :** workflows vérifiés sur appareils physiques, pas copiés depuis des forums.
+- **Profondeur :** tailles de lots, poids de fichiers, dépannage dans chaque guide long.
+- **Corrections :** signalez une erreur via [Contact](/contact) — nous mettons à jour la date.
+- **Pas de contenu scrapé :** pas de republication de manuels tiers ni de traductions automatiques de concurrents.
 
 ## Contact
 
-Questions ou demandes RGPD : [Page contact](/contact) ou la page [Contact](/contact).
+Questions ou demandes RGPD : [Page contact](/contact) ou privacy@heicsave.com.
 
 Voir aussi la [politique de confidentialité](/privacy) et les [conditions d’utilisation](/terms).`,
   },
@@ -48,8 +63,12 @@ Voir aussi la [politique de confidentialité](/privacy) et les [conditions d’u
         "Confidentialité HeicSave : conversion HEIC, WebP et AVIF dans le navigateur — vos photos ne sont pas envoyées. Droits RGPD, cookies, AdSense et statistiques expliqués.",
     },
     h1: "Politique de confidentialité",
-    lastUpdated: "Dernière mise à jour : 19 mai 2026",
+    lastUpdated: "Dernière mise à jour : 2 juin 2026",
     body: `**HeicSave** (« nous ») propose des outils gratuits de conversion d’images qui s’exécutent dans votre navigateur. Nous ne téléversons ni ne stockons vos fichiers image sur nos serveurs pour la conversion.
+
+## Qui exploite ce site
+
+HeicSave est exploité par un éditeur indépendant sur heicsave.com — pas un service de stockage cloud. Conversion **uniquement côté client** ; nous ne recevons pas vos photos. Voir [À propos](/about).
 
 ## Données image
 
@@ -87,7 +106,7 @@ Le service ne s’adresse pas aux enfants de moins de 13 ans. Nous ne collectons
 
 ## Contact
 
-E-mail : [Page contact](/contact) · [Page contact](/contact) · [À propos de HeicSave](/about)`,
+Confidentialité & général : privacy@heicsave.com · [Page contact](/contact) · [À propos de HeicSave](/about)`,
   },
   terms: {
     meta: {
@@ -96,8 +115,12 @@ E-mail : [Page contact](/contact) · [Page contact](/contact) · [À propos de H
         "Conditions pour les convertisseurs HEIC, WebP et AVIF gratuits de HeicSave dans le navigateur. Traitement local, sans compte, publicité distincte de la conversion.",
     },
     h1: "Conditions d’utilisation",
-    lastUpdated: "Dernière mise à jour : 19 mai 2026",
+    lastUpdated: "Dernière mise à jour : 2 juin 2026",
     body: `En utilisant **HeicSave**, vous acceptez ces conditions. Le service est fourni « en l’état », sans garantie.
+
+## Exploitant
+
+HeicSave (heicsave.com) est exploité par un éditeur indépendant. Nous ne sommes ni Apple ni Google ni un stockage cloud. Voir [À propos](/about).
 
 ## Utilisation du service
 
@@ -130,7 +153,7 @@ Nous pouvons mettre à jour ces conditions. La poursuite de l’utilisation vaut
 
 ## Agent désigné
 
-E-mail : [Politique DMCA](/dmca)
+E-mail : dmca@heicsave.com · [Page contact](/contact)
 
 ## Contenu de la notification
 

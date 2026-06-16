@@ -7,7 +7,7 @@ import { audienceStyles } from "@/lib/design-variants";
 import { getT } from "@/lib/i18n/translations";
 import type { LegalPageContent } from "@/lib/legal-l10n/types";
 import { cn } from "@/lib/utils";
-import { Clock, Mail, Scale } from "lucide-react";
+import { Clock, FileText, Mail, Scale } from "lucide-react";
 
 export function ContactPageLayout({
   content,
@@ -36,6 +36,12 @@ export function ContactPageLayout({
       link: { href: "/dmca" as const, label: t("contact.dmcaLink") },
     },
     {
+      icon: FileText,
+      title: t("contact.cardAboutTitle"),
+      body: t("contact.cardAboutBody"),
+      link: { href: "/about" as const, label: t("contact.aboutLink") },
+    },
+    {
       icon: Clock,
       title: t("contact.cardResponseTitle"),
       body: t("contact.cardResponseBody"),
@@ -62,7 +68,7 @@ export function ContactPageLayout({
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 lg:px-6">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card) => {
             const Icon = card.icon;
             return (

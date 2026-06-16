@@ -47,6 +47,7 @@ export const BLOG_SLUGS = [
   "heic-outlook-email-attachment",
   "heic-premiere-pro-import",
   "heic-wont-open-in-photoshop",
+  "batch-heic-to-jpg-workflow",
   "avif-thumbnails-not-showing-windows-explorer",
 ];
 

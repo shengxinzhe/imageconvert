@@ -12,6 +12,7 @@ export const toolRelatedGuides: Partial<
       "heic-iphone-photos-windows-us",
       "heic-premiere-pro-import",
       "heic-wont-open-in-photoshop",
+      "batch-heic-to-jpg-workflow",
       "what-is-heic-file",
       "transfer-iphone-photos-to-windows",
       "heic-windows-guide",

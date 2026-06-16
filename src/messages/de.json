@@ -104,7 +104,15 @@
     "toolsTitle": "Unsere Konverter",
     "toolsSubtitle": "{count} kostenlose Tools für HEIC, WebP, AVIF und Optimierung — alles läuft lokal in Ihrem Tab.",
     "toolsCta": "Mit HEIC in JPG starten",
-    "detailsTitle": "Mehr über HeicSave"
+    "detailsTitle": "Mehr über HeicSave",
+    "whyTitle": "Warum wir HeicSave gebaut haben",
+    "whyBody": "Die meisten „kostenlosen Konverter“ laden Fotos auf fremde Server hoch. Wir wollten das Gegenteil: HEIC-, WebP- und AVIF-Tools, die auf Ihrem Gerät per WebAssembly und Canvas dekodieren — privat, schnell und ohne Konto.",
+    "operatorBody": "HeicSave wird von einem unabhängigen Team unter heicsave.com betrieben. Keine Verbindung zu Apple, Google, Microsoft oder Adobe. Echte Menschen lesen privacy@heicsave.com und aktualisieren Ratgeber bei Softwareänderungen.",
+    "changelogTitle": "Website-Updates",
+    "changelogIntro": "Wir verbessern Tools und Ratgeber laufend. Wichtige Meilensteine:",
+    "changelog1": "Juni 2026 — Stapel-HEIC-Workflow, Vergleichstabellen auf HEIC in JPG, UK/DE/FR/US-FAQ, redaktionelle Standards.",
+    "changelog2": "Juni 2026 — Datenschutz-Converter-UI, HEIC-Vorschau im Browser, 100%-Sicher-Hinweis am Upload.",
+    "changelog3": "Mai 2026 — Premiere-, Photoshop- und Outlook-Ratgeber; vollständige DE/FR-Übersetzung."
   },
   "contact": {
     "badge": "Kontakt",
@@ -113,6 +121,9 @@
     "cardPrivacyBody": "Fragen zu Cookies, DSGVO-Anfragen und zur browser-lokalen Konvertierung.",
     "cardDmcaTitle": "Urheberrecht (DMCA)",
     "cardDmcaBody": "Urheberrechtshinweise und Abmahnungen zu Website-Inhalten oder Ratgebern.",
+    "cardAboutTitle": "Über uns & Redaktion",
+    "cardAboutBody": "Wer HeicSave betreibt, wie wir testen, Changelog und Finanzierung.",
+    "aboutLink": "Über HeicSave lesen →",
     "cardResponseTitle": "Antwortzeit",
     "cardResponseBody": "Antwort in der Regel innerhalb weniger Werktage. Bei technischen Problemen: Browser, Betriebssystem, Dateityp und Reproduktionsschritte angeben.",
     "emailPrivacyLabel": "Datenschutz & allgemein",

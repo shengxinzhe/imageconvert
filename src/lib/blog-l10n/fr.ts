@@ -1338,6 +1338,81 @@ Couleurs plates ? [Couleurs délavées après conversion](/blog/heic-color-washe
 
 > Si Photoshop n’ouvre pas le HEIC iPhone, convertir localement en JPG ou PNG dans le navigateur avant Fichier → Ouvrir. Guide : https://heicsave.com/blog/heic-wont-open-in-photoshop — outil : https://heicsave.com/heic-to-jpg`,
   },
+  "batch-heic-to-jpg-workflow": {
+    title: "Convertir des HEIC iPhone en JPG par lot — workflow réel (2026)",
+    description:
+      "50–200 photos HEIC iPhone en JPG sur Windows ou Mac : USB vs iCloud, taille de lot sur 8 Go RAM, ZIP, curseur qualité — pourquoi le local bat le cloud.",
+    content: `*Dernière mise à jour : 2 juin 2026*
+
+**Réponse courte :** Copiez les HEIC sur le PC (USB, iCloud Drive ou export Google Photos), ouvrez **[HEIC en JPG](/heic-to-jpg)** dans Chrome ou Edge, lots de **40–60 fichiers** sur 8 Go RAM (150+ sur bureau 16 Go), qualité JPEG **85–90 %**, convertissez, téléchargez le **ZIP**. **Aucun envoi** sur nos serveurs.
+
+Guide **workflow par lot** testé en conditions réelles — pas seulement « 5 étapes faciles ».
+
+## Scénario : 187 photos de vacances
+
+iPhone 15 Pro, **48 MP HEIC**, 187 fichiers, dossier ~**620 Mo**. Objectif : JPG pour Google Photos, e-mail famille, montage Premiere.
+
+## Étape 1 — Récupérer les HEIC sur l’ordinateur
+
+| Source | Résultat | Piège |
+|---|---|---|
+| USB → copier DCIM | Rapide ; pleine résolution | Miniatures Windows souvent absentes |
+| iCloud pour Windows | Pratique | Reste HEIC sans réglage Compatible |
+| AirDrop → Mac → PC | Simple côté Apple | Gros dossiers = lots |
+| Téléchargement Google Photos | Multi-plateforme | HEIC ou JPG selon réglages |
+
+**Live Photos :** convertir les **.heic** uniquement ; ignorer les **.mov**.
+
+## Étape 2 — Régler la qualité d’abord
+
+1. Chrome ou Edge sur PC.
+2. Ouvrir [HEIC en JPG](/heic-to-jpg).
+3. **Curseur 85–90 %** avant d’ajouter les fichiers.
+
+## Étape 3 — Taille de lot selon la RAM
+
+| RAM | Lot conseillé |
+|---|---|
+| Portable 8 Go | 40–60 HEIC |
+| Bureau 16 Go | 120–200 HEIC |
+| 8 Go + 48 MP | 20–30 HEIC |
+
+**Boucle :** déposer → Convertir → ZIP → recharger l’onglet si lent → lot suivant.
+
+## Étape 4 — Tailles de fichiers après conversion
+
+- **12 MP HEIC ~1,2–2,5 Mo** → JPG 90 % souvent **1,5–3,5 Mo**
+- **48 MP HEIC ~2–5 Mo** → JPG 90 % souvent **4–8 Mo**
+
+620 Mo HEIC peuvent devenir **~900 Mo–1,1 Go JPG** — normal en haute qualité.
+
+## Étape 5 — Vérifier EXIF
+
+Date, appareil, orientation souvent conservés ; GPS parfois absent. Vérifier 3 fichiers dans Photos. **Garder les HEIC** jusqu’à validation des JPG.
+
+## Pourquoi le local bat le cloud
+
+187 photos × ~3 Mo ≈ **560 Mo d’upload**. À 10 Mbit/s : **12+ minutes** avant conversion — plus confidentialité. HeicSave décode **dans l’onglet** ; au-delà de **30 fichiers**, souvent plus rapide qu’une file cloud.
+
+Tableaux comparatifs sur la [page HEIC en JPG](/heic-to-jpg).
+
+## Dépannage
+
+| Symptôme | Correctif |
+|---|---|
+| Onglet bloqué | Moins de fichiers ; bureau pas mobile |
+| Format non supporté | Vrais .heic/.heif |
+| Couleurs lavées | [Couleurs après conversion](/blog/heic-color-washed-out-after-convert) |
+| Outlook refuse | Diviser le ZIP ou baisser la qualité |
+
+## Guides associés
+
+- [Transférer photos iPhone vers Windows](/blog/transfer-iphone-photos-to-windows)
+- [Lot HEIC depuis Google Drive](/blog/heic-google-drive-batch-convert)
+- [HEIC vs JPG](/blog/heic-vs-jpg)
+
+**Convertir :** [HEIC en JPG](/heic-to-jpg)`,
+  },
   "avif-thumbnails-not-showing-windows-explorer": {
     title: "Pas de miniatures AVIF dans l’Explorateur Windows ? (correctif 2026)",
     description:

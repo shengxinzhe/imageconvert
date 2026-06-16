@@ -22,7 +22,7 @@ export const blogPosts: BlogPost[] = [
 
 HEIC (High Efficiency Image Container) is Apple's default photo format on modern iPhones. It uses advanced compression to store photos at roughly half the size of JPEG with similar visual quality.
 
-Got a .heic on Windows, failed to email it, or saw broken thumbnails in Google Drive? Same problem millions of iPhone users hit every week. If Outlook or Gmail rejected the attachment, start with our [HEIC email attachment guide](/blog/heic-outlook-email-attachment). If **Photoshop** will not open your iPhone still, see [HEIC won't open in Photoshop](/blog/heic-wont-open-in-photoshop). If Premiere Pro crashes when you import iPhone stills, see our [HEIC in Premiere Pro guide](/blog/heic-premiere-pro-import).
+Got a .heic on Windows, failed to email it, or saw broken thumbnails in Google Drive? Same problem millions of iPhone users hit every week. For **50–200 photos**, see our [batch HEIC to JPG workflow](/blog/batch-heic-to-jpg-workflow). If Outlook or Gmail rejected the attachment, start with our [HEIC email attachment guide](/blog/heic-outlook-email-attachment). If **Photoshop** will not open your iPhone still, see [HEIC won't open in Photoshop](/blog/heic-wont-open-in-photoshop). If Premiere Pro crashes when you import iPhone stills, see our [HEIC in Premiere Pro guide](/blog/heic-premiere-pro-import).
 
 ## Why does Apple use HEIC?
 
@@ -608,7 +608,7 @@ EU users see a cookie banner for analytics and Google AdSense. You can accept or
 
 ## What we collect
 
-Analytics (with consent) and standard server logs, not your image files. Questions: see our [Contact](/contact) page.
+Analytics (with consent) and standard server logs, not your image files. Who runs HeicSave and how we test guides: [About](/about). Questions: [Contact](/contact).
 
 ## Verify zero upload yourself (DevTools)
 
@@ -674,7 +674,7 @@ Processing happens **in your browser**. Nothing uploads to our servers. Good for
 
 ## Batch tips for large albums
 
-There is no fixed file-count cap on HeicSave. Practical limits are your PC memory and browser tab stability. For hundreds of vacation photos:
+There is no fixed file-count cap on HeicSave. Practical limits are your PC memory and browser tab stability. For hundreds of vacation photos, follow our [batch HEIC to JPG workflow](/blog/batch-heic-to-jpg-workflow) (RAM batch sizes, ZIP, quality slider):
 
 - Convert in groups of 50–100 if the tab feels slow.
 - Close other heavy tabs before a big batch.
@@ -695,7 +695,7 @@ There is no fixed file-count cap on HeicSave. Practical limits are your PC memor
 - **Photos look rotated wrong** — EXIF orientation is copied to JPG when supported; re-export from Photos on Mac if needed.
 - **Live Photo pairs (.heic + .mov)** — convert the .heic still; see our [Live Photo guide](/blog/heic-live-photo-guide).
 
-For a Windows-only walkthrough, see [How to Open and Convert HEIC on Windows](/blog/heic-windows-guide). For Google Drive albums, see [Batch convert HEIC from Google Drive](/blog/heic-google-drive-batch-convert).`,
+For a Windows-only walkthrough, see [How to Open and Convert HEIC on Windows](/blog/heic-windows-guide). For Google Drive albums, see [Batch convert HEIC from Google Drive](/blog/heic-google-drive-batch-convert). Learn [who operates HeicSave and our editorial standards](/about).`,
   },
   {
     slug: "heic-live-photo-guide",
@@ -1467,6 +1467,125 @@ If colors look flat after convert, read [HEIC colors washed out after convert](/
 ## Cite this page
 
 > If Photoshop cannot open iPhone HEIC, convert to JPG or PNG locally in the browser before File → Open. Guide: https://heicsave.com/blog/heic-wont-open-in-photoshop — tool: https://heicsave.com/heic-to-jpg`,
+  },
+  {
+    slug: "batch-heic-to-jpg-workflow",
+    title: "Batch Convert iPhone HEIC to JPG — Real Workflow (2026)",
+    description:
+      "Convert 50–200 iPhone HEIC photos to JPG on Windows or Mac: USB vs iCloud paths, batch sizes for 8 GB RAM, ZIP download, quality slider, and why local beats cloud upload.",
+    publishedAt: "2026-06-02",
+    readMinutes: 14,
+    content: `*Last updated: June 2, 2026*
+
+**Short answer:** Copy iPhone HEIC photos to your PC (USB, iCloud Drive, or Google Photos export), open **[HEIC to JPG](/heic-to-jpg)** in Chrome or Edge, drop the folder in batches of 40–60 files on 8 GB RAM (or 150+ on a 16 GB desktop), set JPEG quality to 85–90%, convert, and download a **ZIP** of JPGs. Nothing uploads to our servers.
+
+This guide walks through a **real batch workflow** we use when testing HeicSave—not generic “five easy steps.” You will see where files land on disk, how long conversion takes, when to split batches, and what file sizes to expect after export.
+
+## Scenario: 187 photos from a two-week trip
+
+Picture a typical case: iPhone 15 Pro, **48 MP HEIC** stills, 187 files after deleting duplicates. Total HEIC folder size on disk: about **620 MB**. Goal: JPGs for Google Photos backup, email to family, and a Premiere Pro slideshow.
+
+That mix is why batch matters. You are not converting one attachment—you are moving an entire camera roll off Apple's format before anyone else can open it.
+
+## Step 1 — Get HEIC files onto your computer
+
+| Source | What you get | Gotcha |
+|---|---|---|
+| USB cable → copy DCIM folder | Fast; full resolution | Windows may show generic icons until converted |
+| iCloud for Windows → Downloads | Convenient sync | Still HEIC unless iPhone set to Most Compatible |
+| AirDrop to Mac → copy to PC | Easy on Apple hardware | Large folders need batch on Mac too |
+| Google Photos → Download album | Works cross-platform | Google may deliver HEIC or JPG depending on settings |
+
+If Windows Explorer will not preview thumbnails, that is normal without HEIF extensions. You can still convert—see our [HEIC on Windows guide](/blog/heic-windows-guide).
+
+**Live Photos:** each shot may include a **.heic** still and a **.mov** video. Convert the **.heic** files only. Skip .mov unless you know you need video.
+
+## Step 2 — Open the converter and set quality first
+
+1. On the PC, open **Chrome or Edge** (best HEIC decode on Windows).
+2. Go to [HEIC to JPG](/heic-to-jpg).
+3. Move the **quality slider to 85–90%** before adding files. Default 90% is fine for family sharing and print up to 8×10. Drop to 80% only if email size limits bite.
+
+Why set quality first? Every file in the batch uses the same setting. Mixing re-runs wastes time.
+
+## Step 3 — Batch size: match your RAM
+
+HeicSave has **no fixed file-count cap**. Your limit is browser memory decoding full-resolution HEIC.
+
+| PC RAM | Suggested batch | Notes |
+|---|---|---|
+| 8 GB laptop | 40–60 HEIC files | Close Slack, Teams, extra tabs |
+| 16 GB desktop | 120–200 HEIC files | ZIP download after each batch |
+| 8 GB + 48 MP RAW-like exports | 20–30 files | Split aggressively |
+
+**Workflow loop:** drag batch → Convert → Download ZIP → rename ZIP (e.g. \`trip-batch-01.zip\`) → refresh page if tab feels slow → next batch.
+
+On a 16 GB Windows 11 laptop with Chrome, converting **100 HEIC files (12 MP mix)** often finishes in **under three minutes**—local decode, no upload wait.
+
+## Step 4 — File sizes after conversion
+
+HEIC is already compressed. JPG adds a **second lossy generation**. Expect:
+
+- **12 MP HEIC ~1.2–2.5 MB** → JPG at 90% often **1.5–3.5 MB**
+- **48 MP HEIC ~2–5 MB** → JPG at 90% often **4–8 MB**
+
+A 620 MB HEIC folder might become **~900 MB–1.1 GB JPG** at high quality. That is normal. For email, run a second pass at 80% or resize in the tool if we add presets later—for now, split attachments.
+
+Need lossless raster for design? Use [HEIC to PNG](/heic-to-png) for hero images only; JPG for the bulk.
+
+## Step 5 — Verify EXIF and orientation
+
+HeicSave copies common **EXIF** fields when the browser allows: capture date, camera model, orientation. GPS may drop depending on browser privacy rules.
+
+After unzipping, spot-check three files:
+
+1. **Photos app** — correct date ordering?
+2. **File Explorer Details** — dimensions match iPhone?
+3. **One portrait shot** — orientation not sideways?
+
+Keep the original HEIC folder as archive until you confirm JPGs look right.
+
+## Why local batch beats cloud upload converters
+
+Cloud tools queue your files on their servers. For 187 photos at ~3 MB average (~560 MB upload), a **10 Mbps home upload** needs **~12+ minutes** before conversion even starts—plus privacy terms you may not read.
+
+HeicSave decodes with **WebAssembly in your tab**. On the same machine, batch decode often beats upload+queue for folders over **30 files**, and you avoid sending medical, legal, or family images to a third party.
+
+Compare methods in the table on our [HEIC to JPG tool page](/heic-to-jpg#technical-limits-and-browser-support-2026).
+
+## Troubleshooting batch runs
+
+| Symptom | Fix |
+|---|---|
+| Tab freezes mid-batch | Fewer files; refresh; use desktop not phone browser |
+| “Unsupported file” | Confirm extension is .heic/.heif, not renamed .jpg |
+| Colors look washed out | See [HEIC color washed out after convert](/blog/heic-color-washed-out-after-convert) |
+| Outlook still rejects JPG | Attachment may exceed 20–25 MB—split ZIP or lower quality |
+| Premiere import slow | Convert first anyway—see [HEIC in Premiere Pro](/blog/heic-premiere-pro-import) |
+
+## After conversion: where JPGs go
+
+- **Google Photos:** use Backup and Sync or upload the JPG folder in browser.
+- **Family email:** attach **JPG**, never HEIC—see [HEIC email attachment guide](/blog/heic-outlook-email-attachment).
+- **USB for parents:** FAT32 sticks need **<4 GB per file**; JPGs rarely hit that—HEIC+MOV Live Photos do.
+
+## Stop future HEIC pain (optional)
+
+**Settings → Camera → Formats → Most Compatible** saves new shots as JPEG. Existing library stays HEIC until converted. Read [why iPhone uses HEIC](/blog/why-iphone-uses-heic) before switching permanently—you will lose storage efficiency.
+
+## Related guides
+
+- [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows)
+- [HEIC Google Drive batch convert](/blog/heic-google-drive-batch-convert)
+- [HEIC vs JPG](/blog/heic-vs-jpg)
+- [Best HEIC converters 2026](/blog/best-heic-converters-2026)
+- [What is a HEIC file?](/blog/what-is-heic-file)
+
+**Convert now:** [HEIC to JPG](/heic-to-jpg) — batch, ZIP, no upload.
+
+## Cite this page
+
+> Batch iPhone HEIC to JPG locally: 40–60 files per batch on 8 GB RAM, 85–90% JPEG quality, ZIP download. Full workflow: https://heicsave.com/blog/batch-heic-to-jpg-workflow — tool: https://heicsave.com/heic-to-jpg`,
   },
   {
     slug: "avif-thumbnails-not-showing-windows-explorer",

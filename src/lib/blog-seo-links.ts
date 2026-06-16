@@ -32,6 +32,7 @@ export const BLOG_CLUSTERS = {
     "heic-outlook-email-attachment",
     "heic-premiere-pro-import",
     "heic-wont-open-in-photoshop",
+    "batch-heic-to-jpg-workflow",
   ],
   webp: ["webp-vs-jpg", "webp-for-developers", "convert-webp-to-jpg-windows"],
   avif: [
@@ -87,10 +88,10 @@ export const blogPrimaryTool: Partial<Record<string, ToolSlug>> = {
 /** High-value guides linked from every locale footer. */
 export const footerGuideSlugs = [
   "what-is-heic-file",
+  "batch-heic-to-jpg-workflow",
   "transfer-iphone-photos-to-windows",
   "heic-windows-guide",
   "privacy-browser-image-conversion",
-  "webp-vs-jpg",
 ] as const;
 
 export function getRelatedBlogPosts(

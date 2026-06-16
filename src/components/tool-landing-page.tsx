@@ -16,6 +16,7 @@ import type { AppLocale } from "@/i18n/routing";
 import { audienceStyles, getToolAudience } from "@/lib/design-variants";
 import { hasAdSenseDisplayUnits } from "@/lib/adsense";
 import { RelatedGuides } from "@/components/tool/related-guides";
+import { ToolSeoSections } from "@/components/tool/tool-seo-sections";
 import { RelatedToolsGrid } from "@/components/tool/related-tools-grid";
 import type { ToolConfig, ToolSlug } from "@/lib/tools-config";
 import { toolRelatedGuides } from "@/lib/tool-related-guides";
@@ -97,15 +98,7 @@ export async function ToolLandingPage({
         <h2>{t("tool.privacyHeading")}</h2>
         <p>{tool.privacyNote}</p>
 
-        {tool.seoSections.map((s) => (
-          <div key={s.heading}>
-            <h2>{s.heading}</h2>
-            {s.paragraphs?.map((p) => (
-              <p key={p.slice(0, 48)}>{p}</p>
-            ))}
-            {s.content && !s.paragraphs?.length ? <p>{s.content}</p> : null}
-          </div>
-        ))}
+        <ToolSeoSections sections={tool.seoSections} locale={locale} />
 
         {guideConfig?.guides?.length ? (
           <RelatedGuides slugs={guideConfig.guides} locale={locale} />

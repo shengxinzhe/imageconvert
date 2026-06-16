@@ -1,11 +1,111 @@
-type SeoSection = {
-  heading: string;
-  content?: string;
-  paragraphs?: string[];
-};
+import type { ToolSeoSection } from "@/lib/tool-seo-types";
 
 /** Extra on-page copy for AdSense / SEO (merged into each tool config). */
-export const extraToolSeoSections: Record<string, SeoSection[]> = {
+export const extraToolSeoSections: Record<string, ToolSeoSection[]> = {
+  "heic-to-jpg": [
+    {
+      heading: "How HeicSave compares to other HEIC to JPG methods",
+      paragraphs: [
+        "Not every converter fits the same job. Cloud upload tools add privacy risk and wait time on slow Wi‑Fi. Windows Store codecs help preview only—they do not batch-convert a wedding folder for email. The table below summarizes what we tested on Windows 11 and macOS Sonoma in 2026.",
+        "HeicSave keeps decoding in your browser tab. That matters for insurance scans, HR uploads, and family albums you do not want on a stranger's server.",
+      ],
+      table: {
+        caption:
+          "Subjective comparison for typical iPhone photo batches (50–200 files). Your mileage varies with RAM and browser.",
+        headers: ["Method", "Files leave your device?", "Batch + ZIP", "EXIF preserved", "Best for"],
+        rows: [
+          [
+            "HeicSave (this page)",
+            "No — local WebAssembly",
+            "Yes, no fixed cap",
+            "Often (date, camera, orientation)",
+            "Privacy, Windows without codecs, large folders",
+          ],
+          [
+            "Cloud upload converters",
+            "Yes — uploaded to their servers",
+            "Varies; quotas common",
+            "Sometimes stripped",
+            "One-off converts when privacy is not a concern",
+          ],
+          [
+            "Windows Photos + HEIF extension",
+            "Stays local",
+            "Manual export one-by-one",
+            "Partial",
+            "Previewing a few files only",
+          ],
+          [
+            "Mac Preview / Photos export",
+            "Stays local",
+            "Tedious for 100+ files",
+            "Usually yes",
+            "Small sets on Mac",
+          ],
+          [
+            "iPhone Settings → Most Compatible",
+            "N/A — new photos only",
+            "N/A",
+            "N/A",
+            "Stopping future HEIC, not fixing old folders",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "Choose JPG, PNG, or WebP after HEIC",
+      paragraphs: [
+        "HEIC is a storage format on iPhone. Once you leave Apple's ecosystem, pick the output for the destination—not the other way around. Use this decision guide before you convert an entire trip folder to the wrong type.",
+      ],
+      table: {
+        headers: ["Your goal", "Convert to", "Why"],
+        rows: [
+          [
+            "Email, WhatsApp, employer portal, print shop",
+            "JPG",
+            "Universal; smallest practical size for photos",
+          ],
+          [
+            "Photoshop, Figma, slides with text overlays",
+            "PNG",
+            "Lossless-friendly; use HEIC to PNG on this site",
+          ],
+          [
+            "WordPress / Shopify hero images",
+            "WebP",
+            "Smaller than JPG; use HEIC to WebP",
+          ],
+          [
+            "Premiere Pro / DaVinci stills",
+            "JPG sequence",
+            "Stable import; see our Premiere Pro HEIC guide",
+          ],
+          [
+            "Archival master after heavy editing",
+            "Keep HEIC original + export PNG",
+            "Do not re-compress the only copy as low-quality JPG",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "Technical limits and browser support (2026)",
+      paragraphs: [
+        "There is no artificial five-file cap on HeicSave. Practical limits come from device RAM and browser HEIC decode support. On an 8 GB Windows laptop, convert 40–60 full-resolution iPhone photos per batch; on 16 GB desktop Chrome, 150–200 is typical before the tab feels heavy.",
+        "If the tab slows down, download the ZIP for the finished batch, refresh the page, and continue with the next group. Live Photo .mov sidecars should be excluded—convert still .heic files only.",
+      ],
+      table: {
+        headers: ["Environment", "HEIC decode", "Batch tip"],
+        rows: [
+          ["Chrome / Edge on Windows 11", "Supported", "Best for 100+ file ZIP exports"],
+          ["Firefox on Windows", "Supported in recent versions", "Split batches if memory is low"],
+          ["Safari on Mac", "Supported", "Good for AirDrop folders"],
+          ["Safari on iPhone / iPad", "Supported", "Smaller batches; use Wi‑Fi + power connected"],
+          ["Chromebook", "Usually supported", "Smaller batches; see Chromebook HEIC guide"],
+        ],
+      },
+    },
+  ],
   "heic-to-png": [
     {
       heading: "When HEIC to PNG beats JPG",

@@ -104,7 +104,15 @@
     "toolsTitle": "Our converters",
     "toolsSubtitle": "{count} free tools for HEIC, WebP, AVIF, and optimization — all run locally in your tab.",
     "toolsCta": "Start with HEIC to JPG",
-    "detailsTitle": "More about HeicSave"
+    "detailsTitle": "More about HeicSave",
+    "whyTitle": "Why we built HeicSave",
+    "whyBody": "Most \"free converters\" upload your photos to a server you do not control. We wanted the opposite: HEIC, WebP, and AVIF tools that decode on your device with WebAssembly and Canvas — private, fast, and free without an account.",
+    "operatorBody": "HeicSave is operated by an independent team publishing at heicsave.com. We are not affiliated with Apple, Google, Microsoft, or Adobe. Real people read privacy@heicsave.com and update guides when software changes.",
+    "changelogTitle": "Site updates",
+    "changelogIntro": "We ship tool improvements and new guides regularly. Recent milestones:",
+    "changelog1": "June 2026 — Batch HEIC workflow guide, tool comparison tables on HEIC to JPG, UK/DE/FR/US FAQ pages, editorial standards.",
+    "changelog2": "June 2026 — Privacy-first converter UI, HEIC thumbnail previews in browser, 100% private trust line on upload buttons.",
+    "changelog3": "May 2026 — Premiere Pro, Photoshop, and Outlook guides; full German and French site translation."
   },
   "contact": {
     "badge": "Get in touch",
@@ -113,6 +121,9 @@
     "cardPrivacyBody": "Cookie questions, GDPR requests, and how browser-local conversion works.",
     "cardDmcaTitle": "Copyright (DMCA)",
     "cardDmcaBody": "Copyright notices and takedown requests for site content or guides.",
+    "cardAboutTitle": "About & editorial",
+    "cardAboutBody": "Who runs HeicSave, how we test guides, changelog, and how the site is funded.",
+    "aboutLink": "Read About HeicSave →",
     "cardResponseTitle": "Response time",
     "cardResponseBody": "We aim to reply within a few business days. For technical issues, include browser, OS, file type, and steps to reproduce.",
     "emailPrivacyLabel": "Privacy & general",

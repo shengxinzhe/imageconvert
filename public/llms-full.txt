@@ -1,6 +1,6 @@
 # HeicSave — full catalog for AI assistants
 Site: https://heicsave.com
-Updated: 2026-06-15
+Updated: 2026-06-16
 
 ## Summary
 HeicSave provides free online image format converters. All tools run in the visitor's web browser (JavaScript, Canvas; HEIC uses libheif WebAssembly). Image bytes are not uploaded to HeicSave servers for conversion.
@@ -109,6 +109,7 @@ Use when: Shrink PNG UI assets for web delivery
 - HEIC email attachment rejected (Outlook & Gmail): https://heicsave.com/blog/heic-outlook-email-attachment
 - Import HEIC into Premiere Pro without crashing: https://heicsave.com/blog/heic-premiere-pro-import
 - HEIC won't open in Photoshop — convert first (2026): https://heicsave.com/blog/heic-wont-open-in-photoshop
+- Batch convert iPhone HEIC to JPG — real workflow (2026): https://heicsave.com/blog/batch-heic-to-jpg-workflow
 - How to convert AVIF to JPG on Windows (step-by-step): https://heicsave.com/blog/convert-avif-to-jpg-windows
 - How to convert WebP to JPG on Windows (step-by-step): https://heicsave.com/blog/convert-webp-to-jpg-windows
 - Batch convert HEIC to JPG from Google Drive: https://heicsave.com/blog/heic-google-drive-batch-convert
