@@ -33,6 +33,7 @@ export const BLOG_CLUSTERS = {
     "heic-premiere-pro-import",
     "heic-wont-open-in-photoshop",
     "batch-heic-to-jpg-workflow",
+    "disable-heic-iphone-jpg",
   ],
   webp: ["webp-vs-jpg", "webp-for-developers", "convert-webp-to-jpg-windows"],
   avif: [
@@ -76,6 +77,8 @@ export const blogPrimaryTool: Partial<Record<string, ToolSlug>> = {
   "heic-outlook-email-attachment": "heic-to-jpg",
   "heic-premiere-pro-import": "heic-to-jpg",
   "heic-wont-open-in-photoshop": "heic-to-jpg",
+  "batch-heic-to-jpg-workflow": "heic-to-jpg",
+  "disable-heic-iphone-jpg": "heic-to-jpg",
   "avif-explained": "avif-to-jpg",
   "convert-avif-to-jpg-windows": "avif-to-jpg",
   "avif-thumbnails-not-showing-windows-explorer": "avif-to-jpg",

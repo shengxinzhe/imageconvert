@@ -193,7 +193,10 @@
     "updated": "Mis à jour",
     "tryToolHeading": "Essayer le convertisseur gratuit",
     "tryToolCta": "Ouvrir {tool}",
-    "relatedHeading": "Autres guides"
+    "relatedHeading": "Autres guides",
+    "authorName": "Équipe HeicSave",
+    "authorBio": "Nous testons les workflows HEIC sur Windows 11, macOS, Chrome et Edge avant publication.",
+    "authorAboutLink": "Normes éditoriales"
   },
   "converter": {
     "selectImages": "Choisir des photos",

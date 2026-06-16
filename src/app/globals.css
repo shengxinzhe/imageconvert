@@ -150,6 +150,14 @@
     @apply font-medium no-underline hover:underline;
   }
 
+  .prose-mint :where(img):not(:where([class~="not-prose"] *)) {
+    @apply my-6 w-full rounded-vercel border border-hairline bg-canvas-soft shadow-sm;
+  }
+
+  .prose-mint :where(figcaption):not(:where([class~="not-prose"] *)) {
+    @apply -mt-4 mb-6 text-center text-xs text-mute;
+  }
+
   /* AdSense-friendly content bands */
   .content-band {
     @apply border-y border-hairline bg-canvas;

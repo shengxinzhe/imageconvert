@@ -193,7 +193,10 @@
     "updated": "Updated",
     "tryToolHeading": "Try the free converter",
     "tryToolCta": "Open {tool}",
-    "relatedHeading": "More guides"
+    "relatedHeading": "More guides",
+    "authorName": "HeicSave team",
+    "authorBio": "We test HEIC workflows on Windows 11, macOS, Chrome, and Edge before publishing.",
+    "authorAboutLink": "Editorial standards"
   },
   "converter": {
     "selectImages": "Select images",

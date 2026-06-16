@@ -1,3 +1,4 @@
+import { BlogAuthorByline } from "@/components/blog/blog-author-byline";
 import { BlogMarkdown } from "@/components/blog/blog-markdown";
 import { BlogPostFooter } from "@/components/blog/blog-post-footer";
 import { ArticleJsonLd } from "@/components/seo/article-json-ld";
@@ -59,6 +60,7 @@ export default function BlogPostPage({ params }: PageProps) {
         {" · "}
         {post.readMinutes} {t("blog.minRead")}
       </p>
+      <BlogAuthorByline locale={locale} />
       <div className="mt-10">
         <BlogMarkdown content={post.content} locale={locale} />
       </div>

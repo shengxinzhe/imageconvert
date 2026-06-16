@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="HeicSave batch HEIC to JPG converter">
+  <rect width="720" height="480" fill="#fafafa"/>
+  <rect x="48" y="32" width="624" height="416" rx="12" fill="#fff" stroke="#e5e5e5"/>
+  <text x="72" y="72" font-family="system-ui,sans-serif" font-size="22" font-weight="600" fill="#111">HEIC to JPG</text>
+  <text x="72" y="96" font-family="system-ui,sans-serif" font-size="13" fill="#666">Browser-local · no upload · batch + ZIP</text>
+  <rect x="72" y="120" width="576" height="160" rx="12" fill="#f8fffc" stroke="#50e3c2" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="360" y="188" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" fill="#333">Drop HEIC files here</text>
+  <text x="360" y="212" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#888">187 files selected · 620 MB</text>
+  <rect x="296" y="228" width="128" height="36" rx="18" fill="#111"/>
+  <text x="360" y="251" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#fff">Browse files</text>
+  <text x="72" y="312" font-family="system-ui,sans-serif" font-size="13" fill="#333">JPEG quality</text>
+  <rect x="160" y="298" width="280" height="8" rx="4" fill="#e5e5e5"/>
+  <rect x="160" y="298" width="224" height="8" rx="4" fill="#50e3c2"/>
+  <circle cx="384" cy="302" r="10" fill="#50e3c2" stroke="#fff" stroke-width="2"/>
+  <text x="456" y="312" font-family="system-ui,sans-serif" font-size="13" fill="#666">90%</text>
+  <rect x="72" y="340" width="160" height="44" rx="22" fill="#50e3c2"/>
+  <text x="152" y="368" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#fff">Convert</text>
+  <rect x="248" y="340" width="200" height="44" rx="22" fill="#fff" stroke="#ddd"/>
+  <text x="348" y="368" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#333">Download all as ZIP</text>
+  <rect x="72" y="400" width="576" height="32" rx="6" fill="#f0fdf9"/>
+  <text x="360" y="420" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#0d6b55">Processing stays in your browser  files never leave your PC</text>
+</svg>

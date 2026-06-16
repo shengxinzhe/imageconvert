@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { AnchorHTMLAttributes } from "react";
+import type { AnchorHTMLAttributes, ImgHTMLAttributes } from "react";
 import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -62,6 +62,25 @@ function MarkdownLink({
 
 function markdownComponents(locale: AppLocale): Components {
   return {
+    img: ({ src, alt }: ImgHTMLAttributes<HTMLImageElement>) => {
+      if (!src || typeof src !== "string") return null;
+      const path = src.startsWith("/") ? src : `/${src}`;
+      return (
+        <figure className="not-prose my-8">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={path}
+            alt={alt ?? ""}
+            loading="lazy"
+            decoding="async"
+            className="w-full rounded-vercel border border-hairline bg-canvas-soft shadow-sm"
+          />
+          {alt ? (
+            <figcaption className="mt-2 text-center text-xs text-mute">{alt}</figcaption>
+          ) : null}
+        </figure>
+      );
+    },
     a: ({ href, children, ...props }) => (
       <MarkdownLink href={href} locale={locale} {...props}>
         {children}

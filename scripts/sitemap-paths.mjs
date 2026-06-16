@@ -48,6 +48,7 @@ export const BLOG_SLUGS = [
   "heic-premiere-pro-import",
   "heic-wont-open-in-photoshop",
   "batch-heic-to-jpg-workflow",
+  "disable-heic-iphone-jpg",
   "avif-thumbnails-not-showing-windows-explorer",
 ];
 

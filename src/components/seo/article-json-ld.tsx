@@ -37,8 +37,8 @@ export function ArticleJsonLd({
         dateModified: post.updatedAt ?? post.publishedAt,
         author: {
           "@type": "Organization",
-          name: SITE_NAME,
-          url: absoluteUrl("/", routing.defaultLocale),
+          name: `${SITE_NAME} team`,
+          url: absoluteUrl("/about", routing.defaultLocale),
         },
         publisher: {
           "@type": "Organization",

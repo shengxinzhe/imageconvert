@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="iPhone Settings Camera Formats Most Compatible">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f5f7"/>
+      <stop offset="100%" stop-color="#e8e8ed"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#bg)"/>
+  <rect x="200" y="24" width="320" height="432" rx="36" fill="#111" stroke="#333" stroke-width="2"/>
+  <rect x="212" y="48" width="296" height="404" rx="24" fill="#fff"/>
+  <text x="360" y="88" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#666">Settings</text>
+  <text x="248" y="88" font-family="system-ui,sans-serif" font-size="16" fill="#007aff">9</text>
+  <text x="360" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="600" fill="#111">Camera</text>
+  <text x="248" y="168" font-family="system-ui,sans-serif" font-size="15" fill="#111">Formats</text>
+  <text x="452" y="168" text-anchor="end" font-family="system-ui,sans-serif" font-size="14" fill="#888">:</text>
+  <rect x="232" y="188" width="256" height="180" rx="12" fill="#f2f2f7"/>
+  <text x="360" y="220" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="600" fill="#111">Camera Capture</text>
+  <rect x="248" y="238" width="224" height="56" rx="10" fill="#fff" stroke="#007aff" stroke-width="2"/>
+  <circle cx="272" cy="266" r="10" fill="#007aff"/>
+  <circle cx="272" cy="266" r="4" fill="#fff"/>
+  <text x="296" y="262" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#111">Most Compatible</text>
+  <text x="296" y="280" font-family="system-ui,sans-serif" font-size="11" fill="#666">JPEG · H.264 · better sharing</text>
+  <rect x="248" y="304" width="224" height="48" rx="10" fill="#fff" stroke="#d1d1d6"/>
+  <circle cx="272" cy="328" r="10" fill="none" stroke="#c7c7cc" stroke-width="2"/>
+  <text x="296" y="334" font-family="system-ui,sans-serif" font-size="14" fill="#666">High Efficiency</text>
+  <rect x="40" y="400" width="640" height="56" rx="8" fill="#fff" stroke="#50e3c2" stroke-width="2"/>
+  <text x="360" y="432" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#333">Settings ’ Camera ’ Formats ’ Most Compatible saves new photos as JPG</text>
+</svg>

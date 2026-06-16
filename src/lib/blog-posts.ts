@@ -16,31 +16,37 @@ export const blogPosts: BlogPost[] = [
     description:
       "Learn what a HEIC file is, why iPhones use it, and how to open or convert HEIC on Windows and Mac — free browser-local tools that keep your images private.",
     publishedAt: "2026-01-15",
-    updatedAt: "2026-06-15",
+    updatedAt: "2026-06-16",
     readMinutes: 12,
-    content: `*Last updated: June 15, 2026*
+    content: `*Last updated: June 16, 2026*
 
-HEIC (High Efficiency Image Container) is Apple's default photo format on modern iPhones. It uses advanced compression to store photos at roughly half the size of JPEG with similar visual quality.
+If you copied photos off an iPhone recently, you probably ran into **.heic** files. That extension is **HEIC** (High Efficiency Image Container). Apple picked it because a typical shot uses roughly half the space of JPEG at similar quality.
 
-Got a .heic on Windows, failed to email it, or saw broken thumbnails in Google Drive? Same problem millions of iPhone users hit every week. For **50–200 photos**, see our [batch HEIC to JPG workflow](/blog/batch-heic-to-jpg-workflow). If Outlook or Gmail rejected the attachment, start with our [HEIC email attachment guide](/blog/heic-outlook-email-attachment). If **Photoshop** will not open your iPhone still, see [HEIC won't open in Photoshop](/blog/heic-wont-open-in-photoshop). If Premiere Pro crashes when you import iPhone stills, see our [HEIC in Premiere Pro guide](/blog/heic-premiere-pro-import).
+The trade-off shows up fast: Windows without codecs, Gmail rejecting attachments, gray thumbnails in Drive. We maintain HeicSave for that handoff—convert in the browser when the other side only accepts JPG.
+
+![HEIC uses HEVC compression inside the container—smaller on iPhone, JPG is easier to share](/guides/heic-hevc-compression.svg)
+
+Working through 50–200 files? See [batch HEIC to JPG workflow](/blog/batch-heic-to-jpg-workflow). Email bounced? [HEIC attachment guide](/blog/heic-outlook-email-attachment). **Photoshop** or Premiere stuck on iPhone stills? Links below.
 
 ## Why does Apple use HEIC?
 
-Storage on phones is precious. HEIC keeps more photos on device and in iCloud while maintaining detail. Apple has pushed the format since iOS 11. The trade-off is compatibility outside Apple's ecosystem.
+Phone storage fills up. HEIC keeps more photos on device and in iCloud without obvious quality loss. Apple has used it since iOS 11. Outside Apple’s world, compatibility is still the weak spot.
 
 ## HEIC vs HEIF (same family)
 
-You may see **.heic**, **.heif**, or **.HEIC** extensions. For still photos from iPhone they are the same practical format. Our [HEIC to JPG](/heic-to-jpg) tool accepts common variants.
+You may see **.heic**, **.heif**, or **.HEIC**. For iPhone stills they behave the same. Our [HEIC to JPG](/heic-to-jpg) tool accepts common variants.
 
 ## HEIC vs AVIF (different formats)
 
-**AVIF** is a web image format (AV1-based), not Apple's iPhone default. Firefox and Chrome display AVIF in the browser; Windows Explorer may show **blank thumbnails** even when Paint opens the file. If your problem is **.avif** previews, not **.heic**, see [AVIF thumbnails missing in Windows Explorer](/blog/avif-thumbnails-not-showing-windows-explorer) and [convert AVIF to JPG on Windows](/blog/convert-avif-to-jpg-windows).
+**AVIF** is a web format (AV1-based), not Apple’s iPhone default. Browsers display AVIF; Windows Explorer may still show blank thumbnails. If the problem is **.avif**, not **.heic**, see [AVIF thumbnails in Explorer](/blog/avif-thumbnails-not-showing-windows-explorer) and [convert AVIF to JPG](/blog/convert-avif-to-jpg-windows).
 
 ## Can Windows open HEIC?
 
-Windows 10 and **Windows 11** can open HEIC **after** optional codecs from the Microsoft Store (HEIF Image Extensions, sometimes HEVC). Many users skip that and convert to JPG instead, especially on work PCs without admin rights. On Windows 11 24H2, Photos may preview HEIC while Adobe apps still fail — codecs fix the viewer, not every editor.
+Windows 10 and **Windows 11** can open HEIC after optional Microsoft Store codecs (HEIF Image Extensions, sometimes HEVC). Many people skip install and convert to JPG instead—especially on locked-down work PCs. On Windows 11 24H2, Photos may preview HEIC while Adobe apps still fail. Codecs fix the viewer, not every editor.
 
-See our full walkthrough: [How to Open and Convert HEIC on Windows](/blog/heic-windows-guide).
+![Install HEIF Image Extensions from Microsoft Store or winget](/guides/windows-heif-codec.svg)
+
+Full walkthrough: [How to Open and Convert HEIC on Windows](/blog/heic-windows-guide).
 
 ## HEIC in Adobe and video editors
 
@@ -120,6 +126,7 @@ For albums, Google Drive exports, or wedding folders: open [HEIC to JPG](/heic-t
 - [Import HEIC into Premiere Pro](/blog/heic-premiere-pro-import)
 - [HEIC won't open in Photoshop](/blog/heic-wont-open-in-photoshop)
 - [Why iPhone uses HEIC](/blog/why-iphone-uses-heic)
+- [Turn off HEIC on iPhone](/blog/disable-heic-iphone-jpg)
 - [HEIC vs JPG comparison](/blog/heic-vs-jpg)
 - [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows)
 - [HEIC email attachment rejected](/blog/heic-outlook-email-attachment)
@@ -134,34 +141,40 @@ For albums, Google Drive exports, or wedding folders: open [HEIC to JPG](/heic-t
     description:
       "Apple switched to HEIC for storage efficiency. Here's what that means for sharing and compatibility.",
     publishedAt: "2026-01-18",
-    updatedAt: "2026-05-25",
-    readMinutes: 7,
-    content: `*Last updated: May 25, 2026*
+    updatedAt: "2026-06-16",
+    readMinutes: 8,
+    content: `*Last updated: June 16, 2026*
 
-Since iOS 11, the iPhone camera saves photos as HEIC by default. Apple chose efficiency: you fit more photos on your phone and use less iCloud bandwidth.
+Since iOS 11, iPhone cameras save stills as HEIC by default. Apple wanted smaller files on device and less iCloud bandwidth. That part works.
+
+The pain starts when someone on Windows double-clicks the file and gets nothing useful—or when a school portal rejects the upload.
 
 ## The sharing problem
 
-Recipients on Windows or older Android devices may not open HEIC without extra software. Email clients, school portals, and print shops still expect JPG. That is why conversion tools are in high demand.
+Windows PCs, older Android phones, and most email clients still expect JPG. Print shops and HR forms are the same story. Conversion tools exist because Apple’s default and everyone else’s default never matched.
 
-## "Transfer to Mac or PC": Automatic vs Most Compatible
+## "Transfer to Mac or PC": Automatic vs Keep Originals
 
-**Settings → Photos → Transfer to Mac or PC** controls what leaves your iPhone over USB:
+**Settings → Photos → Transfer to Mac or PC** controls USB exports:
 
-- **Automatic** — iOS converts to JPG **only if** it thinks the PC cannot handle HEIC. Windows driver and codec changes can confuse this, so you may still get HEIC files.
+- **Automatic** — iOS sends JPG only if it thinks the PC cannot read HEIC. Driver and codec changes on Windows 11 confuse this; you may still get HEIC.
 - **Keep Originals** — always HEIC.
 
-If Windows keeps receiving HEIC despite Automatic, convert after copy or switch camera format (below).
+If Automatic keeps failing you, convert after copy or change camera format (below).
 
 ## Switch to JPG on iPhone (new photos only)
 
-**Settings → Camera → Formats → Most Compatible** forces new photos to JPEG. Existing HEIC files still need conversion.
+**Settings → Camera → Formats → Most Compatible** makes new shots JPEG. Photos already on the phone stay HEIC until you convert them.
+
+![Settings → Camera → Formats → Most Compatible saves new iPhone photos as JPG](/guides/iphone-most-compatible-formats.svg)
+
+Step-by-step with trade-offs: [Turn off HEIC on iPhone](/blog/disable-heic-iphone-jpg).
 
 ## Convert existing HEIC
 
-Use our free [HEIC to JPG converter](/heic-to-jpg): private, in your browser, no account, no watermark. Add multiple photos, pick your JPEG quality, and download a ZIP if you converted a whole album.
+Use our [HEIC to JPG converter](/heic-to-jpg): runs in your browser, no account, no watermark. Drop a folder, pick JPEG quality, download a ZIP if you converted an album.
 
-For Windows-specific steps after USB copy, see [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows).`,
+After USB copy on Windows, see [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows).`,
   },
   {
     slug: "heic-vs-jpg",
@@ -169,19 +182,27 @@ For Windows-specific steps after USB copy, see [Transfer iPhone photos to Window
     description:
       "Compare HEIC and JPG for photo quality, file size, and compatibility in 2026—when to keep HEIC on iPhone and when to convert for Windows, email, and print.",
     publishedAt: "2026-01-22",
-    updatedAt: "2026-05-25",
-    readMinutes: 9,
-    content: `*Last updated: May 25, 2026*
+    updatedAt: "2026-06-16",
+    readMinutes: 10,
+    content: `*Last updated: June 16, 2026*
 
-Both formats store photos, but they target different goals. Picking the wrong one wastes time when a portal rejects your upload or a Windows PC shows blank thumbnails.
+Both formats hold photos. They optimize for different things—storage on iPhone vs opening on a random Windows PC from 2014.
 
-## File size
+## What is actually inside the file?
 
-HEIC typically wins at the same perceived quality, often about half the size of JPG. That is why iPhones use it by default.
+**HEIC** is a container. The still image is usually compressed with **HEVC** (H.265), the same family as efficient iPhone video. **JPEG** uses older DCT compression. Same scene, similar look: HEIC is often about half the bytes.
+
+![Typical 12 MP iPhone shot: HEIC ~1.8 MB vs JPEG ~3.6 MB at similar quality](/guides/heic-hevc-compression.svg)
+
+That size gap is why Apple made HEIC the camera default in iOS 11. It is not magic—just a newer codec with better compression.
+
+## File size in practice
+
+HEIC wins at the same perceived quality. A vacation folder syncs faster and uses less iCloud space.
 
 ## Compatibility
 
-JPG works everywhere: email, print shops, government portals, and 20-year-old software. HEIC needs modern support or a conversion step.
+JPG opens in email, print shops, government portals, and old software. HEIC needs modern support or a conversion step on Windows.
 
 ## When to keep HEIC vs convert to JPG
 
@@ -195,19 +216,17 @@ JPG works everywhere: email, print shops, government portals, and 20-year-old so
 
 ## When to use PNG instead of JPG
 
-Choose [HEIC to PNG](/heic-to-png) when you need a lossless raster, transparency from edited exports, or want to avoid JPEG compression artifacts before further editing. PNG files are larger; use JPG for sharing.
+Use [HEIC to PNG](/heic-to-png) for lossless raster, transparency, or avoiding JPEG artifacts before more editing. PNG is larger; JPG is fine for sharing.
 
-Read: [HEIC to PNG: when and how](/blog/heic-to-png-when-and-how).
+See [HEIC to PNG: when and how](/blog/heic-to-png-when-and-how).
 
 ## Quality when you convert
 
-At high JPEG quality both look excellent. On [HeicSave](/heic-to-jpg) you can set the slider (default 90%) before converting. We also try to copy common EXIF tags into the JPG; GPS and rare fields may still drop.
+At high JPEG quality both look excellent. On [HeicSave](/heic-to-jpg) set the slider (default 90%) before converting. We copy common EXIF when the browser allows; GPS and rare fields may still drop.
 
 ## Recommendation
 
-- **Keep HEIC** on iPhone for storage.
-- **Convert to JPG** when sharing outside Apple's ecosystem.
-- Use [HEIC to PNG](/heic-to-png) when you need lossless PNG workflows.`,
+Keep HEIC on the phone for storage. Convert to JPG when sharing outside Apple’s ecosystem. Use [HEIC to PNG](/heic-to-png) when you need lossless workflows.`,
   },
   {
     slug: "heic-windows-guide",
@@ -215,15 +234,17 @@ At high JPEG quality both look excellent. On [HeicSave](/heic-to-jpg) you can se
     description:
       "Step-by-step: open HEIC on Windows 10/11 without codecs, or convert to JPG online.",
     publishedAt: "2026-02-01",
-    updatedAt: "2026-05-25",
+    updatedAt: "2026-06-16",
     readMinutes: 12,
-    content: `*Last updated: May 25, 2026*
+    content: `*Last updated: June 16, 2026*
 
-Windows users get HEIC files from iPhone users every day. You might have copied over USB, synced iCloud, or pulled a ZIP from Google Drive.
+Windows users get HEIC from iPhone owners every day—USB copy, iCloud sync, Google Drive ZIP. Here is what actually works in 2026 without guessing.
 
 ## Option 1: Install HEIC codecs (admin may be required)
 
-Microsoft Store offers **HEIF Image Extensions** (often free) and sometimes **HEVC Video Extensions** (paid on some PCs). After install, Photos may open HEIC and Explorer may show thumbnails.
+Microsoft Store has **HEIF Image Extensions** (often free) and sometimes **HEVC Video Extensions** (paid on some PCs). After install, Photos may open HEIC and Explorer may show thumbnails.
+
+![HEIF Image Extensions in Microsoft Store, or install via winget in PowerShell](/guides/windows-heif-codec.svg)
 
 Quick install via winget (PowerShell):
 
@@ -231,7 +252,7 @@ Quick install via winget (PowerShell):
 winget install Microsoft.HEIFImageExtension
 \`\`\`
 
-**Limitations:** locked-down work PCs, missing HEVC for some color profiles, and batch workflows still awkward compared to converting once to JPG.
+**Limits:** locked-down work PCs, missing HEVC for some color profiles, batch workflows still awkward compared to one JPG export.
 
 ## Option 2: Convert in the browser (no install)
 
@@ -239,6 +260,8 @@ winget install Microsoft.HEIFImageExtension
 2. Drag .heic files into the drop zone—or click Browse files.
 3. Set **JPEG quality** if you want smaller or sharper files.
 4. Click **Convert**, then download each JPG or **Download all as ZIP**.
+
+![HeicSave batch converter: drop zone, quality slider, ZIP download — files stay on your PC](/guides/heicsave-dropzone-batch.svg)
 
 Conversion runs in your browser. Nothing uploads to a server.
 
@@ -284,29 +307,52 @@ For Google Drive workflows specifically, see [Batch convert HEIC from Google Dri
     description:
       "Use Preview for one-offs or a free online batch converter for speed.",
     publishedAt: "2026-02-05",
-    readMinutes: 5,
-    content: `Mac opens HEIC natively in Preview and Photos.
+    updatedAt: "2026-06-16",
+    readMinutes: 9,
+    content: `*Last updated: June 16, 2026*
 
-## Preview method
+Mac opens HEIC natively in Preview and Photos. That hides the problem until you email files to someone on Windows or upload to a portal that only lists JPG.
+
+## Preview method (one file at a time)
 
 1. Open HEIC in Preview.
-2. File → Export.
-3. Choose JPEG, set quality, save.
+2. **File → Export**.
+3. Choose **JPEG**, set quality, save.
 
-Fine for one image; slow for dozens.
+Fine for a single image. Tedious for dozens from a trip folder.
 
-## Online batch tool
+![Preview on Mac: File → Export → JPEG with quality slider](/guides/mac-preview-heic-export.svg)
+
+## Batch in Preview (hidden shortcut)
+
+Select multiple HEIC files in Finder → Open With → Preview. In the sidebar, select all thumbnails, then **File → Export Selected Images**. Pick JPEG. Still slower than a dedicated batch tool for 100+ files.
+
+## Online batch tool (no upload)
 
 Use [HEIC to JPG](/heic-to-jpg) in Safari or Chrome:
 
 - Drop many files at once
 - Adjust JPEG quality on the slider
 - Download a **ZIP** of all JPGs
-- EXIF (date taken, camera) is preserved when possible
+- EXIF (date taken, camera) preserved when possible
+
+![HeicSave in the browser: batch HEIC drop, quality slider, ZIP — processing stays local](/guides/heicsave-dropzone-batch.svg)
+
+We test this path on macOS Sonoma and Sequoia before publishing updates.
+
+## When Preview beats the browser
+
+You need one perfect export with manual color tweaks in Preview’s inspector. For plain conversion at scale, browser batch is usually faster.
 
 ## Privacy
 
-Browser tools that process locally never send your photos to a third-party server. Handy for client work under NDA.`,
+Browser tools that decode locally never send photos to a third-party server. Useful for client work under NDA or medical images you cannot upload anywhere.
+
+## Related
+
+- [Batch HEIC to JPG workflow](/blog/batch-heic-to-jpg-workflow)
+- [HEIC vs JPG](/blog/heic-vs-jpg)
+- [Turn off HEIC on iPhone](/blog/disable-heic-iphone-jpg)`,
   },
   {
     slug: "best-heic-converters-2026",
@@ -633,44 +679,51 @@ HeicSave has **no server-side conversion endpoint**. The converter also shows a 
     description:
       "Copy iPhone photos to a Windows PC via USB or iCloud, fix HEIC compatibility issues, and convert to JPG locally in your browser—no upload or codec install required.",
     publishedAt: "2026-05-19",
-    readMinutes: 9,
-    content: `Copying iPhone photos to a Windows PC sounds easy until HEIC gets in the way. These steps still work in 2026.
+    updatedAt: "2026-06-16",
+    readMinutes: 10,
+    content: `*Last updated: June 16, 2026*
+
+Copying iPhone photos to a Windows PC sounds simple until every file ends in **.heic** and Explorer shows blank icons.
 
 ## Why Windows struggles with iPhone photos
 
-Modern iPhones save still photos as **HEIC** (High Efficiency Image Container). Windows 10 and 11 do not always open .heic files out of the box. You may see a blank thumbnail, an error in Photos, or files that refuse to attach to email.
+Modern iPhones save stills as **HEIC**. Windows 10 and 11 do not always open .heic out of the box—you get blank thumbnails, Photos errors, or email attachments that never send.
 
 JPG is still what most Windows apps, printers, and upload forms expect.
 
 ## Method 1: USB cable (File Explorer)
 
-1. Connect iPhone with a Lightning or USB-C cable.
-2. Unlock the phone and tap **Trust This Computer** if prompted.
-3. Open **File Explorer** → **Apple iPhone** → **Internal Storage** → **DCIM**.
+1. Connect iPhone with Lightning or USB-C.
+2. Unlock the phone and tap **Trust This Computer** if asked.
+3. Open **File Explorer → Apple iPhone → Internal Storage → DCIM**.
 4. Copy folders to your PC.
 
-**Catch:** copied files are often still HEIC. They may not preview until you install codecs or convert them.
+![File Explorer path: Apple iPhone → Internal Storage → DCIM — copied files may still be HEIC](/guides/usb-iphone-dcim-windows.svg)
+
+Copied files are often still HEIC. They may not preview until you install codecs or convert.
 
 ## Method 2: iCloud for Windows
 
-Install **iCloud for Windows**, sign in, and enable **Photos**. New iPhone shots sync to the iCloud Photos folder on your PC.
+Install **iCloud for Windows**, sign in, enable **Photos**. New shots sync to the iCloud Photos folder on your PC.
 
-**Catch:** sync can take time on slow connections, and HEIC compatibility on Windows still applies unless you change iPhone camera settings to **Most Compatible** (JPG).
+Sync can take time on slow connections. HEIC compatibility on Windows still applies unless the iPhone camera uses **Most Compatible** (JPG). See [Turn off HEIC on iPhone](/blog/disable-heic-iphone-jpg).
 
 ## Method 3: Convert HEIC to JPG in the browser (no install)
 
-If you already copied HEIC files—or received them by AirDrop to a Mac and moved them via USB stick—convert locally:
+If you already copied HEIC files—or moved them from a Mac via USB stick—convert locally:
 
 1. Open [HEIC to JPG](/heic-to-jpg) in **Chrome or Edge**.
-2. Drag your .heic files into the drop zone.
+2. Drag .heic files into the drop zone.
 3. Adjust **JPEG quality** if needed (default 90%).
 4. Click **Convert**, then download each JPG or **Download all as ZIP**.
 
-Processing happens **in your browser**. Nothing uploads to our servers. Good for personal, medical, or client photos.
+Processing stays **in your browser**. Nothing uploads to our servers.
 
 ## Method 4: Shoot JPG on iPhone going forward
 
 **Settings → Camera → Formats → Most Compatible** makes new photos JPEG. Existing HEIC files still need conversion.
+
+![iPhone Settings → Camera → Formats → Most Compatible](/guides/iphone-most-compatible-formats.svg)
 
 ## Batch tips for large albums
 
@@ -1474,18 +1527,21 @@ If colors look flat after convert, read [HEIC colors washed out after convert](/
     description:
       "Convert 50–200 iPhone HEIC photos to JPG on Windows or Mac: USB vs iCloud paths, batch sizes for 8 GB RAM, ZIP download, quality slider, and why local beats cloud upload.",
     publishedAt: "2026-06-02",
+    updatedAt: "2026-06-16",
     readMinutes: 14,
-    content: `*Last updated: June 2, 2026*
+    content: `*Last updated: June 16, 2026*
 
-**Short answer:** Copy iPhone HEIC photos to your PC (USB, iCloud Drive, or Google Photos export), open **[HEIC to JPG](/heic-to-jpg)** in Chrome or Edge, drop the folder in batches of 40–60 files on 8 GB RAM (or 150+ on a 16 GB desktop), set JPEG quality to 85–90%, convert, and download a **ZIP** of JPGs. Nothing uploads to our servers.
+**Short answer:** Copy iPhone HEIC to your PC (USB, iCloud, or Google Photos export), open **[HEIC to JPG](/heic-to-jpg)** in Chrome or Edge, drop files in batches of 40–60 on 8 GB RAM (150+ on 16 GB desktop), set JPEG quality to 85–90%, convert, download a **ZIP**. Nothing uploads to our servers.
 
-This guide walks through a **real batch workflow** we use when testing HeicSave—not generic “five easy steps.” You will see where files land on disk, how long conversion takes, when to split batches, and what file sizes to expect after export.
+We wrote this after converting real vacation folders while testing HeicSave—not a generic “five easy steps” list. You will see where files land, sensible batch sizes, and what to expect for file sizes after export.
 
 ## Scenario: 187 photos from a two-week trip
 
-Picture a typical case: iPhone 15 Pro, **48 MP HEIC** stills, 187 files after deleting duplicates. Total HEIC folder size on disk: about **620 MB**. Goal: JPGs for Google Photos backup, email to family, and a Premiere Pro slideshow.
+iPhone 15 Pro, **48 MP HEIC** stills, 187 files after deleting duplicates. Folder on disk: about **620 MB**. Goal: JPGs for Google Photos backup, email to family, and a Premiere slideshow.
 
-That mix is why batch matters. You are not converting one attachment—you are moving an entire camera roll off Apple's format before anyone else can open it.
+That mix is why batch matters—you are moving a whole camera roll off Apple’s format before anyone else can open it.
+
+![HeicSave batch UI: drop zone, 90% quality slider, Convert and Download ZIP](/guides/heicsave-dropzone-batch.svg)
 
 ## Step 1 — Get HEIC files onto your computer
 
@@ -1586,6 +1642,67 @@ Compare methods in the table on our [HEIC to JPG tool page](/heic-to-jpg#technic
 ## Cite this page
 
 > Batch iPhone HEIC to JPG locally: 40–60 files per batch on 8 GB RAM, 85–90% JPEG quality, ZIP download. Full workflow: https://heicsave.com/blog/batch-heic-to-jpg-workflow — tool: https://heicsave.com/heic-to-jpg`,
+  },
+  {
+    slug: "disable-heic-iphone-jpg",
+    title: "How to Turn Off HEIC on iPhone and Save JPG Instead (2026)",
+    description:
+      "Switch iPhone camera from HEIC to JPG with Settings → Camera → Formats → Most Compatible. What changes, what stays HEIC, and when to convert old photos.",
+    publishedAt: "2026-06-16",
+    readMinutes: 9,
+    content: `*Last updated: June 16, 2026*
+
+You do not “delete HEIC” from an iPhone—you change what the **camera saves next**. Old photos in Photos stay HEIC until you convert or re-export them.
+
+## Before you switch
+
+**Most Compatible** saves new shots as JPEG and new videos as H.264. You lose some storage efficiency and a bit of headroom on ProRAW/ProRes workflows. For most people emailing photos to family or uploading to Windows PCs, that trade is worth it.
+
+**High Efficiency** (the default) keeps HEIC/HEVC and uses less space. Keep it if you live entirely inside Apple devices and iCloud.
+
+## Step-by-step: turn off HEIC for new photos
+
+1. Open **Settings**.
+2. Scroll to **Camera**.
+3. Tap **Formats**.
+4. Select **Most Compatible** (not High Efficiency).
+
+![Settings → Camera → Formats → Most Compatible — new photos save as JPG](/guides/iphone-most-compatible-formats.svg)
+
+Take a test photo. In Files or when AirDropping to a Mac, the extension should be **.jpg** or **.jpeg**.
+
+## USB to Windows still giving HEIC?
+
+**Settings → Photos → Transfer to Mac or PC** is a separate setting:
+
+| Setting | What USB copy sends |
+|---|---|
+| Automatic | JPG only if iOS thinks the PC cannot read HEIC (unreliable on Windows 11) |
+| Keep Originals | Always HEIC |
+
+If Automatic keeps failing, either set **Most Compatible** (above) or convert after copy with [HEIC to JPG](/heic-to-jpg). Walkthrough: [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows).
+
+## Existing library still HEIC
+
+Changing Formats does not rewrite your camera roll. Options:
+
+1. **Convert on PC** — copy via USB or iCloud, then [batch convert](/blog/batch-heic-to-jpg-workflow) in the browser.
+2. **Share as JPG from iPhone** — Photos → Share → options may offer Automatic format; not reliable for bulk.
+3. **Mac Preview** — export selected images as JPEG ([Mac guide](/blog/heic-mac-guide)).
+
+## When we recommend keeping HEIC on the phone
+
+You shoot hundreds of photos per week and pay for minimal iCloud storage. You edit only on iPhone/iPad/Mac. You rarely email full-resolution files.
+
+When Windows, Outlook, or print shops enter the picture, JPG on capture or convert-after-transfer is simpler.
+
+## Related guides
+
+- [Why iPhone uses HEIC](/blog/why-iphone-uses-heic)
+- [HEIC vs JPG](/blog/heic-vs-jpg)
+- [Batch HEIC to JPG workflow](/blog/batch-heic-to-jpg-workflow)
+
+**Convert existing HEIC:** [HEIC to JPG](/heic-to-jpg) — local, no upload.`,
   },
   {
     slug: "avif-thumbnails-not-showing-windows-explorer",
