@@ -44,7 +44,7 @@ You may see **.heic**, **.heif**, or **.HEIC**. For iPhone stills they behave th
 
 Windows 10 and **Windows 11** can open HEIC after optional Microsoft Store codecs (HEIF Image Extensions, sometimes HEVC). Many people skip install and convert to JPG instead—especially on locked-down work PCs. On Windows 11 24H2, Photos may preview HEIC while Adobe apps still fail. Codecs fix the viewer, not every editor.
 
-![Install HEIF Image Extensions from Microsoft Store or winget](/guides/windows-heif-codec.svg)
+![Install HEIF Image Extensions from Microsoft Store or winget](/guides/windows-heif-codec.webp)
 
 Full walkthrough: [How to Open and Convert HEIC on Windows](/blog/heic-windows-guide).
 
@@ -166,7 +166,7 @@ If Automatic keeps failing you, convert after copy or change camera format (belo
 
 **Settings → Camera → Formats → Most Compatible** makes new shots JPEG. Photos already on the phone stay HEIC until you convert them.
 
-![Settings → Camera → Formats → Most Compatible saves new iPhone photos as JPG](/guides/iphone-most-compatible-formats.svg)
+![Settings → Camera → Formats → Most Compatible saves new iPhone photos as JPG](/guides/iphone-most-compatible-formats.webp)
 
 Step-by-step with trade-offs: [Turn off HEIC on iPhone](/blog/disable-heic-iphone-jpg).
 
@@ -244,7 +244,7 @@ Windows users get HEIC from iPhone owners every day—USB copy, iCloud sync, Goo
 
 Microsoft Store has **HEIF Image Extensions** (often free) and sometimes **HEVC Video Extensions** (paid on some PCs). After install, Photos may open HEIC and Explorer may show thumbnails.
 
-![HEIF Image Extensions in Microsoft Store, or install via winget in PowerShell](/guides/windows-heif-codec.svg)
+![HEIF Image Extensions in Microsoft Store, or install via winget in PowerShell](/guides/windows-heif-codec.webp)
 
 Quick install via winget (PowerShell):
 
@@ -261,7 +261,7 @@ winget install Microsoft.HEIFImageExtension
 3. Set **JPEG quality** if you want smaller or sharper files.
 4. Click **Convert**, then download each JPG or **Download all as ZIP**.
 
-![HeicSave batch converter: drop zone, quality slider, ZIP download — files stay on your PC](/guides/heicsave-dropzone-batch.svg)
+![HeicSave batch converter: drop zone, quality slider, ZIP download — files stay on your PC](/guides/heicsave-dropzone-batch.webp)
 
 Conversion runs in your browser. Nothing uploads to a server.
 
@@ -336,7 +336,7 @@ Use [HEIC to JPG](/heic-to-jpg) in Safari or Chrome:
 - Download a **ZIP** of all JPGs
 - EXIF (date taken, camera) preserved when possible
 
-![HeicSave in the browser: batch HEIC drop, quality slider, ZIP — processing stays local](/guides/heicsave-dropzone-batch.svg)
+![HeicSave in the browser: batch HEIC drop, quality slider, ZIP — processing stays local](/guides/heicsave-dropzone-batch.webp)
 
 We test this path on macOS Sonoma and Sequoia before publishing updates.
 
@@ -698,7 +698,7 @@ JPG is still what most Windows apps, printers, and upload forms expect.
 3. Open **File Explorer → Apple iPhone → Internal Storage → DCIM**.
 4. Copy folders to your PC.
 
-![File Explorer path: Apple iPhone → Internal Storage → DCIM — copied files may still be HEIC](/guides/usb-iphone-dcim-windows.svg)
+![File Explorer: This PC → Apple iPhone → Internal Storage → DCIM — iPhone photos copied here are often still HEIC](/guides/usb-iphone-dcim-windows.webp)
 
 Copied files are often still HEIC. They may not preview until you install codecs or convert.
 
@@ -723,7 +723,7 @@ Processing stays **in your browser**. Nothing uploads to our servers.
 
 **Settings → Camera → Formats → Most Compatible** makes new photos JPEG. Existing HEIC files still need conversion.
 
-![iPhone Settings → Camera → Formats → Most Compatible](/guides/iphone-most-compatible-formats.svg)
+![iPhone Settings → Camera → Formats → Most Compatible](/guides/iphone-most-compatible-formats.webp)
 
 ## Batch tips for large albums
 
@@ -1541,7 +1541,7 @@ iPhone 15 Pro, **48 MP HEIC** stills, 187 files after deleting duplicates. Folde
 
 That mix is why batch matters—you are moving a whole camera roll off Apple’s format before anyone else can open it.
 
-![HeicSave batch UI: drop zone, 90% quality slider, Convert and Download ZIP](/guides/heicsave-dropzone-batch.svg)
+![HeicSave batch UI: drop zone, 90% quality slider, Convert and Download ZIP](/guides/heicsave-dropzone-batch.webp)
 
 ## Step 1 — Get HEIC files onto your computer
 
@@ -1667,7 +1667,7 @@ You do not “delete HEIC” from an iPhone—you change what the **camera saves
 3. Tap **Formats**.
 4. Select **Most Compatible** (not High Efficiency).
 
-![Settings → Camera → Formats → Most Compatible — new photos save as JPG](/guides/iphone-most-compatible-formats.svg)
+![Settings → Camera → Formats → Most Compatible — new photos save as JPG](/guides/iphone-most-compatible-formats.webp)
 
 Take a test photo. In Files or when AirDropping to a Mac, the extension should be **.jpg** or **.jpeg**.
 
