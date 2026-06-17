@@ -160,6 +160,8 @@ Windows PCs, older Android phones, and most email clients still expect JPG. Prin
 - **Automatic** — iOS sends JPG only if it thinks the PC cannot read HEIC. Driver and codec changes on Windows 11 confuse this; you may still get HEIC.
 - **Keep Originals** — always HEIC.
 
+![Settings → Photos → Transfer to Mac or PC — Automatic vs Keep Originals](/guides/iphone-transfer-mac-pc.webp)
+
 If Automatic keeps failing you, convert after copy or change camera format (below).
 
 ## Switch to JPG on iPhone (new photos only)
@@ -240,17 +242,21 @@ Keep HEIC on the phone for storage. Convert to JPG when sharing outside Apple’
 
 Windows users get HEIC from iPhone owners every day—USB copy, iCloud sync, Google Drive ZIP. Here is what actually works in 2026 without guessing.
 
+![Windows Photos without HEIF codecs: yellow banner asks for HEIF Image Extensions](/guides/windows-heic-no-preview.webp)
+
 ## Option 1: Install HEIC codecs (admin may be required)
 
 Microsoft Store has **HEIF Image Extensions** (often free) and sometimes **HEVC Video Extensions** (paid on some PCs). After install, Photos may open HEIC and Explorer may show thumbnails.
 
 ![HEIF Image Extensions in Microsoft Store, or install via winget in PowerShell](/guides/windows-heif-codec.webp)
 
-Quick install via winget (PowerShell):
+Quick install via winget (PowerShell, requires **App Installer** from Microsoft Store):
 
 \`\`\`
 winget install Microsoft.HEIFImageExtension
 \`\`\`
+
+If \`winget\` is not recognized, use the Store link above—same extension, no command line needed.
 
 **Limits:** locked-down work PCs, missing HEVC for some color profiles, batch workflows still awkward compared to one JPG export.
 
@@ -261,7 +267,9 @@ winget install Microsoft.HEIFImageExtension
 3. Set **JPEG quality** if you want smaller or sharper files.
 4. Click **Convert**, then download each JPG or **Download all as ZIP**.
 
-![HeicSave batch converter: drop zone, quality slider, ZIP download — files stay on your PC](/guides/heicsave-dropzone-batch.webp)
+![HeicSave before convert: drag-and-drop zone, 90% quality slider, private browser-local processing](/guides/heicsave-dropzone-before.webp)
+
+![After conversion: Download all as ZIP — files never left your PC](/guides/heicsave-dropzone-batch.webp)
 
 Conversion runs in your browser. Nothing uploads to a server.
 
@@ -336,7 +344,7 @@ Use [HEIC to JPG](/heic-to-jpg) in Safari or Chrome:
 - Download a **ZIP** of all JPGs
 - EXIF (date taken, camera) preserved when possible
 
-![HeicSave in the browser: batch HEIC drop, quality slider, ZIP — processing stays local](/guides/heicsave-dropzone-batch.webp)
+![HeicSave in the browser: drag HEIC files, set quality, convert locally — no upload](/guides/heicsave-dropzone-before.webp)
 
 We test this path on macOS Sonoma and Sequoia before publishing updates.
 
@@ -701,6 +709,17 @@ JPG is still what most Windows apps, printers, and upload forms expect.
 ![File Explorer: This PC → Apple iPhone → Internal Storage → DCIM — iPhone photos copied here are often still HEIC](/guides/usb-iphone-dcim-windows.webp)
 
 Copied files are often still HEIC. They may not preview until you install codecs or convert.
+
+## USB transfer format: Automatic vs Keep Originals
+
+**Settings → Photos → Transfer to Mac or PC** decides whether iOS re-encodes on the wire:
+
+- **Automatic** — JPG only if iOS thinks the PC cannot read HEIC (often wrong on Windows 11).
+- **Keep Originals** — always HEIC on copy.
+
+![Settings → Photos → Transfer to Mac or PC — Automatic selected sends compatible format when iOS guesses the PC needs JPG](/guides/iphone-transfer-mac-pc.webp)
+
+If you see all `.heic` in DCIM despite Automatic, install [HEIF extensions](/blog/heic-windows-guide) or convert with [HEIC to JPG](/heic-to-jpg).
 
 ## Method 2: iCloud for Windows
 
@@ -1541,8 +1560,6 @@ iPhone 15 Pro, **48 MP HEIC** stills, 187 files after deleting duplicates. Folde
 
 That mix is why batch matters—you are moving a whole camera roll off Apple’s format before anyone else can open it.
 
-![HeicSave batch UI: drop zone, 90% quality slider, Convert and Download ZIP](/guides/heicsave-dropzone-batch.webp)
-
 ## Step 1 — Get HEIC files onto your computer
 
 | Source | What you get | Gotcha |
@@ -1564,6 +1581,8 @@ If Windows Explorer will not preview thumbnails, that is normal without HEIF ext
 
 Why set quality first? Every file in the batch uses the same setting. Mixing re-runs wastes time.
 
+![HeicSave: set JPEG quality and drop HEIC files — no upload to our servers](/guides/heicsave-dropzone-before.webp)
+
 ## Step 3 — Batch size: match your RAM
 
 HeicSave has **no fixed file-count cap**. Your limit is browser memory decoding full-resolution HEIC.
@@ -1575,6 +1594,8 @@ HeicSave has **no fixed file-count cap**. Your limit is browser memory decoding 
 | 8 GB + 48 MP RAW-like exports | 20–30 files | Split aggressively |
 
 **Workflow loop:** drag batch → Convert → Download ZIP → rename ZIP (e.g. \`trip-batch-01.zip\`) → refresh page if tab feels slow → next batch.
+
+![Four files converted — Download all as ZIP (4) ready](/guides/heicsave-dropzone-batch.webp)
 
 On a 16 GB Windows 11 laptop with Chrome, converting **100 HEIC files (12 MP mix)** often finishes in **under three minutes**—local decode, no upload wait.
 
@@ -1679,6 +1700,8 @@ Take a test photo. In Files or when AirDropping to a Mac, the extension should b
 |---|---|
 | Automatic | JPG only if iOS thinks the PC cannot read HEIC (unreliable on Windows 11) |
 | Keep Originals | Always HEIC |
+
+![Settings → Photos → Transfer to Mac or PC — separate from Camera → Formats](/guides/iphone-transfer-mac-pc.webp)
 
 If Automatic keeps failing, either set **Most Compatible** (above) or convert after copy with [HEIC to JPG](/heic-to-jpg). Walkthrough: [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows).
 
@@ -1851,6 +1874,8 @@ iPhone photos use **HEIC** compression. Windows 10 does not ship full HEIC decod
 - Grey tile instead of preview
 - "Unsupported" in Photos
 - Email clients refusing .heic attachments
+
+![Photos app on Windows 10: HEIF Image Extension required for full-resolution HEIC](/guides/windows-heic-no-preview.webp)
 
 ## FAQ — Windows 10 HEIC not showing
 

@@ -17,14 +17,32 @@ const JOBS = [
     quality: 82,
   },
   {
+    input: "iphone-transfer-mac-pc.webp",
+    output: "iphone-transfer-mac-pc.webp",
+    width: 472,
+    quality: 82,
+  },
+  {
     input: "windows-heif-codec.webp",
     output: "windows-heif-codec.webp",
     width: 960,
     quality: 82,
   },
   {
+    input: "heicsave-dropzone-before.webp",
+    output: "heicsave-dropzone-before.webp",
+    width: 960,
+    quality: 82,
+  },
+  {
     input: "heicsave-dropzone-batch.webp",
     output: "heicsave-dropzone-batch.webp",
+    width: 960,
+    quality: 82,
+  },
+  {
+    input: "windows-heic-no-preview.webp",
+    output: "windows-heic-no-preview.webp",
     width: 960,
     quality: 82,
   },
