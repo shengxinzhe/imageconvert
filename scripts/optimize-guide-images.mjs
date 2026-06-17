@@ -29,6 +29,12 @@ const JOBS = [
     quality: 82,
   },
   {
+    input: "heic-hevc-compression.webp",
+    output: "heic-hevc-compression.webp",
+    width: 960,
+    quality: 82,
+  },
+  {
     input: "usb-iphone-dcim-windows.webp",
     output: "usb-iphone-dcim-windows.webp",
     width: 960,

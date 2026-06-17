@@ -24,7 +24,7 @@ If you copied photos off an iPhone recently, you probably ran into **.heic** fil
 
 The trade-off shows up fast: Windows without codecs, Gmail rejecting attachments, gray thumbnails in Drive. We maintain HeicSave for that handoff—convert in the browser when the other side only accepts JPG.
 
-![HEIC uses HEVC compression inside the container—smaller on iPhone, JPG is easier to share](/guides/heic-hevc-compression.svg)
+![Same iPhone photo: IMG_5395.HEIC (2,210 KB) vs IMG_5395.jpg (2,748 KB) after conversion](/guides/heic-hevc-compression.webp)
 
 Working through 50–200 files? See [batch HEIC to JPG workflow](/blog/batch-heic-to-jpg-workflow). Email bounced? [HEIC attachment guide](/blog/heic-outlook-email-attachment). **Photoshop** or Premiere stuck on iPhone stills? Links below.
 
@@ -192,7 +192,7 @@ Both formats hold photos. They optimize for different things—storage on iPhone
 
 **HEIC** is a container. The still image is usually compressed with **HEVC** (H.265), the same family as efficient iPhone video. **JPEG** uses older DCT compression. Same scene, similar look: HEIC is often about half the bytes.
 
-![Typical 12 MP iPhone shot: HEIC ~1.8 MB vs JPEG ~3.6 MB at similar quality](/guides/heic-hevc-compression.svg)
+![Same photo on disk: HEIC often smaller than JPG at similar quality — JPG wins on compatibility](/guides/heic-hevc-compression.webp)
 
 That size gap is why Apple made HEIC the camera default in iOS 11. It is not magic—just a newer codec with better compression.
 
