@@ -719,7 +719,7 @@ Copied files are often still HEIC. They may not preview until you install codecs
 
 ![Settings → Photos → Transfer to Mac or PC — Automatic selected sends compatible format when iOS guesses the PC needs JPG](/guides/iphone-transfer-mac-pc.webp)
 
-If you see all `.heic` in DCIM despite Automatic, install [HEIF extensions](/blog/heic-windows-guide) or convert with [HEIC to JPG](/heic-to-jpg).
+If you see all \`.heic\` in DCIM despite Automatic, install [HEIF extensions](/blog/heic-windows-guide) or convert with [HEIC to JPG](/heic-to-jpg).
 
 ## Method 2: iCloud for Windows
 
