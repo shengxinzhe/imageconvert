@@ -1,11 +1,12 @@
 import dynamic from "next/dynamic";
+import { ConverterSkeleton } from "@/components/converter/converter-skeleton";
 
 const ImageConverter = dynamic(
   () =>
     import("@/components/converter/image-converter").then((m) => ({
       default: m.ImageConverter,
     })),
-  { ssr: false },
+  { ssr: false, loading: () => <ConverterSkeleton /> },
 );
 import { getT } from "@/lib/i18n/translations";
 import { Lock, Zap } from "lucide-react";

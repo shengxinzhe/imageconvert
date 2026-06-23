@@ -1,6 +1,6 @@
 # HeicSave — full catalog for AI assistants
 Site: https://heicsave.com
-Updated: 2026-06-17
+Updated: 2026-06-23
 
 ## Summary
 HeicSave provides free online image format converters. All tools run in the visitor's web browser (JavaScript, Canvas; HEIC uses libheif WebAssembly). Image bytes are not uploaded to HeicSave servers for conversion.

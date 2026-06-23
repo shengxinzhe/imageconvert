@@ -3,8 +3,11 @@
 import { useParams } from "next/navigation";
 import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
-import type { OutputFormat } from "@/lib/convert";
-import { defaultQualityPercent, outputSupportsQuality } from "@/lib/convert";
+import {
+  defaultQualityPercent,
+  outputSupportsQuality,
+  type OutputFormat,
+} from "@/lib/convert/format";
 import { getT } from "@/lib/i18n/translations";
 
 interface QualityControlProps {

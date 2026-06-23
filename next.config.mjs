@@ -2,6 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    optimizePackageImports: ["lucide-react", "geist"],
+  },
   images: {
     formats: ["image/avif", "image/webp"],
   },
@@ -20,21 +23,30 @@ const nextConfig = {
       },
     ];
 
+    const longCache = [
+      {
+        key: "Cache-Control",
+        value: "public, max-age=31536000, immutable",
+      },
+    ];
+
     return [
       {
         source: "/_next/static/:path*",
-        headers: [
-          ...securityHeaders,
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
+        headers: [...securityHeaders, ...longCache],
+      },
+      {
+        source: "/guides/:path*",
+        headers: [...securityHeaders, ...longCache],
+      },
+      {
+        source: "/:file(favicon.ico|icon.png|apple-touch-icon.png|og.png|favicon.svg)",
+        headers: [...securityHeaders, ...longCache],
       },
       {
         // HTML/app routes: avoid CDN serving stale HTML that references old chunk hashes.
         source:
-          "/((?!_next/static|_next/image|favicon.ico|icon.png|apple-touch-icon.png|og.png|sitemap|llms|ai.json|robots.txt).*)",
+          "/((?!_next/static|_next/image|favicon.ico|icon.png|apple-touch-icon.png|og.png|sitemap|llms|ai.json|robots.txt|guides/).*)",
         headers: [
           ...securityHeaders,
           {

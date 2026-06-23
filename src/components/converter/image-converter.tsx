@@ -20,7 +20,6 @@ import {
   formatConversionError,
   type ConversionErrorDisplay,
 } from "@/lib/convert-errors";
-import { convertBatch } from "@/lib/convert/conversion-pool";
 import { getConverterSoftWarnings } from "@/lib/converter-warnings";
 import {
   fileInputAccept,
@@ -28,8 +27,8 @@ import {
   supportsExifToggle,
   type InputFormat,
   type OutputFormat,
-} from "@/lib/convert";
-import { buildZipBlob, downloadBlob } from "@/lib/download-zip";
+} from "@/lib/convert/format";
+import { downloadBlob } from "@/lib/download-blob";
 import { Link } from "@/i18n/navigation";
 import { getLocalizedBlogPost } from "@/lib/blog-l10n";
 import { getT } from "@/lib/i18n/translations";
@@ -167,6 +166,7 @@ export function ImageConverter({
     const maxWidth = maxWidthForPreset(resizePreset);
 
     try {
+      const { convertBatch } = await import("@/lib/convert/conversion-pool");
       const { successes, failures } = await convertBatch(
         files,
         {
@@ -254,6 +254,7 @@ export function ImageConverter({
     setZipping(true);
     setError(null);
     try {
+      const { buildZipBlob } = await import("@/lib/download-zip");
       const zip = await buildZipBlob(
         results.map((r) => ({ name: r.outputName, blob: r.blob })),
       );

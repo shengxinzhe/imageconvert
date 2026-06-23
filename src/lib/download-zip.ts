@@ -30,11 +30,4 @@ export async function buildZipBlob(
   return new Blob([zipped], { type: "application/zip" });
 }
 
-export function downloadBlob(blob: Blob, filename: string) {
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
-}
+export { downloadBlob } from "./download-blob";

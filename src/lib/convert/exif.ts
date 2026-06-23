@@ -1,5 +1,3 @@
-import exifr from "exifr";
-
 type PiexifDict = Record<string, Record<number, unknown>>;
 
 function formatExifDate(value: unknown): string | undefined {
@@ -13,6 +11,7 @@ function formatExifDate(value: unknown): string | undefined {
 /** Build piexif-compatible EXIF from source file (best-effort). */
 export async function extractPiexifFromFile(file: File): Promise<PiexifDict | null> {
   try {
+    const exifr = (await import("exifr")).default;
     const tags = await exifr.parse(file, {
       pick: [
         "Make",

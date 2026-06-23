@@ -6,7 +6,7 @@ import { GeistSans } from "geist/font/sans";
 import { Ga4Analytics } from "@/components/analytics/ga4-analytics";
 import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
 import { ChunkLoadRecovery } from "@/components/chunk-load-recovery";
-import { CookieBanner } from "@/components/cookie-banner";
+import { CookieBannerLazy } from "@/components/cookie-banner-lazy";
 import { ConsentRestore } from "@/components/consent-restore";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -124,6 +124,10 @@ export default function LocaleLayout({
           href="/ai.json"
           title="AI discovery catalog"
         />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <meta name="google-adsense-account" content={ADSENSE_CLIENT_ID_DEFAULT} />
       </head>
       <body className="min-h-screen bg-canvas font-sans text-ink antialiased">
@@ -134,7 +138,7 @@ export default function LocaleLayout({
         />
         <Script
           id="adsense-loader"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           async
           crossOrigin="anonymous"
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID_DEFAULT}`}
@@ -144,7 +148,7 @@ export default function LocaleLayout({
         <Header locale={locale as AppLocale} />
         <main>{children}</main>
         <Footer locale={locale as AppLocale} />
-        <CookieBanner />
+        <CookieBannerLazy />
         <ConsentRestore />
         <VercelAnalytics />
         <Ga4Analytics />

@@ -27,7 +27,7 @@ function Ga4Scripts() {
     <Script
       id="ga4-gtag"
       src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
-      strategy="afterInteractive"
+      strategy="lazyOnload"
       onLoad={() => {
         const gtag = (window as Window & { gtag?: (...args: unknown[]) => void })
           .gtag;
