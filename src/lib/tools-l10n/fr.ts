@@ -289,6 +289,106 @@ const frToolsBase: Record<ToolSlug, ToolLocaleFields> = {
       },
     ],
   },
+  "jpg-to-png": {
+    title: "Convertir JPG en PNG — gratuit en ligne",
+    h1: "Convertir JPG en PNG — gratuit en ligne",
+    metaDescription:
+      "JPG en PNG gratuit dans le navigateur. Sans envoi, lot et ZIP — pour formulaires et outils design.",
+    keywords: ["jpg en png", "jpeg png convertir"],
+    heroSubtitle: "JPG en PNG quand un portail refuse le JPEG",
+    whyConvert: {
+      title: "Pourquoi JPG en PNG ?",
+      paragraphs: [
+        "Certains formulaires n'acceptent que le PNG.",
+        "Conversion locale — rien n'est envoyé à nos serveurs.",
+      ],
+    },
+    howToSteps: ["Ajoutez JPG.", "Convertissez.", "Téléchargez PNG ou ZIP."],
+    privacyNote: "Décodage Canvas — uniquement sur votre appareil.",
+    faqs: [
+      {
+        question: "Sans perte ?",
+        answer: "Le PNG stocke les pixels décodés ; le JPEG source ne se reconstitue pas.",
+      },
+    ],
+  },
+  "png-to-jpg": {
+    title: "Convertir PNG en JPG — gratuit en ligne",
+    h1: "Convertir PNG en JPG — gratuit en ligne",
+    metaDescription:
+      "PNG en JPG gratuit dans le navigateur. Pièces jointes plus légères, curseur qualité, ZIP lot — sans envoi.",
+    keywords: ["png en jpg", "convertir png jpg"],
+    heroSubtitle: "PNG en JPG pour e-mail et limites d'envoi",
+    whyConvert: {
+      title: "Pourquoi PNG en JPG ?",
+      paragraphs: ["Le JPG est souvent plus petit et mieux accepté par les portails."],
+    },
+    howToSteps: [
+      "Ajoutez PNG.",
+      "Choisissez la qualité JPEG.",
+      "Téléchargez JPG ou ZIP.",
+    ],
+    privacyNote: "Sans envoi — tout reste dans l'onglet.",
+    faqs: [
+      {
+        question: "Transparence ?",
+        answer: "Le JPG ne gère pas la transparence — fond aplati.",
+      },
+    ],
+  },
+  "compress-jpg": {
+    title: "Compresser JPG — gratuit, privé, sans envoi",
+    h1: "Compresser JPG — dans le navigateur",
+    metaDescription:
+      "Réduire JPG gratuit dans le navigateur. Qualité, redimensionnement, ZIP lot — fichiers sur l'appareil.",
+    keywords: ["compresser jpg", "réduire jpeg en ligne"],
+    heroSubtitle: "JPG plus petits pour e-mail et formulaires — 100 % local",
+    whyConvert: {
+      title: "Pourquoi compresser JPG localement ?",
+      paragraphs: [
+        "Les portails limitent la taille. Re-encodage dans le navigateur, pas sur un serveur inconnu.",
+      ],
+    },
+    howToSteps: [
+      "Ajoutez JPG, qualité (75 % par défaut).",
+      "Compressez — localement.",
+      "Téléchargez JPG ou ZIP.",
+    ],
+    privacyNote: "Aucune donnée image reçue par nos serveurs.",
+    faqs: [
+      {
+        question: "Quelle qualité ?",
+        answer: "75 % par défaut — réglable avant export.",
+      },
+    ],
+  },
+  "strip-exif": {
+    title: "Supprimer EXIF — gratuit dans le navigateur",
+    h1: "Supprimer EXIF et métadonnées — privé",
+    metaDescription:
+      "Retirer EXIF, GPS et métadonnées gratuit dans le navigateur. HEIC, JPG, PNG, WebP, AVIF — ZIP lot, sans envoi.",
+    keywords: ["supprimer exif", "effacer métadonnées photo"],
+    heroSubtitle: "Retirer GPS et infos appareil avant de partager",
+    whyConvert: {
+      title: "Pourquoi retirer les métadonnées localement ?",
+      paragraphs: [
+        "Les photos peuvent contenir GPS et infos appareil — risqué avant publication.",
+        "Re-encodage local au lieu d'outils cloud.",
+      ],
+    },
+    howToSteps: [
+      "Ajoutez photos (formats mixtes OK).",
+      "Supprimez les métadonnées — localement.",
+      "Téléchargez fichiers nettoyés ou ZIP.",
+    ],
+    privacyNote: "Traitement uniquement dans votre onglet.",
+    faqs: [
+      {
+        question: "HEIC pris en charge ?",
+        answer: "Oui — HEIC converti en JPG sans copie EXIF.",
+      },
+    ],
+  },
 };
 
 export const frTools: Record<ToolSlug, ToolLocaleFields> = Object.fromEntries(

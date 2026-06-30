@@ -57,6 +57,9 @@ export async function ToolLandingPage({
                   toolSlug={tool.slug}
                   audience={audience}
                   postConvertGuideSlug={guideConfig?.postConvertGuide}
+                  toolKind={tool.kind}
+                  acceptedInputs={tool.acceptedInputs}
+                  defaultQualityPercent={tool.defaultQualityPercent}
                 />
               </div>
 

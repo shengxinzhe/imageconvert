@@ -46,3 +46,16 @@ export function fileInputAccept(from: InputFormat): string {
 export function supportsExifToggle(from: InputFormat, to: OutputFormat): boolean {
   return from === "heic" && (to === "jpg" || to === "jpeg");
 }
+
+/** Output format when stripping metadata (re-encode locally, no EXIF). */
+export function stripMetadataOutputFormat(input: InputFormat): OutputFormat {
+  if (input === "png") return "png";
+  if (input === "webp") return "webp";
+  return "jpg";
+}
+
+export function fileInputAcceptMultiple(formats: InputFormat[]): string {
+  const specific = formats.map((f) => acceptMimeForInput(f)).join(",");
+  if (isIos()) return `image/*,${specific}`;
+  return specific;
+}

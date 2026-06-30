@@ -4,6 +4,7 @@ export const SITE_URL =
 
 export const DEFAULT_JPEG_QUALITY = 0.9;
 export const DEFAULT_WEBP_QUALITY = 0.85;
+export const DEFAULT_COMPRESS_JPEG_QUALITY = 0.75;
 
 /** Soft guidance only — conversion is not blocked above these values. */
 export const SOFT_WARN_FILE_SIZE = 50 * 1024 * 1024; // 50 MB

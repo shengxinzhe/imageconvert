@@ -7,11 +7,18 @@ export interface FaqItem {
   answer: string;
 }
 
+export type ToolKind = "convert" | "compress" | "strip-metadata";
+
 export interface ToolConfig {
   slug: string;
   path: string;
   from: InputFormat;
   to: OutputFormat;
+  kind?: ToolKind;
+  /** Multi-format input for strip-metadata tools */
+  acceptedInputs?: InputFormat[];
+  /** Override default quality slider (e.g. compress at 75%) */
+  defaultQualityPercent?: number;
   title: string;
   h1: string;
   metaDescription: string;
@@ -35,6 +42,10 @@ const allSlugs = [
   "avif-to-png",
   "jpg-to-webp",
   "png-to-webp",
+  "jpg-to-png",
+  "png-to-jpg",
+  "compress-jpg",
+  "strip-exif",
 ] as const;
 
 export type ToolSlug = (typeof allSlugs)[number];
@@ -717,6 +728,276 @@ export const tools: Record<ToolSlug, ToolConfig> = {
         heading: "PNG to WebP for frontend performance",
         content:
           "Replace bloated PNGs in your /public folder with WebP exports from this tool, then use <picture> elements for resilient delivery.",
+      },
+    ],
+  },
+  "jpg-to-png": {
+    slug: "jpg-to-png",
+    path: "/jpg-to-png",
+    from: "jpg",
+    to: "png",
+    title: "JPG to PNG Converter — Free & Online (No Upload)",
+    h1: "JPG to PNG Converter — Free in Your Browser",
+    metaDescription:
+      "Convert JPG to PNG free in your browser. No upload, batch convert, ZIP download—ideal for forms, design tools, and lossless-friendly workflows.",
+    keywords: [
+      "jpg to png",
+      "jpeg to png",
+      "convert jpg to png",
+      "jpg to png online free",
+      "convert jpeg to png without uploading",
+    ],
+    heroSubtitle: "Turn JPG photos into PNG for apps that reject JPEG",
+    whyConvert: {
+      title: "Why Convert JPG to PNG?",
+      paragraphs: [
+        "Some forms, government portals, and legacy software accept PNG but block JPG uploads.",
+        "PNG stores decoded pixels without additional JPEG loss—useful when you need a stable intermediate for editing or screenshots.",
+        "HeicSave converts locally in your browser; your files never upload to our servers.",
+      ],
+    },
+    howToSteps: [
+      "Drop JPG or JPEG files (or click Browse).",
+      "Click Convert—encoding runs locally in your browser.",
+      "Download each PNG or grab all files as a ZIP.",
+    ],
+    privacyNote: "JPG is decoded via the browser Canvas API on your device only.",
+    faqs: [
+      {
+        question: "Is JPG to PNG lossless?",
+        answer:
+          "PNG is lossless relative to the decoded JPG pixels. It cannot restore detail already lost in the original JPEG compression.",
+      },
+      {
+        question: "Will PNG files be larger?",
+        answer: "Usually yes. PNG is best when you need compatibility or a lossless container, not minimum file size.",
+      },
+      {
+        question: "Batch convert JPG to PNG?",
+        answer: "Yes. Add many files, convert once, and download a ZIP.",
+      },
+      {
+        question: "Do you upload my JPG files?",
+        answer: "No. Conversion is client-side only.",
+      },
+      {
+        question: "Works offline?",
+        answer: "After the page loads, conversion can run without sending your images online.",
+      },
+    ],
+    relatedSlugs: related("jpg-to-png"),
+    seoSections: [
+      {
+        heading: "JPG to PNG for forms and design handoffs",
+        paragraphs: [
+          "Upload portals and CMS tools sometimes whitelist PNG only. Convert locally before submitting insurance scans, ID photos, or marketing assets—without cloud upload risk.",
+        ],
+      },
+    ],
+  },
+  "png-to-jpg": {
+    slug: "png-to-jpg",
+    path: "/png-to-jpg",
+    from: "png",
+    to: "jpg",
+    title: "PNG to JPG Converter — Free & Online (No Upload)",
+    h1: "PNG to JPG Converter — Free in Your Browser",
+    metaDescription:
+      "Convert PNG to JPG free in your browser. Smaller attachments, batch ZIP, quality slider—no upload. Perfect for email, Outlook, and portals that only accept JPEG.",
+    keywords: [
+      "png to jpg",
+      "convert png to jpg",
+      "png to jpeg online free",
+      "png to jpg without uploading",
+      "reduce png file size jpg",
+    ],
+    heroSubtitle: "Shrink PNG screenshots and photos to JPG for email and uploads",
+    whyConvert: {
+      title: "Why Convert PNG to JPG?",
+      paragraphs: [
+        "PNG is lossless but heavy—JPG attachments are easier for email inboxes and upload limits.",
+        "Many job portals, insurance forms, and legacy apps accept JPG but reject PNG.",
+        "Adjust JPEG quality before converting to balance size and clarity—all processing stays on your device.",
+      ],
+    },
+    howToSteps: [
+      "Add PNG files via drag-and-drop or Browse.",
+      "Set JPEG quality with the slider (default 90%).",
+      "Convert locally and download JPG files or a ZIP.",
+    ],
+    privacyNote: "PNG never leaves your browser during conversion.",
+    faqs: [
+      {
+        question: "Does PNG to JPG reduce file size?",
+        answer:
+          "Usually yes. JPEG compression produces smaller files than PNG for photographic content.",
+      },
+      {
+        question: "What happens to transparency?",
+        answer: "JPG does not support transparency; transparent areas flatten onto a background.",
+      },
+      {
+        question: "Can I batch convert PNG to JPG?",
+        answer: "Yes. Select many PNGs and download everything as a ZIP.",
+      },
+      {
+        question: "Quality settings?",
+        answer: "Use the slider (60–100%). Default is 90% for a strong balance of size and clarity.",
+      },
+      {
+        question: "Is conversion private?",
+        answer: "Yes. We do not receive your image bytes.",
+      },
+    ],
+    relatedSlugs: related("png-to-jpg"),
+    seoSections: [
+      {
+        heading: "PNG to JPG for email and upload limits",
+        paragraphs: [
+          "Outlook and corporate mail gateways often cap attachment size. Converting large PNG screenshots to JPG locally can keep you under limits without sending files to a third-party server.",
+        ],
+      },
+    ],
+  },
+  "compress-jpg": {
+    slug: "compress-jpg",
+    path: "/compress-jpg",
+    from: "jpg",
+    to: "jpg",
+    kind: "compress",
+    defaultQualityPercent: 75,
+    title: "Compress JPG Online — Free, Private, No Upload",
+    h1: "Compress JPG — Reduce File Size in Your Browser",
+    metaDescription:
+      "Compress JPG free in your browser. Re-encode with quality slider and resize presets—batch ZIP, no upload. Smaller email attachments and faster uploads.",
+    keywords: [
+      "compress jpg",
+      "compress jpeg online",
+      "reduce jpg file size",
+      "jpg compressor free",
+      "compress jpg without uploading",
+      "shrink jpeg file size",
+    ],
+    heroSubtitle: "Make JPG files smaller for email, forms, and upload limits—100% local",
+    whyConvert: {
+      title: "Why Compress JPG Locally?",
+      paragraphs: [
+        "Camera and scanner JPGs are often larger than portals allow. Re-encoding at lower quality—or with a max-width preset—cuts bytes without sending photos to a cloud compressor.",
+        "Most online \"compress JPG\" sites upload your files. HeicSave re-encodes in your tab with JavaScript and Canvas—your bytes never hit our servers.",
+        "Use batch mode for folders of receipts, ID scans, or vacation photos before attaching to email or submitting forms.",
+      ],
+    },
+    howToSteps: [
+      "Drop JPG/JPEG files. Set quality (default 75%) and optional max width.",
+      "Click Compress. Re-encoding runs locally—nothing is uploaded.",
+      "Download smaller JPGs individually or as a ZIP.",
+    ],
+    privacyNote:
+      "Compression re-encodes JPG in your browser. We do not receive your image data.",
+    faqs: [
+      {
+        question: "How do I compress JPG without uploading?",
+        answer:
+          "Open this page, add JPG files, adjust quality, and click Compress. Processing stays in your browser tab.",
+      },
+      {
+        question: "What quality should I use?",
+        answer:
+          "Default is 75%—a good balance for forms and email. Raise for sharper output; lower for smaller files.",
+      },
+      {
+        question: "Does compressing remove EXIF?",
+        answer:
+          "Re-encoding through canvas typically strips GPS and camera metadata—useful for privacy before sharing.",
+      },
+      {
+        question: "Can I resize while compressing?",
+        answer: "Yes. Pick a max-width preset (2048, 1920, or 1280 px) before compressing.",
+      },
+      {
+        question: "Batch compress JPG?",
+        answer: "Yes. Convert many files and download a ZIP of smaller JPGs.",
+      },
+    ],
+    relatedSlugs: related("compress-jpg"),
+    seoSections: [
+      {
+        heading: "Compress JPG for email and portal upload limits",
+        paragraphs: [
+          "Government forms, university portals, and HR systems often cap file size at 2–5 MB. Compress locally first instead of trusting random upload sites with personal documents.",
+        ],
+      },
+    ],
+  },
+  "strip-exif": {
+    slug: "strip-exif",
+    path: "/strip-exif",
+    from: "jpg",
+    to: "jpg",
+    kind: "strip-metadata",
+    acceptedInputs: ["heic", "jpg", "jpeg", "png", "webp", "avif"],
+    title: "Remove EXIF & Metadata — Free, Browser-Local, No Upload",
+    h1: "Strip EXIF & Image Metadata — Private Browser Tool",
+    metaDescription:
+      "Remove EXIF, GPS, and camera metadata from photos free in your browser. HEIC, JPG, PNG, WebP, AVIF—batch ZIP, no upload. Privacy-first metadata stripper.",
+    keywords: [
+      "remove exif",
+      "strip exif online",
+      "remove metadata from photo",
+      "remove gps from photo",
+      "exif remover free",
+      "strip image metadata browser",
+      "remove exif without uploading",
+    ],
+    heroSubtitle: "Scrub GPS, camera info, and hidden metadata before you share—files stay on device",
+    whyConvert: {
+      title: "Why Strip EXIF Locally?",
+      paragraphs: [
+        "Photos can embed GPS coordinates, device serials, and timestamps—risky before posting online or sending to strangers.",
+        "Re-encoding in the browser removes most embedded metadata without uploading sensitive images to a server.",
+        "Supports HEIC, JPG, PNG, WebP, and AVIF in one batch session. HEIC converts to JPG without preserving EXIF.",
+      ],
+    },
+    howToSteps: [
+      "Add photos in any supported format (HEIC, JPG, PNG, WebP, AVIF).",
+      "Click Strip metadata. Each file re-encodes locally with metadata removed.",
+      "Download clean files or a ZIP—ready to share safely.",
+    ],
+    privacyNote:
+      "Metadata removal runs client-side. Your photos are never uploaded for processing.",
+    faqs: [
+      {
+        question: "What metadata is removed?",
+        answer:
+          "Re-encoding strips EXIF, GPS, and most embedded tags. Output is a fresh JPG, PNG, or WebP without the original metadata blocks.",
+      },
+      {
+        question: "Does this work on iPhone HEIC photos?",
+        answer:
+          "Yes. HEIC files convert to JPG without copying EXIF—ideal before posting location-sensitive shots.",
+      },
+      {
+        question: "Is this safer than online EXIF removers?",
+        answer:
+          "Yes. Cloud tools receive your full image bytes. HeicSave processes files only in your browser tab.",
+      },
+      {
+        question: "Batch remove metadata?",
+        answer: "Yes. Mix formats in one session and download a ZIP of cleaned files.",
+      },
+      {
+        question: "Will image quality change?",
+        answer:
+          "JPG and WebP outputs use high quality (90%). PNG stays lossless. Some generation loss may occur for already-compressed sources.",
+      },
+    ],
+    relatedSlugs: related("strip-exif"),
+    seoSections: [
+      {
+        heading: "Remove GPS and EXIF before sharing online",
+        paragraphs: [
+          "Reddit, marketplace listings, and dating-app screenshots often leak location via EXIF. Strip metadata locally before upload—especially for HEIC shots from iPhone.",
+        ],
       },
     ],
   },

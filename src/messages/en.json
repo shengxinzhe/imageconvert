@@ -79,6 +79,26 @@
       "pngToWebp": {
         "scenario": "Replace heavy PNG icons and UI assets on production sites.",
         "tags": "Canvas · Lossy WebP"
+      },
+      "jpgToPng": {
+        "scenario": "Turn JPG into PNG when a portal or app rejects JPEG uploads.",
+        "tags": "Canvas · Batch ZIP"
+      },
+      "pngToJpg": {
+        "scenario": "Shrink PNG screenshots to JPG for email and upload limits.",
+        "tags": "Canvas · Quality slider"
+      },
+      "compressJpg": {
+        "scenario": "Make JPG attachments smaller before email or form submit.",
+        "use1": "Email limits",
+        "use2": "Portal uploads",
+        "use3": "Batch ZIP"
+      },
+      "stripExif": {
+        "scenario": "Remove GPS and camera metadata before sharing photos online.",
+        "use1": "Privacy",
+        "use2": "HEIC + JPG",
+        "use3": "Batch ZIP"
       }
     },
     "blogLabel": "Guides",
@@ -170,7 +190,7 @@
   "toolsIndex": {
     "badge": "Tool directory",
     "title": "All image converters",
-    "subtitle": "Nine free browser-local tools for iPhone HEIC, WebP, AVIF, and web optimization.",
+    "subtitle": "Thirteen free browser-local tools for iPhone HEIC, WebP, AVIF, JPG/PNG, and web optimization.",
     "heicTitle": "iPhone & HEIC",
     "heicSubtitle": "Convert Apple photos for email, Windows, and sharing — files stay on your device.",
     "devTitle": "WebP, AVIF & optimize",
@@ -227,6 +247,8 @@
     "privacyVerifyNote": "Conversion uses libheif WASM and Canvas in your tab; HeicSave has no upload endpoint for images.",
     "privacyVerifyLink": "Read the full privacy guide →",
     "convert": "Convert",
+    "compress": "Compress",
+    "stripMetadata": "Strip metadata",
     "converting": "Converting…",
     "convertingProgress": "Converting {current}/{total}…",
     "clear": "Clear",

@@ -1,15 +1,13 @@
 import type {
   BatchConvertFailure,
   BatchConvertSuccess,
+  BatchConvertOptions,
   ConversionJobPayload,
   WorkerOutMessage,
 } from "./conversion-types";
 import {
   convertImage,
   getOutputFilename,
-  type ConvertOptions,
-  type InputFormat,
-  type OutputFormat,
 } from "./index";
 
 const DEFAULT_POOL_SIZE = 3;
@@ -66,8 +64,9 @@ type PoolWorker = {
 
 async function convertWithPool(
   files: File[],
-  options: ConvertOptions,
+  options: BatchConvertOptions,
   onProgress: (completed: number, total: number) => void,
+  resolveOptions?: (file: File) => BatchConvertOptions,
 ): Promise<{ successes: BatchConvertSuccess[]; failures: BatchConvertFailure[] }> {
   const total = files.length;
   let completed = 0;
@@ -98,32 +97,33 @@ async function convertWithPool(
   const processOne = async (file: File, index: number) => {
     const slot = await acquireWorker();
     const jobId = `${file.name}-${file.size}-${index}-${Date.now()}`;
+    const fileOptions = resolveOptions ? resolveOptions(file) : options;
     const buffer = await file.arrayBuffer();
     const payload: ConversionJobPayload = {
       jobId,
       buffer,
       fileName: file.name,
-      from: options.from,
-      to: options.to,
-      quality: options.quality ?? 0.9,
-      maxWidth: options.maxWidth ?? null,
+      from: fileOptions.from,
+      to: fileOptions.to,
+      quality: fileOptions.quality ?? 0.9,
+      maxWidth: fileOptions.maxWidth ?? null,
     };
 
     try {
       const outBuffer = await runInWorker(slot.worker, payload);
       let blob = new Blob([outBuffer], {
         type:
-          options.to === "png"
+          fileOptions.to === "png"
             ? "image/png"
-            : options.to === "webp"
+            : fileOptions.to === "webp"
               ? "image/webp"
               : "image/jpeg",
       });
 
       if (
-        options.from === "heic" &&
-        (options.to === "jpg" || options.to === "jpeg") &&
-        options.preserveExif !== false
+        fileOptions.from === "heic" &&
+        (fileOptions.to === "jpg" || fileOptions.to === "jpeg") &&
+        fileOptions.preserveExif !== false
       ) {
         const { preserveExifOnJpeg } = await import("./exif");
         blob = await preserveExifOnJpeg(file, blob);
@@ -132,7 +132,7 @@ async function convertWithPool(
       successes.push({
         file,
         blob,
-        outputName: getOutputFilename(file.name, options.to),
+        outputName: getOutputFilename(file.name, fileOptions.to),
       });
     } catch (err) {
       failures.push({ file, error: err });
@@ -155,20 +155,22 @@ async function convertWithPool(
 
 async function convertSequentialMainThread(
   files: File[],
-  options: ConvertOptions,
+  options: BatchConvertOptions,
   onProgress: (completed: number, total: number) => void,
+  resolveOptions?: (file: File) => BatchConvertOptions,
 ): Promise<{ successes: BatchConvertSuccess[]; failures: BatchConvertFailure[] }> {
   const successes: BatchConvertSuccess[] = [];
   const failures: BatchConvertFailure[] = [];
 
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
+    const fileOptions = resolveOptions ? resolveOptions(file) : options;
     try {
-      const blob = await convertImage(file, options);
+      const blob = await convertImage(file, fileOptions);
       successes.push({
         file,
         blob,
-        outputName: getOutputFilename(file.name, options.to),
+        outputName: getOutputFilename(file.name, fileOptions.to),
       });
     } catch (err) {
       failures.push({ file, error: err });
@@ -181,8 +183,9 @@ async function convertSequentialMainThread(
 
 export async function convertBatch(
   files: File[],
-  options: ConvertOptions & { from: InputFormat; to: OutputFormat },
+  options: BatchConvertOptions,
   onProgress: (completed: number, total: number) => void,
+  resolveOptions?: (file: File) => BatchConvertOptions,
 ): Promise<{ successes: BatchConvertSuccess[]; failures: BatchConvertFailure[] }> {
   if (!files.length) {
     return { successes: [], failures: [] };
@@ -190,11 +193,11 @@ export async function convertBatch(
 
   if (canUseWorkers()) {
     try {
-      return await convertWithPool(files, options, onProgress);
+      return await convertWithPool(files, options, onProgress, resolveOptions);
     } catch {
       /* fall through to main-thread path */
     }
   }
 
-  return convertSequentialMainThread(files, options, onProgress);
+  return convertSequentialMainThread(files, options, onProgress, resolveOptions);
 }

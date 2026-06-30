@@ -382,4 +382,34 @@ export const frToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
       ],
     },
   ],
+  "jpg-to-png": [
+    {
+      heading: "JPG en PNG pour formulaires",
+      content:
+        "Certains portails n'acceptent que le PNG. Convertissez localement — sans envoi cloud de documents sensibles.",
+    },
+  ],
+  "png-to-jpg": [
+    {
+      heading: "PNG en JPG pour limites e-mail",
+      content:
+        "Réduisez de lourdes captures PNG en JPG — localement avant pièce jointe, sans serveur tiers.",
+    },
+  ],
+  "compress-jpg": [
+    {
+      heading: "Compresser JPG sans envoi",
+      paragraphs: [
+        "Formulaires et portails RH plafonnent souvent à 2–5 Mo. Baissez la qualité ou la largeur — dans l'onglet.",
+      ],
+    },
+  ],
+  "strip-exif": [
+    {
+      heading: "Retirer GPS et EXIF avant partage",
+      paragraphs: [
+        "Annonces et forums : la position peut fuiter via EXIF. HEIC, JPG et plus — nettoyage local.",
+      ],
+    },
+  ],
 };

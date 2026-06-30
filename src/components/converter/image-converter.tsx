@@ -23,7 +23,9 @@ import {
 import { getConverterSoftWarnings } from "@/lib/converter-warnings";
 import {
   fileInputAccept,
+  fileInputAcceptMultiple,
   defaultQualityPercent,
+  stripMetadataOutputFormat,
   supportsExifToggle,
   type InputFormat,
   type OutputFormat,
@@ -35,10 +37,10 @@ import { getT } from "@/lib/i18n/translations";
 import { Button } from "@/components/ui/button";
 import type { ResizePresetId } from "@/lib/constants";
 import { Download, FolderOpen, Loader2, ShieldCheck, Upload, X } from "lucide-react";
+import type { ToolKind } from "@/lib/tools-config";
 import type { ToolAudience } from "@/lib/design-variants";
-import { cn } from "@/lib/utils";
 import { collectFilesFromDataTransfer } from "@/lib/collect-drop-files";
-import { filterFilesForInput } from "@/lib/converter-file-filter";
+import { filterFilesForInput, filterFilesForAcceptedInputs, detectInputFormat } from "@/lib/converter-file-filter";
 import { isIos } from "@/lib/platform";
 
 interface ConvertedFile {
@@ -55,6 +57,8 @@ interface FailedFile {
   message: string;
 }
 
+import { cn } from "@/lib/utils";
+
 interface ImageConverterProps {
   from: InputFormat;
   to: OutputFormat;
@@ -62,6 +66,9 @@ interface ImageConverterProps {
   audience?: ToolAudience;
   /** Blog slug for optional post-convert guide link */
   postConvertGuideSlug?: string;
+  toolKind?: ToolKind;
+  acceptedInputs?: InputFormat[];
+  defaultQualityPercent?: number;
 }
 
 export function ImageConverter({
@@ -70,6 +77,9 @@ export function ImageConverter({
   toolSlug,
   audience = "heic",
   postConvertGuideSlug,
+  toolKind = "convert",
+  acceptedInputs,
+  defaultQualityPercent: defaultQualityOverride,
 }: ImageConverterProps) {
   const params = useParams();
   const locale = (routing.locales.includes(params.locale as AppLocale)
@@ -77,7 +87,9 @@ export function ImageConverter({
     : routing.defaultLocale) as AppLocale;
   const t = getT(locale);
   const isDev = audience === "developer";
-  const showExif = supportsExifToggle(from, to);
+  const isStripMetadata = toolKind === "strip-metadata";
+  const isCompress = toolKind === "compress";
+  const showExif = supportsExifToggle(from, to) && !isStripMetadata && !isCompress;
   const [files, setFiles] = useState<File[]>([]);
   const [results, setResults] = useState<ConvertedFile[]>([]);
   const [failedFiles, setFailedFiles] = useState<FailedFile[]>([]);
@@ -89,7 +101,7 @@ export function ImageConverter({
     null,
   );
   const [qualityPercent, setQualityPercent] = useState(() =>
-    defaultQualityPercent(to),
+    defaultQualityOverride ?? defaultQualityPercent(to),
   );
   const [resizePreset, setResizePreset] = useState<ResizePresetId>("original");
   const [preserveExif, setPreserveExif] = useState(true);
@@ -105,7 +117,9 @@ export function ImageConverter({
   const ingestFiles = useCallback(
     (incoming: File[]) => {
       if (!incoming.length) return;
-      const matched = filterFilesForInput(incoming, from);
+      const matched = acceptedInputs?.length
+        ? filterFilesForAcceptedInputs(incoming, acceptedInputs)
+        : filterFilesForInput(incoming, from);
       if (!matched.length) {
         setError({ message: t("converter.filesRejected") });
         return;
@@ -114,7 +128,7 @@ export function ImageConverter({
       setFailedFiles([]);
       setFiles((prev) => [...prev, ...matched]);
     },
-    [from, t],
+    [acceptedInputs, from, t],
   );
 
   const addFiles = useCallback(
@@ -165,6 +179,26 @@ export function ImageConverter({
     const quality = qualityPercent / 100;
     const maxWidth = maxWidthForPreset(resizePreset);
 
+    const resolveOptions =
+      isStripMetadata
+        ? (file: File) => {
+            const detected = detectInputFormat(file);
+            if (!detected) {
+              throw new ConversionError({
+                message: t("converter.filesRejected"),
+              });
+            }
+            const outTo = stripMetadataOutputFormat(detected);
+            return {
+              from: detected,
+              to: outTo,
+              quality,
+              maxWidth,
+              preserveExif: false,
+            };
+          }
+        : undefined;
+
     try {
       const { convertBatch } = await import("@/lib/convert/conversion-pool");
       const { successes, failures } = await convertBatch(
@@ -174,9 +208,15 @@ export function ImageConverter({
           to,
           quality,
           maxWidth,
-          preserveExif: showExif ? preserveExif : undefined,
+          preserveExif:
+            isStripMetadata || isCompress
+              ? false
+              : showExif
+                ? preserveExif
+                : undefined,
         },
         (current, total) => setProgress({ current, total }),
+        resolveOptions,
       );
 
       const converted: ConvertedFile[] = successes.map((item, i) => ({
@@ -188,7 +228,14 @@ export function ImageConverter({
       }));
 
       const perFileFailures: FailedFile[] = failures.map((item, i) => {
-        const display = formatConversionError(item.error, from, locale, item.file.name);
+        const errorFrom =
+          isStripMetadata ? (detectInputFormat(item.file) ?? from) : from;
+        const display = formatConversionError(
+          item.error,
+          errorFrom,
+          locale,
+          item.file.name,
+        );
         return {
           id: `fail-${item.file.name}-${i}`,
           name: item.file.name,
@@ -278,7 +325,9 @@ export function ImageConverter({
     setProgress(null);
   };
 
-  const accept = fileInputAccept(from);
+  const accept = acceptedInputs?.length
+    ? fileInputAcceptMultiple(acceptedInputs)
+    : fileInputAccept(from);
 
   const onFileInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files?.length) addFiles(e.target.files);
@@ -487,6 +536,10 @@ export function ImageConverter({
                   })
                 : t("converter.converting")}
             </>
+          ) : isCompress ? (
+            t("converter.compress")
+          ) : isStripMetadata ? (
+            t("converter.stripMetadata")
           ) : (
             t("converter.convert")
           )}

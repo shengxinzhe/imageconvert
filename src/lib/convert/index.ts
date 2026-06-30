@@ -7,8 +7,10 @@ export {
   acceptMimeForInput,
   defaultQualityPercent,
   fileInputAccept,
+  fileInputAcceptMultiple,
   getOutputFilename,
   outputSupportsQuality,
+  stripMetadataOutputFormat,
   supportsExifToggle,
 } from "./format";
 import type { InputFormat, OutputFormat } from "./conversion-types";

@@ -1,7 +1,7 @@
 {
   "name": "HeicSave",
   "url": "https://heicsave.com",
-  "updated": "2026-06-23",
+  "updated": "2026-06-30",
   "summary": "Free browser-local converters for HEIC, WebP, and AVIF. Files are not uploaded for processing.",
   "processing": "client-side",
   "languages": [

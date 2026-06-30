@@ -60,4 +60,17 @@ export const toolRelatedGuides: Partial<
   "png-to-webp": {
     guides: ["webp-for-developers", "webp-vs-jpg"],
   },
+  "jpg-to-png": {
+    guides: ["privacy-browser-image-conversion"],
+  },
+  "png-to-jpg": {
+    guides: ["privacy-browser-image-conversion", "webp-vs-jpg"],
+  },
+  "compress-jpg": {
+    guides: ["privacy-browser-image-conversion"],
+  },
+  "strip-exif": {
+    guides: ["privacy-browser-image-conversion"],
+    postConvertGuide: "privacy-browser-image-conversion",
+  },
 };

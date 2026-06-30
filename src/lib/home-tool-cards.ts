@@ -10,7 +10,11 @@ export type HomeCardId =
   | "avifToJpg"
   | "avifToPng"
   | "jpgToWebp"
-  | "pngToWebp";
+  | "pngToWebp"
+  | "jpgToPng"
+  | "pngToJpg"
+  | "compressJpg"
+  | "stripExif";
 
 export const toolHomeCardId: Record<ToolSlug, HomeCardId> = {
   "heic-to-jpg": "heicToJpg",
@@ -22,6 +26,10 @@ export const toolHomeCardId: Record<ToolSlug, HomeCardId> = {
   "avif-to-png": "avifToPng",
   "jpg-to-webp": "jpgToWebp",
   "png-to-webp": "pngToWebp",
+  "jpg-to-png": "jpgToPng",
+  "png-to-jpg": "pngToJpg",
+  "compress-jpg": "compressJpg",
+  "strip-exif": "stripExif",
 };
 
 export const heicCardUseKeys = ["use1", "use2", "use3"] as const;

@@ -383,4 +383,34 @@ export const deToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
       ],
     },
   ],
+  "jpg-to-png": [
+    {
+      heading: "JPG in PNG für Formulare",
+      content:
+        "Manche Portale akzeptieren nur PNG. Lokal konvertieren — ohne Cloud-Upload sensibler Dokumente.",
+    },
+  ],
+  "png-to-jpg": [
+    {
+      heading: "PNG in JPG für E-Mail-Limits",
+      content:
+        "Große PNG-Screenshots als JPG verkleinern — lokal vor dem Anhängen, ohne Drittanbieter-Server.",
+    },
+  ],
+  "compress-jpg": [
+    {
+      heading: "JPG komprimieren ohne Upload",
+      paragraphs: [
+        "Formulare und HR-Portale begrenzen oft 2–5 MB. Qualität senken oder Breite begrenzen — alles im Browser-Tab.",
+      ],
+    },
+  ],
+  "strip-exif": [
+    {
+      heading: "GPS und EXIF vor dem Teilen entfernen",
+      paragraphs: [
+        "Marktplätze und Foren: Standort kann in EXIF stecken. HEIC, JPG und mehr — lokal bereinigen.",
+      ],
+    },
+  ],
 };

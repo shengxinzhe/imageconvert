@@ -20,6 +20,10 @@ const TOOL_SLUGS = [
   "avif-to-png",
   "jpg-to-webp",
   "png-to-webp",
+  "jpg-to-png",
+  "png-to-jpg",
+  "compress-jpg",
+  "strip-exif",
 ];
 
 function localePath(path, locale) {

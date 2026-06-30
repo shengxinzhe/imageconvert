@@ -79,6 +79,26 @@
       "pngToWebp": {
         "scenario": "Remplacer de lourdes icônes PNG et assets UI sur sites en production.",
         "tags": "Canvas · WebP avec perte"
+      },
+      "jpgToPng": {
+        "scenario": "JPG en PNG quand un portail refuse le JPEG.",
+        "tags": "Canvas · ZIP lot"
+      },
+      "pngToJpg": {
+        "scenario": "PNG en JPG plus léger pour e-mail et limites d'envoi.",
+        "tags": "Canvas · Curseur qualité"
+      },
+      "compressJpg": {
+        "scenario": "Réduire les JPG avant e-mail ou formulaire.",
+        "use1": "Limites e-mail",
+        "use2": "Portails",
+        "use3": "ZIP lot"
+      },
+      "stripExif": {
+        "scenario": "Retirer GPS et métadonnées avant de partager.",
+        "use1": "Confidentialité",
+        "use2": "HEIC + JPG",
+        "use3": "ZIP lot"
       }
     },
     "blogLabel": "Guides",
@@ -170,7 +190,7 @@
   "toolsIndex": {
     "badge": "Répertoire d'outils",
     "title": "Tous les convertisseurs d'images",
-    "subtitle": "Neuf outils gratuits dans le navigateur pour HEIC iPhone, WebP, AVIF et optimisation web.",
+    "subtitle": "Treize outils gratuits dans le navigateur pour HEIC iPhone, WebP, AVIF, JPG/PNG et optimisation web.",
     "heicTitle": "iPhone & HEIC",
     "heicSubtitle": "Convertissez les photos Apple pour e-mail, Windows et partage — fichiers sur l'appareil.",
     "devTitle": "WebP, AVIF & optimiser",
@@ -227,6 +247,8 @@
     "privacyVerifyNote": "La conversion utilise libheif WASM et Canvas dans l'onglet ; HeicSave n'a pas d'endpoint d'envoi d'images.",
     "privacyVerifyLink": "Guide confidentialité complet →",
     "convert": "Lancer la conversion",
+    "compress": "Compresser",
+    "stripMetadata": "Supprimer les métadonnées",
     "converting": "Conversion en cours…",
     "convertingProgress": "Conversion {current}/{total}…",
     "clear": "Effacer",

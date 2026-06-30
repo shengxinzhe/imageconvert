@@ -298,6 +298,108 @@ const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
       },
     ],
   },
+  "jpg-to-png": {
+    title: "JPG in PNG umwandeln — kostenlos online",
+    h1: "JPG in PNG umwandeln — kostenlos online",
+    metaDescription:
+      "JPG kostenlos im Browser in PNG umwandeln. Kein Upload, Stapel, ZIP — für Formulare und Design-Tools.",
+    keywords: ["jpg in png", "jpeg png konverter"],
+    heroSubtitle: "JPG in PNG für Apps und Portale, die kein JPEG akzeptieren",
+    whyConvert: {
+      title: "Warum JPG in PNG?",
+      paragraphs: [
+        "Manche Formulare und Legacy-Software akzeptieren PNG, aber kein JPG.",
+        "Konvertierung läuft lokal im Browser — keine Server-Uploads.",
+      ],
+    },
+    howToSteps: ["JPG ablegen.", "Konvertieren.", "PNG oder ZIP herunterladen."],
+    privacyNote: "Dekodierung per Canvas — nur auf Ihrem Gerät.",
+    faqs: [
+      {
+        question: "Verlustfrei?",
+        answer: "PNG speichert dekodierte Pixel; verlorene JPEG-Details kommen nicht zurück.",
+      },
+    ],
+  },
+  "png-to-jpg": {
+    title: "PNG in JPG umwandeln — kostenlos online",
+    h1: "PNG in JPG umwandeln — kostenlos online",
+    metaDescription:
+      "PNG kostenlos im Browser in JPG umwandeln. Kleinere Anhänge, Qualitätsregler, Stapel-ZIP — kein Upload.",
+    keywords: ["png in jpg", "png jpg konverter"],
+    heroSubtitle: "PNG-Screenshots in JPG für E-Mail und Upload-Limits",
+    whyConvert: {
+      title: "Warum PNG in JPG?",
+      paragraphs: [
+        "JPG-Anhänge sind oft kleiner und werden von mehr Portalen akzeptiert.",
+      ],
+    },
+    howToSteps: [
+      "PNG ablegen.",
+      "JPEG-Qualität wählen.",
+      "JPG oder ZIP herunterladen.",
+    ],
+    privacyNote: "Kein Upload — alles lokal im Tab.",
+    faqs: [
+      {
+        question: "Transparenz?",
+        answer: "JPG unterstützt keine Transparenz — Hintergrund wird gefüllt.",
+      },
+    ],
+  },
+  "compress-jpg": {
+    title: "JPG komprimieren — kostenlos, privat, kein Upload",
+    h1: "JPG komprimieren — im Browser",
+    metaDescription:
+      "JPG kostenlos im Browser verkleinern. Qualitätsregler, Resize, Stapel-ZIP — Dateien bleiben auf dem Gerät.",
+    keywords: ["jpg komprimieren", "jpeg verkleinern online"],
+    heroSubtitle: "JPG kleiner machen für E-Mail und Formulare — 100 % lokal",
+    whyConvert: {
+      title: "Warum JPG lokal komprimieren?",
+      paragraphs: [
+        "Portale begrenzen Dateigröße. Re-Encoding im Browser statt Cloud-Upload.",
+      ],
+    },
+    howToSteps: [
+      "JPG ablegen, Qualität (Standard 75 %) wählen.",
+      "Komprimieren — lokal im Browser.",
+      "Kleinere JPGs oder ZIP herunterladen.",
+    ],
+    privacyNote: "Keine Bilddaten an unsere Server.",
+    faqs: [
+      {
+        question: "Welche Qualität?",
+        answer: "Standard 75 % — vor dem Export anpassbar.",
+      },
+    ],
+  },
+  "strip-exif": {
+    title: "EXIF entfernen — kostenlos im Browser",
+    h1: "EXIF & Metadaten entfernen — privat",
+    metaDescription:
+      "EXIF, GPS und Metadaten kostenlos im Browser entfernen. HEIC, JPG, PNG, WebP, AVIF — Stapel-ZIP, kein Upload.",
+    keywords: ["exif entfernen", "metadaten foto löschen"],
+    heroSubtitle: "GPS und Kameradaten vor dem Teilen entfernen",
+    whyConvert: {
+      title: "Warum Metadaten lokal entfernen?",
+      paragraphs: [
+        "Fotos können GPS und Gerätedaten enthalten — riskant vor Online-Postings.",
+        "Neu kodieren im Browser statt Cloud-Dienste mit Ihren Bytes.",
+      ],
+    },
+    howToSteps: [
+      "Fotos in beliebigem Format hinzufügen.",
+      "Metadaten entfernen — lokal.",
+      "Bereinigte Dateien oder ZIP herunterladen.",
+    ],
+    privacyNote: "Verarbeitung nur in Ihrem Tab.",
+    faqs: [
+      {
+        question: "HEIC unterstützt?",
+        answer: "Ja — HEIC wird zu JPG ohne EXIF-Übernahme.",
+      },
+    ],
+  },
 };
 
 export const deTools: Record<ToolSlug, ToolLocaleFields> = Object.fromEntries(

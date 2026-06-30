@@ -60,3 +60,20 @@ export function fileMatchesInput(file: File, from: InputFormat): boolean {
 export function filterFilesForInput(files: File[], from: InputFormat): File[] {
   return files.filter((f) => fileMatchesInput(f, from));
 }
+
+export function filterFilesForAcceptedInputs(
+  files: File[],
+  inputs: InputFormat[],
+): File[] {
+  return files.filter((f) => inputs.some((fmt) => fileMatchesInput(f, fmt)));
+}
+
+const DETECT_ORDER: InputFormat[] = ["heic", "avif", "webp", "png", "jpg", "jpeg"];
+
+/** Best-effort input format for a dropped file (strip-metadata batch). */
+export function detectInputFormat(file: File): InputFormat | null {
+  for (const fmt of DETECT_ORDER) {
+    if (fileMatchesInput(file, fmt)) return fmt;
+  }
+  return null;
+}

@@ -3,7 +3,13 @@ import type { ToolSlug } from "@/lib/tools-config";
 /** Layered styles on top of shared Vercel/Cal base tokens (DESIGN.md) */
 export type ToolAudience = "heic" | "developer";
 
-const HEIC_SLUGS: ToolSlug[] = ["heic-to-jpg", "heic-to-png", "heic-to-webp"];
+const HEIC_SLUGS: ToolSlug[] = [
+  "heic-to-jpg",
+  "heic-to-png",
+  "heic-to-webp",
+  "compress-jpg",
+  "strip-exif",
+];
 
 export function getToolAudience(slug: string): ToolAudience {
   return HEIC_SLUGS.includes(slug as ToolSlug) ? "heic" : "developer";
