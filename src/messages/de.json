@@ -278,6 +278,56 @@
     "errorGuidePrefix": "Hilfe:",
     "bookmarkHint": "💡 Strg+D (Cmd+D am Mac) — HeicSave als Lesezeichen speichern. Beim nächsten Mal sofort konvertieren, auch offline."
   },
+  "compress": {
+    "optionsTitle": "Komprimierungs-Einstellungen",
+    "optionsSubtitle": "Szenen-Voreinstellung wählen oder Qualität und max. Breite feinjustieren.",
+    "currentSettings": "Aktuelle Ausgabe",
+    "settingsSummary": "JPEG {quality} % · Max. Breite {width}",
+    "customHint": "Eigene Einstellungen — Qualität und Breite unten anpassen.",
+    "selectedSize": "{count} Datei(en) · {size} gesamt vor Komprimierung",
+    "sceneTitle": "Schnell-Voreinstellungen",
+    "sceneSubtitle": "Ein Klick setzt Qualität + max. Breite für typische Upload-Limits.",
+    "scenePresetValues": "{quality} % · {width}",
+    "qualityLabel": "JPEG-Qualität",
+    "qualitySmaller": "Kleinere Datei",
+    "qualityBalanced": "Ausgewogen",
+    "qualitySharper": "Schärfer",
+    "qualityHelp": "Niedrigere Qualität = kleinere Datei. Erhöhen, wenn Text oder Gesichter unscharf wirken.",
+    "widthLabel": "Max. Fotobreite",
+    "widthHelp": "Breite Fotos verkleinern — oft der schnellste Weg unter Upload-Limits.",
+    "maxWidthPx": "Lange Kante ≤ {px} px",
+    "fullResolution": "Originalauflösung",
+    "progressLabel": "Komprimierung lokal im Browser",
+    "compressing": "Komprimierung läuft…",
+    "compressingProgress": "Komprimiere {current}/{total}…",
+    "scene": {
+      "email": {
+        "title": "E-Mail-Anhang",
+        "desc": "Outlook & Gmail — meist unter ~5 MB",
+        "hint": "Ausgewogen für Foto-Anhänge per E-Mail."
+      },
+      "form": {
+        "title": "Formular / Portal",
+        "desc": "Job, Behörde, Schule — oft 2 MB Limit",
+        "hint": "Kleinere Dateien für strenge Upload-Limits."
+      },
+      "document": {
+        "title": "Ausweis & Scan",
+        "desc": "Lesbarer Text — Belege, IDs, Formulare",
+        "hint": "Höhere Qualität für scharfen Kleinsttext."
+      },
+      "social": {
+        "title": "Chat & Social",
+        "desc": "WhatsApp, Telegram, Discord",
+        "hint": "Moderate Komprimierung für Messenger."
+      },
+      "max": {
+        "title": "Kleinste Datei",
+        "desc": "Maximale Größenreduktion",
+        "hint": "Aggressive Komprimierung bei sehr engem Limit."
+      }
+    }
+  },
   "errors": {
     "thisFile": "Diese Datei",
     "theFile": "die Datei",

@@ -278,6 +278,56 @@
     "errorGuidePrefix": "Aide :",
     "bookmarkHint": "💡 Ctrl+D (Cmd+D sur Mac) — ajoutez HeicSave aux favoris pour des conversions instantanées, même hors ligne."
   },
+  "compress": {
+    "optionsTitle": "Réglages de compression",
+    "optionsSubtitle": "Choisissez un scénario ou ajustez qualité et largeur max avant de compresser.",
+    "currentSettings": "Sortie actuelle",
+    "settingsSummary": "JPEG {quality} % · Largeur max {width}",
+    "customHint": "Réglages personnalisés — ajustez qualité et largeur ci-dessous.",
+    "selectedSize": "{count} fichier(s) · {size} au total avant compression",
+    "sceneTitle": "Scénarios rapides",
+    "sceneSubtitle": "Un clic applique qualité + largeur max pour les limites d'envoi courantes.",
+    "scenePresetValues": "{quality} % · {width}",
+    "qualityLabel": "Qualité JPEG",
+    "qualitySmaller": "Fichier plus petit",
+    "qualityBalanced": "Équilibré",
+    "qualitySharper": "Plus net",
+    "qualityHelp": "Qualité basse = fichier plus petit. Montez-la si le texte ou les visages floutent.",
+    "widthLabel": "Largeur max de la photo",
+    "widthHelp": "Réduire les photos larges — souvent le moyen le plus rapide d'respecter une limite.",
+    "maxWidthPx": "Grand côté ≤ {px} px",
+    "fullResolution": "Résolution d'origine",
+    "progressLabel": "Compression locale dans le navigateur",
+    "compressing": "Compression…",
+    "compressingProgress": "Compression {current}/{total}…",
+    "scene": {
+      "email": {
+        "title": "Pièce jointe e-mail",
+        "desc": "Outlook & Gmail — souvent sous ~5 Mo",
+        "hint": "Équilibré pour partager des photos par e-mail."
+      },
+      "form": {
+        "title": "Formulaire / portail",
+        "desc": "Emploi, admin, école — souvent 2 Mo max",
+        "hint": "Fichiers plus petits pour les limites strictes."
+      },
+      "document": {
+        "title": "Pièce d'identité & scan",
+        "desc": "Texte lisible — reçus, IDs, formulaires",
+        "hint": "Qualité plus haute pour garder le petit texte net."
+      },
+      "social": {
+        "title": "Chat & social",
+        "desc": "WhatsApp, Telegram, Discord",
+        "hint": "Compression modérée pour la messagerie."
+      },
+      "max": {
+        "title": "Fichier le plus petit",
+        "desc": "Réduction maximale",
+        "hint": "Compression agressive quand la limite est très serrée."
+      }
+    }
+  },
   "errors": {
     "thisFile": "Ce fichier",
     "theFile": "le fichier",

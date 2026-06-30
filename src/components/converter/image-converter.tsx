@@ -11,6 +11,10 @@ import {
   trackToolDownloadZip,
 } from "@/lib/analytics-events";
 import { ConverterOptionsPanel } from "@/components/converter/converter-options-panel";
+import {
+  applyCompressScene,
+  CompressOptionsPanel,
+} from "@/components/converter/compress-options-panel";
 import { ConverterPrivacyBanner } from "@/components/converter/converter-privacy-banner";
 import { ConverterStickyDownloadBar } from "@/components/converter/converter-sticky-download-bar";
 import { FilePreviewGrid } from "@/components/converter/file-preview-grid";
@@ -41,8 +45,18 @@ import type { ToolKind } from "@/lib/tools-config";
 import type { ToolAudience } from "@/lib/design-variants";
 import { collectFilesFromDataTransfer } from "@/lib/collect-drop-files";
 import { filterFilesForInput, filterFilesForAcceptedInputs, detectInputFormat } from "@/lib/converter-file-filter";
+import {
+  DEFAULT_COMPRESS_SCENE_ID,
+  type CompressSceneId,
+} from "@/lib/compress-presets";
 import { isIos } from "@/lib/platform";
+import { cn } from "@/lib/utils";
 
+function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / 1024 / 1024).toFixed(2)} MB`;
+}
 interface ConvertedFile {
   id: string;
   originalName: string;
@@ -56,8 +70,6 @@ interface FailedFile {
   name: string;
   message: string;
 }
-
-import { cn } from "@/lib/utils";
 
 interface ImageConverterProps {
   from: InputFormat;
@@ -100,10 +112,18 @@ export function ImageConverter({
   const [progress, setProgress] = useState<{ current: number; total: number } | null>(
     null,
   );
-  const [qualityPercent, setQualityPercent] = useState(() =>
-    defaultQualityOverride ?? defaultQualityPercent(to),
+  const initialCompress = applyCompressScene(DEFAULT_COMPRESS_SCENE_ID);
+  const [compressScene, setCompressScene] = useState<CompressSceneId>(
+    isCompress ? DEFAULT_COMPRESS_SCENE_ID : "custom",
   );
-  const [resizePreset, setResizePreset] = useState<ResizePresetId>("original");
+  const [qualityPercent, setQualityPercent] = useState(() =>
+    isCompress
+      ? initialCompress.qualityPercent
+      : (defaultQualityOverride ?? defaultQualityPercent(to)),
+  );
+  const [resizePreset, setResizePreset] = useState<ResizePresetId>(() =>
+    isCompress ? initialCompress.resizePreset : "original",
+  );
   const [preserveExif, setPreserveExif] = useState(true);
   const [dropBusy, setDropBusy] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -112,6 +132,36 @@ export function ImageConverter({
 
   useEffect(() => {
     setIosDevice(isIos());
+  }, []);
+
+  const selectedTotalBytes = useMemo(
+    () => files.reduce((sum, file) => sum + file.size, 0),
+    [files],
+  );
+
+  const originalSizeByName = useMemo(
+    () => new Map(files.map((file) => [file.name, file.size])),
+    [files],
+  );
+
+  const applyCompressScenePreset = useCallback(
+    (sceneId: Exclude<CompressSceneId, "custom">) => {
+      const next = applyCompressScene(sceneId);
+      setCompressScene(sceneId);
+      setQualityPercent(next.qualityPercent);
+      setResizePreset(next.resizePreset);
+    },
+    [],
+  );
+
+  const onCompressQualityChange = useCallback((value: number) => {
+    setQualityPercent(value);
+    setCompressScene("custom");
+  }, []);
+
+  const onCompressResizeChange = useCallback((value: ResizePresetId) => {
+    setResizePreset(value);
+    setCompressScene("custom");
   }, []);
 
   const ingestFiles = useCallback(
@@ -306,7 +356,7 @@ export function ImageConverter({
         results.map((r) => ({ name: r.outputName, blob: r.blob })),
       );
       const stamp = new Date().toISOString().slice(0, 10);
-      downloadBlob(zip, `heicsave-${to}-${stamp}.zip`);
+      downloadBlob(zip, `heicsave-${isCompress ? "compressed" : to}-${stamp}.zip`);
     } catch {
       setError({ message: t("converter.zipError") });
     } finally {
@@ -445,6 +495,20 @@ export function ImageConverter({
         ) : null}
       </div>
 
+      {isCompress ? (
+        <CompressOptionsPanel
+          qualityPercent={qualityPercent}
+          onQualityChange={onCompressQualityChange}
+          resizePreset={resizePreset}
+          onResizeChange={onCompressResizeChange}
+          activeScene={compressScene}
+          onSceneSelect={applyCompressScenePreset}
+          selectedFileCount={files.length}
+          selectedTotalBytes={selectedTotalBytes}
+          disabled={converting || dropBusy}
+        />
+      ) : null}
+
       {files.length > 0 && (
         <FilePreviewGrid
           files={files}
@@ -457,12 +521,19 @@ export function ImageConverter({
       {converting && progress ? (
         <div className="space-y-2" role="status" aria-live="polite">
           <div className="flex items-center justify-between text-xs text-body">
-            <span>{t("converter.progressLabel")}</span>
+            <span>
+              {isCompress ? t("compress.progressLabel") : t("converter.progressLabel")}
+            </span>
             <span className="font-mono text-ink">
-              {t("converter.convertingProgress", {
-                current: progress.current,
-                total: progress.total,
-              })}
+              {isCompress
+                ? t("compress.compressingProgress", {
+                    current: progress.current,
+                    total: progress.total,
+                  })
+                : t("converter.convertingProgress", {
+                    current: progress.current,
+                    total: progress.total,
+                  })}
             </span>
           </div>
           <div
@@ -530,11 +601,18 @@ export function ImageConverter({
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               {progress
-                ? t("converter.convertingProgress", {
-                    current: progress.current,
-                    total: progress.total,
-                  })
-                : t("converter.converting")}
+                ? isCompress
+                  ? t("compress.compressingProgress", {
+                      current: progress.current,
+                      total: progress.total,
+                    })
+                  : t("converter.convertingProgress", {
+                      current: progress.current,
+                      total: progress.total,
+                    })
+                : isCompress
+                  ? t("compress.compressing")
+                  : t("converter.converting")}
             </>
           ) : isCompress ? (
             t("converter.compress")
@@ -575,7 +653,13 @@ export function ImageConverter({
           ) : null}
           <p className="text-sm font-medium text-ink">{t("converter.resultsHeading")}</p>
           <ul className="space-y-2">
-            {results.map((r) => (
+            {results.map((r) => {
+              const originalSize = originalSizeByName.get(r.originalName);
+              const saved =
+                originalSize && originalSize > r.blob.size
+                  ? Math.round((1 - r.blob.size / originalSize) * 100)
+                  : null;
+              return (
               <li
                 key={r.id}
                 className="flex items-center gap-3 rounded-vercel border border-hairline bg-canvas-soft px-3 py-2.5"
@@ -586,15 +670,28 @@ export function ImageConverter({
                   alt=""
                   className="h-12 w-12 shrink-0 rounded-md border border-hairline object-cover"
                 />
-                <span className="min-w-0 flex-1 truncate font-mono text-xs text-ink">
-                  {r.outputName}
-                </span>
+                <div className="min-w-0 flex-1">
+                  <span className="block truncate font-mono text-xs text-ink">
+                    {r.outputName}
+                  </span>
+                  {isCompress && originalSize ? (
+                    <span className="mt-0.5 block font-mono text-[10px] text-mute">
+                      {formatBytes(originalSize)} → {formatBytes(r.blob.size)}
+                      {saved !== null && saved > 0 ? (
+                        <span className="ml-1 text-[var(--mintlify-green)]">
+                          (−{saved}%)
+                        </span>
+                      ) : null}
+                    </span>
+                  ) : null}
+                </div>
                 <Button size="sm" variant="ghost" onClick={() => download(r)}>
                   <Download className="mr-1 h-4 w-4" />
                   {t("converter.download")}
                 </Button>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </div>
       )}
@@ -615,18 +712,20 @@ export function ImageConverter({
         </div>
       ) : null}
 
-      <ConverterOptionsPanel
-        from={from}
-        to={to}
-        showExif={showExif}
-        qualityPercent={qualityPercent}
-        onQualityChange={setQualityPercent}
-        resizePreset={resizePreset}
-        onResizeChange={setResizePreset}
-        preserveExif={preserveExif}
-        onPreserveExifChange={setPreserveExif}
-        disabled={converting}
-      />
+      {!isCompress ? (
+        <ConverterOptionsPanel
+          from={from}
+          to={to}
+          showExif={showExif}
+          qualityPercent={qualityPercent}
+          onQualityChange={setQualityPercent}
+          resizePreset={resizePreset}
+          onResizeChange={setResizePreset}
+          preserveExif={preserveExif}
+          onPreserveExifChange={setPreserveExif}
+          disabled={converting}
+        />
+      ) : null}
     </div>
   );
 }

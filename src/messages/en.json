@@ -278,6 +278,56 @@
     "errorGuidePrefix": "Help:",
     "bookmarkHint": "💡 Press Ctrl+D (Cmd+D on Mac) to bookmark HeicSave — instant, offline-capable conversions next time."
   },
+  "compress": {
+    "optionsTitle": "Compression settings",
+    "optionsSubtitle": "Pick a scene preset or fine-tune quality and max width before you compress.",
+    "currentSettings": "Current output",
+    "settingsSummary": "JPEG {quality}% · Max width {width}",
+    "customHint": "Custom settings — adjust quality and width below.",
+    "selectedSize": "{count} file(s) selected · {size} total before compression",
+    "sceneTitle": "Quick scene presets",
+    "sceneSubtitle": "One click applies quality + max width for common upload limits.",
+    "scenePresetValues": "{quality}% · {width}",
+    "qualityLabel": "JPEG quality",
+    "qualitySmaller": "Smaller file",
+    "qualityBalanced": "Balanced",
+    "qualitySharper": "Sharper",
+    "qualityHelp": "Lower quality shrinks file size more. Raise it if text or faces look soft.",
+    "widthLabel": "Max photo width",
+    "widthHelp": "Scaling down wide photos is often the fastest way to hit upload size limits.",
+    "maxWidthPx": "Long edge ≤ {px} px",
+    "fullResolution": "Keep original pixels",
+    "progressLabel": "Compressing locally in your browser",
+    "compressing": "Compressing…",
+    "compressingProgress": "Compressing {current}/{total}…",
+    "scene": {
+      "email": {
+        "title": "Email attachment",
+        "desc": "Outlook & Gmail — usually under ~5 MB",
+        "hint": "Balanced for sharing photos by email without huge attachments."
+      },
+      "form": {
+        "title": "Form / portal upload",
+        "desc": "Job, gov & school sites — often 2 MB cap",
+        "hint": "Smaller files for strict upload limits on web forms."
+      },
+      "document": {
+        "title": "ID & document scan",
+        "desc": "Readable text — receipts, IDs, forms",
+        "hint": "Higher quality so small text stays sharp after resize."
+      },
+      "social": {
+        "title": "Chat & social",
+        "desc": "WhatsApp, Telegram, Discord",
+        "hint": "Quick share in messaging apps with moderate compression."
+      },
+      "max": {
+        "title": "Smallest file",
+        "desc": "Maximum size reduction",
+        "hint": "Aggressive compression when the portal limit is very tight."
+      }
+    }
+  },
   "errors": {
     "thisFile": "This file",
     "theFile": "the file",
