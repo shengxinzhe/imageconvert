@@ -67,6 +67,8 @@ export const BLOG_SLUGS = [
   "heic-wont-open-in-photoshop",
   "batch-heic-to-jpg-workflow",
   "disable-heic-iphone-jpg",
+  "jpg-portal-upload-size-limits",
+  "strip-exif-before-selling-online",
   "avif-thumbnails-not-showing-windows-explorer",
 ];
 

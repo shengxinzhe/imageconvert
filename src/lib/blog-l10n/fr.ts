@@ -1579,4 +1579,91 @@ La conversion **dans le navigateur** évite d’envoyer des photos personnelles 
 
 **Convertir :** [HEIC en JPG](/heic-to-jpg)`,
   },
+  "jpg-portal-upload-size-limits": {
+    title: "JPG trop lourd pour un portail emploi ou école ? Compresser localement (2026)",
+    description:
+      "Administrations, universités et RH plafonnent souvent les JPG à 2–5 Mo. Compressez dans le navigateur avec des scénarios — sans envoi de scans d'identité sur un serveur.",
+    content: `*Dernière mise à jour : 16 juin 2026*
+
+**Réponse courte :** Portail refuse votre JPG → **[Compresser JPG](/compress-jpg)** localement, scénario **Formulaire / portail** (65 %, largeur max 1280 px). Vérifiez la taille avant/après, puis réessayez. Rien n'est envoyé à HeicSave.
+
+## Pourquoi les portails refusent un JPG « normal »
+
+Photos **12–48 MP** → souvent **4–8 Mo**. Le portail n'affiche qu'un plafond en Mo.
+
+| Type de portail | Plafond typique | Besoin réel |
+|---|---|---|
+| Candidature université US | 2–5 Mo | Photo ID lisible |
+| Admin UK / NHS | 2–4 Mo | Scan document |
+| Job boards EU | 2–5 Mo | Photo CV |
+| Visa / DMV US | 1–3 Mo | ~1280 px suffit |
+
+## Cloud vs local navigateur
+
+Les compresseurs en ligne **uploadent** vos scans. HeicSave ré-encode dans l'onglet — [confidentialité](/blog/privacy-browser-image-conversion).
+
+## Étapes (plafond 2 Mo)
+
+1. Ouvrir **[Compresser JPG](/compress-jpg)**.
+2. Choisir **Formulaire / portail**.
+3. Déposer le JPG → **Compresser**.
+4. Trop gros encore ? **Fichier le plus petit** ou baisser la qualité.
+5. Télécharger et renvoyer au portail.
+
+## Scénarios et plafonds
+
+| Scénario | Qualité / largeur | Pour |
+|---|---|---|
+| Formulaire / portail | 65 % · 1280 px | Emploi/admin 2–5 Mo |
+| Pièce jointe e-mail | 75 % · 1920 px | Outlook/Gmail |
+| Scan pièce d'identité | 82 % · 2048 px | Texte lisible |
+| Fichier le plus petit | 55 % · 1280 px | Sous 1 Mo |
+
+## Guides associés
+
+- [Pièce jointe HEIC e-mail](/blog/heic-outlook-email-attachment)
+- [Confidentialité navigateur](/blog/privacy-browser-image-conversion)
+
+**Compresser :** [Compresser JPG](/compress-jpg)`,
+  },
+  "strip-exif-before-selling-online": {
+    title: "Retirer le GPS des photos avant Facebook Marketplace ou petites annonces (2026)",
+    description:
+      "Les photos iPhone embarquent le GPS en EXIF. Nettoyez les métadonnées localement avant Marketplace, Craigslist ou eBay — lot HEIC, JPG, PNG dans le navigateur.",
+    content: `*Dernière mise à jour : 16 juin 2026*
+
+**Réponse courte :** Avant de publier, passez par **[Supprimer EXIF](/strip-exif)**. HEIC, JPG, PNG, WebP, AVIF ré-encodés sans GPS ni horodatage. ZIP — aucun envoi à HeicSave.
+
+## Ce que l'EXIF révèle
+
+| Donnée | Sur téléphone ? | Risque vente |
+|---|---|---|
+| GPS | Souvent oui | Domicile, lieu de rendez-vous |
+| Date de prise | Oui | Présence à un moment |
+| Modèle appareil | Oui | Identification |
+
+Supprimer l'EXIF efface les champs **cachés** — pas les visages ou numéros de série visibles.
+
+## Pourquoi éviter les sites cloud
+
+Photos d'annonce = intérieur et objets de valeur. Upload tiers = copie pleine résolution. HeicSave reste local — [guide confidentialité](/blog/privacy-browser-image-conversion).
+
+## Étapes
+
+1. Ouvrir **[Supprimer EXIF](/strip-exif)**.
+2. Déposer les photos (HEIC + JPG mélangés OK).
+3. **Convertir** → ZIP.
+4. Publier les fichiers nettoyés.
+
+## Garder un original
+
+Conservez les fichiers bruts en privé **avant** de nettoyer pour l'annonce publique.
+
+## Guides associés
+
+- [Confidentialité navigateur](/blog/privacy-browser-image-conversion)
+- [Limites JPG portail](/blog/jpg-portal-upload-size-limits)
+
+**Nettoyer :** [Supprimer EXIF](/strip-exif)`,
+  },
 };

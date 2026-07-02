@@ -67,10 +67,19 @@ export const toolRelatedGuides: Partial<
     guides: ["privacy-browser-image-conversion", "webp-vs-jpg"],
   },
   "compress-jpg": {
-    guides: ["privacy-browser-image-conversion"],
+    guides: [
+      "jpg-portal-upload-size-limits",
+      "heic-outlook-email-attachment",
+      "privacy-browser-image-conversion",
+    ],
+    postConvertGuide: "jpg-portal-upload-size-limits",
   },
   "strip-exif": {
-    guides: ["privacy-browser-image-conversion"],
-    postConvertGuide: "privacy-browser-image-conversion",
+    guides: [
+      "strip-exif-before-selling-online",
+      "privacy-browser-image-conversion",
+      "disable-heic-iphone-jpg",
+    ],
+    postConvertGuide: "strip-exif-before-selling-online",
   },
 };

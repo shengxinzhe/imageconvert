@@ -1993,6 +1993,197 @@ Convert on either machine before emailing yourself—JPG works everywhere.
 
 **Start here:** [HEIC to JPG](/heic-to-jpg)`,
   },
+  {
+    slug: "jpg-portal-upload-size-limits",
+    title: "JPG Upload Too Large for Job or School Portal? Fix Without Cloud Upload (2026)",
+    description:
+      "Government, university, and HR portals often cap JPG uploads at 2–5 MB. Compress locally in your browser with scene presets—no server upload of ID scans or résumé photos.",
+    publishedAt: "2026-06-16",
+    readMinutes: 11,
+    content: `*Last updated: June 16, 2026*
+
+**Short answer:** When a portal says your JPG is too large, re-encode it locally with [Compress JPG](/compress-jpg)—pick the **Form / portal** scene preset (65% quality, max width 1280 px), check the before/after size in results, then upload the smaller file. Nothing uploads to HeicSave during compression.
+
+We maintain HeicSave for this exact Reddit and Gutefrage pattern: someone finishes a job application or visa form, clicks upload, and gets **“file exceeds maximum size”** even though the photo looks fine on their phone.
+
+## Why portals reject “normal” JPGs
+
+Phone cameras save **12–48 MP** JPEGs. A single portrait at high quality can be **4–8 MB**. Portals rarely tell you the pixel dimensions they want—they only show a megabyte cap.
+
+| Portal type | Typical per-file cap | What they really need |
+|---|---|---|
+| US university application | 2–5 MB | Readable ID or headshot, not full resolution |
+| UK gov / NHS forms | 2–4 MB | Document scan, not 48 MP portrait |
+| EU job boards (StepStone, etc.) | 2–5 MB | CV photo or certificate scan |
+| US state DMV / visa upload | 1–3 MB | Flat scan, often 1280 px wide is enough |
+| School enrollment (K–12, EU) | 1–2 MB | Student photo, strict caps |
+
+Caps change by season—always read the error message on the form itself. The table reflects what we see in support threads in 2026.
+
+## Cloud compressors vs browser-local
+
+Most “compress JPG online” sites **upload your file** to their servers. That is a bad fit for passport scans, bank KYC photos, or medical receipts.
+
+HeicSave re-encodes in your browser tab with WebAssembly and Canvas. Your bytes stay on your device—the same privacy model as our [HEIC converters](/heic-to-jpg). Verify in DevTools: [privacy guide](/blog/privacy-browser-image-conversion).
+
+## Step-by-step: hit a 2 MB cap
+
+1. Open **[Compress JPG](/compress-jpg)** in Chrome or Edge on desktop.
+2. Click the **Form / portal** scene preset (65% quality, max width 1280 px).
+3. Drag your oversized JPG into the drop zone.
+4. Click **Compress** and wait for the results list—it shows **before → after** size on each row.
+5. If still over the cap, switch to **Smallest file** (55%, 1280 px) or lower the quality slider manually.
+6. Download the JPG and retry the portal upload.
+
+![HeicSave compress JPG: scene presets and quality slider visible before you drop files](/guides/heicsave-dropzone-before.webp)
+
+### If the portal wants PNG instead
+
+Some forms whitelist PNG but reject JPEG. Convert format first with [JPG to PNG](/jpg-to-png), then compress only if the PNG is huge (rare for photos). For screenshots with text, PNG is often required—see our [JPG to PNG tool page](/jpg-to-png).
+
+### If you started from iPhone HEIC
+
+Convert HEIC to JPG first with [HEIC to JPG](/heic-to-jpg), then compress the JPG output here. Two-step is normal when the portal accepts only JPG under 2 MB.
+
+## Scene presets map to real caps
+
+The compress tool ships five one-click presets. Match them to your error message:
+
+| Preset on HeicSave | Quality / max width | Good for |
+|---|---|---|
+| Form / portal | 65% · 1280 px | 2–5 MB job/gov/school caps |
+| Email attachment | 75% · 1920 px | Outlook/Gmail total message limits |
+| ID & document scan | 82% · 2048 px | Readable text on receipts or IDs |
+| Chat & social | 70% · 1280 px | WhatsApp/Telegram sends |
+| Smallest file | 55% · 1280 px | Under 1 MB tight caps |
+
+After picking a preset, you can still nudge the quality slider—the UI switches to **Custom** so you know you changed the defaults.
+
+## Quality checks before you submit
+
+Government and HR reviewers care about **readable text**, not megapixels.
+
+1. Zoom to 100% on the compressed JPG—can you read small print on a scan?
+2. Check file size in Explorer or Finder—under the portal cap with ~10% headroom?
+3. Keep the original JPG in a separate folder until the portal confirms acceptance.
+
+Below **60% quality**, watch for soft edges on document scans. Raise quality before shrinking width further.
+
+## Batch compress for multi-page forms
+
+Some applications ask for **front and back of ID**, proof of address, and a headshot—each with its own cap. Add all JPGs in one session, compress with the same preset, download a **ZIP**, and upload files one by one.
+
+On **8 GB RAM** laptops, batches of 40–60 JPGs are usually fine. Refresh the tab if it slows down.
+
+## Troubleshooting
+
+| Symptom | Fix |
+|---|---|
+| Still over 2 MB after Smallest file | Lower max width to 960 px manually; try 50% quality |
+| Portal rejects “invalid format” | Wrong extension—confirm real JPG; try [JPG to PNG](/jpg-to-png) if PNG required |
+| Colors look dull | Slightly raise quality; do not re-compress an already compressed file twice |
+| Portal wants PDF not JPG | This tool outputs JPG only—use a PDF scanner app for PDF uploads |
+| Privacy concern | Use browser-local tools only—see [DevTools verification](/blog/privacy-browser-image-conversion) |
+
+## Related guides
+
+- [HEIC email attachment rejected](/blog/heic-outlook-email-attachment)
+- [Batch HEIC to JPG workflow](/blog/batch-heic-to-jpg-workflow)
+- [Privacy: browser-local conversion](/blog/privacy-browser-image-conversion)
+- [PNG to JPG for smaller attachments](/png-to-jpg)
+
+**Compress now:** [Compress JPG](/compress-jpg) — scene presets, before/after sizes, no upload.`,
+  },
+  {
+    slug: "strip-exif-before-selling-online",
+    title: "Remove Photo GPS Before Selling on Facebook Marketplace or Craigslist (2026)",
+    description:
+      "iPhone photos embed GPS in EXIF. Strip location and camera metadata locally before Facebook Marketplace, Craigslist, or eBay listings—batch HEIC, JPG, and PNG in your browser.",
+    publishedAt: "2026-06-16",
+    readMinutes: 10,
+    content: `*Last updated: June 16, 2026*
+
+**Short answer:** Before you post listing photos, run them through [Strip EXIF](/strip-exif) in Chrome or Edge. HEIC, JPG, PNG, WebP, and AVIF re-encode locally without GPS, camera serial, and capture timestamps. Download a ZIP of clean files—nothing uploads to HeicSave.
+
+Buyers do not need to know where you live. Yet a typical iPhone **HEIC** or **JPG** still carries **GPS coordinates** unless you removed them. Marketplace scams and stalking threads often start with “they found my address from a couch photo.”
+
+## What EXIF leaks in a listing photo
+
+EXIF is metadata embedded by the camera—not visible in the image, but easy to read with free tools.
+
+| Data type | In phone photos? | Risk when selling |
+|---|---|---|
+| GPS latitude / longitude | Often yes (iPhone default) | Reveals home, school, or meetup spot |
+| Date and time taken | Yes | Confirms when you were at that location |
+| Camera / phone model | Yes | Identifies your device |
+| Serial / lens info | Sometimes | Extra fingerprinting |
+| Visible room contents | Yes (pixels, not EXIF) | Strip EXIF does not blur faces or serial numbers on items |
+
+Stripping metadata removes the **hidden** fields. You still should not photograph unique house numbers or mail piles in frame.
+
+## Why cloud “metadata remover” sites are risky
+
+Listing photos still show your stuff—electronics, bikes, nursery furniture. Uploading them to a random EXIF-removal website sends **full-resolution copies** to a third party. Terms of service vary; retention is opaque.
+
+HeicSave re-encodes in the browser. Same zero-upload model as [HEIC to JPG](/heic-to-jpg). How to verify: [privacy guide](/blog/privacy-browser-image-conversion).
+
+## Step-by-step: clean photos before posting
+
+1. Open **[Strip EXIF](/strip-exif)** on a desktop browser (Chrome or Edge recommended).
+2. Drag listing photos—**HEIC, JPG, and PNG mix fine** in one batch.
+3. Click **Convert** (metadata is stripped during re-encode).
+4. Check each result row; download individually or **Download all as ZIP**.
+5. Upload the cleaned files to Facebook Marketplace, Craigslist, eBay, or OfferUp.
+
+HEIC from iPhone converts to **JPG without EXIF** automatically. PNG stays PNG; WebP/AVIF re-encode without metadata.
+
+## Facebook Marketplace vs Craigslist
+
+Both platforms may strip **some** metadata on upload—but you should not rely on it:
+
+- Platform policies change without notice.
+- Originals you share elsewhere (cross-posting, messages) may still carry EXIF.
+- **WhatsApp or iMessage** to a buyer often sends the original file with GPS intact.
+
+Clean files **before** they leave your gallery. One local batch beats trusting each app’s upload pipeline.
+
+## iPhone settings help—but do not replace stripping
+
+**Settings → Privacy & Security → Location Services → Camera → Never** stops new photos from embedding GPS. Photos already shot still have old coordinates.
+
+**Settings → Camera → Formats → Most Compatible** changes future formats, not metadata on existing HEIC files. For your camera roll backlog, use [Strip EXIF](/strip-exif) or convert HEIC first via [HEIC to JPG](/heic-to-jpg) with EXIF not preserved.
+
+## Mixed batches sellers actually use
+
+| Listing type | Common inputs | HeicSave output |
+|---|---|---|
+| Living room furniture | iPhone HEIC + wide JPG | JPG without GPS |
+| Car parts | Android JPG + PNG screenshot | JPG/PNG clean |
+| Electronics with serial visible | HEIC close-ups | JPG without EXIF (blur serial in editor if needed) |
+| Cross-post to Reddit + Marketplace | Same folder | One ZIP for all platforms |
+
+## Keep an original for disputes
+
+Marketplace disputes sometimes need **unedited originals** with timestamps. Save unmodified copies in a private folder **before** you strip metadata for public listing photos. HeicSave output is for **sharing copies**, not destroying your only archive.
+
+## Troubleshooting
+
+| Symptom | Fix |
+|---|---|
+| Buyer still asks “where are you?” | They infer from background—not EXIF; tidy the frame |
+| File size grew after strip | HEIC→JPG is normal; re-compress with [Compress JPG](/compress-jpg) if portal caps apply |
+| Live Photo pair | Strip the **.heic** still; .mov video is separate |
+| Need to keep copyright IPTC | Re-encoding removes IPTC too—keep master files offline |
+
+## Related guides
+
+- [Privacy: browser-local conversion](/blog/privacy-browser-image-conversion)
+- [Turn off HEIC on iPhone](/blog/disable-heic-iphone-jpg)
+- [JPG portal upload size limits](/blog/jpg-portal-upload-size-limits)
+- [Transfer iPhone photos to Windows](/blog/transfer-iphone-photos-to-windows)
+
+**Strip metadata now:** [Strip EXIF](/strip-exif) — HEIC, JPG, PNG, WebP, AVIF, batch ZIP, no upload.`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

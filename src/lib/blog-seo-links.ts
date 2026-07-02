@@ -41,7 +41,11 @@ export const BLOG_CLUSTERS = {
     "convert-avif-to-jpg-windows",
     "avif-thumbnails-not-showing-windows-explorer",
   ],
-  privacy: ["privacy-browser-image-conversion"],
+  privacy: [
+    "privacy-browser-image-conversion",
+    "jpg-portal-upload-size-limits",
+    "strip-exif-before-selling-online",
+  ],
 } as const satisfies Record<string, readonly string[]>;
 
 export const BLOG_TOPICS = ["heic", "webp", "avif", "privacy"] as const;
@@ -86,6 +90,8 @@ export const blogPrimaryTool: Partial<Record<string, ToolSlug>> = {
   "webp-for-developers": "jpg-to-webp",
   "convert-webp-to-jpg-windows": "webp-to-jpg",
   "privacy-browser-image-conversion": "heic-to-jpg",
+  "jpg-portal-upload-size-limits": "compress-jpg",
+  "strip-exif-before-selling-online": "strip-exif",
 };
 
 /** High-value guides linked from every locale footer. */

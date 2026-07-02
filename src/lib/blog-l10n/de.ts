@@ -1579,4 +1579,92 @@ HEIC auf dem iPhone behalten. JPG nutzen für Windows-Nutzer, Druckereien und We
 
 **Tool:** [HEIC in JPG](/heic-to-jpg)`,
   },
+  "jpg-portal-upload-size-limits": {
+    title: "JPG-Upload zu groß für Job- oder Schulportal? Lokal komprimieren (2026)",
+    description:
+      "Behörden-, Uni- und HR-Portale begrenzen JPG oft auf 2–5 MB. Im Browser komprimieren mit Szenen-Presets — kein Server-Upload von Ausweis- oder Bewerbungsfotos.",
+    content: `*Zuletzt aktualisiert: 16. Juni 2026*
+
+**Kurzantwort:** Lehnt das Portal Ihr JPG ab, re-encodieren Sie lokal mit [JPG komprimieren](/compress-jpg) — Preset **Formular / Portal** (65 % Qualität, max. 1280 px). Vorher/Nachher-Größe in der Ergebnisliste prüfen, dann erneut hochladen. Nichts geht zu HeicSave hoch.
+
+## Warum Portale „normale“ JPGs ablehnen
+
+Handykameras liefern **12–48 MP** JPEGs — oft **4–8 MB** pro Portrait. Portale nennen nur MB-Limits, nicht Pixel.
+
+| Portal-Typ | Typisches Limit | Was wirklich nötig ist |
+|---|---|---|
+| US-Uni-Bewerbung | 2–5 MB | Lesbares Ausweis-/Passfoto |
+| UK Behörden / NHS | 2–4 MB | Dokumentenscan, nicht 48 MP |
+| EU Jobbörsen | 2–5 MB | Bewerbungsfoto |
+| US DMV / Visum | 1–3 MB | Flacher Scan, ~1280 px reicht |
+| Schulanmeldung | 1–2 MB | Schülerfoto, strenge Caps |
+
+## Cloud vs. browser-lokal
+
+Online-Kompressoren **laden hoch**. Schlecht für Pass-, KYC- oder Arzt-Scans. HeicSave re-encodiert im Tab — siehe [Datenschutz](/blog/privacy-browser-image-conversion).
+
+## Schritt für Schritt (2-MB-Cap)
+
+1. **[JPG komprimieren](/compress-jpg)** in Chrome/Edge öffnen.
+2. Preset **Formular / Portal** wählen.
+3. JPG ablegen → **Komprimieren**.
+4. Noch zu groß? **Kleinste Datei** oder Qualität manuell senken.
+5. Herunterladen und Portal erneut versuchen.
+
+## Presets und Caps
+
+| Preset | Qualität / Breite | Für |
+|---|---|---|
+| Formular / Portal | 65 % · 1280 px | Job/Behörde/Schule 2–5 MB |
+| E-Mail-Anhang | 75 % · 1920 px | Outlook/Gmail |
+| Ausweis & Scan | 82 % · 2048 px | Lesbarer Text |
+| Kleinste Datei | 55 % · 1280 px | Unter 1 MB |
+
+## Verwandte Ratgeber
+
+- [HEIC-E-Mail-Anhang](/blog/heic-outlook-email-attachment)
+- [Datenschutz browser-lokal](/blog/privacy-browser-image-conversion)
+
+**Jetzt:** [JPG komprimieren](/compress-jpg)`,
+  },
+  "strip-exif-before-selling-online": {
+    title: "Foto-GPS entfernen vor Facebook Marketplace oder Kleinanzeigen (2026)",
+    description:
+      "iPhone-Fotos enthalten GPS in EXIF. Metadaten lokal entfernen vor Marketplace, Craigslist oder eBay — HEIC, JPG, PNG stapelweise im Browser.",
+    content: `*Zuletzt aktualisiert: 16. Juni 2026*
+
+**Kurzantwort:** Vor dem Inserieren **[EXIF entfernen](/strip-exif)** in Chrome/Edge nutzen. HEIC, JPG, PNG, WebP, AVIF werden lokal ohne GPS, Kameramodell und Zeitstempel neu kodiert. ZIP laden — kein Upload zu HeicSave.
+
+## Was EXIF verrät
+
+| Datentyp | Im Handyfoto? | Risiko beim Verkauf |
+|---|---|---|
+| GPS | Oft ja | Wohnadresse, Treffpunkt |
+| Aufnahmedatum | Ja | Zeit am Ort |
+| Kameramodell | Ja | Gerät identifizierbar |
+
+EXIF-Entfernung löscht **versteckte** Felder — nicht Gesichter oder Seriennummern im Bild.
+
+## Warum Cloud-Tools riskant sind
+
+Listing-Fotos zeigen Ihre Wohnung und Wertgegenstände. Upload an Drittanbieter = volle Auflösung auf fremdem Server. HeicSave bleibt browser-lokal — [Datenschutz](/blog/privacy-browser-image-conversion).
+
+## Schritt für Schritt
+
+1. **[EXIF entfernen](/strip-exif)** öffnen.
+2. Fotos ablegen (HEIC + JPG gemischt OK).
+3. **Konvertieren** → ZIP laden.
+4. Bereinigte Dateien auf Marketplace/Kleinanzeigen hochladen.
+
+## Original aufbewahren
+
+Unveränderte Originale privat speichern **bevor** Sie Metadaten für öffentliche Anzeigen entfernen.
+
+## Verwandte Ratgeber
+
+- [Datenschutz browser-lokal](/blog/privacy-browser-image-conversion)
+- [JPG-Portal-Limits](/blog/jpg-portal-upload-size-limits)
+
+**Jetzt:** [EXIF entfernen](/strip-exif)`,
+  },
 };
