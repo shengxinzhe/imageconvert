@@ -20,7 +20,7 @@ export const frLegal: LegalCatalog = {
         "Découvrez HeicSave : convertisseurs HEIC, WebP et AVIF gratuits dans le navigateur. Sans envoi, sans compte — vos photos restent privées sur votre appareil.",
     },
     h1: "À propos de HeicSave",
-    lastUpdated: "Dernière mise à jour : 2 juin 2026",
+    lastUpdated: "Dernière mise à jour : 16 juin 2026",
     body: `**HeicSave** est un site gratuit de conversion d’images sur [heicsave.com](https://heicsave.com). Nous aidons les utilisateurs d’iPhone à transformer des photos HEIC en JPG ou PNG, et les développeurs à convertir WebP et AVIF lorsque d’anciennes applications ou clients mail ne les ouvrent pas.
 
 ## Public visé
@@ -41,14 +41,7 @@ Les convertisseurs cloud envoient vos photos sur des serveurs que vous ne contr�
 
 ## Contenus éditoriaux
 
-Notre [blog](/blog) propose des guides originaux sur HEIC, WebP, AVIF et la conversion locale. Les pages outils incluent des tableaux comparatifs, des FAQ et des workflows testés sur Windows 11, macOS, Chrome et Edge — pas du contenu générique.
-
-## Standards éditoriaux
-
-- **Tests réels :** workflows vérifiés sur appareils physiques, pas copiés depuis des forums.
-- **Profondeur :** tailles de lots, poids de fichiers, dépannage dans chaque guide long.
-- **Corrections :** signalez une erreur via [Contact](/contact) — nous mettons à jour la date.
-- **Pas de contenu scrapé :** pas de republication de manuels tiers ni de traductions automatiques de concurrents.
+Notre [blog](/blog) propose des guides originaux sur HEIC, WebP, AVIF, utilitaires JPG et conversion locale. Voir nos [standards éditoriaux](/about#editorial-standards) complets — tests, mises à jour et financement séparés de la conversion.
 
 ## Contact
 

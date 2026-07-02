@@ -23,7 +23,10 @@ export function BlogAuthorByline({ locale }: { locale: AppLocale }) {
         <p className="text-sm font-medium text-ink">{t("blog.authorName")}</p>
         <p className="mt-0.5 text-xs leading-relaxed text-body">
           {t("blog.authorBio")}{" "}
-          <Link href="/about" className="font-medium text-link hover:text-link-deep">
+          <Link
+            href="/about#editorial-standards"
+            className="font-medium text-link hover:text-link-deep"
+          >
             {t("blog.authorAboutLink")}
           </Link>
         </p>

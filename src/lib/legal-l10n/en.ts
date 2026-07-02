@@ -20,7 +20,7 @@ export const enLegal: LegalCatalog = {
         "Learn about HeicSave: free browser-local HEIC, WebP, and AVIF converters for iPhone users. No upload, no account — photos stay private on your device.",
     },
     h1: "About HeicSave",
-    lastUpdated: "Last updated: June 2, 2026",
+    lastUpdated: "Last updated: June 16, 2026",
     body: `**HeicSave** is a free online image conversion site at [heicsave.com](https://heicsave.com). We help iPhone users turn HEIC photos into JPG or PNG, and help developers convert WebP and AVIF when older apps or email clients cannot open modern formats.
 
 ## Who we serve
@@ -41,14 +41,9 @@ Cloud upload converters send your photos to servers you cannot audit. We built b
 
 ## Editorial content
 
-We maintain a [blog](/blog) with original guides on HEIC, WebP, AVIF, and browser-local privacy. Articles are written for real workflows—batch iPhone exports, Outlook attachments, Premiere/Photoshop imports—not generic SEO filler. We test steps on Windows 11, macOS, Chrome, and Edge before publishing, and update guides when Apple or Adobe changes behavior.
+We maintain a [blog](/blog) with original guides on HEIC, WebP, AVIF, JPG utilities, and browser-local privacy. Articles are written for real workflows—batch iPhone exports, Outlook attachments, portal upload limits, marketplace EXIF—not generic SEO filler.
 
-## Editorial standards
-
-- **Original testing:** conversion workflows are verified on physical devices, not copied from forums.
-- **Depth over volume:** long-form guides include batch sizes, file-size expectations, and troubleshooting tables.
-- **Corrections:** if a step is wrong, contact us via [Contact](/contact) and we update the article with a revised date.
-- **No scraped content:** we do not republish third-party manuals or auto-translate competitor pages.
+Our full [editorial standards](/about#editorial-standards) cover how we test, update, and fund the site separately from conversion.
 
 ## Contact
 

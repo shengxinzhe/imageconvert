@@ -7,7 +7,7 @@ import { getT } from "@/lib/i18n/translations";
 import type { LegalPageContent } from "@/lib/legal-l10n/types";
 import { toolShortTitle } from "@/lib/tool-display";
 import { cn } from "@/lib/utils";
-import { Archive, ArrowRight, BookOpen, Lock, Sparkles } from "lucide-react";
+import { Archive, ArrowRight, BookOpen, ClipboardCheck, Lock, Sparkles } from "lucide-react";
 
 const principleIcons = [Lock, Sparkles, Archive] as const;
 
@@ -80,13 +80,81 @@ export function AboutPageLayout({
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-4 py-16 lg:px-6">
+      <section
+        id="editorial-standards"
+        className="mx-auto max-w-3xl scroll-mt-24 px-4 py-16 lg:px-6"
+      >
         <div className="flex items-start gap-3">
-          <BookOpen className="mt-0.5 h-5 w-5 shrink-0 text-ink" aria-hidden />
-          <div>
+          <ClipboardCheck className="mt-0.5 h-5 w-5 shrink-0 text-ink" aria-hidden />
+          <div className="min-w-0">
             <h2 className="text-2xl font-semibold tracking-display-sm text-ink">
-              {t("about.changelogTitle")}
+              {t("about.editorialTitle")}
             </h2>
+            <p className="mt-3 text-body">{t("about.editorialIntro")}</p>
+            <ul className="mt-6 space-y-4">
+              {[1, 2, 3, 4].map((n) => (
+                <li key={n} className="rounded-vercel border border-hairline bg-canvas-soft px-4 py-3">
+                  <h3 className="text-sm font-medium text-ink">
+                    {t(`about.editorialStandard${n}Title` as "about.editorialStandard1Title")}
+                  </h3>
+                  <p className="mt-1 text-sm text-body">
+                    {t(`about.editorialStandard${n}Body` as "about.editorialStandard1Body")}
+                  </p>
+                </li>
+              ))}
+            </ul>
+            <h3 className="mt-8 text-lg font-semibold text-ink">
+              {t("about.editorialTestingTitle")}
+            </h3>
+            <p className="mt-2 text-sm text-body">{t("about.editorialTestingIntro")}</p>
+            <div className="mt-4 overflow-x-auto rounded-vercel border border-hairline">
+              <table className="w-full min-w-[280px] text-left text-sm">
+                <thead>
+                  <tr className="border-b border-hairline bg-canvas-soft">
+                    <th className="px-4 py-2.5 font-medium text-ink">
+                      {t("about.editorialTableEnv")}
+                    </th>
+                    <th className="px-4 py-2.5 font-medium text-ink">
+                      {t("about.editorialTableUse")}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-body">
+                  {[1, 2, 3].map((n) => (
+                    <tr key={n} className="border-b border-hairline last:border-0">
+                      <td className="px-4 py-2.5 font-mono text-xs text-ink">
+                        {t(`about.editorialEnv${n}` as "about.editorialEnv1")}
+                      </td>
+                      <td className="px-4 py-2.5">
+                        {t(`about.editorialEnv${n}Use` as "about.editorialEnv1Use")}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-6 text-sm text-body">{t("about.editorialReviewBody")}</p>
+            <p className="mt-3 text-sm text-body">{t("about.editorialFundingBody")}</p>
+            <div className="mt-6 flex flex-wrap gap-4 text-sm">
+              <Link href="/blog" className="font-medium text-link hover:text-link-deep">
+                {t("about.editorialBlogLink")}
+              </Link>
+              <Link href="/contact" className="font-medium text-link hover:text-link-deep">
+                {t("about.editorialContactLink")}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="content-band-soft border-y border-hairline py-16">
+        <div className="mx-auto max-w-3xl px-4 lg:px-6">
+          <div className="flex items-start gap-3">
+            <BookOpen className="mt-0.5 h-5 w-5 shrink-0 text-ink" aria-hidden />
+            <div>
+              <h2 className="text-2xl font-semibold tracking-display-sm text-ink">
+                {t("about.changelogTitle")}
+              </h2>
             <p className="mt-2 text-sm text-body">{t("about.changelogIntro")}</p>
             <ul className="mt-4 space-y-3 text-sm text-body">
               {[1, 2, 3].map((n) => (
@@ -95,6 +163,7 @@ export function AboutPageLayout({
                 </li>
               ))}
             </ul>
+            </div>
           </div>
         </div>
       </section>
