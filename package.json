@@ -8,6 +8,7 @@
     "postbuild": "next-sitemap && node scripts/ping-google-sitemap.mjs && node scripts/ping-bing-sitemap.mjs",
     "indexnow": "node scripts/ping-indexnow.mjs",
     "submit:blog": "node scripts/submit-blog-search.mjs",
+    "submit:new-tools": "node scripts/submit-new-tools-search.mjs",
     "start": "next start",
     "lint": "next lint",
     "compress:brand": "node scripts/compress-brand-assets.mjs",

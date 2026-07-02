@@ -384,31 +384,153 @@ export const frToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
   ],
   "jpg-to-png": [
     {
-      heading: "JPG en PNG pour formulaires",
-      content:
-        "Certains portails n'acceptent que le PNG. Convertissez localement — sans envoi cloud de documents sensibles.",
+      heading: "JPG en PNG — comparatif des méthodes",
+      paragraphs: [
+        "Beaucoup de portails refusent le JPEG mais acceptent le PNG pour pièces d'identité ou formulaires. Les convertisseurs cloud reçoivent vos documents.",
+        "HeicSave encode JPG en PNG localement — important pour scans avec noms, adresses ou numéros de compte.",
+      ],
+      table: {
+        caption: "Workflows typiques pour envois de formulaires (2026).",
+        headers: ["Méthode", "Fichiers quittent l'appareil ?", "Lot + ZIP", "Idéal pour"],
+        rows: [
+          ["HeicSave (cette page)", "Non — Canvas dans l'onglet", "Oui, sans limite fixe", "Scans privés, lots formulaires"],
+          ["Convertisseurs cloud", "Oui — envoi serveur", "Quotas fréquents", "Conversion ponctuelle"],
+          ["Photoshop / GIMP", "Local", "Manuel, un par un", "Retouche avant export"],
+          ["Paint / Preview", "Local", "Un fichier", "Capture ou pièce d'identité"],
+        ],
+      },
+    },
+    {
+      heading: "Quand passer JPG en PNG",
+      table: {
+        headers: ["Situation", "Vers PNG ?", "Pourquoi"],
+        rows: [
+          ["Portail admin/université PNG seulement", "Oui", "Évite le rejet d'envoi"],
+          ["Import design (Figma, Canva)", "Oui", "Pipeline stable sans perte JPEG extra"],
+          ["Texte ou bords nets", "Souvent oui", "Moins d'artefacts JPEG"],
+          ["E-mail / WhatsApp photo", "Plutôt non — PNG en JPG", "JPG plus petit et universel"],
+        ],
+      },
+    },
+    {
+      heading: "Formulaires, scans et handoffs design",
+      paragraphs: [
+        "Les portails emploi rejettent parfois le .jpg — produire un PNG localement sans envoyer la pièce d'identité à un tiers.",
+        "Les équipes marketing ont besoin de PNG pour slides avec texte — lot, ZIP, insertion PowerPoint.",
+        "En cas d'échec : vérifier un vrai JPEG ; Chrome/Edge sur bureau pour gros lots.",
+      ],
     },
   ],
   "png-to-jpg": [
     {
-      heading: "PNG en JPG pour limites e-mail",
-      content:
-        "Réduisez de lourdes captures PNG en JPG — localement avant pièce jointe, sans serveur tiers.",
+      heading: "PNG en JPG — comparatif des méthodes",
+      paragraphs: [
+        "Les captures PNG sont souvent bien plus lourdes que le JPEG. Les outils cloud uploadent vos fichiers.",
+        "HeicSave convertit par lot dans le navigateur avec curseur qualité — avant pièces jointes Outlook et limites portail.",
+      ],
+      table: {
+        headers: ["Méthode", "Envoi serveur ?", "Lot + ZIP", "Contrôle qualité"],
+        rows: [
+          ["HeicSave", "Non", "Oui", "Curseur 60–100 %"],
+          ["Convertisseurs cloud", "Oui", "Variable", "Qualité souvent fixe"],
+          ["Paint / Preview", "Non", "Un par un", "Presets limités"],
+          ["Export Photoshop", "Non", "Manuel", "Contrôle total, lent"],
+        ],
+      },
+    },
+    {
+      heading: "Quand PNG en JPG est pertinent",
+      table: {
+        headers: ["Objectif", "PNG→JPG ?", "Conseil"],
+        rows: [
+          ["Pièce jointe Outlook/Gmail trop lourde", "Oui", "Commencer à 85–90 %"],
+          ["Portail plafond 2–5 Mo", "Oui", "Puis [Compresser JPG](/compress-jpg)"],
+          ["WhatsApp / Telegram", "Oui", "JPG économise la data mobile"],
+          ["Logo avec transparence", "Attention", "JPG aplatit l'alpha — garder le PNG source"],
+        ],
+      },
+    },
+    {
+      heading: "Taille de fichier et transparence",
+      paragraphs: [
+        "Un PNG photo peut perdre 70–90 % en JPG. La transparence devient un fond uni — normal en JPG.",
+        "Convertir un dossier entier, télécharger un ZIP de JPG. Chrome/Edge bureau pour gros volumes.",
+      ],
     },
   ],
   "compress-jpg": [
     {
-      heading: "Compresser JPG sans envoi",
+      heading: "Compresser JPG — comparatif",
       paragraphs: [
-        "Formulaires et portails RH plafonnent souvent à 2–5 Mo. Baissez la qualité ou la largeur — dans l'onglet.",
+        "La plupart des compresseurs en ligne uploadent vos photos. HeicSave ré-encode localement avec qualité et largeur max — pour portails et e-mail sans risque cloud.",
+      ],
+      table: {
+        headers: ["Méthode", "Envoi ?", "Contrôle taille", "Idéal pour"],
+        rows: [
+          ["HeicSave", "Non", "Curseur + scénarios", "Formulaires, e-mail, lots"],
+          ["Compresseurs cloud", "Oui", "Variable", "Rapide si confidentialité OK"],
+          ["Galerie téléphone", "Non", "Peu de contrôle", "Usage casual"],
+          ["Photoshop Save for Web", "Non", "Contrôle total", "Pro, lent en masse"],
+        ],
+      },
+    },
+    {
+      heading: "Limites d'envoi par scénario",
+      table: {
+        headers: ["Scénario", "Limite typique", "Preset", "Si encore trop gros"],
+        rows: [
+          ["Formulaire emploi/admin", "2–5 Mo", "Formulaire / portail", "Fichier le plus petit ou 55 %"],
+          ["Pièce jointe e-mail", "~10–25 Mo total", "Pièce jointe e-mail", "Compresser chaque JPG"],
+          ["Scan pièce d'identité", "Texte lisible", "Scan & document", "Baisser qualité avant largeur"],
+          ["Messagerie", "Souvent strict", "Chat & social", "Fichier le plus petit"],
+        ],
+      },
+    },
+    {
+      heading: "Qualité, EXIF et résultats",
+      paragraphs: [
+        "À 75–85 %, OK pour la plupart des formulaires. Sous 60 %, vérifier le texte sur les scans.",
+        "Le ré-encodage retire souvent GPS/EXIF — souhaitable avant envoi. Garder l'original.",
+        "Lot + ZIP ; taille avant/après affichée par fichier dans les résultats.",
       ],
     },
   ],
   "strip-exif": [
     {
-      heading: "Retirer GPS et EXIF avant partage",
+      heading: "Supprimer EXIF — comparatif",
       paragraphs: [
-        "Annonces et forums : la position peut fuiter via EXIF. HEIC, JPG et plus — nettoyage local.",
+        "L'EXIF peut contenir GPS et infos appareil. Les sites cloud reçoivent vos octets. exiftool est puissant mais en ligne de commande.",
+        "HeicSave ré-encode localement — HEIC, JPG, PNG, WebP, AVIF en lot ; HEIC→JPG sans copie EXIF.",
+      ],
+      table: {
+        headers: ["Méthode", "Envoi ?", "HEIC", "Lot + ZIP"],
+        rows: [
+          ["HeicSave", "Non", "Oui → JPG sans EXIF", "Oui"],
+          ["Outils EXIF cloud", "Oui", "Rare", "Quotas"],
+          ["exiftool", "Non", "Avec plugins", "Scriptable"],
+          ["Réglage localisation téléphone", "Non", "Variable", "Une photo"],
+        ],
+      },
+    },
+    {
+      heading: "Ce qui est retiré",
+      table: {
+        headers: ["Type de donnée", "Retiré ?", "Enjeu"],
+        rows: [
+          ["GPS", "Oui", "Révèle lieu de rendez-vous ou domicile"],
+          ["Modèle appareil", "Oui", "Identifie le téléphone"],
+          ["Date de prise", "Souvent oui", "Prouve la présence à un moment"],
+          ["Contenu visible", "Inchangé", "Pas de floutage de visage"],
+        ],
+      },
+    },
+    {
+      heading: "Quand nettoyer avant de partager",
+      paragraphs: [
+        "Petites annonces : l'acheteur n'a pas besoin du GPS. HEIC iPhone souvent géolocalisé.",
+        "Blog/newsletter : retirer EXIF des photos d'équipe — ne pas fuiter des lieux internes.",
+        "Lots mixtes : HEIC + JPG + PNG en une session, ZIP de fichiers propres.",
+        "Archives légales : conserver l'original séparément — outil pour copies à publier.",
       ],
     },
   ],

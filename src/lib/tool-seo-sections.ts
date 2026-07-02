@@ -307,4 +307,345 @@ export const extraToolSeoSections: Record<string, ToolSeoSection[]> = {
       ],
     },
   ],
+  "jpg-to-png": [
+    {
+      heading: "How HeicSave compares to other JPG to PNG methods",
+      paragraphs: [
+        "Many portals reject JPEG but accept PNG for ID scans, insurance forms, and design handoffs. Cloud converters work, but they receive your document bytes on their servers. Desktop apps like Photoshop export one file at a time—slow for a folder of scans.",
+        "HeicSave re-encodes JPG to PNG in your browser tab. That matters when the image contains names, addresses, or account numbers you do not want on a third-party upload queue.",
+      ],
+      table: {
+        caption:
+          "Typical workflow comparison for form uploads and design exports (2026).",
+        headers: ["Method", "Files leave your device?", "Batch + ZIP", "Best for"],
+        rows: [
+          [
+            "HeicSave (this page)",
+            "No — Canvas in your tab",
+            "Yes, no fixed cap",
+            "Private scans, batch form prep, quick PNG handoffs",
+          ],
+          [
+            "Cloud upload converters",
+            "Yes — uploaded to their servers",
+            "Quotas common",
+            "One-off converts when privacy is not a concern",
+          ],
+          [
+            "Photoshop / GIMP export",
+            "Stays local",
+            "Manual, one-by-one",
+            "Heavy retouching before export",
+          ],
+          [
+            "Paint / Preview Save As",
+            "Stays local",
+            "One file at a time",
+            "Single screenshot or ID photo",
+          ],
+          [
+            "Screenshot tools (PNG native)",
+            "Stays local",
+            "N/A",
+            "New captures — not converting existing JPG",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "When JPG to PNG beats staying on JPG",
+      paragraphs: [
+        "PNG is not always the right output—it is usually larger. Convert when the destination or workflow requires PNG, not because PNG sounds higher quality.",
+      ],
+      table: {
+        headers: ["Your situation", "Convert to PNG?", "Why"],
+        rows: [
+          [
+            "Government or university portal accepts PNG only",
+            "Yes",
+            "Avoid rejected uploads; PNG is whitelisted",
+          ],
+          [
+            "Design tool import (Figma, Canva, older CMS)",
+            "Yes",
+            "Stable decode; no extra JPEG generation loss in the pipeline",
+          ],
+          [
+            "Image with text, UI, or sharp edges",
+            "Often yes",
+            "PNG avoids JPEG ringing on high-contrast edges",
+          ],
+          [
+            "Email or WhatsApp photo share",
+            "Usually no — use PNG to JPG",
+            "JPG is smaller and universally accepted",
+          ],
+          [
+            "Archival master after editing",
+            "Maybe — keep original JPG too",
+            "PNG cannot restore detail lost in the source JPEG",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "Real scenarios: forms, scans, and design handoffs",
+      paragraphs: [
+        "Job applications and visa portals sometimes show \"unsupported format\" for .jpg even when the photo looks fine on your phone. Converting to PNG locally fixes the extension and container without uploading your ID to a random converter site.",
+        "Marketing teams often receive JPG exports from clients but need PNG for slide decks with text overlays. Batch convert here, download a ZIP, and attach PNGs to PowerPoint or Google Slides—nothing passes through our servers.",
+        "If a single file fails, confirm it is a real JPEG (not a misnamed WebP or HEIC). Hard-refresh the page and retry with Chrome or Edge on desktop for large batches.",
+      ],
+    },
+  ],
+  "png-to-jpg": [
+    {
+      heading: "How HeicSave compares to other PNG to JPG methods",
+      paragraphs: [
+        "PNG screenshots and exports are often 3–10× larger than JPEG for photographic content. Cloud compressors shrink files but upload your bytes. Windows Paint and Mac Preview can save as JPEG one file at a time.",
+        "HeicSave batch-converts PNG to JPG in the browser with an adjustable quality slider—useful before Outlook attachments, HR uploads, and chat apps with size caps.",
+      ],
+      table: {
+        caption: "Comparison for shrinking PNG attachments and portal uploads.",
+        headers: ["Method", "Files leave your device?", "Batch + ZIP", "Quality control"],
+        rows: [
+          [
+            "HeicSave (this page)",
+            "No — Canvas encode in tab",
+            "Yes",
+            "Slider 60–100% (default 90%)",
+          ],
+          [
+            "Cloud PNG to JPG tools",
+            "Yes — server upload",
+            "Varies",
+            "Often fixed quality",
+          ],
+          [
+            "Paint / Preview Save As JPEG",
+            "Stays local",
+            "One-by-one",
+            "Limited presets",
+          ],
+          [
+            "Photoshop Export As JPEG",
+            "Stays local",
+            "Manual batch actions",
+            "Full control; slower for dozens of files",
+          ],
+          [
+            "Email client auto-resize",
+            "Stays in mail app",
+            "Per message",
+            "Unpredictable quality",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "When PNG to JPG is the right move",
+      table: {
+        headers: ["Your goal", "PNG to JPG?", "Tip"],
+        rows: [
+          [
+            "Outlook / Gmail attachment over 10–25 MB",
+            "Yes",
+            "Start at 85–90% quality; lower if still too large",
+          ],
+          [
+            "Employer portal 2–5 MB file cap",
+            "Yes",
+            "Pair with [Compress JPG](/compress-jpg) if still over limit",
+          ],
+          [
+            "WhatsApp / Telegram image send",
+            "Yes",
+            "JPG avoids PNG size penalty on mobile data",
+          ],
+          [
+            "Logo or UI with transparency",
+            "Careful — JPG flattens alpha",
+            "Keep PNG master; export JPG only for sharing",
+          ],
+          [
+            "Print shop asks for PNG/TIFF",
+            "No — keep PNG",
+            "Do not convert lossy for print unless they require JPG",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "File size and transparency expectations",
+      paragraphs: [
+        "Photographic PNGs often drop 70–90% in file size when converted to high-quality JPG. Screenshots with flat color compress even more aggressively.",
+        "Transparent PNG areas become a solid background in JPG—that is normal. If you need alpha, stay on PNG or convert to WebP with our [PNG to WebP](/png-to-webp) tool instead.",
+        "For a folder of PNGs, convert in one session and download a ZIP of JPGs. Desktop Chrome or Edge handles large batches best; split groups if the tab feels slow on 8 GB RAM.",
+      ],
+    },
+  ],
+  "compress-jpg": [
+    {
+      heading: "How HeicSave compares to other JPG compressors",
+      paragraphs: [
+        "Most \"compress JPG online\" sites upload your photos to their servers. Phone gallery apps compress one image at a time. HeicSave re-encodes in the browser with visible quality and max-width controls—built for portal limits and email attachments without cloud privacy risk.",
+      ],
+      table: {
+        caption:
+          "Subjective comparison for shrinking JPG before upload (typical phone photos, 2026).",
+        headers: ["Method", "Files leave your device?", "Resize + quality", "Best for"],
+        rows: [
+          [
+            "HeicSave (this page)",
+            "No — local re-encode",
+            "Slider + max-width presets + scene shortcuts",
+            "Forms, email, batch receipts/IDs",
+          ],
+          [
+            "Cloud JPG compressors",
+            "Yes — uploaded",
+            "Varies",
+            "Quick one-offs when privacy OK",
+          ],
+          [
+            "iPhone Photos / Google Photos export",
+            "Stays on device",
+            "Limited control",
+            "Casual sharing, not precise MB targets",
+          ],
+          [
+            "Photoshop Save for Web",
+            "Stays local",
+            "Full control",
+            "Pro workflows; slow for 100+ files",
+          ],
+          [
+            "Zip archives only (no re-encode)",
+            "Stays local",
+            "No pixel change",
+            "Does not help strict image MB caps",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "Upload limits by scenario — quick preset guide",
+      paragraphs: [
+        "Use the scene presets on this page to match common caps. Then fine-tune the quality slider if the portal still rejects the file.",
+      ],
+      table: {
+        headers: ["Scenario", "Typical limit", "Suggested preset", "If still too large"],
+        rows: [
+          [
+            "Job / gov / school web form",
+            "2–5 MB per file",
+            "Form / portal (65%, 1280 px)",
+            "Try Smallest file or lower quality to 55%",
+          ],
+          [
+            "Email attachment (Outlook/Gmail)",
+            "~10–25 MB total message",
+            "Email attachment (75%, 1920 px)",
+            "Compress each JPG separately before attaching",
+          ],
+          [
+            "ID scan or receipt upload",
+            "Readable text required",
+            "ID & document scan (82%, 2048 px)",
+            "Raise quality before shrinking width",
+          ],
+          [
+            "WhatsApp / Telegram / Discord",
+            "Varies; often aggressive",
+            "Chat & social (70%, 1280 px)",
+            "Use Smallest file preset",
+          ],
+          [
+            "Very tight cap (under 1 MB)",
+            "Under 1 MB",
+            "Smallest file (55%, 1280 px)",
+            "Reduce max width to 1280 or 960 manually",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "Quality, EXIF, and what changes when you compress",
+      paragraphs: [
+        "Compressing JPG applies a new generation of JPEG compression. At 75–85% quality, most phone photos still look fine for forms and email. Below 60%, watch for soft text on document scans.",
+        "Re-encoding through the browser canvas typically strips GPS and camera EXIF—often desirable before uploading personal documents. Keep your original JPG if you need the full metadata archive.",
+        "Batch compress an entire folder, then download one ZIP. Results show before/after file size on each row so you can confirm the savings before you upload.",
+      ],
+    },
+  ],
+  "strip-exif": [
+    {
+      heading: "How HeicSave compares to other EXIF removal tools",
+      paragraphs: [
+        "EXIF can embed GPS coordinates, device serials, and capture timestamps. Cloud \"metadata remover\" sites receive your full image bytes. Desktop tools like exiftool are powerful but require installs and command-line comfort.",
+        "HeicSave re-encodes images locally and supports HEIC, JPG, PNG, WebP, and AVIF in one batch—HEIC converts to JPG without copying EXIF forward.",
+      ],
+      table: {
+        caption: "Privacy-focused comparison for removing photo metadata before sharing.",
+        headers: ["Method", "Files leave your device?", "HEIC support", "Batch + ZIP"],
+        rows: [
+          [
+            "HeicSave (this page)",
+            "No — browser re-encode",
+            "Yes → JPG without EXIF",
+            "Yes",
+          ],
+          [
+            "Cloud EXIF remover sites",
+            "Yes — full upload",
+            "Rare",
+            "Quotas common",
+          ],
+          [
+            "exiftool (CLI)",
+            "Stays local",
+            "With plugins",
+            "Scriptable; steep learning curve",
+          ],
+          [
+            "Phone \"Remove location\" toggle",
+            "Stays on device",
+            "Varies",
+            "One photo at a time",
+          ],
+          [
+            "Social app \"strip on upload\"",
+            "Uploads to platform",
+            "Platform-dependent",
+            "You trust the platform policy",
+          ],
+        ],
+      },
+    },
+    {
+      heading: "What metadata stripping actually removes",
+      paragraphs: [
+        "Re-encoding produces a new file without the original EXIF/IPTC blocks. Some quality change may occur for JPG and WebP outputs; PNG stays lossless relative to decoded pixels.",
+      ],
+      table: {
+        headers: ["Data type", "Usually removed?", "Why it matters"],
+        rows: [
+          ["GPS latitude / longitude", "Yes", "Reveals home, school, or sale meetup location"],
+          ["Camera make / model", "Yes", "Identifies your phone or gear"],
+          ["Date / time taken", "Often yes", "Can confirm when you were at a place"],
+          ["Orientation tag", "Replaced by pixels", "Output displays correctly without tag"],
+          ["IPTC caption / copyright", "Yes", "Rare on phone photos; gone after re-encode"],
+          ["Visible image content", "Unchanged", "Stripping metadata is not the same as blurring faces"],
+        ],
+      },
+    },
+    {
+      heading: "When to strip EXIF before you post or sell",
+      paragraphs: [
+        "Facebook Marketplace, Craigslist, and dating-app screenshots: buyers do not need your GPS. iPhone HEIC shots are high risk because location is embedded by default until you strip or use a stripped export.",
+        "Newsletter photos and blog posts: remove EXIF from staff headshots and office pictures so you do not leak internal locations or device inventories.",
+        "Mixed batches: add HEIC, JPG, and PNG in one session—each file re-encodes to JPG, PNG, or WebP without metadata. Download a ZIP of clean files ready to upload.",
+        "For legal or forensic workflows, keep an unmodified original separately. This tool is for sharing copies, not destroying your only archive.",
+      ],
+    },
+  ],
 };

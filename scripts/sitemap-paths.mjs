@@ -23,6 +23,20 @@ export const TOOL_SLUGS = [
   "strip-exif",
 ];
 
+/** Batch 1 utility tools (2026-06) — use for targeted IndexNow / GSC submit. */
+export const NEW_TOOL_SLUGS = ["jpg-to-png", "png-to-jpg", "compress-jpg", "strip-exif"];
+
+export function getNewToolIndexUrls(siteUrl = "https://heicsave.com") {
+  const base = siteUrl.replace(/\/$/, "");
+  const urls = [];
+  for (const locale of LOCALES) {
+    for (const slug of NEW_TOOL_SLUGS) {
+      urls.push(`${base}${localePath(`/${slug}`, locale)}`);
+    }
+  }
+  return [...new Set(urls)].sort();
+}
+
 export const BLOG_SLUGS = [
   "heic-windows-11-uk",
   "heic-windows-10-not-showing",
