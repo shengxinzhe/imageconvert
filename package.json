@@ -9,6 +9,7 @@
     "indexnow": "node scripts/ping-indexnow.mjs",
     "submit:blog": "node scripts/submit-blog-search.mjs",
     "submit:new-tools": "node scripts/submit-new-tools-search.mjs",
+    "submit:gsc-priority": "node scripts/submit-gsc-priority.mjs",
     "start": "next start",
     "lint": "next lint",
     "compress:brand": "node scripts/compress-brand-assets.mjs",
