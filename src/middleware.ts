@@ -43,6 +43,12 @@ export function middleware(request: NextRequest) {
   const defaultLocale = routing.defaultLocale;
 
   const { locale, path } = splitLocalePath(pathname);
+
+  // ads.txt must live at site root; crawlers also request /de/ads.txt, /fr/ads.txt.
+  if (path === "/ads.txt" && locale !== defaultLocale) {
+    return NextResponse.redirect(new URL("/ads.txt", request.url), 301);
+  }
+
   const redirectTarget = resolvePathRedirect(path);
   if (redirectTarget) {
     const dest = toPublicPath(locale, redirectTarget);

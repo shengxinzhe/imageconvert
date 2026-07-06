@@ -13,6 +13,7 @@ export const PATH_REDIRECTS: Record<string, string> = {
   "/webp-to-jpg-online": "/webp-to-jpg",
   "/blog/avif-to-jpg-guide": "/blog/convert-avif-to-jpg-windows",
   "/blog/how-to-convert-avif-to-jpg": "/blog/convert-avif-to-jpg-windows",
+  "/blog/heic-to-jpg-online": "/heic-to-jpg",
 };
 
 export function resolvePathRedirect(pathname: string): string | undefined {
