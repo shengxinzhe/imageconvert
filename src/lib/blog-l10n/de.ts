@@ -1,7 +1,7 @@
 /** German overlays for high-intent blog posts (slug → fields). */
 export const deBlogPosts: Record<
   string,
-  { title: string; description: string; content: string }
+  { title: string; description: string; content: string; updatedAt?: string }
 > = {
   "what-is-heic-file": {
     title: "Was ist eine HEIC-Datei? Kompletter Ratgeber (2026)",
@@ -1498,18 +1498,34 @@ Verarbeitung lokal; Bildbytes werden nicht zur Konvertierung auf HeicSave-Server
   "iphone-photos-pc-without-heic": {
     title: "iPhone-Fotos auf den PC übertragen — ohne HEIC (FAQ 2026)",
     description:
-      "iPhone-Fotos auf Windows- oder Mac-PC als JPG kopieren, nicht als HEIC. Browser-lokale Konvertierung, privat, ohne Server-Upload.",
-    content: `**Kurzantwort:** Per USB oder iCloud kopieren, dann **HEIC → JPG im Browser** unter [HEIC in JPG](/heic-to-jpg). Ihre Dateien werden **nicht** auf unsere Server hochgeladen.
+      "iPhone-Fotos auf Windows- oder Mac-PC als JPG kopieren, nicht als HEIC. Browser-lokale Konvertierung, privat, ohne Server-Upload — mit DSGVO-Hinweisen für Deutschland.",
+    updatedAt: "2026-07-07",
+    content: `*Zuletzt aktualisiert: 7. Juli 2026*
+
+**Kurzantwort:** Per USB oder iCloud kopieren, dann **HEIC → JPG im Browser** unter [HEIC in JPG](/heic-to-jpg). Ihre Dateien werden **nicht** auf unsere Server hochgeladen.
 
 ## Warum „ohne HEIC“
 
 HEIC spart Speicher auf dem iPhone, ist auf vielen PCs aber unpraktisch: falsche Vorschaubilder, abgelehnte E-Mails, kaputte Upload-Formulare. **JPG** erwarten Empfänger und Software weltweit.
 
+## Deutschland: Behörden & Arbeitgeber
+
+In Deutschland verlangen viele Portale **JPG**, nicht HEIC:
+
+| Situation | Typisches Format |
+|---|---|
+| Bewerbung (PDF + Foto) | JPG unter 2–5 MB |
+| Jobcenter / Agentur für Arbeit | JPG, oft Größenlimit |
+| Versicherung, Schadenfoto | JPG per Upload-Formular |
+| Schule / Kita (Elternportal) | JPG oder PNG |
+
+HEIC aus der iPhone-Fotomediathek scheitert dort oft — **vor dem Upload konvertieren**, nicht erst nach der Ablehnung.
+
 ## FAQ — iPhone-Fotos als JPG auf dem PC
 
 ### Wie übertrage ich iPhone-Fotos auf den PC ohne HEIC?
 
-**Option A — künftig JPG:** Einstellungen → Kamera → Formate → **Maximale Kompatibilität**.
+**Option A — künftig JPG:** Einstellungen → Kamera → Formate → **Maximale Kompatibilität**. Schritt-für-Schritt: [HEIC am iPhone deaktivieren](/blog/disable-heic-iphone-jpg) (Englisch, technische Screenshots).
 
 **Option B — Bestand konvertieren:** USB-Kopie auf den PC, dann Browser-Konvertierung in JPG (Stapel + ZIP).
 
@@ -1526,7 +1542,7 @@ Safari auf dem iPhone kann [HEIC in JPG](/heic-to-jpg) öffnen und vor AirDrop o
 
 ### Datenschutz (Deutschland, EU, DSGVO)
 
-Browser-lokale Konvertierung bedeutet: **keine persönlichen Fotos auf fremden Servern**. Cookies betreffen nur Werbung; Bilder sind davon getrennt.
+Browser-lokale Konvertierung bedeutet: **keine persönlichen Fotos auf fremden Servern**. Cookies betreffen nur Werbung; Bilder sind davon getrennt. Details: [Datenschutz: browser-lokal](/blog/privacy-browser-image-conversion).
 
 ## Verwandte Ratgeber
 

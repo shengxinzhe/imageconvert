@@ -11,7 +11,9 @@ import { hreflangLanguages } from "@/lib/locale-path";
 
 const overlays: Record<
   Exclude<AppLocale, "en">,
-  Partial<Record<string, Pick<BlogPost, "title" | "description" | "content">>>
+  Partial<
+    Record<string, Pick<BlogPost, "title" | "description" | "content" | "updatedAt">>
+  >
 > = {
   de: deBlogPosts,
   fr: frBlogPosts,

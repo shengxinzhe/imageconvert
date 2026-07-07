@@ -1912,6 +1912,7 @@ Keep HEIC on iPhone for storage. Use JPG when sending to Windows users, printers
     description:
       "Move iPhone photos to a Windows or Mac PC as JPG—not HEIC. Browser-local conversion, private, no upload.",
     publishedAt: "2026-06-10",
+    updatedAt: "2026-07-07",
     readMinutes: 6,
     content: `**Short answer:** Copy photos via USB or iCloud, then convert **HEIC → JPG in your browser** at [HEIC to JPG](/heic-to-jpg). Your files never upload to our servers.
 
