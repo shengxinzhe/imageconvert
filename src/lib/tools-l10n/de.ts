@@ -4,7 +4,7 @@ import type { ToolLocaleFields } from "@/lib/tools-l10n/types";
 
 const deToolsBase: Record<ToolSlug, ToolLocaleFields> = {
   "heic-to-jpg": {
-    title: "HEIC in JPG umwandeln — HEIC Datei öffnen | gratis, kein Upload",
+    title: "HEIC in JPG umwandeln — gratis & lokal",
     h1: "HEIC in JPG umwandeln — HEIC Datei öffnen",
     metaDescription:
       "HEIC kostenlos im Browser in JPG umwandeln. Stapel ohne Limit, ZIP-Download—kein Server-Upload. Windows, Mac, Chromebook.",

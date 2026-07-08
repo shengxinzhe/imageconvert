@@ -185,7 +185,7 @@ Le JPG fonctionne partout : e-mail, imprimeur, portails publics, logiciels vieux
   "heic-windows-guide": {
     title: "Ouvrir et convertir le HEIC sur Windows (guide 2026)",
     description:
-      "Pas à pas : ouvrir le HEIC sous Windows 10/11 sans codecs, ou convertir en JPG en ligne.",
+      "Ouvrir des photos HEIC iPhone sous Windows 10/11 sans codecs du Store, ou convertir en JPG gratuitement dans le navigateur. Guide pas à pas avec ZIP par lot, sans upload.",
     content: `*Dernière mise à jour : 25 mai 2026*
 
 Les utilisateurs Windows reçoivent chaque jour des HEIC d’iPhone — par USB, iCloud ou ZIP depuis Google Drive.
@@ -250,7 +250,7 @@ Workflow Google Drive : [Convertir en lot le HEIC depuis Google Drive](/blog/hei
   "heic-mac-guide": {
     title: "Convertir HEIC en JPG sur Mac : Aperçu vs outils en ligne",
     description:
-      "Aperçu pour un fichier isolé ou convertisseur en lot gratuit pour aller vite.",
+      "Convertir HEIC en JPG sur Mac avec Aperçu pour une photo, ou en lot gratuitement dans le navigateur. Traitement local et privé — vos fichiers ne sont jamais uploadés.",
     content: `Le Mac ouvre le HEIC nativement dans Aperçu et Photos.
 
 ## Méthode Aperçu
@@ -277,7 +277,7 @@ Les outils qui traitent localement n’envoient pas vos photos à un serveur tie
   "best-heic-converters-2026": {
     title: "Meilleurs convertisseurs HEIC en 2026 (gratuits et privés)",
     description:
-      "Apps bureau, upload cloud et convertisseurs HEIC locaux dans le navigateur comparés.",
+      "Comparez les convertisseurs HEIC gratuits en 2026 : apps bureau, upload cloud vs outils locaux dans le navigateur comme HeicSave. Confidentialité, lots et astuces Windows.",
     content: `*Dernière mise à jour : 25 mai 2026*
 
 Choisissez un convertisseur HEIC selon la confidentialité, la taille des lots et la possibilité d’installer un logiciel. Ce que les gens utilisent vraiment en 2026.
@@ -359,7 +359,7 @@ Sous Windows ? [Convertir AVIF en JPG sur Windows](/blog/convert-avif-to-jpg-win
   "webp-vs-jpg": {
     title: "WebP vs JPG : quel format choisir en 2026 ?",
     description:
-      "WebP vs JPG pour sites, e-mail et stockage, avec outils de conversion gratuits.",
+      "WebP vs JPG pour sites web, e-mail et stockage photo en 2026. Quand choisir chaque format — plus des outils gratuits dans le navigateur pour WebP vers JPG sans upload.",
     content: `Le WebP est le format image moderne de Google pour le web ; le JPG reste le standard photo universel.
 
 ## Taille
@@ -386,7 +386,7 @@ Servir le WebP avec <picture> et repli JPG. Garder les masters en JPG ou RAW.`,
   "webp-for-developers": {
     title: "WebP pour les développeurs : encoder, décoder, convertir",
     description:
-      "WebP pour le front-end : encoder et convertir PNG/JPG dans les deux sens—en local dans le navigateur, astuces Lighthouse et replis JPG/PNG pour clients anciens.",
+      "WebP pour développeurs front-end : encoder et convertir PNG/JPG dans les deux sens — en local dans le navigateur, astuces Lighthouse et replis JPG/PNG pour clients anciens.",
     content: `Les développeurs adoptent le WebP pour les scores Lighthouse et la bande passante.
 
 ## Encoder localement
@@ -408,7 +408,7 @@ Toujours livrer JPG/PNG de secours pour les clients mail et navigateurs anciens.
   "heic-live-photo-guide": {
     title: "Live Photos iPhone et HEIC : exporter des JPG fixes",
     description:
-      "HEIC Live Photo, confusion .mov et export JPG sur Windows et Mac.",
+      "Les Live Photos iPhone créent des HEIC fixes plus des clips .mov. Exportez des JPG sur Windows et Mac sans envoyer vos photos vers des convertisseurs cloud.",
     content: `Les Live Photos capturent quelques secondes de mouvement autour d’une image fixe. Sur disque, souvent **deux fichiers** : un .heic (ou .jpg) et une **.mov**. Ça embrouille sous Windows et casse la conversion par lots si vous choisissez le mauvais fichier.
 
 ## Qu’est-ce qu’une Live Photo ?
@@ -1028,7 +1028,7 @@ Sur PC **[HEIC en JPG](/heic-to-jpg)**, repartager en JPG. Ou **Chrome sur Andro
   "heic-color-washed-out-after-convert": {
     title: "Couleurs fades après HEIC→JPG",
     description:
-      "HEIC en Display P3, JPG souvent sRGB. Pourquoi les photos semblent ternes et quoi faire.",
+      "Le HEIC utilise l'espace colorimétrique Display P3, le JPG souvent sRGB. Pourquoi les photos iPhone semblent ternes après conversion — et comment la qualité JPEG aide.",
     content: `Certains trouvent le JPG **plat** après conversion HEIC. Souvent **mappage d'espace colorimétrique**, pas un outil cassé.
 
 ## Couleur HEIC vs JPG

@@ -234,7 +234,7 @@ Keep HEIC on the phone for storage. Convert to JPG when sharing outside Apple’
     slug: "heic-windows-guide",
     title: "How to Open and Convert HEIC on Windows (2026 Guide)",
     description:
-      "Step-by-step: open HEIC on Windows 10/11 without codecs, or convert to JPG online.",
+      "Open iPhone HEIC photos on Windows 10/11 without Store codecs—or convert to JPG free in your browser. Step-by-step guide with batch ZIP, no upload.",
     publishedAt: "2026-02-01",
     updatedAt: "2026-06-16",
     readMinutes: 12,
@@ -313,7 +313,7 @@ For Google Drive workflows specifically, see [Batch convert HEIC from Google Dri
     slug: "heic-mac-guide",
     title: "Convert HEIC to JPG on Mac : Preview vs Online Tools",
     description:
-      "Use Preview for one-offs or a free online batch converter for speed.",
+      "Convert HEIC to JPG on Mac with Preview for one photo, or use a free browser batch tool for albums. Private, local processing—files never uploaded.",
     publishedAt: "2026-02-05",
     updatedAt: "2026-06-16",
     readMinutes: 9,
@@ -366,7 +366,7 @@ Browser tools that decode locally never send photos to a third-party server. Use
     slug: "best-heic-converters-2026",
     title: "Best HEIC Converters in 2026 (Free & Private)",
     description:
-      "Desktop apps, cloud uploaders, and browser-local HEIC converters compared.",
+      "Compare free HEIC converters in 2026: desktop apps vs cloud upload vs browser-local tools like HeicSave. Privacy, batch limits, and Windows tips included.",
     publishedAt: "2026-02-10",
     updatedAt: "2026-05-25",
     readMinutes: 11,
@@ -588,7 +588,7 @@ Open **[AVIF to JPG](/avif-to-jpg)**.`,
     slug: "webp-vs-jpg",
     title: "WebP vs JPG: Which Format Should You Use in 2026?",
     description:
-      "WebP vs JPG for websites, email, and storage, with free conversion tools.",
+      "WebP vs JPG for websites, email, and photo storage in 2026. See when each format wins, plus free browser tools to convert WebP to JPG without uploading.",
     publishedAt: "2026-02-20",
     readMinutes: 7,
     content: `WebP is Google's modern image format for the web; JPG is the universal photo standard.
@@ -773,7 +773,7 @@ For a Windows-only walkthrough, see [How to Open and Convert HEIC on Windows](/b
     slug: "heic-live-photo-guide",
     title: "iPhone Live Photos and HEIC: How to Export JPG Still Images",
     description:
-      "Live Photo HEIC files, .mov confusion, and exporting still JPGs on Windows and Mac.",
+      "iPhone Live Photos create HEIC stills plus .mov clips. Learn how to export JPG stills on Windows and Mac without uploading photos to cloud converters.",
     publishedAt: "2026-05-20",
     readMinutes: 7,
     content: `Live Photos capture a few seconds of motion around a still image. On disk they often appear as **two files**: a .heic (or .jpg) still and a companion **.mov** video. That confuses Windows users and breaks batch conversion if you pick the wrong file.
@@ -947,7 +947,7 @@ Open **[WebP to JPG](/webp-to-jpg)**.`,
     slug: "heic-to-png-when-and-how",
     title: "HEIC to PNG: When You Need It and How to Convert (2026)",
     description:
-      "When to pick HEIC to PNG over JPG, and how to batch convert in your browser.",
+      "When should you convert HEIC to PNG instead of JPG? Use cases for editing and transparency, plus free browser batch conversion with ZIP download.",
     publishedAt: "2026-05-22",
     readMinutes: 9,
     content: `Most people convert HEIC to **JPG** for email and Windows. **PNG** is the better pick when you are editing, need transparency, or want to skip another lossy step.
@@ -1018,7 +1018,7 @@ Tool: **[HEIC to PNG](/heic-to-png)**`,
     slug: "heic-google-drive-batch-convert",
     title: "How to Batch Convert HEIC to JPG from Google Drive (2026)",
     description:
-      "Download HEIC from Google Drive, batch convert to JPG in the browser, then re-upload or share.",
+      "Download HEIC from Google Drive, batch convert to JPG in Chrome or Edge, then re-upload or share. Browser-local workflow—your photos never leave your PC.",
     publishedAt: "2026-05-22",
     readMinutes: 10,
     content: `Google Drive has no **HEIC → JPG** button. iPhone backups and shared folders full of .heic files break Windows previews and email attachments. You can convert **many HEIC files at once** in the browser without codecs or uploading to a stranger's server.
@@ -1207,7 +1207,7 @@ Tool: **[HEIC to JPG](/heic-to-jpg)**`,
     slug: "heic-color-washed-out-after-convert",
     title: "Fix Dull Colors After HEIC to JPG",
     description:
-      "HEIC uses Display P3 wide color; JPG is often sRGB. Why converted photos look washed out and what you can do.",
+      "HEIC uses Display P3 wide color; JPG is usually sRGB. Learn why iPhone photos look washed out after conversion and how JPEG quality settings help fix it.",
     publishedAt: "2026-05-24",
     readMinutes: 6,
     content: `Some users say iPhone HEIC photos look **flat or washed out** after converting to JPG. Usually this is **color space mapping**, not a broken converter.
