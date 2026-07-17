@@ -4,6 +4,13 @@ import type { ToolSeoSection } from "@/lib/tools-l10n/types";
 export const deToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
   "heic-to-jpg": [
     {
+      heading: "Echte Windows-Szenarien für diese Seite",
+      paragraphs: [
+        "Nutzen Sie diesen Konverter, wenn Outlook .heic ablehnt, Explorer leere Icons zeigt oder Firmen-PCs den Microsoft-Store-HEIF-Codec blockieren. Album einmal umwandeln, JPG anhängen, Originale auf dem Telefon behalten.",
+        "Bei 50–500 Urlaubsfotos: Stapelmodus und ZIP. JPEG-Qualität 85–92 für Portale mit Upload-Limit.",
+      ],
+    },
+    {
       heading: "HEIC in JPG für iPhone-Nutzer in EU und USA",
       paragraphs: [
         "Täglich entstehen Millionen HEIC-Fotos. Für E-Mail an die Familie, Versicherungsunterlagen, Jobportale oder Plattformen, die nur JPG akzeptieren, brauchen Sie einen schnellen, kostenlosen und vertrauenswürdigen Konverter.",
@@ -158,6 +165,13 @@ export const deToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
   ],
   "heic-to-png": [
     {
+      heading: "Wann HEIC → PNG die richtige Wahl ist (nicht JPG)",
+      paragraphs: [
+        "Wählen Sie PNG, wenn Sie weiter bearbeiten, ein verlustarmes Still brauchen oder Text/UI über das Foto legen. JPG ist besser für E-Mail und die meisten Portale.",
+        "PNG-Dateien sind größer. Konvertieren Sie nur die Frames zum Bearbeiten; den Rest des Albums mit HEIC in JPG.",
+      ],
+    },
+    {
       heading: "HEIC in PNG für Designer",
       content:
         "Grafiker und Entwickler brauchen oft PNG-Assets. Dieses Tool verbindet iPhone-HEIC-Exporte mit PNG-Pipelines — ohne Kundenfotos auf einen Server zu schicken.",
@@ -220,6 +234,13 @@ export const deToolSeoSections: Record<ToolSlug, ToolSeoSection[]> = {
     },
   ],
   "webp-to-jpg": [
+    {
+      heading: "WebP freibekommen, das E-Mail und Drucker ablehnen",
+      paragraphs: [
+        "Viele CRM-Uploads, ältere Outlook-Builds und Print-Kioske lehnen WebP noch ab. Wandeln Sie Marketing-Assets hier in JPG um, bevor Sie das Firmennetz verlassen.",
+        "Behalten Sie WebP als Website-Master; JPG ist der Kompatibilitäts-Export. Qualität 88–92 ist ein guter Start für Screenshots mit Text.",
+      ],
+    },
     {
       heading: "WebP in JPG für E-Mail und Legacy-Software",
       content:

@@ -5,7 +5,15 @@
 export const LOCALES = ["en", "de", "fr"];
 export const DEFAULT_LOCALE = "en";
 
-export const STATIC_PAGES = ["/about", "/contact", "/privacy", "/terms", "/dmca", "/blog"];
+export const STATIC_PAGES = [
+  "/about",
+  "/about/author",
+  "/contact",
+  "/privacy",
+  "/terms",
+  "/dmca",
+  "/blog",
+];
 
 export const TOOL_SLUGS = [
   "heic-to-jpg",

@@ -4,6 +4,13 @@ import type { ToolSeoSection } from "@/lib/tool-seo-types";
 export const extraToolSeoSections: Record<string, ToolSeoSection[]> = {
   "heic-to-jpg": [
     {
+      heading: "Real Windows scenarios this page is built for",
+      paragraphs: [
+        "Use this converter when Outlook rejects a .heic attachment, when Explorer shows blank icons, or when a workplace PC blocks Microsoft Store HEIF codecs. Convert the album once, attach JPG, and keep originals on the phone.",
+        "For 50–500 vacation photos, use batch mode and download a ZIP. Prefer JPEG quality 85–92 for email portals that cap upload size.",
+      ],
+    },
+    {
       heading: "How HeicSave compares to other HEIC to JPG methods",
       paragraphs: [
         "Not every converter fits the same job. Cloud upload tools add privacy risk and wait time on slow Wi‑Fi. Windows Store codecs help preview only—they do not batch-convert a wedding folder for email. The table below summarizes what we tested on Windows 11 and macOS Sonoma in 2026.",
@@ -108,6 +115,13 @@ export const extraToolSeoSections: Record<string, ToolSeoSection[]> = {
   ],
   "heic-to-png": [
     {
+      heading: "When HEIC → PNG is the right call (not JPG)",
+      paragraphs: [
+        "Choose PNG when you will edit further, need a lossless-friendly still, or will composite text/UI over the photo. JPG is better for email and most portals.",
+        "PNG files are larger. Convert only the frames you will edit; use HEIC to JPG for the rest of the album.",
+      ],
+    },
+    {
       heading: "When HEIC to PNG beats JPG",
       paragraphs: [
         "PNG is lossless after decode—useful for screenshots, UI captures, and images with text where JPG ringing is visible. HEIC from iPhone is still a compressed source, but PNG avoids a second lossy step that JPG adds.",
@@ -160,6 +174,13 @@ export const extraToolSeoSections: Record<string, ToolSeoSection[]> = {
     },
   ],
   "webp-to-jpg": [
+    {
+      heading: "Unstick WebP that email and printers reject",
+      paragraphs: [
+        "Many CRM uploads, older Outlook builds, and print kiosks still reject WebP. Convert marketing assets to JPG here before you leave the office network.",
+        "Keep a WebP master for the website; use JPG as the compatibility export. Quality 88–92 is a practical starting point for screenshots with text.",
+      ],
+    },
     {
       heading: "WebP to JPG for email and legacy software",
       paragraphs: [

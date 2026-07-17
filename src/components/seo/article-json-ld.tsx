@@ -2,6 +2,7 @@ import type { BlogPost } from "@/lib/blog-posts";
 import { hasBlogTranslation } from "@/lib/blog-l10n";
 import type { AppLocale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
+import { AUTHOR_PATH, AUTHOR_PEN_NAME } from "@/lib/author";
 import { SITE_NAME } from "@/lib/constants";
 import { absoluteUrl } from "@/lib/locale-path";
 import { getSchemaCopy, SCHEMA_LANG } from "@/lib/schema-l10n";
@@ -36,9 +37,9 @@ export function ArticleJsonLd({
         datePublished: post.publishedAt,
         dateModified: post.updatedAt ?? post.publishedAt,
         author: {
-          "@type": "Organization",
-          name: `${SITE_NAME} team`,
-          url: absoluteUrl("/about", routing.defaultLocale),
+          "@type": "Person",
+          name: AUTHOR_PEN_NAME,
+          url: absoluteUrl(AUTHOR_PATH, routing.defaultLocale),
         },
         publisher: {
           "@type": "Organization",

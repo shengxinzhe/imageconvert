@@ -116,6 +116,37 @@ export default function HomePage({ params }: PageProps) {
         </div>
       </section>
 
+      <section className="content-band-soft border-y border-hairline py-16">
+        <div className="mx-auto max-w-6xl px-4 lg:px-6">
+          <h2 className="text-2xl font-semibold tracking-display-sm text-ink">
+            {t("home.howTitle")}
+          </h2>
+          <ol className="mt-8 grid gap-6 md:grid-cols-3">
+            {[1, 2, 3].map((n) => (
+              <li key={n} className="rounded-vercel border border-hairline bg-canvas p-5">
+                <p className="font-mono text-xs text-mute">{n}</p>
+                <h3 className="mt-2 font-medium text-ink">
+                  {t(`home.howStep${n}Title` as "home.howStep1Title")}
+                </h3>
+                <p className="mt-2 text-sm text-body">
+                  {t(`home.howStep${n}Body` as "home.howStep1Body")}
+                </p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-10 max-w-3xl rounded-vercel border border-hairline bg-canvas px-5 py-5">
+            <h2 className="text-lg font-semibold text-ink">{t("home.verifyTitle")}</h2>
+            <p className="mt-3 text-sm text-body">{t("home.verifyBody")}</p>
+            <Link
+              href="/blog/privacy-browser-image-conversion"
+              className="mt-4 inline-flex text-sm font-medium text-link hover:text-link-deep"
+            >
+              {t("home.verifyCta")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className={homeStyles.devSection}>
         <div className="mx-auto max-w-6xl px-4 py-16 lg:px-6">
           <span className={homeStyles.devBadge}>{t("home.devBadge")}</span>

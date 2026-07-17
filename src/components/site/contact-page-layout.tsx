@@ -68,7 +68,32 @@ export function ContactPageLayout({
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-16 lg:px-6">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-xl font-semibold tracking-display-sm text-ink">
+            {t("contact.topicsTitle")}
+          </h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-body marker:text-mute">
+            <li>{t("contact.topicPrivacy")}</li>
+            <li>{t("contact.topicBug")}</li>
+            <li>{t("contact.topicDmca")}</li>
+            <li>{t("contact.topicPartner")}</li>
+            <li>{t("contact.topicOther")}</li>
+          </ul>
+          <p className="mt-4 text-sm text-body">{t("contact.slaBody")}</p>
+          <div className="mt-4 flex flex-wrap gap-4 text-sm">
+            <Link href="/about/author" className="font-medium text-link hover:text-link-deep">
+              {t("contact.authorLink")}
+            </Link>
+            <Link
+              href="/about#editorial-standards"
+              className="font-medium text-link hover:text-link-deep"
+            >
+              {t("contact.editorialLink")}
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card) => {
             const Icon = card.icon;
             return (

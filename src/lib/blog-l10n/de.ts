@@ -1525,7 +1525,7 @@ HEIC aus der iPhone-Fotomediathek scheitert dort oft — **vor dem Upload konver
 
 ### Wie übertrage ich iPhone-Fotos auf den PC ohne HEIC?
 
-**Option A — künftig JPG:** Einstellungen → Kamera → Formate → **Maximale Kompatibilität**. Schritt-für-Schritt: [HEIC am iPhone deaktivieren](/blog/disable-heic-iphone-jpg) (Englisch, technische Screenshots).
+**Option A — künftig JPG:** Einstellungen → Kamera → Formate → **Maximale Kompatibilität**. Schritt-für-Schritt: [HEIC am iPhone deaktivieren](/blog/disable-heic-iphone-jpg).
 
 **Option B — Bestand konvertieren:** USB-Kopie auf den PC, dann Browser-Konvertierung in JPG (Stapel + ZIP).
 
@@ -1594,6 +1594,149 @@ HEIC auf dem iPhone behalten. JPG nutzen für Windows-Nutzer, Druckereien und We
 - [HeicSave vs. Cloud-Konverter](/blog/heicsave-vs-browser-heic-converters)
 
 **Tool:** [HEIC in JPG](/heic-to-jpg)`,
+  },
+  "disable-heic-iphone-jpg": {
+    title: "HEIC am iPhone deaktivieren und stattdessen JPG speichern (2026)",
+    description:
+      "iPhone-Kamera von HEIC auf JPG umstellen: Einstellungen → Kamera → Formate → Maximale Kompatibilität. Was sich ändert, was in HEIC bleibt und wie Sie bestehende Fotos konvertieren.",
+    content: `*Zuletzt aktualisiert: 7. Juli 2026*
+
+HEIC lässt sich auf dem iPhone nicht „löschen“ — Sie ändern, was die **Kamera künftig speichert**. Fotos in der Mediathek bleiben HEIC, bis Sie sie konvertieren oder neu exportieren.
+
+## Vor dem Umstellen
+
+**Maximale Kompatibilität** speichert neue Aufnahmen als JPEG und neue Videos als H.264. Sie verlieren etwas Speichereffizienz und Spielraum bei ProRAW/ProRes. Für E-Mail, Windows-PCs und Upload-Formulare lohnt sich der Kompromiss meist.
+
+**Hohe Effizienz** (Standard) behält HEIC/HEVC und spart Speicher. Behalten Sie es, wenn Sie ausschließlich in der Apple-Welt (iPhone, iPad, Mac, iCloud) bleiben.
+
+## Schritt für Schritt: HEIC für neue Fotos ausschalten
+
+1. **Einstellungen** öffnen.
+2. Zu **Kamera** scrollen.
+3. **Formate** antippen.
+4. **Maximale Kompatibilität** wählen (nicht Hohe Effizienz).
+
+![Einstellungen → Kamera → Formate → Maximale Kompatibilität — neue Fotos als JPG](/guides/iphone-most-compatible-formats.webp)
+
+Testfoto aufnehmen. In Dateien oder per AirDrop zum Mac sollte die Endung **.jpg** oder **.jpeg** sein.
+
+## USB zu Windows liefert noch HEIC?
+
+**Einstellungen → Fotos → Übertragung an Mac oder PC** ist eine **eigene** Einstellung:
+
+| Einstellung | Was die USB-Kopie sendet |
+|---|---|
+| Automatisch | JPG nur, wenn iOS meint, der PC kann kein HEIC (unter Windows 11 unzuverlässig) |
+| Originale behalten | Immer HEIC |
+
+![Einstellungen → Fotos → Übertragung an Mac oder PC — getrennt von Kamera → Formate](/guides/iphone-transfer-mac-pc.webp)
+
+Wenn Automatisch scheitert: **Maximale Kompatibilität** (oben) oder nach dem Kopieren mit [HEIC in JPG](/heic-to-jpg) konvertieren. Anleitung: [iPhone-Fotos auf Windows übertragen](/blog/transfer-iphone-photos-to-windows).
+
+## Bestehende Mediathek bleibt HEIC
+
+Formate ändern schreibt die Kamerarolle nicht um. Optionen:
+
+1. **Am PC konvertieren** — USB oder iCloud, dann [Stapel-Konvertierung](/blog/batch-heic-to-jpg-workflow) im Browser.
+2. **Als JPG vom iPhone teilen** — Fotos → Teilen → manchmal automatisches Format; für Massen unzuverlässig.
+3. **Mac-Vorschau** — ausgewählte Bilder als JPEG exportieren ([Mac-Ratgeber](/blog/heic-mac-guide)).
+
+## Wann HEIC auf dem Handy behalten
+
+Sie machen hunderte Fotos pro Woche und nutzen minimalen iCloud-Speicher. Sie bearbeiten nur auf iPhone/iPad/Mac. Sie versenden selten Dateien in voller Auflösung.
+
+Sobald Windows, Outlook oder Druckereien ins Spiel kommen, ist JPG bei der Aufnahme oder Konvertierung nach dem Transfer einfacher.
+
+## Verwandte Ratgeber
+
+- [Warum iPhone HEIC nutzt](/blog/why-iphone-uses-heic)
+- [HEIC vs JPG](/blog/heic-vs-jpg)
+- [HEIC-Stapel-Workflow](/blog/batch-heic-to-jpg-workflow)
+
+**Bestehendes HEIC konvertieren:** [HEIC in JPG](/heic-to-jpg) — lokal, ohne Upload.`,
+  },
+  "heic-windows-11-uk": {
+    title: "iPhone-Fotos unter Windows 11 öffnen (DACH-FAQ 2026)",
+    description:
+      "Unter Windows 11 lassen sich iPhone-HEIC oft erst mit Store-Codecs anzeigen. Im Browser lokal in JPG konvertieren — privat, ohne Server-Upload, für Behörden & Bewerbungen.",
+    content: `**Kurzantwort:** Windows 11 zeigt iPhone-**HEIC** oft erst nach Microsoft-Store-Codecs — oder konvertieren Sie **lokal im Browser** zu **JPG** mit [HEIC in JPG](/heic-to-jpg). **Nichts wird auf unsere Server hochgeladen.**
+
+## Warum Windows 11 + iPhone-HEIC in DE/AT/CH scheitert
+
+iPhones in Deutschland, Österreich und der Schweiz speichern standardmäßig **HEIC**. Fotos unter Windows 11 zeigt oft nur ein generisches Symbol, Outlook lehnt Anhänge ab, und Portale von Versicherung, Jobcenter oder Uni akzeptieren häufig **nur JPG**.
+
+**HEIF Image Extensions** aus dem Microsoft Store helfen manchmal bei der Vorschau — viele Firmen- und Schul-PCs blockieren den Store.
+
+## FAQ — Windows 11 + iPhone-HEIC
+
+### iPhone-Fotos unter Windows 11 ohne Installation öffnen?
+
+1. [HEIC in JPG](/heic-to-jpg) in **Chrome oder Edge** öffnen.
+2. .heic-Dateien in die Ablage ziehen.
+3. **Konvertieren** — Verarbeitung **im Browser** auf Ihrem PC.
+4. JPGs herunterladen, die in Fotos, Word und deutschen Upload-Formularen funktionieren.
+
+**100 % privat:** Ihre Fotos werden nicht zur Konvertierung an HeicSave gesendet.
+
+### Bewerbungen, Versicherung, Behörden — reicht JPG?
+
+Ja. Die Ausgabe ist Standard-**.jpg**, wie deutsche und europäische Portale es erwarten. Vor dem Upload konvertieren; HEIC-Originale gern auf dem iPhone behalten.
+
+### Ist Cloud-Upload sicherer als Browser-Konvertierung?
+
+Für persönliche Fotos **nein**. Cloud-Konverter kopieren Dateien auf fremde Server. HeicSave dekodiert HEIC per WebAssembly **auf Ihrem Gerät** — im Einklang mit DSGVO-Erwartungen.
+
+### Urlaubsfotos im Stapel (Alpen, Ostsee, Schwarzwald)?
+
+Viele Dateien hinzufügen, einmal konvertieren, **ZIP** laden. Desktop-Chrome oder Edge unter Windows 11 ist am schnellsten.
+
+## Verwandte Ratgeber
+
+- [iPhone-Fotos auf Windows-PC übertragen](/blog/transfer-iphone-photos-to-windows)
+- [HEIC unter Windows (vollständiger Ratgeber)](/blog/heic-windows-guide)
+- [Datenschutz: Browser-Konvertierung](/blog/privacy-browser-image-conversion)
+
+**Jetzt konvertieren:** [HEIC in JPG](/heic-to-jpg) — kostenlos, ohne Konto, ohne Upload.`,
+  },
+  "heic-iphone-photos-windows-us": {
+    title: "HEIC vom iPhone unter Windows konvertieren — ohne Upload (DACH-FAQ 2026)",
+    description:
+      "iPhone plus Windows im Büro oder Studium: HEIC im Browser in JPG umwandeln. Privat, kostenlos, Stapel-ZIP — Fotos werden nie auf Server hochgeladen.",
+    content: `**Kurzantwort:** iPhone-Nutzer mit Windows am Arbeitsplatz oder in der Schule sollten **HEIC → JPG im Browser** unter [HEIC in JPG](/heic-to-jpg) konvertieren. Die Verarbeitung bleibt auf **Ihrem PC** — wir erhalten Ihre Fotos nicht.
+
+## Warum das in Deutschland häufig vorkommt
+
+Hoher iPhone-Anteil; Windows dominiert Büro- und Schul-PCs. Schadenmeldungen, Bewerbungsportale, Kleinanzeigen und Schul-Uploads verlangen oft **JPG**, nicht HEIC.
+
+## FAQ — iPhone + Windows
+
+### Wie konvertiere ich iPhone-Fotos für Windows-PCs?
+
+Nutzen Sie einen **browser-lokalen** Konverter — kein iTunes-Codec-Suchen, kein Cloud-Upload:
+
+1. [HEIC in JPG](/heic-to-jpg) in Chrome oder Edge öffnen.
+2. Urlaubs-, Beleg- oder Ausweisfotos (.heic) ablegen.
+3. JPG oder ZIP herunterladen.
+
+### Ist ein „kostenloser Online-Konverter“ sicher?
+
+Behandeln Sie persönliche Fotos wie Ausweis-Scans: Tools bevorzugen, die **im Browser** dekodieren. Cloud-Dienste kopieren auf unbekannte Server.
+
+### 50+ Fotos von einer Reise im Stapel?
+
+Kein festes Limit — bei langsamer Tab-Performance in Blöcken konvertieren. ZIP-Download hält Dateinamen ordentlich.
+
+### Mac zu Hause, Windows im Büro?
+
+Auf beiden Geräten vor dem Mailen an sich selbst konvertieren — JPG funktioniert überall.
+
+## Verwandte Ratgeber
+
+- [iPhone-Fotos auf Windows übertragen](/blog/transfer-iphone-photos-to-windows)
+- [Beste HEIC-Konverter 2026](/blog/best-heic-converters-2026)
+- [Datenschutz-Leitfaden](/blog/privacy-browser-image-conversion)
+
+**Start:** [HEIC in JPG](/heic-to-jpg)`,
   },
   "jpg-portal-upload-size-limits": {
     title: "JPG-Upload zu groß für Job- oder Schulportal? Lokal komprimieren (2026)",

@@ -77,6 +77,16 @@ export function AboutPageLayout({
           </h2>
           <p className="mt-4 text-body">{t("about.whyBody")}</p>
           <p className="mt-3 text-body">{t("about.operatorBody")}</p>
+          <h2 className="mt-10 text-2xl font-semibold tracking-display-sm text-ink">
+            {t("about.whoWritesTitle")}
+          </h2>
+          <p className="mt-4 text-body">{t("about.whoWritesBody")}</p>
+          <Link
+            href="/about/author"
+            className="mt-4 inline-flex text-sm font-medium text-link hover:text-link-deep"
+          >
+            {t("about.whoWritesCta")}
+          </Link>
         </div>
       </section>
 
